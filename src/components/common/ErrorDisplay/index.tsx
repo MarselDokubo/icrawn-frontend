@@ -40,7 +40,7 @@ export const ErrorDisplay = () => {
                 <Container size="md" className={classes.root}>
                     <Stack gap="xl" align="center">
                         <Image
-                            src={"icrawn_logo.jpg"}
+                            src={"/icrawn_logo.jpg"}
                             alt={getConfig("VITE_APP_NAME", "iCrawn.Events") + " Logo"}
                             w={rem(140)}
                             h="auto"

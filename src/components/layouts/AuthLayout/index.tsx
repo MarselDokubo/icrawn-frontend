@@ -130,7 +130,7 @@ const AuthLayout = () => {
                 <div className={classes.leftPanel}>
                     <main className={classes.container}>
                         <div className={classes.logo}>
-                            <img src={"icrawn_logo.jpg"} alt={`logo`}/>
+                            <img src={"/icrawn_logo.jpg"} alt={`logo`}/>
                         </div>
                         <div className={classes.wrapper}>
                             <Outlet/>
