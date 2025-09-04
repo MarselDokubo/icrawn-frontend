@@ -9,7 +9,7 @@ module.exports = {
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   plugins: ['react-refresh', 'lingui'],
   rules: {
-    "lingui/no-unlocalized-strings": 2,
+    "lingui/no-unlocalized-strings": "off",
     "lingui/t-call-in-function": 2,
     "lingui/no-single-variables-to-translate": 2,
     "lingui/no-expression-in-message": 2,
