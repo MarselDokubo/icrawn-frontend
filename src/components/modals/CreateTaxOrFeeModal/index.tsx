@@ -29,7 +29,7 @@ export const CreateTaxOrFeeModal = ({ onClose }: GenericModalProps) => {
             taxOrFeeData: values,
         }, {
             onSuccess: () => {
-                showSuccess(<Trans>{form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`} created successfully</Trans>);
+                showSuccess(<>{form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`} created successfully</>);
                 form.reset();
                 onClose();
             },
@@ -45,7 +45,7 @@ export const CreateTaxOrFeeModal = ({ onClose }: GenericModalProps) => {
                     fullWidth
                     loading={createMutation.isPending}
                     type={'submit'}>
-                    <Trans>Create {form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`}</Trans>
+                    <>Create {form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`}</>
                 </Button>
             </form>
         </Modal>

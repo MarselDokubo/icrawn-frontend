@@ -115,8 +115,8 @@ export const ManageProfile = () => {
                                 <Alert className={classes.emailChangeAlert} variant="light" color="blue"
                                        title={`Email change pending`} icon={<IconInfoCircle/>}>
                                     <p>
-                                        <Trans>Your email request change to <b>{me?.pending_email}</b> is pending.
-                                            Please check your email to confirm</Trans>
+                                        <>Your email request change to <b>{me?.pending_email}</b> is pending.
+                                            Please check your email to confirm</>
                                     </p>
                                     <p>
                                         {`If you did not request this change, please immediately change your password.`}

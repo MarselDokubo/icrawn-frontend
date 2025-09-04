@@ -257,9 +257,9 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                         <Switch
                             mt={20}
                             label={(
-                                <Trans>
+                                <>
                                     Send a copy to <b>{me?.email}</b>
-                                </Trans>
+                                </>
                             )}
                             {...form.getInputProps('send_copy_to_current_user')}
                         />
@@ -267,10 +267,10 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                         <Switch
                             mt={20}
                             label={(
-                                <Trans>
+                                <>
                                     Send as a test. This will send the message to your email address instead of the
                                     recipients.
-                                </Trans>
+                                </>
                             )}
                             {...form.getInputProps('is_test')}
                         />
@@ -283,9 +283,9 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
 
                         <Switch mt={20} {...form.getInputProps('acknowledgement', {type: 'checkbox'})}
                                 label={(
-                                    <Trans>
+                                    <>
                                         This email is not promotional and is directly related to the event.
-                                    </Trans>
+                                    </>
                                 )}/>
 
                         <Button mt={20}

@@ -87,9 +87,9 @@ export const AttendeeTable = ({attendees, openCreateModal}: AttendeeTableProps) 
                 onSuccess: () => {
                     notifications.show({
                         message: (
-                            <Trans>
+                            <>
                                 Successfully {attendee.status === 'CANCELLED' ? 'activated' : 'cancelled'} attendee
-                            </Trans>
+                            </>
                         ),
                         color: 'green',
                     });

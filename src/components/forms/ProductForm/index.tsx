@@ -64,7 +64,7 @@ const ProductPriceTierForm = ({form, product, event}: ProductFormProps) => {
 
         return (
             <Card key={`price-${index}`} className={classes.priceTierCard}>
-                <h3>{price.label || <Trans>Tier {index + 1}</Trans>}</h3>
+                <h3>{price.label || <>Tier {index + 1}</>}</h3>
                 <InputGroup>
                     <NumberInput decimalScale={2}
                                  min={0}
@@ -240,11 +240,11 @@ export const ProductForm = ({form, product}: ProductFormProps) => {
 
                 {form.values.type === ProductPriceType.Tiered && (
                     <Alert title={`What are Tiered Products?`} mb={20}>
-                        <Trans>
+                        <>
                             Tiered products allow you to offer multiple price options for the same product.
                             This is perfect for early bird products, or offering different price
                             options for different groups of people.
-                        </Trans>
+                        </>
                     </Alert>
                 )}
 
@@ -284,14 +284,14 @@ export const ProductForm = ({form, product}: ProductFormProps) => {
                                      label={<InputLabelWithHelp
                                          label={isDonationProduct ? `Minimum Price` : `Price`}
                                          helpText={(
-                                             <Trans>
+                                             <>
                                                  <p>
                                                      Please enter the price excluding taxes and fees.
                                                  </p>
                                                  <p>
                                                      Taxes and fees can be added below.
                                                  </p>
-                                             </Trans>
+                                             </>
                                          )}
                                      />}
                                      placeholder="19.99"/>
@@ -301,7 +301,7 @@ export const ProductForm = ({form, product}: ProductFormProps) => {
                                      label={<InputLabelWithHelp
                                          label={`Quantity Available`}
                                          helpText={(
-                                             <Trans>
+                                             <>
                                                  <p>
                                                      The number of products available for this product
                                                  </p>
@@ -310,7 +310,7 @@ export const ProductForm = ({form, product}: ProductFormProps) => {
                                                                                                   href={'capacity-assignments'}>Capacity
                                                      Limits</a> associated with this product.
                                                  </p>
-                                             </Trans>
+                                             </>
                                          )}
                                      />}
                         />

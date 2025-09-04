@@ -83,7 +83,7 @@ export function Dashboard() {
                 <div className={classes.headerContent}>
                     <h1 className={classes.pageTitle}>{getHeading()}</h1>
                     <p className={classes.welcomeMessage}>
-                        <Trans>Welcome to {getConfig('VITE_APP_NAME', 'iCrawn.Events')}, here's a listing of all your events</Trans>
+                        <>Welcome to {getConfig('VITE_APP_NAME', 'iCrawn.Events')}, here's a listing of all your events</>
                     </p>
                 </div>
 

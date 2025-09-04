@@ -29,7 +29,7 @@ export const InviteUserModal = ({onClose}: GenericModalProps) => {
             onSuccess: () => {
                 form.reset();
                 onClose();
-                showSuccess(<Trans>Success! {values.first_name} will receive an email shortly.</Trans>);
+                showSuccess(<>Success! {values.first_name} will receive an email shortly.</>);
             },
             onError: (error: any) => formErrorHandler(form, error)
         });

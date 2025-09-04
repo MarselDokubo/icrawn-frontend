@@ -79,7 +79,7 @@ const CheckIn = () => {
                     showError(errors[attendee.public_id]);
                     return;
                 }
-                showSuccess(<Trans>{attendee.first_name} <b>checked in</b> successfully</Trans>);
+                showSuccess(<>{attendee.first_name} <b>checked in</b> successfully</>);
                 checkInModalHandlers.close();
                 setSelectedAttendee(null);
             },
@@ -103,7 +103,7 @@ const CheckIn = () => {
                 checkInShortId: attendee.check_in.short_id,
             }, {
                 onSuccess: () => {
-                    showSuccess(<Trans>{attendee.first_name} <b>checked out</b> successfully</Trans>);
+                    showSuccess(<>{attendee.first_name} <b>checked out</b> successfully</>);
                 },
                 onError: (error) => {
                     if (!networkStatus.online) {
@@ -190,7 +190,7 @@ const CheckIn = () => {
                     checkInModalHandlers.close();
                     setSelectedAttendee(null);
                 }}
-                title={<Trans>Check in {selectedAttendee.first_name} {selectedAttendee.last_name}</Trans>}
+                title={<>Check in {selectedAttendee.first_name} {selectedAttendee.last_name}</>}
                 size="md"
             >
                 <Stack>
@@ -328,9 +328,9 @@ const CheckIn = () => {
                 subHeading={(
                     <>
                         <p>
-                            <Trans>
+                            <>
                                 This check-in list has expired and is no longer available for check-ins.
-                            </Trans>
+                            </>
                         </p>
                     </>
                 )}
@@ -446,10 +446,10 @@ const CheckIn = () => {
                                 {checkInList && (
                                     <>
                                         <h4>
-                                            <Trans>
+                                            <>
                                                 {`${checkInList.checked_in_attendees}/${checkInList.total_attendees}`} checked
                                                 in
-                                            </Trans>
+                                            </>
                                         </h4>
 
                                         <Progress

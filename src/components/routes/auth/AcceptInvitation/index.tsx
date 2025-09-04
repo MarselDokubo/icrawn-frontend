@@ -116,11 +116,11 @@ const AcceptInvitation = () => {
 
                     <Switch {...form.getInputProps('terms', {type: 'checkbox'})}
                             label={(
-                                <Trans>
+                                <>
                                     I agree to the <Anchor target={'_blank'}
                                                            href={getConfig("VITE_TOS_URL",'https://iCrawn.Events/terms-of-service')}>terms and
                                     conditions</Anchor>
-                                </Trans>
+                                </>
                             )}/>
 
                     <Button color={'var(--hi-pink)'} fullWidth loading={acceptInvitationMutation.isPending}

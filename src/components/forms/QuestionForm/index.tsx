@@ -25,10 +25,10 @@ import {ProductSelector} from "../../common/ProductSelector";
 const Options = ({form}: { form: UseFormReturnType<any> }) => {
     return (
         <Card>
-            <h3 className={classes.optionsHeading}><Trans>Options</Trans></h3>
+            <h3 className={classes.optionsHeading}><>Options</></h3>
             {form.values.options.length === 0 && (
                 <div className={classes.noOptionsMessage}>
-                    <Trans>Please add at least one option</Trans>
+                    <>Please add at least one option</>
                 </div>
             )}
 

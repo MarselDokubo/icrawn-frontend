@@ -21,10 +21,10 @@ export const ProductsBlankSlate = ({openCreateModal, productCategories, searchTe
                 subHeading={(
                     <>
                         <p>
-                            <Trans>
+                            <>
                                 We couldn't find any tickets matching {searchTerm ?
                                 <strong>{searchTerm}</strong> : 'your search'}
-                            </Trans>
+                            </>
                         </p>
                     </>
                 )}

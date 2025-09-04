@@ -39,8 +39,8 @@ export const EditTaxOrFeeModal = ({onClose, taxOrFee}: EditTaxOrFeeModalProps) =
             taxOrFeeData: values,
         }, {
             onSuccess: () => {
-                showSuccess(<Trans>{form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`} updated
-                    successfully</Trans>);
+                showSuccess(<>{form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`} updated
+                    successfully</>);
                 form.reset();
                 onClose();
             },
@@ -49,14 +49,14 @@ export const EditTaxOrFeeModal = ({onClose, taxOrFee}: EditTaxOrFeeModalProps) =
     };
 
     return (
-        <Modal heading={ <Trans>Edit {form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`}</Trans>} onClose={onClose} opened>
+        <Modal heading={ <>Edit {form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`}</>} onClose={onClose} opened>
             <form onSubmit={form.onSubmit(values => handleEdit(values))}>
                 <TaxAndFeeForm form={form}/>
                 <Button
                     fullWidth
                     loading={updateMutation.isPending}
                     type={'submit'}>
-                    <Trans>Update {form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`}</Trans>
+                    <>Update {form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`}</>
                 </Button>
             </form>
         </Modal>

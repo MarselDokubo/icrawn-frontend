@@ -220,8 +220,8 @@ export const OrganizerDashboard = () => {
             )}
             {/* {!stats && !organizerStatsQuery.isLoading && (
                 <Card>
-                    <Trans>Organizer statistics are not available for the selected currency or an error
-                        occurred.</Trans>
+                    <>Organizer statistics are not available for the selected currency or an error
+                        occurred.</>
                 </Card>
             )} */}
 
@@ -229,7 +229,7 @@ export const OrganizerDashboard = () => {
             <div className={classes.recentItemsGrid}>
                 {/* Events Section - First on mobile, second on desktop */}
                 <div className={`${classes.recentSection} ${classes.eventsSection}`}>
-                    <h3 className={classes.sectionTitle}><Trans>Upcoming Events</Trans></h3>
+                    <h3 className={classes.sectionTitle}><>Upcoming Events</></h3>
                     {isLoadingEvents && (
                         <div className={classes.skeletonStack}>
                             {[...Array(3)].map((_, i) => <Skeleton key={i} height={100} radius="md"/>)}
@@ -245,8 +245,8 @@ export const OrganizerDashboard = () => {
                     {!isLoadingEvents && (!recentEvents || recentEvents.length === 0) && (
                         <div className={classes.emptyState}>
                             <div className={classes.emptyStateIcon}>🎉</div>
-                            <h4><Trans>No events yet</Trans></h4>
-                            <p><Trans>Create your first event to start selling tickets and managing attendees.</Trans>
+                            <h4><>No events yet</></h4>
+                            <p><>Create your first event to start selling tickets and managing attendees.</>
                             </p>
                             <Button
                                 onClick={() => setShowCreateEventModal(true)}
@@ -254,7 +254,7 @@ export const OrganizerDashboard = () => {
                                 size="sm"
                                 mt="md"
                             >
-                                <Trans>Create Event</Trans>
+                                <>Create Event</>
                             </Button>
                         </div>
                     )}
@@ -262,7 +262,7 @@ export const OrganizerDashboard = () => {
 
                 {/* Orders Section - Second on mobile, first on desktop */}
                 <div className={`${classes.recentSection} ${classes.ordersSection}`}>
-                    <h3 className={classes.sectionTitle}><Trans>Recent Orders</Trans></h3>
+                    <h3 className={classes.sectionTitle}><>Recent Orders</></h3>
                     {isLoadingOrders && (
                         <div className={classes.skeletonStack}>
                             {[...Array(3)].map((_, i) => <Skeleton key={i} height={100} radius="md"/>)}
@@ -308,7 +308,7 @@ export const OrganizerDashboard = () => {
                                             to={`/manage/event/${order.event_id}/orders#order-${order.id}`}
                                             className={classes.orderButton}
                                         >
-                                            <Trans>View</Trans>
+                                            <>View</>
                                         </Button>
                                     </div>
                                 </Card>
@@ -318,8 +318,8 @@ export const OrganizerDashboard = () => {
                     {!isLoadingOrders && (!recentOrders || recentOrders.length === 0) && (
                         <div className={classes.emptyState}>
                             <div className={classes.emptyStateIcon}>📦</div>
-                            <h4><Trans>No orders yet</Trans></h4>
-                            <p><Trans>When customers purchase tickets, their orders will appear here.</Trans></p>
+                            <h4><>No orders yet</></h4>
+                            <p><>When customers purchase tickets, their orders will appear here.</></p>
                         </div>
                     )}
                 </div>

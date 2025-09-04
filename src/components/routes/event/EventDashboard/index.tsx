@@ -92,15 +92,15 @@ export const EventDashboard = () => {
         <PageBody>
             <PageTitle style={{marginBottom: 0}}>
                 {!isMobile && (
-                    <Trans>
+                    <>
                         Welcome back{me?.first_name && ', ' + me?.first_name} 👋
-                    </Trans>
+                    </>
                 )}
 
                 {isMobile && (
-                    <Trans>
+                    <>
                         Hi {me?.first_name && me?.first_name} 👋
-                    </Trans>
+                    </>
                 )}
             </PageTitle>
 

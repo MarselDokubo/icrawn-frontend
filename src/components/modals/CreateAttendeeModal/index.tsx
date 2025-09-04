@@ -166,7 +166,7 @@ export const CreateAttendeeModal = ({onClose}: GenericModalProps) => {
                     mt={20}
                     fixedDecimalScale
                     {...form.getInputProps('amount_paid')}
-                    label={<Trans>Amount paid ({event?.currency})</Trans>}
+                    label={<>Amount paid ({event?.currency})</>}
                     placeholder="0.00"
                     decimalScale={2}
                     step={1}

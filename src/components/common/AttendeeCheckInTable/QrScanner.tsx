@@ -172,14 +172,14 @@ export const QRScannerComponent = (props: QRScannerComponentProps) => {
         <div className={classes.videoContainer}>
             {permissionDenied && (
                 <div className={classes.permissionMessage}>
-                    <Trans>
+                    <>
                         Camera permission was denied. <Anchor onClick={requestPermission}>Request
                         Permission</Anchor> again,
                         or if this doesn't work,
                         you will need to <Anchor target={'_blank'}
                                                  href={'https://support.onemob.com/hc/en-us/articles/360037342154-How-do-I-grant-permission-for-Camera-and-Microphone-in-my-web-browser-'}>grant
                         this page</Anchor> access to your camera in your browser settings.
-                    </Trans>
+                    </>
 
                     <div>
                         <Button color={'green'} mt={20} onClick={handleClose} variant={'filled'}>

@@ -50,7 +50,7 @@ export const ConfirmEmailChange = () => {
                 <>
                     <h2>{`Confirm Email Change`}</h2>
                     <Card style={{marginTop: 'var(--hi-spacing-lg)'}}>
-                        <Trans>You are changing your email to <b>{userData?.pending_email}</b>.</Trans>
+                        <>You are changing your email to <b>{userData?.pending_email}</b>.</>
                         <p>
                             <Button onClick={confirmChange}>
                                 {`Confirm Email Change`}

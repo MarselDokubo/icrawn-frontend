@@ -46,12 +46,12 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                 subHeading={(
                     <>
                         <p>
-                            <Trans>
+                            <>
                                 <p>
                                     Check-in lists help manage attendee entry for your event. You can associate multiple
                                     tickets with a check-in list and ensure only those with valid tickets can enter.
                                 </p>
-                            </Trans>
+                            </>
                         </p>
                         <Button
                             loading={deleteMutation.isPending}
@@ -100,7 +100,7 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                                             <div className={classes.appliesToText}>
                                                 <div>
                                                     {list.products.length > 1 &&
-                                                        <Trans>Includes {list.products.length} products</Trans>}
+                                                        <>Includes {list.products.length} products</>}
                                                     {list.products.length === 1 && `Includes 1 produc`}
                                                 </div>
                                                 &nbsp;

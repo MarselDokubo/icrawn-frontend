@@ -76,7 +76,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
                     }
                 >
                     <Badge variant="light" size="sm">
-                        {eventCount > 1 ? <Trans>{eventCount} events</Trans> : eventTypes[0]}
+                        {eventCount > 1 ? <>{eventCount} events</> : eventTypes[0]}
                     </Badge>
                 </Tooltip>
             </div>
@@ -202,7 +202,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
                 imageHref={'/blank-slate/webhooks.svg'}
                 subHeading={(
                     <>
-                        <Trans>
+                        <>
                             <p>
                                 Webhooks instantly notify external services when events happen, like adding a new attendee
                                 to your CRM or mailing list upon registration, ensuring seamless automation.
@@ -214,7 +214,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
                                 target={'_blank'} href="https://www.make.com/en/help/tools/webhooks">Make</Anchor> to
                                 create custom workflows and automate tasks.
                             </p>
-                        </Trans>
+                        </>
                         <Button
                             loading={deleteMutation.isPending}
                             size={'xs'}

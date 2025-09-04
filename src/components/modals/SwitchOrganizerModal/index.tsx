@@ -41,7 +41,7 @@ export const SwitchOrganizerModal: React.FC<SwitchOrganizerModalProps> = ({opene
                     {availableOrganizers.length === 0 ? (
                         <div className={classes.emptyState}>
                             <IconBuilding size={48} stroke={1.5}/>
-                            <p><Trans>No other organizers available</Trans></p>
+                            <p><>No other organizers available</></p>
                         </div>
                     ) : (
                         availableOrganizers.map((organizer) => (

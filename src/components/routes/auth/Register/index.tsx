@@ -78,11 +78,11 @@ export const Register = () => {
             <header className={classes.header}>
                 <h2>{`Welcome to ${appName} 👋`}</h2>
                 <p>
-                    <Trans>
+                    <>
                         Create an account or <NavLink to={'/auth/login'}>
                         {`Log in`}
                     </NavLink> to get started
-                    </Trans>
+                    </>
                 </p>
             </header>
 
@@ -142,13 +142,13 @@ export const Register = () => {
                     </Button>
                 </form>
                 <footer>
-                    <Trans>
+                    <>
                         By registering you agree to our <NavLink target={'_blank'}
                                                                  to={getConfig("VITE_TOS_URL", "https://iCrawn.Events/terms-of-service?utm_source=app-register-footer") as string}>Terms
                         of Service</NavLink> and <NavLink
                         target={'_blank'}
                         to={getConfig("VITE_PRIVACY_URL", 'https://iCrawn.Events/privacy-policy?utm_source=app-register-footer') as string}>Privacy Policy</NavLink>.
-                    </Trans>
+                    </>
                 </footer>
             </div>
         </>

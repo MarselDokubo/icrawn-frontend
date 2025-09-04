@@ -54,12 +54,12 @@ const Login = () => {
             <header className={classes.header}>
                 <h2>{`Welcome back 👋`}</h2>
                 <p>
-                    <Trans>
+                    <>
                         Don't have an account? {'  '}
                         <NavLink to={'/auth/register'}>
                             Sign up
                         </NavLink>
-                    </Trans>
+                    </>
                 </p>
             </header>
             <div className={classes.loginCard}>

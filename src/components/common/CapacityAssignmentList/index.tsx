@@ -44,7 +44,7 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
                 subHeading={(
                     <>
                         <p>
-                            <Trans>
+                            <>
                                 <p>
                                     Capacity assignments let you manage capacity across tickets or an entire event. Ideal
                                     for multi-day events, workshops, and more, where controlling attendance is crucial.
@@ -54,7 +54,7 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
                                     Days</b> ticket. Once the capacity is reached, both tickets will automatically stop
                                     being available for sale.
                                 </p>
-                            </Trans>
+                            </>
                         </p>
                         <Button
                             size={'xs'}
@@ -94,7 +94,7 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
                                             <div className={classes.appliesToText}>
                                                 <div>
                                                     {assignment.products.length > 1 &&
-                                                        <Trans>Applies to {assignment.products.length} products</Trans>}
+                                                        <>Applies to {assignment.products.length} products</>}
                                                     {assignment.products.length === 1 && `Applies to 1 produc`}
                                                 </div>
                                                 &nbsp;

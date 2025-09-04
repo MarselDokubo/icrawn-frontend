@@ -321,7 +321,7 @@ export default App;
                             </div>
                             <div className={classes.browserAddressBar}>
                                 <div>
-                                    <Trans><span>https://</span>your-website.com</Trans>
+                                    <><span>https://</span>your-website.com</>
                                 </div>
                             </div>
                         </div>

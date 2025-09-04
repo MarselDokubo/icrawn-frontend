@@ -37,7 +37,7 @@ export const EditUserModal = ({onClose, user}: EditUserModalProps) => {
             onSuccess: () => {
                 form.reset();
                 onClose();
-                showSuccess(<Trans>Success! {values.first_name} will receive an email shortly.</Trans>);
+                showSuccess(<>Success! {values.first_name} will receive an email shortly.</>);
             },
             onError: (error) => formErrorHandler(form, error)
         });
@@ -62,7 +62,7 @@ export const EditUserModal = ({onClose, user}: EditUserModalProps) => {
         <Modal heading={`Edit User`} onClose={onClose} opened>
             {user.status === 'INVITED' && (
                 <Alert mb={20}>
-                    <Trans>This user is not active, as they have not accepted their invitation.</Trans>
+                    <>This user is not active, as they have not accepted their invitation.</>
                 </Alert>
             )}
             <form onSubmit={form.onSubmit(values => handleCreate(values))}>
@@ -78,9 +78,9 @@ export const EditUserModal = ({onClose, user}: EditUserModalProps) => {
                         value={user.email}
                         type={'email'}
                         label={`Email`}
-                        description={<Trans>Users can change their email in <NavLink target={'_blank'}
+                        description={<>Users can change their email in <NavLink target={'_blank'}
                                                                                      to={'/manage/profile'}>Profile
-                            Settings</NavLink></Trans>}
+                            Settings</NavLink></>}
                     />
 
                     {user.is_account_owner && (

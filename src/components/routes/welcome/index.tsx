@@ -459,9 +459,9 @@ const Welcome = () => {
                         <img src="/icrawn_logo.jpg" alt="iCrawn.Events"/>
                     </div>
                     <h1 className={classes.welcomeTitle}>
-                        <Trans>
+                        <>
                             Welcome to {getConfig("VITE_APP_NAME", `iCrawn.Events`)}, {userData?.first_name} 👋
-                        </Trans>
+                        </>
                     </h1>
                 </div>
 

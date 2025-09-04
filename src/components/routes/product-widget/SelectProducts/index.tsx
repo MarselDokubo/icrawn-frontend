@@ -451,14 +451,14 @@ const SelectProducts = (props: SelectProductsProps) => {
                                                                 {(product.is_available && !!product.quantity_available) && (
                                                                     <>
                                                                         {product.quantity_available === Constants.INFINITE_TICKETS && (
-                                                                            <Trans>
+                                                                            <>
                                                                                 Unlimited available
-                                                                            </Trans>
+                                                                            </>
                                                                         )}
                                                                         {product.quantity_available !== Constants.INFINITE_TICKETS && (
-                                                                            <Trans>
+                                                                            <>
                                                                                 {product.quantity_available} available
-                                                                            </Trans>
+                                                                            </>
                                                                         )}
                                                                     </>
                                                                 )}
@@ -488,9 +488,9 @@ const SelectProducts = (props: SelectProductsProps) => {
 
                                                         {product.max_per_order && form.values.products && isObjectEmpty(form.errors) && (form.values.products[productIndex]?.quantities.reduce((acc, {quantity}) => acc + Number(quantity), 0) > product.max_per_order) && (
                                                             <div className={'hi-product-quantity-error'}>
-                                                                <Trans>The maximum number of products
+                                                                <>The maximum number of products
                                                                     for {product.title}
-                                                                    is {product.max_per_order}</Trans>
+                                                                    is {product.max_per_order}</>
                                                             </div>
                                                         )}
 

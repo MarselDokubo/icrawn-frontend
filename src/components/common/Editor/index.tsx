@@ -74,7 +74,7 @@ export const Editor = ({
             const htmlLength = value.length;
 
             if (maxLength && htmlLength > maxLength) {
-                setCharError(<Trans>HTML character limit exceeded: {htmlLength}/{maxLength}</Trans>);
+                setCharError(<>HTML character limit exceeded: {htmlLength}/{maxLength}</>);
             } else {
                 setCharError(null);
             }
