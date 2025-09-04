@@ -1,4 +1,4 @@
-import { t } from "@lingui/macro";
+
 import {
   Alert, Badge, Box, Button, Container, Divider, Grid, Group, Image as MantineImage,
   Paper, SimpleGrid, Skeleton, Stack, Text, ThemeIcon, Title, rem,
@@ -187,7 +187,7 @@ export default function Hero() {
       <Container size="lg" pt="xl" pb="xl">
         <Alert
           icon={<IconAlertCircle size={16} />}
-          title={`Failed to load even`}
+          title={`Failed to load event`}
           color="red"
           variant="light"
           radius="md"

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Anchor, Button, Container, Group } from "@mantine/core";
 import { Link, NavLink } from "react-router-dom";
-import { t } from "@lingui/macro";
+
 
 export default function PublicNavbar() {
   const [scrolled, setScrolled] = useState(false);

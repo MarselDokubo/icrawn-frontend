@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router";
 import { Button, Alert } from "@mantine/core";
-import { t } from "@lingui/macro";
+
 import { orderClientPublic } from "../../../api/order.client";
 
 export default function PaystackCheckoutForm() {

@@ -8,7 +8,6 @@ export const usePublicGetEvents = (filters: PublicEventFilters) => {
   return useQuery({
     queryKey: [GET_PUBLIC_EVENTS_QUERY_KEY, filters],
     queryFn: async () => {
-      // /api/public/events endpoint
       const response = await eventsClientPublic.listAll(filters);
       return response;
     },

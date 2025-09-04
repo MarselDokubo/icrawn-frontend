@@ -16,6 +16,7 @@ export const authClient = {
 
     register: async (registerData: RegisterAccountRequest) => {
         const response = await api.post<GenericDataResponse<User>>('auth/register', registerData);
+        console.log(response)
         return response.data;
     },
 

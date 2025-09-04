@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Container, Title, Text, Loader } from '@mantine/core';
 import { useGetEventPublic } from '../../queries/useGetEventPublic';
 import { Countdown } from '../common/Countdown';
-import { t } from '@lingui/macro';
+
 
 const EventPage: React.FC = () => {
   const { eventId } = useParams<{ eventId: string }>();

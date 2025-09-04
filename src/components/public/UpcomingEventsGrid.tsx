@@ -2,7 +2,7 @@ import { Card, Image, Text, Group, Badge, Button, SimpleGrid, Skeleton } from "@
 import { Link } from "react-router-dom";
 import { useUpcomingEvents } from "@/hooks/useUpcomingEvents";
 import type { EventSummaryPublic } from "@/api/event.client";
-import { t } from "@lingui/macro";
+
 
 function getCoverUrl(ev: EventSummaryPublic): string | null {
   const images = ev.images ?? [];

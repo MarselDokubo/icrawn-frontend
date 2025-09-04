@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@mantine/core';
 import { IconBrandStripe } from '@tabler/icons-react';
-import { t } from '@lingui/macro';
+
 import { useCreateOrGetStripeConnectDetails } from '../../../queries/useCreateOrGetStripeConnectDetails';
 import { useGetAccount } from '../../../queries/useGetAccount';
 import { showSuccess } from '../../../utilites/notifications';

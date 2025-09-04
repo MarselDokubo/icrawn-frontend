@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router";
-import { t } from "@lingui/macro";
+
 import { orderClientPublic } from "../../../../../../api/order.client";
 import { Button, Alert } from "@mantine/core";
 import { CheckoutContent } from "../../../../../layouts/Checkout/CheckoutContent"; 

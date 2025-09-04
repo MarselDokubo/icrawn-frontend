@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Title, Text } from '@mantine/core';
-import { t } from '@lingui/macro';
+
 
 const HomePage: React.FC = () => (
   <Container size="md" py={40}>

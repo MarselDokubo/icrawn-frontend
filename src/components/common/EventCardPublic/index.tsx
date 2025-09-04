@@ -2,7 +2,7 @@ import { EventSummaryPublic } from "../../../api/event.client";
 import classes from "../EventCard/EventCard.module.scss";
 import { Card } from "../Card";
 import { formatDate } from "../../../utilites/dates";
-import { t } from "@lingui/macro";
+
 
 interface EventCardPublicProps {
     event: EventSummaryPublic;

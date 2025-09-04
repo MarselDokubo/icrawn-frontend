@@ -29,7 +29,7 @@ IconSparkles,
   IconMicrophone,
   IconMasksTheater
 } from "@tabler/icons-react";
-import { t } from "@lingui/macro";
+
 import UpcomingEventsGrid from "../public/UpcomingEventsGrid";
 import { useUpcomingEvents } from "@/hooks/useUpcomingEvents";
 import Hero from "./_components/Hero";

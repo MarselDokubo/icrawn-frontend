@@ -19,7 +19,7 @@ import "./styles/global.scss";
 import {isSsr} from "./utilites/helpers.ts";
 import {ThirdPartyScripts} from "./components/common/ThirdPartyScripts";
 import {getConfig} from "./utilites/config.ts";
-import { t } from "@lingui/macro";
+
 
 declare global {
     interface Window {

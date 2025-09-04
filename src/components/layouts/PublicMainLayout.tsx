@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Group, Anchor, AppShell, Box, SimpleGrid, Stack, ThemeIcon, Divider } from '@mantine/core';
 import { Outlet } from 'react-router-dom';
-import { t } from '@lingui/macro';
+
 import { Title } from '@mantine/core';
 import { Button } from '@mantine/core';
 import { IconArrowUp } from '@tabler/icons-react';

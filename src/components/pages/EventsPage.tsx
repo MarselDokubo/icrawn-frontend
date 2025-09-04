@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Title } from '@mantine/core';
 import { usePublicGetEvents } from '../../queries/usePublicGetEvents';
 import { EventCardPublic } from '../common/EventCardPublic';
-import { t } from '@lingui/macro';
+
 
 const EventsPage: React.FC = () => {
   const { data: events, isLoading } = usePublicGetEvents({ page: 1 });

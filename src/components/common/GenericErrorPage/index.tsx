@@ -5,7 +5,7 @@ import classes from './GenericErrorPage.module.scss';
 import {PoweredByFooter} from "../PoweredByFooter";
 import {Helmet} from "react-helmet-async";
 import {getConfig} from "../../../utilites/config.ts";
-import { t } from '@lingui/macro';
+
 
 interface GenericErrorPageProps {
     title: string;
