@@ -2,7 +2,7 @@ import {usePollGetOrderPublic} from "../../../../queries/usePollGetOrderPublic.t
 import {useNavigate, useParams} from "react-router";
 import {useEffect, useState} from "react";
 import classes from './PaymentReturn.module.scss';
-import {t} from "@lingui/macro";
+ 
 import {useGetOrderStripePaymentIntentPublic} from "../../../../queries/useGetOrderStripePaymentIntentPublic.ts";
 import {CheckoutContent} from "../../../layouts/Checkout/CheckoutContent";
 import {eventCheckoutPath} from "../../../../utilites/urlHelper.ts";

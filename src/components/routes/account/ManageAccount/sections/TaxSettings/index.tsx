@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {TaxAndFeeList} from "../../../../../common/TaxAndFeeList";
 import {CreateTaxOrFeeModal} from "../../../../../modals/CreateTaxOrFeeModal";
 import {useDisclosure} from "@mantine/hooks";

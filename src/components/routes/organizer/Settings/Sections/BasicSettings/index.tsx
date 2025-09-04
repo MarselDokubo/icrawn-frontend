@@ -1,6 +1,6 @@
 import {useForm} from "@mantine/form";
 import {Button, Select, TextInput} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import {useEffect} from "react";
 import {useParams} from "react-router";
 import {showSuccess} from "../../../../../../utilites/notifications.tsx";

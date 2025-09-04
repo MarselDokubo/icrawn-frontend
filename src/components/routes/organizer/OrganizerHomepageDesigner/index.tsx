@@ -6,7 +6,7 @@ import {useUpdateOrganizerSettings} from "../../../../mutations/useUpdateOrganiz
 import {useFormErrorResponseHandler} from "../../../../hooks/useFormErrorResponseHandler.tsx";
 import {IdParam, OrganizerSettings, ColorTheme} from "../../../../types.ts";
 import {showSuccess} from "../../../../utilites/notifications.tsx";
-import {t} from "@lingui/macro";
+ 
 import {useForm} from "@mantine/form";
 import {Button, Collapse, ColorInput, Group, Text, UnstyledButton, Accordion, Stack} from "@mantine/core";
 import {IconCheck, IconChevronDown, IconChevronUp, IconColorPicker, IconHelp, IconPhoto, IconPalette} from "@tabler/icons-react";

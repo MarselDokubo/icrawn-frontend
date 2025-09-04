@@ -1,7 +1,7 @@
 import {NavLink, Outlet, useNavigate, useParams} from "react-router";
 import classes from './Checkout.module.scss';
 import {useGetOrderPublic} from "../../../queries/useGetOrderPublic.ts";
-import {t} from "@lingui/macro";
+ 
 import {Countdown} from "../../common/Countdown";
 import {CheckoutSidebar} from "./CheckoutSidebar";
 import {ActionIcon, Button, Group, Modal, Tooltip} from "@mantine/core";

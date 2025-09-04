@@ -4,7 +4,7 @@ import classes from "../ProductsTable.module.scss";
 import classNames from "classnames";
 import {Badge, Button, Group, Menu, Popover} from "@mantine/core";
 import Truncate from "../../Truncate";
-import {t} from "@lingui/macro";
+ 
 import {relativeDate} from "../../../../utilites/dates.ts";
 import {formatCurrency} from "../../../../utilites/currency.ts";
 import {

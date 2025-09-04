@@ -5,7 +5,7 @@ import {ProductType, PromoCode, PromoCodeDiscountType} from "../../../types.ts";
 import {useGetEvent} from "../../../queries/useGetEvent.ts";
 import {useParams} from "react-router";
 import {LoadingMask} from "../../common/LoadingMask";
-import {t} from "@lingui/macro";
+ 
 import {InputGroup} from "../../common/InputGroup";
 import {getCurrencySymbol} from "../../../utilites/currency.ts";
 import {ProductSelector} from "../../common/ProductSelector";

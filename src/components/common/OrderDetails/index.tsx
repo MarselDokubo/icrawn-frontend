@@ -5,7 +5,7 @@ import {Currency} from "../Currency";
 import {Card, CardVariant} from "../Card";
 import {Event, Order} from "../../../types.ts";
 import classes from "./OrderDetails.module.scss";
-import {t} from "@lingui/macro";
+ 
 import {formatAddress} from "../../../utilites/addressUtilities.ts";
 import React from "react";
 import {capitalize} from "../../../utilites/stringHelper.ts";

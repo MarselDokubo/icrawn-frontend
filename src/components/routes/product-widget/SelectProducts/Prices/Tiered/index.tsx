@@ -3,7 +3,7 @@ import {Event, Product} from "../../../../../../types.ts";
 import {Group, TextInput} from "@mantine/core";
 import {NumberSelector} from "../../../../../common/NumberSelector";
 import {UseFormReturnType} from "@mantine/form";
-import {t} from "@lingui/macro";
+ 
 import {ProductPriceAvailability} from "../../../../../common/ProductPriceAvailability";
 import {getCurrencySymbol} from "../../../../../../utilites/currency.ts";
 

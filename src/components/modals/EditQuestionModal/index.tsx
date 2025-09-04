@@ -8,7 +8,7 @@ import {questionClient} from "../../../api/question.client.ts";
 import {useGetEvent} from "../../../queries/useGetEvent.ts";
 import {GET_EVENT_QUESTIONS_QUERY_KEY} from "../../../queries/useGetEventQuestions.ts";
 import {Modal} from "../../common/Modal";
-import {t} from "@lingui/macro";
+ 
 import {QuestionForm} from "../../forms/QuestionForm";
 import {GET_QUESTION_QUERY_KEY, useGetQuestion} from "../../../queries/useGetQuestion.ts";
 import {useEffect} from "react";

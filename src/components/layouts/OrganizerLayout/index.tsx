@@ -15,7 +15,7 @@ import {
     IconShare,
     IconUsersGroup
 } from "@tabler/icons-react";
-import {t} from "@lingui/macro";
+ 
 import {BreadcrumbItem, NavItem} from "../AppLayout/types.ts";
 import AppLayout from "../AppLayout";
 import {NavLink, useParams} from "react-router";

@@ -7,7 +7,7 @@ import {Modal} from "../../common/Modal";
 import {Button} from "../../common/Button";
 import {useCreatePromoCode} from "../../../mutations/useCreatePromoCode.ts";
 import {showSuccess} from "../../../utilites/notifications.tsx";
-import {t} from "@lingui/macro";
+ 
 
 export const CreatePromoCodeModal = ({onClose}: GenericModalProps) => {
     const {eventId} = useParams();

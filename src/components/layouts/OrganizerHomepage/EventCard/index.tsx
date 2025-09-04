@@ -3,7 +3,7 @@ import {Link} from "react-router";
 import {Event} from "../../../../types.ts";
 import classes from './EventCard.module.scss';
 import {formatDate} from "../../../../utilites/dates.ts";
-import {t} from "@lingui/macro";
+ 
 import {isLightColor} from "@mantine/core";
 import {formatCurrency} from "../../../../utilites/currency.ts";
 import {eventHomepagePath, eventHomepageUrl} from "../../../../utilites/urlHelper.ts";

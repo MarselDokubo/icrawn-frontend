@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {Button, Select, TextInput} from "@mantine/core";
 import {useForm} from "@mantine/form";
 import {useParams} from "react-router";

@@ -10,7 +10,7 @@ import {EditTaxOrFeeModal} from "../../modals/EditTaxOrFeeModal";
 import {useState} from "react";
 import {useDeleteTaxOrFee} from "../../../mutations/useDeleteTaxOrFee.ts";
 import {showError, showSuccess} from "../../../utilites/notifications.tsx";
-import {t} from "@lingui/macro";
+ 
 
 export const TaxAndFeeList = () => {
     const {data: taxesAndFees, isFetched} = useGetTaxesAndFees();

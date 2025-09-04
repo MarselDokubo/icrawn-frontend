@@ -1,5 +1,5 @@
 import {Event, Product, ProductPrice} from "../../../types.ts";
-import {t} from "@lingui/macro";
+ 
 import {Tooltip} from "@mantine/core";
 import {prettyDate, relativeDate} from "../../../utilites/dates.ts";
 import {IconInfoCircle} from "@tabler/icons-react";

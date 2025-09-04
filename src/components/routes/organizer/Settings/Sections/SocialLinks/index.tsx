@@ -3,7 +3,7 @@ import {useForm} from "@mantine/form";
 import {useFormErrorResponseHandler} from "../../../../../../hooks/useFormErrorResponseHandler.tsx";
 import {useEffect, useMemo, useState} from "react";
 import {showSuccess} from "../../../../../../utilites/notifications.tsx";
-import {t} from "@lingui/macro";
+ 
 import {Card} from "../../../../../common/Card";
 import {HeadingWithDescription} from "../../../../../common/Card/CardHeading";
 import {Button, Collapse, Group, Text, TextInput, UnstyledButton} from "@mantine/core";

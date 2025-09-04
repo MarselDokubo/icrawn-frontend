@@ -1,7 +1,7 @@
 import {Event, Order} from "../../../types.ts";
 import classes from "./OrderSummary.module.scss";
 import {Currency} from "../Currency";
-import {t} from "@lingui/macro";
+ 
 
 interface OrderSummaryProps {
     event: Event,

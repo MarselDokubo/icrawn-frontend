@@ -14,7 +14,7 @@ import {CreatePromoCodeModal} from "../../modals/CreatePromoCodeModal";
 import {useFilterQueryParamSync} from "../../../hooks/useFilterQueryParamSync.ts";
 import {QueryFilters} from "../../../types.ts";
 import {TableSkeleton} from "../../common/TableSkeleton";
-import {t} from "@lingui/macro";
+ 
 
 export const PromoCodes = () => {
     const {eventId} = useParams();

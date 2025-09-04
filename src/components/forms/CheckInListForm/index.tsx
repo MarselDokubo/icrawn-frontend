@@ -1,5 +1,5 @@
 import {Textarea, TextInput} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import {UseFormReturnType} from "@mantine/form";
 import {CheckInListRequest, ProductCategory, ProductType} from "../../../types.ts";
 import {InputLabelWithHelp} from "../../common/InputLabelWithHelp";

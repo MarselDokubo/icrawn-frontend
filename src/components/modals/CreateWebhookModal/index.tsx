@@ -1,6 +1,6 @@
 import {GenericModalProps, IdParam} from "../../../types";
 import {Modal} from "../../common/Modal";
-import {t} from "@lingui/macro";
+ 
 import {WebhookForm} from "../../forms/WebhookForm";
 import {useForm} from "@mantine/form";
 import {Button} from "@mantine/core";

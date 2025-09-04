@@ -9,7 +9,7 @@ import {useGetPromoCode} from "../../../queries/useGetPromoCode.ts";
 import {useEffect} from "react";
 import {useUpdatePromoCode} from "../../../mutations/useUpdatePromoCode.ts";
 import {showSuccess} from "../../../utilites/notifications.tsx";
-import {t} from "@lingui/macro";
+ 
 import {LoadingMask} from "../../common/LoadingMask";
 import {utcToTz} from "../../../utilites/dates.ts";
 import {useGetEvent} from "../../../queries/useGetEvent.ts";

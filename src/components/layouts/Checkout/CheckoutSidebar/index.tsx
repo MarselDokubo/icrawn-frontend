@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {OrderSummary} from "../../../common/OrderSummary";
 import {LoadingMask} from "../../../common/LoadingMask";
 import {Event, Order} from "../../../../types.ts";

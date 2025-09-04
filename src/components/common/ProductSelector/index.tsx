@@ -3,7 +3,7 @@ import {IconTicket} from "@tabler/icons-react";
 import {UseFormReturnType} from "@mantine/form";
 import {ProductCategory, ProductType} from "../../../types.ts";
 import React from "react";
-import {t} from "@lingui/macro";
+ 
 
 interface ProductSelectorProps {
     label: string;

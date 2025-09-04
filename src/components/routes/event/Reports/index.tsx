@@ -1,5 +1,5 @@
 import {PageTitle} from "../../../common/PageTitle";
-import {t} from "@lingui/macro";
+ 
 import {PageBody} from "../../../common/PageBody";
 import {IconChartBar, IconChevronRight, IconReportMoney} from "@tabler/icons-react";
 import classes from './Reports.module.scss';

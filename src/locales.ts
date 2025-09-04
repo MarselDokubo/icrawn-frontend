@@ -1,5 +1,5 @@
 import {i18n} from "@lingui/core";
-import {t} from "@lingui/macro";
+ 
 
 export type SupportedLocales = "en" | "de" | "fr" | "it" | "nl" | "pt" | "es" | "zh-cn" | "pt-br" | "vi" |"zh-hk";
 

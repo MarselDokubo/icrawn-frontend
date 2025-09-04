@@ -6,7 +6,7 @@ import {Modal} from "../../common/Modal";
 import {ProductForm} from "../../forms/ProductForm";
 import {useEffect} from "react";
 import {useGetTaxesAndFees} from "../../../queries/useGetTaxesAndFees.ts";
-import {t} from "@lingui/macro";
+ 
 import {useCreateProduct} from "../../../mutations/useCreateProduct.ts";
 import {showError, showSuccess} from "../../../utilites/notifications.tsx";
 

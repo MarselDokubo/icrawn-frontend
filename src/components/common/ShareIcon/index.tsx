@@ -10,7 +10,7 @@ import {
     IconMail,
     IconShare
 } from "@tabler/icons-react";
-import {t} from "@lingui/macro";
+ 
 
 interface ShareComponentProps {
     title: string;

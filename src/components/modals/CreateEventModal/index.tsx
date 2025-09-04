@@ -3,7 +3,7 @@ import {useNavigate} from "react-router";
 import {useGetAccount} from "../../../queries/useGetAccount.ts";
 import {Event, GenericModalProps, IdParam, Organizer} from "../../../types.ts";
 import {useEffect, useState} from "react";
-import {t} from "@lingui/macro";
+ 
 import {Anchor, Button, Select, TextInput} from "@mantine/core";
 import {hasLength, useForm} from "@mantine/form";
 import {useCreateEvent} from "../../../mutations/useCreateEvent.ts";

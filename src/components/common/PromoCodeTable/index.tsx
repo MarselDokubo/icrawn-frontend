@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {Event, PromoCode, PromoCodeDiscountType} from "../../../types.ts";
 import {prettyDate, relativeDate} from "../../../utilites/dates.ts";
 import {Badge, Button, Flex, Group, Menu, Table as MantineTable, Tooltip} from "@mantine/core";

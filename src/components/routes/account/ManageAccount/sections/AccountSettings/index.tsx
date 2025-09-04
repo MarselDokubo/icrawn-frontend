@@ -5,7 +5,7 @@ import {useForm} from "@mantine/form";
 import classes from "../../ManageAccount.module.scss";
 import {useGetAccount} from "../../../../../../queries/useGetAccount.ts";
 import {useEffect} from "react";
-import {t} from "@lingui/macro";
+ 
 import {Card} from "../../../../../common/Card";
 import {HeadingCard} from "../../../../../common/HeadingCard";
 import {useUpdateAccount} from "../../../../../../mutations/useUpdateAccount.ts";

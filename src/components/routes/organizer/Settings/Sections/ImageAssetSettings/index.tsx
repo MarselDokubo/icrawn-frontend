@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {useParams} from "react-router";
 import {ImageUploadDropzone} from "../../../../../common/ImageUploadDropzone";
 import {Card} from "../../../../../common/Card";

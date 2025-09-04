@@ -1,6 +1,6 @@
 import {PageBody} from "../../../common/PageBody";
 import {PageTitle} from "../../../common/PageTitle";
-import {t} from "@lingui/macro";
+ 
 import {useParams} from "react-router";
 import {useGetEventCapacityAssignments} from "../../../../queries/useGetCapacityAssignments.ts";
 import {CapacityAssignmentList} from "../../../common/CapacityAssignmentList";

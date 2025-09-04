@@ -1,6 +1,6 @@
 import {Navigate, Outlet, useLocation} from "react-router";
 import classes from "./Auth.module.scss";
-import {t} from "@lingui/macro";
+ 
 import {useGetMe} from "../../../queries/useGetMe.ts";
 import {PoweredByFooter} from "../../common/PoweredByFooter";
 import {LanguageSwitcher} from "../../common/LanguageSwitcher";
@@ -130,7 +130,7 @@ const AuthLayout = () => {
                 <div className={classes.leftPanel}>
                     <main className={classes.container}>
                         <div className={classes.logo}>
-                            <img src={getConfig("VITE_APP_LOGO_DARK", "/logo-dark.svg")} alt={`logo`}/>
+                            <img src={"icrawn_logo.jpg"} alt={`logo`}/>
                         </div>
                         <div className={classes.wrapper}>
                             <Outlet/>

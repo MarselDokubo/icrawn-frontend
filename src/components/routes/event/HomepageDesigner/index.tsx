@@ -6,7 +6,7 @@ import {useUpdateEventSettings} from "../../../../mutations/useUpdateEventSettin
 import {useFormErrorResponseHandler} from "../../../../hooks/useFormErrorResponseHandler.tsx";
 import {EventSettings, IdParam} from "../../../../types.ts";
 import {showSuccess} from "../../../../utilites/notifications.tsx";
-import {t} from "@lingui/macro";
+ 
 import {useForm} from "@mantine/form";
 import {Button, ColorInput, Group, TextInput, Accordion, Stack, Text} from "@mantine/core";
 import {IconColorPicker, IconHelp, IconPhoto, IconPalette, IconTypography} from "@tabler/icons-react";

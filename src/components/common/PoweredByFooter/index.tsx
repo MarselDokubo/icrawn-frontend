@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import classes from "./FloatingPoweredBy.module.scss";
 import classNames from "classnames";
 import React from "react";

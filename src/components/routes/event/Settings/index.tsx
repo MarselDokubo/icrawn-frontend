@@ -4,7 +4,7 @@ import {LocationSettings} from "./Sections/LocationSettings";
 import {HomepageAndCheckoutSettings} from "./Sections/HomepageAndCheckoutSettings";
 import {EmailSettings} from "./Sections/EmailSettings";
 import {PageTitle} from "../../../common/PageTitle";
-import {t} from "@lingui/macro";
+ 
 import {SeoSettings} from "./Sections/SeoSettings";
 import {MiscSettings} from "./Sections/MiscSettings";
 import {Box, Group, NavLink as MantineNavLink, Stack} from "@mantine/core";

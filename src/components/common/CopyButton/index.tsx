@@ -1,6 +1,6 @@
 import {ActionIcon, CopyButton as MantineCopy, rem, Tooltip} from '@mantine/core';
 import {IconCheck, IconCopy} from '@tabler/icons-react';
-import {t} from "@lingui/macro";
+ 
 
 interface CopyButtonProps {
     value: string;

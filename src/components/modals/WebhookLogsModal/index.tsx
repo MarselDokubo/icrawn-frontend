@@ -1,7 +1,7 @@
 import {useParams} from "react-router";
 import {useGetWebhookLogs} from "../../../queries/useGetWebhookLogs";
 import {Modal} from "../../common/Modal";
-import {t} from "@lingui/macro";
+ 
 import {Center} from "../../common/Center";
 import {Alert, Badge, Code, Collapse, Group, Loader, Paper, Stack, Text} from "@mantine/core";
 import {IconCheck, IconChevronRight, IconX} from '@tabler/icons-react';

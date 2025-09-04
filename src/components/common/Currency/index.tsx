@@ -1,7 +1,7 @@
 import React from 'react';
 import {formatCurrency} from "../../../utilites/currency.ts";
 import {Product, ProductPrice} from "../../../types.ts";
-import {t} from "@lingui/macro";
+ 
 import {Popover} from "@mantine/core";
 import {IconInfoCircle} from "@tabler/icons-react";
 

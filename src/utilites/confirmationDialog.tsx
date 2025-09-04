@@ -1,5 +1,5 @@
 import {modals} from "@mantine/modals";
-import {t} from "@lingui/macro";
+ 
 
 export const confirmationDialog = (
     message: string,

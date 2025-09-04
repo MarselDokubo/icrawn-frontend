@@ -1,7 +1,7 @@
 import {useMutation, useQuery} from "@tanstack/react-query";
 import {questionClient} from "../api/question.client";
 import {useState} from "react";
-import {t} from "@lingui/macro";
+ 
 import {showError, showSuccess} from "../utilites/notifications.tsx";
 import {downloadFile} from "../utilites/download.ts";
 import {IdParam} from "../types.ts";

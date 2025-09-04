@@ -4,7 +4,7 @@ import {useGetAttendeePublic} from "../../../../queries/useGetAttendeePublic.ts"
 import {AttendeeTicket} from "../../../common/AttendeeTicket";
 import {Attendee, Product} from "../../../../types.ts";
 import {Container} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import {PoweredByFooter} from "../../../common/PoweredByFooter";
 import {OnlineEventDetails} from "../../../common/OnlineEventDetails";
 

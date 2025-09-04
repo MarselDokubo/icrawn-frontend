@@ -4,7 +4,7 @@ import {PoweredByFooter} from "../../../common/PoweredByFooter";
 import {useParams} from "react-router";
 import {useGetOrderPublic} from "../../../../queries/useGetOrderPublic.ts";
 import {useGetEventPublic} from "../../../../queries/useGetEventPublic.ts";
-import {t} from "@lingui/macro";
+ 
 import {Container} from "@mantine/core";
 import {useEffect} from "react";
 

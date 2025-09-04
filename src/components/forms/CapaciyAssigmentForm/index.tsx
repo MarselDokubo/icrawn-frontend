@@ -1,6 +1,6 @@
 import {InputGroup} from "../../common/InputGroup";
 import {NumberInput, TextInput} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import {UseFormReturnType} from "@mantine/form";
 import {CapacityAssignmentRequest, ProductCategory} from "../../../types.ts";
 import {CustomSelect, ItemProps} from "../../common/CustomSelect";

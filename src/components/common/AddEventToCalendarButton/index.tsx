@@ -1,6 +1,6 @@
 import {ActionIcon, Button, Popover, Stack, Text, Tooltip} from '@mantine/core';
 import {IconBrandGoogle, IconCalendarPlus, IconDownload} from '@tabler/icons-react';
-import {t} from "@lingui/macro";
+ 
 
 interface LocationDetails {
     venue_name?: string;

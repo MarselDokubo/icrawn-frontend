@@ -1,5 +1,5 @@
 import {Button, Group} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import {useNavigate} from "react-router";
 
 interface EventsDashboardStatusButtonsProps {

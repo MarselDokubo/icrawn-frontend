@@ -17,7 +17,7 @@ import {
     IconShare
 } from '@tabler/icons-react';
 import QRCode from 'react-qr-code';
-import {t} from "@lingui/macro";
+ 
 import classes from './ShareModal.module.scss';
 
 interface ShareModalProps {

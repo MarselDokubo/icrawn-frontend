@@ -5,7 +5,7 @@ import {Card} from "../Card";
 import {Anchor, Avatar, Badge} from "@mantine/core";
 import {getInitials} from "../../../utilites/helpers.ts";
 import {NoResultsSplash} from "../NoResultsSplash";
-import {t} from "@lingui/macro";
+ 
 import {useState} from "react";
 
 interface MessageListProps {

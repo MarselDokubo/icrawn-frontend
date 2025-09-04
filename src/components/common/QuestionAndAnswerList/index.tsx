@@ -1,6 +1,6 @@
 import {IdParam, QuestionAnswer} from "../../../types.ts";
 import {ActionIcon, Button, Group, Text, Tooltip} from '@mantine/core';
-import {t} from "@lingui/macro";
+ 
 import {
     IconEdit,
     IconExternalLink,

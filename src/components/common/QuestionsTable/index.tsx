@@ -19,7 +19,7 @@ import {PageTitle} from "../PageTitle";
 import {CreateQuestionModal} from "../../modals/CreateQuestionModal";
 import {useDisclosure} from "@mantine/hooks";
 import {Card} from "../Card";
-import {t} from "@lingui/macro";
+ 
 import {useEffect, useState} from "react";
 import {EditQuestionModal} from "../../modals/EditQuestionModal";
 import {useDeleteQuestion} from "../../../mutations/useDeleteQuestion.ts";

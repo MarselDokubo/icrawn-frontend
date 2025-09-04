@@ -1,7 +1,7 @@
 import {Anchor} from "@mantine/core";
 import {Attendee} from "../../../types.ts";
 import classes from "./AttendeeDetails.module.scss";
-import {t} from "@lingui/macro";
+ 
 import {getAttendeeProductTitle} from "../../../utilites/products.ts";
 
 export const AttendeeDetails = ({attendee}: { attendee: Attendee }) => {

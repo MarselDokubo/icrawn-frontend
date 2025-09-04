@@ -6,7 +6,7 @@ import {Sidebar} from "./Sidebar";
 import {BreadcrumbItem, NavItem} from "./types.ts";
 import {IconLayoutSidebar} from "@tabler/icons-react";
 import {UnstyledButton, VisuallyHidden} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 
 interface AppLayoutProps {
     navItems: NavItem[];

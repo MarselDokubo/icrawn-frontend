@@ -3,7 +3,7 @@ import {Tabs} from "@mantine/core";
 import classes from "./ManageAccount.module.scss";
 import {IconAdjustmentsCog, IconCreditCard, IconReceiptTax, IconUsers} from "@tabler/icons-react";
 import {Outlet, useLocation, useNavigate} from "react-router";
-import {t} from "@lingui/macro";
+ 
 import {useIsCurrentUserAdmin} from "../../../../hooks/useIsCurrentUserAdmin.ts";
 import { useGetAccount } from "../../../../queries/useGetAccount.ts";
 

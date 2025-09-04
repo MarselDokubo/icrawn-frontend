@@ -1,6 +1,6 @@
 import {CheckInListRequest, GenericModalProps, IdParam, ProductCategory} from "../../../types.ts";
 import {Modal} from "../../common/Modal";
-import {t} from "@lingui/macro";
+ 
 import {CheckInListForm} from "../../forms/CheckInListForm";
 import {useForm} from "@mantine/form";
 import {Alert, Button, Center, Loader} from "@mantine/core";

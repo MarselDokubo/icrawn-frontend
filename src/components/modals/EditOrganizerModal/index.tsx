@@ -1,5 +1,5 @@
 import {GenericModalProps, IdParam, Organizer} from "../../../types.ts";
-import {t} from "@lingui/macro";
+ 
 import {Modal} from "../../common/Modal";
 import {useForm} from "@mantine/form";
 import {useUpdateOrganizer} from "../../../mutations/useUpdateOrganizer.ts";

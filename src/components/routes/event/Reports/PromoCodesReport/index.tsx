@@ -2,7 +2,7 @@ import {useParams} from "react-router";
 import {useGetEvent} from "../../../../../queries/useGetEvent.ts";
 import {formatCurrency} from "../../../../../utilites/currency.ts";
 import ReportTable from "../../../../common/ReportTable";
-import {t} from "@lingui/macro";
+ 
 import {formatDate} from "../../../../../utilites/dates.ts";
 
 const PromoCodesReport = () => {

@@ -15,7 +15,7 @@ import {OrderDetails} from "../../common/OrderDetails";
 import {QuestionAndAnswerList, QuestionList} from "../../common/QuestionAndAnswerList";
 import {AttendeeTicket} from "../../common/AttendeeTicket";
 import {getInitials} from "../../../utilites/helpers.ts";
-import {t} from "@lingui/macro";
+ 
 import classes from './ManageAttendeeModal.module.scss';
 import {useEffect, useState} from "react";
 import {showSuccess} from "../../../utilites/notifications.tsx";

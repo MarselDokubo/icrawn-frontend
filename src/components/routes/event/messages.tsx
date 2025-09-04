@@ -14,7 +14,7 @@ import {TableSkeleton} from "../../common/TableSkeleton";
 import {useGetEventMessages} from "../../../queries/useGetEventMessages.ts";
 import {MessageList} from "../../common/MessageList";
 import {SendMessageModal} from "../../modals/SendMessageModal";
-import {t} from "@lingui/macro";
+ 
 
 export const Messages = () => {
     const {eventId} = useParams();

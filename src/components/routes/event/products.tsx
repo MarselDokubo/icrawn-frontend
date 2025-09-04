@@ -8,7 +8,7 @@ import {CreateProductModal} from "../../modals/CreateProductModal";
 import {ProductCategoryList} from "../../common/ProductsTable";
 import {ToolBar} from "../../common/ToolBar";
 import {TableSkeleton} from "../../common/TableSkeleton";
-import {t} from "@lingui/macro";
+ 
 import {useUrlHash} from "../../../hooks/useUrlHash.ts";
 import {useGetEvent} from "../../../queries/useGetEvent.ts";
 import {useGetEventProductCategories} from "../../../queries/useGetProductCategories.ts";

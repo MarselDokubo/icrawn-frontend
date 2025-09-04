@@ -7,7 +7,7 @@ import {showError, showSuccess} from "../../../../utilites/notifications.tsx";
 import {useEffect} from "react";
 import {ResetPasswordRequest} from "../../../../types.ts";
 import {useFormErrorResponseHandler} from "../../../../hooks/useFormErrorResponseHandler.tsx";
-import {t} from "@lingui/macro";
+ 
 import {Card} from "../../../common/Card";
 import classes from "./ResetPassword.module.scss";
 

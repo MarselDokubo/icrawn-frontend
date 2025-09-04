@@ -1,5 +1,5 @@
 import {Modal} from "../../common/Modal";
-import {t} from "@lingui/macro";
+ 
 import {Button} from "@mantine/core";
 import {useForm} from "@mantine/form";
 import {showError, showSuccess} from "../../../utilites/notifications.tsx";

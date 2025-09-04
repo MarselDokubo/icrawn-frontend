@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 
 export const EventCategories = [
     {id: 'NIGHTLIFE', name: `Nightlife`, emoji: '🪩'},

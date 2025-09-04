@@ -1,6 +1,6 @@
 import {Event} from "../../../types.ts";
 import {Badge} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 
 interface EventLifecycleStatusLabelProps {
     event: Event;

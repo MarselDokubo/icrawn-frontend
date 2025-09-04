@@ -4,7 +4,7 @@ import {useFormErrorResponseHandler} from "../../../../../../hooks/useFormErrorR
 import {useEffect} from "react";
 import {EventSettings} from "../../../../../../types.ts";
 import {showSuccess} from "../../../../../../utilites/notifications.tsx";
-import {t} from "@lingui/macro";
+ 
 import {Card} from "../../../../../common/Card";
 import {HeadingWithDescription} from "../../../../../common/Card/CardHeading";
 import {Button, Switch, TextInput} from "@mantine/core";

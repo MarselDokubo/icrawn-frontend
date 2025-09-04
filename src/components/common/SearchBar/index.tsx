@@ -3,7 +3,7 @@ import {IconSearch, IconX} from '@tabler/icons-react';
 import classes from './SearchBar.module.scss';
 import {useEffect, useState} from "react";
 import {SortSelector, SortSelectorProps} from "../SortSelector";
-import {t} from "@lingui/macro";
+ 
 import classNames from "classnames";
 import {PaginationData, QueryFilters} from "../../../types.ts";
 

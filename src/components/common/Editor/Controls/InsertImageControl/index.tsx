@@ -1,6 +1,6 @@
 import {RichTextEditor, useRichTextEditorContext} from "@mantine/tiptap";
 import {useState} from "react";
-import {t} from "@lingui/macro";
+ 
 import {IconPhotoPlus} from "@tabler/icons-react";
 import {Button, FileButton, Group, Image, Loader, Modal, Portal, Stack, Tabs, Text, TextInput} from "@mantine/core";
 import {useUploadImage} from "../../../../../mutations/useUploadImage.ts";

@@ -25,7 +25,7 @@ import {
     IconUsersGroup,
     IconWebhook
 } from "@tabler/icons-react";
-import {t} from "@lingui/macro";
+ 
 import {useGetEvent} from "../../../queries/useGetEvent";
 import {useGetEventSettings} from "../../../queries/useGetEventSettings";
 import {useGetEventStats} from "../../../queries/useGetEventStats";

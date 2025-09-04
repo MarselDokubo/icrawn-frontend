@@ -9,7 +9,7 @@ import {Event, Order} from "../../../../types.ts";
 import {CheckoutFooter} from "../../../layouts/Checkout/CheckoutFooter";
 import {Group} from "@mantine/core";
 import {formatCurrency} from "../../../../utilites/currency.ts";
-import {t} from "@lingui/macro";
+ 
 import {useGetOrderPublic} from "../../../../queries/useGetOrderPublic.ts";
 import {
     useTransitionOrderToOfflinePaymentPublic

@@ -1,5 +1,5 @@
 import {ActionIcon, Button} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import {IconShoppingCartDown, IconShoppingCartUp} from "@tabler/icons-react";
 import classes from "./CheckoutFooter.module.scss";
 import {Event, Order} from "../../../../types.ts";

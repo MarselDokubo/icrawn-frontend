@@ -4,7 +4,7 @@ import {NavLink} from "react-router";
 import {IconChevronUp, IconExternalLink, IconMessageCircle2} from "@tabler/icons-react";
 import classes from './AttendeeList.module.scss';
 import {IdParam, Order, Product, QuestionAnswer} from "../../../types.ts";
-import {t} from "@lingui/macro";
+ 
 import {useState} from "react";
 import {QuestionList} from "../QuestionAndAnswerList";
 

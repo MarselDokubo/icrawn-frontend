@@ -1,6 +1,6 @@
 import {InputGroup} from "../../common/InputGroup";
 import {Button, TextInput} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import {UseFormReturnType} from "@mantine/form";
 import {CreateAffiliateRequest, UpdateAffiliateRequest} from "../../../api/affiliate.client.ts";
 import {CustomSelect, ItemProps} from "../../common/CustomSelect";

@@ -1,7 +1,7 @@
 import {Badge, BadgeVariant} from "@mantine/core";
 import {Order} from "../../../types.ts";
 import {getStatusColor} from "../../../utilites/helpers.ts";
-import {t} from "@lingui/macro";
+ 
 
 export const OrderStatusBadge = ({order, variant = 'outline'}: { order: Order, variant?: BadgeVariant }) => {
     let color;

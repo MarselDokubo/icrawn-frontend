@@ -5,7 +5,7 @@ import {useDeleteImage} from "../../../mutations/useDeleteImage.ts";
 import {showSuccess} from "../../../utilites/notifications.tsx";
 import {ActionIcon, Button, Group, Loader, Text} from "@mantine/core";
 import {IconReplace, IconTrash, IconUpload} from "@tabler/icons-react";
-import {t} from "@lingui/macro";
+ 
 import {IdParam, ImageType} from "../../../types.ts";
 import classes from "./ImageUploadDropzone.module.scss";
 

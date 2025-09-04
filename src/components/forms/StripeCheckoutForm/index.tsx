@@ -3,7 +3,7 @@ import {PaymentElement, useElements, useStripe} from "@stripe/react-stripe-js";
 import {useParams} from "react-router";
 import * as stripeJs from "@stripe/stripe-js";
 import {Alert, Skeleton} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import classes from './StripeCheckoutForm.module.scss';
 import {LoadingMask} from "../../common/LoadingMask";
 import {useGetOrderPublic} from "../../../queries/useGetOrderPublic.ts";

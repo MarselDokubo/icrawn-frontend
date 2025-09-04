@@ -5,7 +5,7 @@ import {useGetOrder} from "../../../queries/useGetOrder.ts";
 import {OrderSummary} from "../../common/OrderSummary";
 import {AttendeeList} from "../../common/AttendeeList";
 import {OrderDetails} from "../../common/OrderDetails";
-import {t} from "@lingui/macro";
+ 
 import {QuestionAndAnswerList} from "../../common/QuestionAndAnswerList";
 import {Box, Stack, Tabs, Text, Textarea, TextInput} from "@mantine/core";
 import {IconEdit, IconInfoCircle, IconNotebook, IconQuestionMark, IconReceipt, IconUsers} from "@tabler/icons-react";

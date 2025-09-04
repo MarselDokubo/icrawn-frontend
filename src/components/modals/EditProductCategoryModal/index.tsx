@@ -1,6 +1,6 @@
 import {GenericModalProps, IdParam, ProductCategory} from "../../../types.ts";
 import {Modal} from "../../common/Modal";
-import {t} from "@lingui/macro";
+ 
 import {LoadingMask} from "../../common/LoadingMask";
 import {Button} from "@mantine/core";
 import {useGetEventProductCategory} from "../../../queries/useGetProductCategory.ts";

@@ -1,7 +1,7 @@
 import React from "react";
 import {Badge, UnstyledButton, VisuallyHidden} from '@mantine/core';
 import {IconChevronLeft} from "@tabler/icons-react";
-import {t} from "@lingui/macro";
+ 
 import classes from './Sidebar.module.scss';
 import {NavItem} from "../types";
 import {NavLink} from "react-router";

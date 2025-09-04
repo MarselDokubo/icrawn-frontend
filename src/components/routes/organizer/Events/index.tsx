@@ -2,7 +2,7 @@ import {useFilterQueryParamSync} from "../../../../hooks/useFilterQueryParamSync
 import {useDisclosure} from "@mantine/hooks";
 import {Event, QueryFilters} from "../../../../types.ts";
 import {useParams} from "react-router";
-import {t} from "@lingui/macro";
+ 
 import {ToolBar} from "../../../common/ToolBar";
 import {SearchBarWrapper} from "../../../common/SearchBar";
 import {Button, Skeleton} from "@mantine/core";

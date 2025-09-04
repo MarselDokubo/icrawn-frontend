@@ -1,7 +1,7 @@
 import {Product, Question, QuestionType} from "../../../types.ts";
 import {UseFormReturnType} from "@mantine/form";
 import {Box, Checkbox, ComboboxItem, Group, NativeSelect, Radio, Select, Textarea, TextInput} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import countries from "../../../../data/countries.json";
 import {InputGroup} from "../InputGroup";
 import classes from "./CheckoutQuestion.module.scss";

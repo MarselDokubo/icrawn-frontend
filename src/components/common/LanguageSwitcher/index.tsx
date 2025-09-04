@@ -1,6 +1,6 @@
 import {Select} from "@mantine/core";
 import {dynamicActivateLocale, getClientLocale, SupportedLocales} from "../../../locales.ts";
-import {t} from "@lingui/macro";
+ 
 import {IconWorld} from "@tabler/icons-react";
 import {useLingui} from "@lingui/react";
 

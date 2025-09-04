@@ -2,7 +2,7 @@ import {useNavigate, useParams} from "react-router";
 import {useGetMe} from "../../../../queries/useGetMe";
 import {Card} from "../../../common/Card";
 import {showError, showSuccess} from "../../../../utilites/notifications";
-import {t} from "@lingui/macro";
+ 
 import {useConfirmEmailAddress} from "../../../../mutations/useConfirmEmailAddress";
 import {useEffect} from "react";
 

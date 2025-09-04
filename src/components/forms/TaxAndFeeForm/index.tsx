@@ -3,7 +3,7 @@ import {TaxAndFee, TaxAndFeeCalculationType, TaxAndFeeType} from "../../../types
 import {NumberInput, Switch, TextInput} from "@mantine/core";
 import {CustomSelect, ItemProps} from "../../common/CustomSelect";
 import {IconCash, IconPercentage, IconReceiptTax} from "@tabler/icons-react";
-import {t} from "@lingui/macro";
+ 
 
 export const TaxAndFeeForm = ({form}: { form: UseFormReturnType<TaxAndFee> }) => {
     const typeOptions: ItemProps[] = [

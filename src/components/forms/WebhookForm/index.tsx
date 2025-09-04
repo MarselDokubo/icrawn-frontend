@@ -1,5 +1,5 @@
 import {TextInput} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import {UseFormReturnType} from "@mantine/form";
 import {CustomSelect, ItemProps} from "../../common/CustomSelect";
 import {IconBolt, IconWebhook, IconWebhookOff} from "@tabler/icons-react";

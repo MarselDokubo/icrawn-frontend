@@ -1,7 +1,7 @@
 import {IconCalendar, IconExternalLink, IconMapPin, IconWorld} from "@tabler/icons-react";
 import classes from "./EventInformation.module.scss";
 import {formatAddress, isAddressSet} from "../../../../utilites/addressUtilities.ts";
-import {t} from "@lingui/macro";
+ 
 import {Anchor, Button} from "@mantine/core";
 import {LoadingMask} from "../../../common/LoadingMask";
 import {ShareComponent} from "../../../common/ShareIcon";

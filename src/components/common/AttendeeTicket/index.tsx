@@ -2,7 +2,7 @@ import {Card} from "../Card";
 import {getAttendeeProductPrice, getAttendeeProductTitle} from "../../../utilites/products.ts";
 import {Anchor, Button, CopyButton} from "@mantine/core";
 import {formatCurrency} from "../../../utilites/currency.ts";
-import {t} from "@lingui/macro";
+ 
 import {prettyDate} from "../../../utilites/dates.ts";
 import QRCode from "react-qr-code";
 import {IconCopy, IconPrinter} from "@tabler/icons-react";

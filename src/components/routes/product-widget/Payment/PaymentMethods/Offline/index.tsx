@@ -1,6 +1,6 @@
 import {Event} from "../../../../../../types.ts";
 import {Card} from "../../../../../common/Card";
-import {t} from "@lingui/macro";
+ 
 
 interface OfflinePaymentMethodProps {
     event: Event;

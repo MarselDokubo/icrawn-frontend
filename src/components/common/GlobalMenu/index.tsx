@@ -3,7 +3,7 @@ import {getInitials} from "../../../utilites/helpers.ts";
 import {IconLifebuoy, IconLogout, IconPlus, IconSettingsCog, IconUser, IconUsers,} from "@tabler/icons-react";
 import {useGetMe} from "../../../queries/useGetMe.ts";
 import {NavLink} from "react-router";
-import {t} from "@lingui/macro";
+ 
 import {authClient} from "../../../api/auth.client.ts";
 import {useDisclosure} from "@mantine/hooks";
 import {AboutModal} from "../../modals/AboutModal";

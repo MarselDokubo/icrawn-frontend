@@ -8,7 +8,7 @@ import {Modal} from "../../common/Modal";
 import {useUpdateProduct} from "../../../mutations/useUpdateProduct.ts";
 import {showSuccess} from "../../../utilites/notifications.tsx";
 import {useFormErrorResponseHandler} from "../../../hooks/useFormErrorResponseHandler.tsx";
-import {t} from "@lingui/macro";
+ 
 import {useGetProduct} from "../../../queries/useGetProduct.ts";
 import {LoadingMask} from "../../common/LoadingMask";
 import {utcToTz} from "../../../utilites/dates.ts";

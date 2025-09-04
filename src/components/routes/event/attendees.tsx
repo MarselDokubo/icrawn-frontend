@@ -16,7 +16,7 @@ import {CreateAttendeeModal} from "../../modals/CreateAttendeeModal";
 import {downloadBinary} from "../../../utilites/download.ts";
 import {attendeesClient} from "../../../api/attendee.client.ts";
 import {useState} from "react";
-import {t} from "@lingui/macro";
+ 
 import {withLoadingNotification} from "../../../utilites/withLoadingNotification.tsx";
 
 const Attendees = () => {

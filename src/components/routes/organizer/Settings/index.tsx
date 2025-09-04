@@ -4,7 +4,7 @@ import {SocialLinks} from "./Sections/SocialLinks";
 import {AddressSettings} from "./Sections/AddressSettings";
 import {PageBody} from "../../../common/PageBody";
 import {PageTitle} from "../../../common/PageTitle";
-import {t} from "@lingui/macro";
+ 
 import {Box, Group, NavLink as MantineNavLink, Stack} from "@mantine/core";
 import {IconBrandGoogleAnalytics, IconInfoCircle, IconMapPin, IconShare} from "@tabler/icons-react";
 import {useMediaQuery} from "@mantine/hooks";

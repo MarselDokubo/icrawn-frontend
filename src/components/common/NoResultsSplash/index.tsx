@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './NoResultsSplash.module.scss';
 import {useSearchParams} from "react-router";
-import {t} from "@lingui/macro";
+ 
 
 interface NoResultsSplashProps {
     heading?: React.ReactNode,

@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {Badge, Button, Group, Table as MantineTable, Text} from '@mantine/core';
 import {IdParam} from "../../../types.ts";
 import {IconCopy, IconCurrencyDollar, IconPencil, IconPlus, IconShare, IconTrash, IconUsers} from "@tabler/icons-react";

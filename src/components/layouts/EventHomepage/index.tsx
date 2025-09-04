@@ -9,7 +9,7 @@ import {Event, Organizer, OrganizerStatus, VenueAddress} from "../../../types.ts
 import {EventNotAvailable} from "./EventNotAvailable";
 import {IconExternalLink, IconMail, IconMapPin, IconTicket, IconWorld} from "@tabler/icons-react";
 import {Anchor, Button} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 import {PoweredByFooter} from "../../common/PoweredByFooter";
 import {ContactOrganizerModal} from "../../common/ContactOrganizerModal";
 import {socialMediaConfig} from "../../../constants/socialMediaConfig";

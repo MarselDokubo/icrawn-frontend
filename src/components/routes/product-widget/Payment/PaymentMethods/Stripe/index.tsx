@@ -6,7 +6,7 @@ import {useGetEventPublic} from "../../../../../../queries/useGetEventPublic.ts"
 import {getConfig} from "../../../../../../utilites/config.ts";
 import {CheckoutContent} from "../../../../../layouts/Checkout/CheckoutContent";
 import {HomepageInfoMessage} from "../../../../../common/HomepageInfoMessage";
-import {t} from "@lingui/macro";
+ 
 import {eventHomepagePath} from "../../../../../../utilites/urlHelper.ts";
 import {LoadingMask} from "../../../../../common/LoadingMask";
 import {Elements} from "@stripe/react-stripe-js";

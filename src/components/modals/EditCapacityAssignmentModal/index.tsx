@@ -1,6 +1,6 @@
 import {CapacityAssignmentRequest, GenericModalProps, IdParam, ProductCategory} from "../../../types.ts";
 import {Modal} from "../../common/Modal";
-import {t} from "@lingui/macro";
+ 
 import {CapacityAssigmentForm} from "../../forms/CapaciyAssigmentForm";
 import {useForm} from "@mantine/form";
 import {Button} from "@mantine/core";

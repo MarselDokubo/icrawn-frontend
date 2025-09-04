@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {Anchor, Badge, Button, Group, Menu, Table as MantineTable, Tooltip} from '@mantine/core';
 import {Event, IdParam, Invoice, MessageType, Order} from "../../../types.ts";
 import {

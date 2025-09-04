@@ -3,7 +3,7 @@ import {IconCash, IconCreditCardRefund, IconEye, IconReceipt, IconShoppingCart, 
 import {Card} from "../Card";
 import {useGetEventStats} from "../../../queries/useGetEventStats.ts";
 import {useParams} from "react-router";
-import {t} from "@lingui/macro";
+ 
 import {useGetEvent} from "../../../queries/useGetEvent.ts";
 import {formatCurrency} from "../../../utilites/currency.ts";
 import {formatNumber} from "../../../utilites/helpers.ts";

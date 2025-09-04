@@ -10,7 +10,7 @@ import {useGetEventQuestionsPublic} from "../../../../queries/useGetEventQuestio
 import {CheckoutOrderQuestions, CheckoutProductQuestions} from "../../../common/CheckoutQuestion";
 import {Event, IdParam, Order, Question} from "../../../../types.ts";
 import {useEffect} from "react";
-import {t} from "@lingui/macro";
+ 
 import {InputGroup} from "../../../common/InputGroup";
 import {Card} from "../../../common/Card";
 import {IconCopy} from "@tabler/icons-react";

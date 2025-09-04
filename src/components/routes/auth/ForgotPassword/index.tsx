@@ -6,7 +6,7 @@ import {authClient} from "../../../../api/auth.client.ts";
 import {useState} from "react";
 import {NavLink} from "react-router";
 import {Card} from "../../../common/Card";
-import {t} from "@lingui/macro";
+ 
 
 export const ForgotPassword = () => {
     const form = useForm({

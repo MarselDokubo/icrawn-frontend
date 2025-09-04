@@ -8,7 +8,7 @@ import {IconInfoCircle} from "@tabler/icons-react";
 import classes from './CancelOrderModal.module.scss';
 import {OrderDetails} from "../../common/OrderDetails";
 import {AttendeeList} from "../../common/AttendeeList";
-import {t} from "@lingui/macro";
+ 
 import {useCancelOrder} from "../../../mutations/useCancelOrder.ts";
 import {showError, showSuccess} from "../../../utilites/notifications.tsx";
 

@@ -1,7 +1,7 @@
 import {Card} from "../Card";
 import classes from './HeadingCard.module.scss';
 import {Button} from "@mantine/core";
-import {t} from "@lingui/macro";
+ 
 
 interface HeadingCardProps {
     className?: string;

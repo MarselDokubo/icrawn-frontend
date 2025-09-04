@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useParams} from "react-router";
 import {Button} from "@mantine/core";
 import {IconDownload} from "@tabler/icons-react";
-import {t} from "@lingui/macro";
+ 
 import {useGetEvent} from "../../../queries/useGetEvent";
 import {useGetEventOrders} from "../../../queries/useGetEventOrders";
 import {PageTitle} from "../../common/PageTitle";

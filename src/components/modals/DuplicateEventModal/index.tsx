@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {EventDuplicatePayload, GenericModalProps, IdParam} from "../../../types.ts";
 import {Button, Switch, TextInput, Group, ActionIcon, Tooltip, Grid} from "@mantine/core";
 import {Modal} from "../../common/Modal";

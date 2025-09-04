@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {Card} from "../Card";
 import {EventSettings} from "../../../types.ts";
 

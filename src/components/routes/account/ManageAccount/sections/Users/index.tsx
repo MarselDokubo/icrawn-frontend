@@ -3,7 +3,7 @@ import {Avatar, Badge, Button, Group, Menu, Table, Text} from "@mantine/core";
 import classes from "./Users.module.scss";
 import {IconDotsVertical, IconEye, IconSend, IconUser, IconUserShield} from "@tabler/icons-react";
 import {getInitials} from "../../../../../../utilites/helpers.ts";
-import {t} from "@lingui/macro";
+ 
 import {Card} from "../../../../../common/Card";
 import {HeadingCard} from "../../../../../common/HeadingCard";
 import {relativeDate} from "../../../../../../utilites/dates.ts";

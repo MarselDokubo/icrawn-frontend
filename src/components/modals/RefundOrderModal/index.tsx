@@ -12,7 +12,7 @@ import {IconInfoCircle} from "@tabler/icons-react";
 import {showSuccess} from "../../../utilites/notifications.tsx";
 import {Modal} from "../../common/Modal";
 import classes from './RefundOrderModal.module.scss';
-import {t} from "@lingui/macro";
+ 
 
 interface RefundOrderModalProps extends GenericModalProps {
     orderId: IdParam;

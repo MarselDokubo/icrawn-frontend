@@ -6,7 +6,7 @@ import React, {useEffect, useState} from 'react';
 import {Event, GenericPaginatedResponse, Organizer} from "../../../types.ts";
 import {OrganizerDocumentHead} from "../../common/OrganizerDocumentHead";
 import {IconExternalLink, IconMail, IconMapPin, IconWorld} from '@tabler/icons-react';
-import {t} from "@lingui/macro";
+ 
 import {PoweredByFooter} from "../../common/PoweredByFooter";
 import {socialMediaConfig} from "../../../constants/socialMediaConfig";
 import {ContactOrganizerModal} from "../../common/ContactOrganizerModal";

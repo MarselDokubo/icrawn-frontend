@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {Card} from "../../../../../common/Card";
 import {HeadingCard} from "../../../../../common/HeadingCard";
 import {useCreateOrGetStripeConnectDetails} from "../../../../../../queries/useCreateOrGetStripeConnectDetails.ts";

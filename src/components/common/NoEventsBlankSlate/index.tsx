@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 import {Button} from "@mantine/core";
 import {IconPlus} from "@tabler/icons-react";
 import {NoResultsSplash} from "../NoResultsSplash";

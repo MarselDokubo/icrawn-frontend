@@ -1,5 +1,5 @@
 import {PageTitle} from "../../../common/PageTitle";
-import {t} from "@lingui/macro";
+ 
 import {PageBody} from "../../../common/PageBody";
 import {Badge, Button, Group} from "@mantine/core"
 import {IconPlus} from "@tabler/icons-react";

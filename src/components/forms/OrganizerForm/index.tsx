@@ -4,7 +4,7 @@ import {useForm, UseFormReturnType} from "@mantine/form";
 import {Organizer} from "../../../types.ts";
 import {useEffect} from "react";
 import {LoadingContainer} from "../../common/LoadingContainer";
-import {t} from "@lingui/macro";
+ 
 import {Button, Select, Stack, TextInput} from "@mantine/core";
 import {currencies} from "../../../../data/currencies.ts";
 import {timezones} from "../../../../data/timezones.ts";

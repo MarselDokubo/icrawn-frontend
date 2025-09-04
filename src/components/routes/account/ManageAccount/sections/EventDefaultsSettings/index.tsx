@@ -1,4 +1,4 @@
-import {t} from "@lingui/macro";
+ 
 
 const EventDefaultsSettings = () => {
     return (
