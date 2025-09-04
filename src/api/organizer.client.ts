@@ -87,7 +87,7 @@ export const organizerPublicClient = {
         message: string;
     }) => {
         const response = await publicApi.post<GenericDataResponse<any>>(
-            `organizers/${organizerId}/contact`, 
+            `organizers/${organizerId}/contac`, 
             contactData
         );
         return response.data;

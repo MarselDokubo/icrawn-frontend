@@ -24,15 +24,15 @@ export const OrganizerForm = ({form}: { form: UseFormReturnType<Partial<Organize
             <TextInput
                 {...form.getInputProps('name')}
                 required
-                label={t`Organization Name`}
-                placeholder={t`Awesome Events Ltd.`}
+                label={`Organization Name`}
+                placeholder={`Awesome Events Ltd.`}
                 size="lg"
             />
             <TextInput
                 {...form.getInputProps('email')}
                 required
-                label={t`Contact Email`}
-                placeholder={t`hello@awesome-events.com`}
+                label={`Contact Email`}
+                placeholder={`hello@awesome-events.com`}
                 size="lg"
                 type="email"
             />
@@ -46,8 +46,8 @@ export const OrganizerForm = ({form}: { form: UseFormReturnType<Partial<Organize
                         value: value,
                         label: `${key} (${value})`,
                     }))}
-                    label={t`Currency`}
-                    placeholder={t`Select currency`}
+                    label={`Currency`}
+                    placeholder={`Select currency`}
                     size="lg"
                 />
                 <Select
@@ -55,8 +55,8 @@ export const OrganizerForm = ({form}: { form: UseFormReturnType<Partial<Organize
                     searchable
                     required
                     data={timezones}
-                    label={t`Timezone`}
-                    placeholder={t`Select timezone`}
+                    label={`Timezone`}
+                    placeholder={`Select timezone`}
                     size="lg"
                 />
             </div>
@@ -118,9 +118,9 @@ export const OrganizerCreateForm = ({onSuccess, onCancel}: OrganizerFormProps) =
                         className={classes.primaryButton}
                         disabled={organizerMutation.isPending}
                         style={{marginTop: '1.5rem'}}
-                        aria-label={organizerMutation.isPending ? t`Creating your organizer profile, please wait` : t`Continue to event creation`}
+                        aria-label={organizerMutation.isPending ? `Creating your organizer profile, please wai` : `Continue to event creation`}
                     >
-                        {organizerMutation.isPending ? t`Creating Organizer...` : t`Continue Setup`}
+                        {organizerMutation.isPending ? `Creating Organizer...` : `Continue Setup`}
                     </Button>
                 </fieldset>
             </form>

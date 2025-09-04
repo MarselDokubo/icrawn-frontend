@@ -8,7 +8,7 @@ export const confirmationDialog = (
 ) => {
     modals.openConfirmModal({
         title: message,
-        labels: labels || {confirm: t`Confirm`, cancel: t`Cancel`},
+        labels: labels || {confirm: `Confirm`, cancel: `Cancel`},
         onConfirm: () => onConfirm(),
     });
 }

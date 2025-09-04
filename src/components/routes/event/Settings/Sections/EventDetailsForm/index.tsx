@@ -54,7 +54,7 @@ export const EventDetailsForm = () => {
             eventId: eventId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Event`);
+                showSuccess(`Successfully Updated Even`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);
@@ -65,22 +65,22 @@ export const EventDetailsForm = () => {
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`Event Details`}
-                description={t`Update event name, description and dates`}
+                heading={`Event Details`}
+                description={`Update event name, description and dates`}
             />
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <fieldset disabled={eventQuery.isLoading || updateMutation.isPending}>
                     <TextInput
                         {...form.getInputProps('title')}
-                        label={t`Name`}
-                        placeholder={t`Summer Music Festival ${new Date().getFullYear()}`}
+                        label={`Name`}
+                        placeholder={`Summer Music Festival ${new Date().getFullYear()}`}
                         required
                     />
                     
                     <Select
                         {...form.getInputProps('category')}
-                        label={t`Category`}
-                        placeholder={t`Select a category`}
+                        label={`Category`}
+                        placeholder={`Select a category`}
                         data={EventCategories.map((category) => ({
                             value: category.id,
                             label: `${category.emoji} ${category.name}`,
@@ -90,7 +90,7 @@ export const EventDetailsForm = () => {
                     />
 
                     <Editor
-                        label={t`Description`}
+                        label={`Description`}
                         value={form.values.description || ''}
                         onChange={(value) => form.setFieldValue('description', value)}
                         error={form.errors?.description as string}
@@ -99,12 +99,12 @@ export const EventDetailsForm = () => {
                     <InputGroup>
                         <TextInput type={'datetime-local'}
                                    {...form.getInputProps('start_date')}
-                                   label={t`Start Date`}
+                                   label={`Start Date`}
                                    required
                         />
                         <TextInput type={'datetime-local'}
                                    {...form.getInputProps('end_date')}
-                                   label={t`End Date`}
+                                   label={`End Date`}
                         />
                     </InputGroup>
                     <InputGroup>
@@ -112,8 +112,8 @@ export const EventDetailsForm = () => {
                             searchable
                             data={currenciesMap}
                             {...form.getInputProps('currency')}
-                            label={t`Currency`}
-                            placeholder={t`EUR`}
+                            label={`Currency`}
+                            placeholder={`EUR`}
                             disabled
                         />
 
@@ -121,12 +121,12 @@ export const EventDetailsForm = () => {
                             searchable
                             data={timezones}
                             {...form.getInputProps('timezone')}
-                            label={t`Timezone`}
-                            placeholder={t`UTC`}
+                            label={`Timezone`}
+                            placeholder={`UTC`}
                         />
                     </InputGroup>
                     <Button loading={updateMutation.isPending} type={'submit'}>
-                        {t`Save`}
+                        {`Save`}
                     </Button>
                 </fieldset>
             </form>

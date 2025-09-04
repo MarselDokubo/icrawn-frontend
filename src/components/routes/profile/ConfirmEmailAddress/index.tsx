@@ -20,11 +20,11 @@ const ConfirmEmailAddress = () => {
 
         confirmEmailAddressMutation.mutate({token: (token as string), userId: userData?.id}, {
             onSuccess: () => {
-                showSuccess(t`Successfully confirmed email address`);
+                showSuccess(`Successfully confirmed email address`);
                 navigate('/manage/events');
             },
             onError: () => {
-                showError(t`Error confirming email address`);
+                showError(`Error confirming email address`);
             }
         });
     };
@@ -33,7 +33,7 @@ const ConfirmEmailAddress = () => {
 
     return (
         <Card style={{marginTop: 'var(--hi-spacing-lg)'}}>
-            <p>{t`Confirming email address...`}</p>
+            <p>{`Confirming email address...`}</p>
         </Card>
     );
 };

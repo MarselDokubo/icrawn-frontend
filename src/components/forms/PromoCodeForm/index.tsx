@@ -39,7 +39,7 @@ export const PromoCodeForm = ({form}: PromoCodeFormProps) => {
         <>
             <TextInput
                 {...form.getInputProps('code')}
-                label={t`Code`}
+                label={`Code`}
                 placeholder="20OFF"
                 required
                 rightSection={(
@@ -49,40 +49,40 @@ export const PromoCodeForm = ({form}: PromoCodeFormProps) => {
                         color="gray"
                         onClick={generateRandomCode}
                         style={{fontWeight: 400}}
-                        title={t`Generate code`}
+                        title={`Generate code`}
                         leftSection={<IconRefresh size={16}/>}
                     >
                         <ShowForMobile>
-                            {t`Generate`}
+                            {`Generate`}
                         </ShowForMobile>
                         <ShowForDesktop>
-                            {t`Generate code`}
+                            {`Generate code`}
                         </ShowForDesktop>
                     </Button>
                 )}
                 rightSectionWidth={'auto'}
             />
 
-            <Alert variant={'light'} mt={20} mb={20} icon={<IconAlertCircle size="1rem"/>} title={t`TIP`}>
-                {t`A promo code with no discount can be used to reveal hidden products.`}
+            <Alert variant={'light'} mt={20} mb={20} icon={<IconAlertCircle size="1rem"/>} title={`TIP`}>
+                {`A promo code with no discount can be used to reveal hidden products.`}
             </Alert>
 
             <InputGroup>
                 <Select
                     {...form.getInputProps('discount_type')}
-                    label={t`Discount Type`}
+                    label={`Discount Type`}
                     data={[
                         {
                             value: 'NONE',
-                            label: t`No Discount`,
+                            label: `No Discoun`,
                         },
                         {
                             value: 'PERCENTAGE',
-                            label: t`Percentage`,
+                            label: `Percentage`,
                         },
                         {
                             value: 'FIXED',
-                            label: t`Fixed amount`,
+                            label: `Fixed amoun`,
                         },
                     ]}/>
                 <NumberInput
@@ -90,12 +90,12 @@ export const PromoCodeForm = ({form}: PromoCodeFormProps) => {
                     decimalScale={2} min={0}
                     leftSection={<DiscountIcon/>}
                     {...form.getInputProps('discount')}
-                    label={(form.values.discount_type === 'PERCENTAGE' ? t`Discount %` : t`Discount in ${event.currency}`)}
+                    label={(form.values.discount_type === 'PERCENTAGE' ? `Discount %` : `Discount in ${event.currency}`)}
                     placeholder="0.00"/>
             </InputGroup>
 
             <ProductSelector
-                label={t`What products does this code apply to? (Applies to all by default)`}
+                label={`What products does this code apply to? (Applies to all by default)`}
                 placeholder="Select products"
                 icon={<IconTicket size="1rem"/>}
                 productCategories={productCategories}
@@ -106,12 +106,12 @@ export const PromoCodeForm = ({form}: PromoCodeFormProps) => {
             <InputGroup>
                 <TextInput type={'datetime-local'}
                            {...form.getInputProps('expiry_date')}
-                           label={t`Expiry Date`}
+                           label={`Expiry Date`}
                 />
                 <NumberInput min={1}
-                             placeholder={t`Unlimited`}
+                             placeholder={`Unlimited`}
                              {...form.getInputProps('max_allowed_usages')}
-                             label={t`How many times can this code be used?`}/>
+                             label={`How many times can this code be used?`}/>
             </InputGroup>
         </>
     );

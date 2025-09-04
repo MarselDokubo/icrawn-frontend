@@ -18,21 +18,21 @@ const Webhooks = () => {
     const webhooks = webhooksQuery.data?.data?.data;
 
     const getWebhookCountText = () => {
-        if (!webhooks) return t`Loading Webhooks`;
-        if (webhooks.length === 0) return t`No Active Webhooks`;
-        if (webhooks.length === 1) return t`1 Active Webhook`;
-        return t`${webhooks.length} Active Webhooks`;
+        if (!webhooks) return `Loading Webhooks`;
+        if (webhooks.length === 0) return `No Active Webhooks`;
+        if (webhooks.length === 1) return `1 Active Webhook`;
+        return `${webhooks.length} Active Webhooks`;
     };
 
     return (
         <PageBody>
             <PageTitle>
-                {t`Webhooks`}
+                {`Webhooks`}
             </PageTitle>
             <Card>
                 <Group justify="space-between">
                     <Button color={'green'} rightSection={<IconPlus/>} onClick={openCreateModal}>
-                        {t`Add Webhook`}
+                        {`Add Webhook`}
                     </Button>
                     <Badge
                         variant="transparent"

@@ -42,7 +42,7 @@ export const SeoSettings = () => {
             eventId: eventId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Seo Settings`);
+                showSuccess(`Successfully Updated Seo Settings`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);
@@ -53,36 +53,36 @@ export const SeoSettings = () => {
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`SEO Settings`}
-                description={t`Customize the SEO settings for this event`}
+                heading={`SEO Settings`}
+                description={`Customize the SEO settings for this even`}
             />
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>
                     <TextInput
                         {...form.getInputProps('seo_title')}
-                        description={t`The title of the event that will be displayed in search engine results and when sharing on social media. By default, the event title will be used`}
-                        label={t`SEO Title`}
-                        placeholder={t`My amazing event title...`}
+                        description={`The title of the event that will be displayed in search engine results and when sharing on social media. By default, the event title will be used`}
+                        label={`SEO Title`}
+                        placeholder={`My amazing event title...`}
                     />
                     <TextInput
                         {...form.getInputProps('seo_description')}
-                        description={t`A short description of the event that will be displayed in search engine results and when sharing on social media. By default, the event description will be used`}
-                        label={t`SEO Description`}
-                        placeholder={t`My amazing event description...`}
+                        description={`A short description of the event that will be displayed in search engine results and when sharing on social media. By default, the event description will be used`}
+                        label={`SEO Description`}
+                        placeholder={`My amazing event description...`}
                     />
                     <TextInput
                         {...form.getInputProps('seo_keywords')}
-                        description={t`Comma seperated keywords that describe the event. These will be used by search engines to help categorize and index the event`}
-                        label={t`SEO Keywords`}
-                        placeholder={t`Amazing, Event, Keywords...`}
+                        description={`Comma seperated keywords that describe the event. These will be used by search engines to help categorize and index the even`}
+                        label={`SEO Keywords`}
+                        placeholder={`Amazing, Event, Keywords...`}
                     />
                     <Switch
                         {...form.getInputProps('allow_search_engine_indexing', {type: 'checkbox'})}
-                        description={t`Allow search engines to index this event`}
-                        label={t`Allow search engine indexing`}
+                        description={`Allow search engines to index this even`}
+                        label={`Allow search engine indexing`}
                     />
                     <Button loading={updateMutation.isPending} type={'submit'}>
-                        {t`Save`}
+                        {`Save`}
                     </Button>
 
                 </fieldset>

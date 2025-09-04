@@ -10,7 +10,7 @@ export const CopyButton = ({value}: CopyButtonProps) => {
     return (
         <MantineCopy value={value} timeout={2000}>
             {({copied, copy}) => (
-                <Tooltip label={copied ? t`Copied` : t`Copy`} withArrow position="right">
+                <Tooltip label={copied ? `Copied` : `Copy`} withArrow position="right">
                     <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
                         {copied ? (
                             <IconCheck style={{width: rem(16)}}/>

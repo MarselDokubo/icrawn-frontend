@@ -28,17 +28,17 @@ export const Messages = () => {
     return (
         <>
             <PageBody isFluid={false}>
-                <PageTitle>{t`Messages`}</PageTitle>
+                <PageTitle>{`Messages`}</PageTitle>
                 <ToolBar searchComponent={() => (
                     <SearchBarWrapper
-                        placeholder={t`Search by subject or content...`}
+                        placeholder={`Search by subject or content...`}
                         setSearchParams={setSearchParam}
                         searchParams={searchParams}
                         pagination={pagination}
                     />
                 )}>
                     <Button color={'green'} size={'sm'} onClick={openSendModal} rightSection={<IconSend/>}>
-                        {t`Send Message`}
+                        {`Send Message`}
                     </Button>
                 </ToolBar>
 

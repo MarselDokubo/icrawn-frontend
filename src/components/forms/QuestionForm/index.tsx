@@ -42,7 +42,7 @@ const Options = ({form}: { form: UseFormReturnType<any> }) => {
                                 mt={0}
                                 mb={0}
                                 {...form.getInputProps(`options.${index}`)}
-                                placeholder={t`Option ${i}`}
+                                placeholder={`Option ${i}`}
                                 required
                                 className={classes.optionInput}
                             />
@@ -65,7 +65,7 @@ const Options = ({form}: { form: UseFormReturnType<any> }) => {
                 onClick={() => form.setFieldValue('options', [...form.values.options, ''])}
                 size="xs"
             >
-                {t`Add Option`}
+                {`Add Option`}
             </Button>
         </Card>
     )
@@ -82,60 +82,60 @@ export const QuestionForm = ({form, productCategories}: QuestionFormProps) => {
     const belongToOptions: ItemProps[] = [
         {
             icon: <IconReceipt/>,
-            label: t`Ask once per order`,
+            label: `Ask once per order`,
             value: QuestionBelongsToType.ORDER,
-            description: t`A single question per order. E.g, What is your shipping address?`,
+            description: `A single question per order. E.g, What is your shipping address?`,
         },
         {
             icon: <IconUser/>,
-            label: t`Ask once per product`,
+            label: `Ask once per produc`,
             value: QuestionBelongsToType.PRODUCT,
-            description: t`A single question per product. E.g, What is your t-shirt size?`,
+            description: `A single question per product. E.g, What is your t-shirt size?`,
         },
     ];
 
     const questionTypeOptions: ItemProps[] = [
         {
             icon: <IconForms/>,
-            label: t`Single line text box`,
+            label: `Single line text box`,
             value: QuestionType.SINGLE_LINE_TEXT,
-            description: t`A single line text input`,
+            description: `A single line text inpu`,
         },
         {
             icon: <IconAlignBoxLeftTop/>,
-            label: t`Multi line text box`,
+            label: `Multi line text box`,
             value: QuestionType.MULTI_LINE_TEXT,
-            description: t`A multi line text input`,
+            description: `A multi line text inpu`,
         },
         {
             icon: <IconSquareCheck/>,
-            label: t`Checkboxes`,
+            label: `Checkboxes`,
             value: QuestionType.CHECKBOX,
-            description: t`Checkbox options allow multiple selections`,
+            description: `Checkbox options allow multiple selections`,
         },
         {
             icon: <IconCircleCheck/>,
-            label: t`Radio Option`,
+            label: `Radio Option`,
             value: QuestionType.RADIO,
-            description: t`A Radio option has multiple options but only one can be selected.`,
+            description: `A Radio option has multiple options but only one can be selected.`,
         },
         {
             icon: <IconSelector/>,
-            label: t`Dropdown selection`,
+            label: `Dropdown selection`,
             value: QuestionType.DROPDOWN,
-            description: t`A Dropdown input allows only one selection`,
+            description: `A Dropdown input allows only one selection`,
         },
         {
             icon: <IconMapPin/>,
-            label: t`Address`,
+            label: `Address`,
             value: QuestionType.ADDRESS,
-            description: t`Shows common address fields, including country`,
+            description: `Shows common address fields, including country`,
         },
         {
             icon: <IconCalendar/>,
-            label: t`Date`,
+            label: `Date`,
             value: QuestionType.DATE,
-            description: t`A date input. Perfect for asking for a date of birth etc.`,
+            description: `A date input. Perfect for asking for a date of birth etc.`,
         }
     ];
     const multiAnswerQuestionTypes = [
@@ -148,7 +148,7 @@ export const QuestionForm = ({form, productCategories}: QuestionFormProps) => {
         <>
             <CustomSelect
                 optionList={belongToOptions}
-                label={t`Who should be asked this question?`}
+                label={`Who should be asked this question?`}
                 required
                 form={form}
                 name="belongs_to"
@@ -156,7 +156,7 @@ export const QuestionForm = ({form, productCategories}: QuestionFormProps) => {
 
             {form.values.belongs_to === QuestionBelongsToType.PRODUCT && (
                 <ProductSelector
-                    label={t`What products does this code apply to?`}
+                    label={`What products does this code apply to?`}
                     placeholder="Select products"
                     icon={<IconTicket size="1rem"/>}
                     productCategories={productCategories ?? []}
@@ -167,7 +167,7 @@ export const QuestionForm = ({form, productCategories}: QuestionFormProps) => {
 
             <CustomSelect
                 optionList={questionTypeOptions}
-                label={t`What type of question is this?`}
+                label={`What type of question is this?`}
                 required
                 form={form}
                 name="type"
@@ -175,8 +175,8 @@ export const QuestionForm = ({form, productCategories}: QuestionFormProps) => {
 
             <TextInput
                 {...form.getInputProps('title')}
-                label={t`Question Title`}
-                placeholder={t`What time will you be arriving?`}
+                label={`Question Title`}
+                placeholder={`What time will you be arriving?`}
                 required
             />
 
@@ -185,8 +185,8 @@ export const QuestionForm = ({form, productCategories}: QuestionFormProps) => {
                     maxLength={10000}
                     editorType={'simple'}
                     error={form.errors.description as string}
-                    label={t`Question Description`}
-                    description={t`Provide additional context or instructions for this question. Use this field to add terms
+                    label={`Question Description`}
+                    description={`Provide additional context or instructions for this question. Use this field to add terms
                                 and conditions, guidelines, or any important information that attendees need to know before answering.`}
                     value={form.values.description}
                     onChange={(value: string) => form.setFieldValue('description', value)}
@@ -199,7 +199,7 @@ export const QuestionForm = ({form, productCategories}: QuestionFormProps) => {
                     mb={10}
                     onClick={() => setShowDescription(true)}
                 >
-                    {t`Add description`}
+                    {`Add description`}
                 </Button>
             )}
 
@@ -208,15 +208,15 @@ export const QuestionForm = ({form, productCategories}: QuestionFormProps) => {
             <Switch
                 mt={20}
                 {...form.getInputProps('required', {type: 'checkbox'})}
-                description={t`Mandatory questions must be answered before the customer can checkout.`}
-                label={t`Make this question mandatory`}
+                description={`Mandatory questions must be answered before the customer can checkout.`}
+                label={`Make this question mandatory`}
             />
 
             <Switch
                 mt={20}
                 {...form.getInputProps('is_hidden', {type: 'checkbox'})}
-                description={t`Hidden questions are only visible to the event organizer and not to the customer.`}
-                label={t`Hide this question`}
+                description={`Hidden questions are only visible to the event organizer and not to the customer.`}
+                label={`Hide this question`}
             />
         </>
     )

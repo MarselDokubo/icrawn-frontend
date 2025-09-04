@@ -38,12 +38,12 @@ export const OrderSummary = ({event, order, showFreeWhenZeroTotal = true}: Order
                 })}
                 <div className={classes.separator}/>
                 <div className={classes.itemRow}>
-                    <div className={classes.itemName}><b className={classes.total}>{t`Subtotal`}</b></div>
+                    <div className={classes.itemName}><b className={classes.total}>{`Subtotal`}</b></div>
                     <div className={classes.itemValue}>
                         <Currency
                             currency={event.currency}
                             price={order.total_before_additions}
-                            freeLabel={showFreeWhenZeroTotal ? t`Free` : null}
+                            freeLabel={showFreeWhenZeroTotal ? `Free` : null}
                         />
                     </div>
                 </div>
@@ -77,7 +77,7 @@ export const OrderSummary = ({event, order, showFreeWhenZeroTotal = true}: Order
                     <>
                         <div className={classes.separator}/>
                         <div className={classes.itemRow}>
-                            <div className={classes.itemName}>{t`Refunded`}</div>
+                            <div className={classes.itemName}>{`Refunded`}</div>
                             <div className={classes.itemValue}>
                                 - <Currency
                                 currency={event.currency}
@@ -89,14 +89,14 @@ export const OrderSummary = ({event, order, showFreeWhenZeroTotal = true}: Order
                 ))}
                 <div className={classes.separator}/>
                 <div className={classes.itemRow}>
-                    <div className={classes.itemName}><b className={classes.total}>{t`Total`}</b></div>
+                    <div className={classes.itemName}><b className={classes.total}>{`Total`}</b></div>
                     <div className={classes.itemValue}>
                         <Currency
                             currency={event.currency}
                             price={
                                 order.total_refunded ? order.total_gross - order.total_refunded : order.total_gross
                             }
-                            freeLabel={showFreeWhenZeroTotal ? t`Free` : null}
+                            freeLabel={showFreeWhenZeroTotal ? `Free` : null}
                         />
                     </div>
                 </div>

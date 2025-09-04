@@ -11,27 +11,27 @@ export const LanguageSwitcher = () => {
     const getLocaleName = (locale: SupportedLocales): string => {
         switch (locale) {
             case "de":
-                return t`German`;
+                return `German`;
             case "en":
-                return t`English`;
+                return `English`;
             case "es":
-                return t`Spanish`;
+                return `Spanish`;
             case "fr":
-                return t`French`;
+                return `French`;
             case "it":
-                return t`Italian`;
+                return `Italian`;
             case "nl":
-                return t`Dutch`;
+                return `Dutch`;
             case "pt":
-                return t`Portuguese`;
+                return `Portuguese`;
             case "pt-br":
-                return t`Brazilian Portuguese`;
+                return `Brazilian Portuguese`;
             case "zh-cn":
-                return t`Chinese (Simplified)`;
+                return `Chinese (Simplified)`;
             case "zh-hk":
-                return t`Chinese (Traditional)`;
+                return `Chinese (Traditional)`;
             case "vi":
-                return t`Vietnamese`;
+                return `Vietnamese`;
         }
     };
 
@@ -49,11 +49,11 @@ export const LanguageSwitcher = () => {
                     label: getLocaleName(locale as SupportedLocales),
                 }))}
                 defaultValue={getClientLocale()}
-                placeholder={t`English`}
+                placeholder={`English`}
                 onChange={(value) =>
                     dynamicActivateLocale(value as string).then(() => {
                         document.cookie = `locale=${value};path=/;max-age=31536000`;
-                        // this shouldn't be necessary, but it is due to the wide use of t`...` in the codebase
+                        // this shouldn't be necessary, but it is due to the wide use of `...` in the codebase
                         window.location.reload();
                     })}
             />

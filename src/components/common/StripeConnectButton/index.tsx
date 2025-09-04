@@ -48,7 +48,7 @@ export const StripeConnectButton: React.FC<StripeConnectButtonProps> = ({
     useEffect(() => {
         if (fetchStripeDetails && !stripeDetailsQuery.isLoading && stripeDetails) {
             setFetchStripeDetails(false);
-            showSuccess(t`Redirecting to Stripe...`);
+            showSuccess(`Redirecting to Stripe...`);
             window.location.href = String(stripeDetails.connect_url);
         }
     }, [fetchStripeDetails, stripeDetailsQuery.isLoading, stripeDetails]);
@@ -58,12 +58,12 @@ export const StripeConnectButton: React.FC<StripeConnectButtonProps> = ({
             setFetchStripeDetails(true);
         } else {
             if (stripeDetails.is_connect_setup_complete) {
-                showSuccess(t`Stripe setup is already complete.`);
+                showSuccess(`Stripe setup is already complete.`);
                 return;
             }
 
             if (typeof window !== 'undefined') {
-                showSuccess(t`Redirecting to Stripe...`);
+                showSuccess(`Redirecting to Stripe...`);
                 window.location.href = String(stripeDetails.connect_url);
             }
         }
@@ -74,9 +74,9 @@ export const StripeConnectButton: React.FC<StripeConnectButtonProps> = ({
         if (buttonText) return buttonText;
         
         if (!isReturningFromStripe && !account?.stripe_account_id) {
-            return t`Connect with Stripe`;
+            return `Connect with Stripe`;
         }
-        return t`Complete Stripe Setup`;
+        return `Complete Stripe Setup`;
     };
 
     return (

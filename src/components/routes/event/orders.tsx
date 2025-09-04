@@ -20,14 +20,14 @@ import {FilterModal, FilterOption} from "../../common/FilterModal";
 import {withLoadingNotification} from "../../../utilites/withLoadingNotification.tsx";
 
 const orderStatuses = [
-    {label: t`Completed`, value: 'COMPLETED'},
-    {label: t`Cancelled`, value: 'CANCELLED'},
-    {label: t`Awaiting Offline Payment`, value: 'AWAITING_OFFLINE_PAYMENT'},
+    {label: `Completed`, value: 'COMPLETED'},
+    {label: `Cancelled`, value: 'CANCELLED'},
+    {label: `Awaiting Offline Paymen`, value: 'AWAITING_OFFLINE_PAYMENT'},
 ];
 
 const refundStatuses = [
-    {label: t`Refunded`, value: 'REFUNDED'},
-    {label: t`Partially Refunded`, value: 'PARTIALLY_REFUNDED'},
+    {label: `Refunded`, value: 'REFUNDED'},
+    {label: `Partially Refunded`, value: 'PARTIALLY_REFUNDED'},
 ];
 
 export const Orders: React.FC = () => {
@@ -42,13 +42,13 @@ export const Orders: React.FC = () => {
     const filterOptions: FilterOption[] = [
         {
             field: 'status',
-            label: t`Order Status`,
+            label: `Order Status`,
             type: 'multi-select',
             options: orderStatuses
         },
         {
             field: 'refund_status',
-            label: t`Refund Status`,
+            label: `Refund Status`,
             type: 'multi-select',
             options: refundStatuses
         }
@@ -87,17 +87,17 @@ export const Orders: React.FC = () => {
             },
             {
                 loading: {
-                    title: t`Exporting Orders`,
-                    message: t`Please wait while we prepare your orders for export...`
+                    title: `Exporting Orders`,
+                    message: `Please wait while we prepare your orders for export...`
                 },
                 success: {
-                    title: t`Orders Exported`,
-                    message: t`Your orders have been exported successfully.`,
+                    title: `Orders Exported`,
+                    message: `Your orders have been exported successfully.`,
                     onRun: () => setDownloadPending(false)
                 },
                 error: {
-                    title: t`Failed to export orders`,
-                    message: t`Please try again.`,
+                    title: `Failed to export orders`,
+                    message: `Please try again.`,
                     onRun: () => setDownloadPending(false)
                 }
             });
@@ -110,7 +110,7 @@ export const Orders: React.FC = () => {
 
     return (
         <PageBody>
-            <PageTitle>{t`Orders`}</PageTitle>
+            <PageTitle>{`Orders`}</PageTitle>
             <ToolBar
                 filterComponent={
                     <FilterModal
@@ -118,12 +118,12 @@ export const Orders: React.FC = () => {
                         activeFilters={currentFilters}
                         onChange={handleFilterChange}
                         onReset={handleResetFilters}
-                        title={t`Filter Orders`}
+                        title={`Filter Orders`}
                     />
                 }
                 searchComponent={() => (
                     <SearchBarWrapper
-                        placeholder={t`Search by name, email, or order #...`}
+                        placeholder={`Search by name, email, or order #...`}
                         setSearchParams={setSearchParams}
                         searchParams={searchParams}
                         pagination={pagination}
@@ -137,7 +137,7 @@ export const Orders: React.FC = () => {
                     loading={downloadPending}
                     size="sm"
                 >
-                    {t`Export`}
+                    {`Expor`}
                 </Button>
             </ToolBar>
 

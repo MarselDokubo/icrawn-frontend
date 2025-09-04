@@ -63,7 +63,7 @@ export const EditQuestionModal = ({onClose, questionId}: EditQuestionModalProps)
 
         onSuccess: () => {
             notifications.show({
-                message: t`Successfully Created Question`,
+                message: `Successfully Created Question`,
                 color: 'green',
                 position: 'top-center',
             });
@@ -81,7 +81,7 @@ export const EditQuestionModal = ({onClose, questionId}: EditQuestionModalProps)
                 form.setErrors(error.response.data.errors);
             }
             notifications.show({
-                message: t`Unable to update question. Please check the your details`,
+                message: `Unable to update question. Please check the your details`,
                 color: 'red',
                 position: 'top-center',
             });
@@ -92,13 +92,13 @@ export const EditQuestionModal = ({onClose, questionId}: EditQuestionModalProps)
         <Modal
             opened
             onClose={onClose}
-            heading={t`Edit Question`}
+            heading={`Edit Question`}
         >
             <form onSubmit={form.onSubmit((values) => mutation.mutate(values as any as Question))}>
                 <QuestionForm form={form} productCategories={productsCategories}/>
                 {!questionQuery.isFetched && <LoadingOverlay visible/>}
                 <Button loading={mutation.isPending} type="submit" fullWidth mt="xl">
-                    {mutation.isPending ? t`Working...` : t`Edit Question`}
+                    {mutation.isPending ? `Working...` : `Edit Question`}
                 </Button>
             </form>
         </Modal>

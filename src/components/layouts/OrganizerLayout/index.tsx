@@ -57,27 +57,27 @@ const OrganizerLayout = () => {
     const [emailConfirmationResent, setEmailConfirmationResent] = useState(false);
     const {data: me} = useGetMe();
     const isUserEmailVerfied = me?.is_email_verified;
-    const isMobile = useMediaQuery(t`(max-width: 768px)`);
+    const isMobile = useMediaQuery(`(max-width: 768px)`);
 
     const statusToggleMutation = useUpdateOrganizerStatus();
 
     const navItems: NavItem[] = [
         {
-            label: t`Switch Organizer`,
+            label: `Switch Organizer`,
             icon: IconArrowsHorizontal,
             onClick: openSwitchModal,
             isActive: () => false,
             showWhen: () => organizers && organizers.length > 1,
         },
-        {label: t`Overview`},
-        {link: 'dashboard', label: t`Organizer Dashboard`, icon: IconDashboard},
+        {label: `Overview`},
+        {link: 'dashboard', label: `Organizer Dashboard`, icon: IconDashboard},
 
-        {label: t`Manage`},
-        {link: 'events', label: t`Events`, icon: IconCalendar},
-        {link: 'settings', label: t`Settings`, icon: IconSettings},
+        {label: `Manage`},
+        {link: 'events', label: `Events`, icon: IconCalendar},
+        {link: 'settings', label: `Settings`, icon: IconSettings},
 
-        {label: t`Tools`},
-        {link: 'organizer-homepage-designer', label: t`Homepage Designer`, icon: IconPaint},
+        {label: `Tools`},
+        {link: 'organizer-homepage-designer', label: `Homepage Designer`, icon: IconPaint},
     ];
 
     const handleEmailConfirmationResend = () => {
@@ -85,11 +85,11 @@ const OrganizerLayout = () => {
             userId: me?.id
         }, {
             onSuccess: () => {
-                showSuccess(t`Email confirmation resent successfully`);
+                showSuccess(`Email confirmation resent successfully`);
                 setEmailConfirmationResent(true);
             },
             onError: () => {
-                showError(t`Something went wrong. Please try again.`);
+                showError(`Something went wrong. Please try again.`);
             }
         })
     }
@@ -112,8 +112,8 @@ const OrganizerLayout = () => {
         }
 
         const message = organizer?.status === 'LIVE'
-            ? t`Are you sure you want to make this organizer draft? This will make the organizer page invisible to the public`
-            : t`Are you sure you want to make this organizer public? This will make the organizer page visible to the public`;
+            ? `Are you sure you want to make this organizer draft? This will make the organizer page invisible to the public`
+            : `Are you sure you want to make this organizer public? This will make the organizer page visible to the public`;
 
         confirmationDialog(message, () => {
             statusToggleMutation.mutate({
@@ -121,7 +121,7 @@ const OrganizerLayout = () => {
                 status: organizer?.status === 'LIVE' ? 'DRAFT' : 'LIVE'
             }, {
                 onSuccess: () => {
-                    showSuccess(t`Organizer status updated`);
+                    showSuccess(`Organizer status updated`);
                 },
                 onError: (error: unknown) => {
                     if (
@@ -131,9 +131,9 @@ const OrganizerLayout = () => {
                         typeof (error as { response?: unknown }).response === 'object'
                     ) {
                         const response = (error as { response?: { data?: { message?: string } } }).response;
-                        showError(response?.data?.message || t`Organizer status update failed. Please try again later`);
+                        showError(response?.data?.message || `Organizer status update failed. Please try again later`);
                     } else {
-                        showError(t`Organizer status update failed. Please try again later`);
+                        showError(`Organizer status update failed. Please try again later`);
                     }
                 }
             });
@@ -143,7 +143,7 @@ const OrganizerLayout = () => {
     const breadcrumbItems: BreadcrumbItem[] = [
         {
             link: '/manage/events',
-            content: t`Events`
+            content: `Events`
         },
         {
             link: `/manage/organizer/${organizerId}`,
@@ -155,7 +155,7 @@ const OrganizerLayout = () => {
                     className={classes.createEventBreadcrumb}
                     onClick={() => setShowCreateEventModal(true)}
                 >
-                    <IconCalendarPlus size={16} /> {t`Create Event`}
+                    <IconCalendarPlus size={16} /> {`Create Even`}
                 </span>
             ),
         }
@@ -164,10 +164,10 @@ const OrganizerLayout = () => {
     const callouts: CalloutConfig[] = [
         {
             icon: <IconUsersGroup size={20}/>,
-            heading: t`Invite Your Team`,
-            description: t`Collaborate with your team to create amazing events together.`,
+            heading: `Invite Your Team`,
+            description: `Collaborate with your team to create amazing events together.`,
             buttonIcon: <IconUsersGroup size={16}/>,
-            buttonText: t`Invite Team Members`,
+            buttonText: `Invite Team Members`,
             onClick: () => {
                 openCreateModal();
             },
@@ -178,15 +178,15 @@ const OrganizerLayout = () => {
     if (account && !account?.stripe_connect_setup_complete) {
         callouts.unshift({
             icon: <IconBrandStripe size={20}/>,
-            heading: t`Connect Stripe`,
-            description: t`Connect your Stripe account to accept payments for tickets and products.`,
+            heading: `Connect Stripe`,
+            description: `Connect your Stripe account to accept payments for tickets and products.`,
             storageKey: `stripe-callout-dismissed`,
             customButton:
                 <StripeConnectButton
                     fullWidth
                     variant="white"
                     buttonIcon={<IconCreditCard size={16}/>}
-                    buttonText={t`Connect Stripe`}
+                    buttonText={`Connect Stripe`}
                     className={classes.calloutButton}
                 />
         });
@@ -208,10 +208,10 @@ const OrganizerLayout = () => {
                                 rightSection={<IconChevronRight size={14}/>}
                             >
                                 {organizer?.status === 'DRAFT'
-                                    ? <span>{t`Draft`} <span
-                                        className={classes.statusAction}>{t`- Click to Publish`}</span></span>
-                                    : <span>{t`Live`} <span
-                                        className={classes.statusAction}>{t`- Click to Unpublish`}</span></span>
+                                    ? <span>{`Draf`} <span
+                                        className={classes.statusAction}>{`- Click to Publish`}</span></span>
+                                    : <span>{`Live`} <span
+                                        className={classes.statusAction}>{`- Click to Unpublish`}</span></span>
                                 }
                             </TopBarButton>
                         )}
@@ -227,10 +227,10 @@ const OrganizerLayout = () => {
                                     leftSection={<IconShare size={16}/>}
                                 >
                                     <span className={classes.shareButtonTextDesktop}>
-                                        {t`Share Organizer Page`}
+                                        {`Share Organizer Page`}
                                     </span>
                                     <span className={classes.shareButtonTextMobile}>
-                                        {t`Share`}
+                                        {`Share`}
                                     </span>
                                 </Button>
                             </>
@@ -245,10 +245,10 @@ const OrganizerLayout = () => {
                         variant={'transparent'}
                         className={classes.viewHomepageButton}
                         leftSection={<IconExternalLink size={17}/>}
-                        title={t`View Organizer Homepage`}
+                        title={`View Organizer Homepage`}
                     >
                         <span className={classes.viewHomepageButtonTextDesktop}>
-                            {t`View Organizer Homepage`}
+                            {`View Organizer Homepage`}
                         </span>
                     </Button>
                 )}
@@ -262,7 +262,7 @@ const OrganizerLayout = () => {
                 <ShareModal
                     url={organizerHomepageUrl(organizer)}
                     title={organizer.name}
-                    modalTitle={t`Share Organizer Page`}
+                    modalTitle={`Share Organizer Page`}
                     opened={shareModalOpen}
                     onClose={closeShareModal}
                 />
@@ -277,13 +277,13 @@ const OrganizerLayout = () => {
             <Modal
                 opened={emailVerificationModalOpen}
                 onClose={closeEmailVerificationModal}
-                title={t`Email Verification Required`}
+                title={`Email Verification Required`}
                 size="md"
                 centered
             >
                 <Stack gap="md">
                     <Text size="sm" c="dimmed">
-                        {t`You must verify your email address before you can update the organizer status.`}
+                        {`You must verify your email address before you can update the organizer status.`}
                     </Text>
                     
                     {!emailConfirmationResent ? (
@@ -294,11 +294,11 @@ const OrganizerLayout = () => {
                             }}
                             loading={resendEmailConfirmationMutation.isPending}
                         >
-                            {t`Resend Confirmation Email`}
+                            {`Resend Confirmation Email`}
                         </Button>
                     ) : (
                         <Text size="sm">
-                            {t`Confirmation email sent! Please check your inbox.`}
+                            {`Confirmation email sent! Please check your inbox.`}
                         </Text>
                     )}
                 </Stack>

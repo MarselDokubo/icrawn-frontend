@@ -40,11 +40,11 @@ const Events = () => {
     return (
         <PageBody>
             <PageTitle>
-                {t`Events`}
+                {`Events`}
             </PageTitle>
             <ToolBar searchComponent={() => (
                 <SearchBarWrapper
-                    placeholder={t`Search by event name...`}
+                    placeholder={`Search by event name...`}
                     setSearchParams={setSearchParams}
                     searchParams={searchParams}
                     pagination={pagination}
@@ -59,7 +59,7 @@ const Events = () => {
                         onClick={openCreateModal}
                         pr={12}
                     >
-                        {t`Create Event`}
+                        {`Create Even`}
                     </Button>
                 </>
             </ToolBar>

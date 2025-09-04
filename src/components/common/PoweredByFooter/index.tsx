@@ -24,21 +24,21 @@ export const PoweredByFooter = (props: React.DetailedHTMLProps<React.HTMLAttribu
 
     const footerContent = isHiEvents() ? (
         <>
-            {t`Planning an event?`} {' '}
+            {`Planning an event?`} {' '}
             <a href="https://iCrawn.Events?utm_source=app-powered-by-footer&utm_content=try-hi-events-free"
                target="_blank"
                className={classes.ctaLink}
                title={'Effortlessly manage events and sell tickets online with iCrawn.Events'}>
-                {t`Try iCrawn.Events Free`}
+                {`Try iCrawn.Events Free`}
             </a>
         </>
     ) : (
         <>
-            {t`Powered by`} {' '}
+            {`Powered by`} {' '}
             <a href="https://iCrawn.Events?utm_source=app-powered-by-footer"
                target="_blank"
                title={'Effortlessly manage events and sell tickets online with iCrawn.Events'}>
-                {t`iCrawn.Events`}
+                {`iCrawn.Events`}
             </a> 🚀
         </>
     );

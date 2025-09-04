@@ -70,7 +70,7 @@ export const LocationSettings = () => {
             eventId: eventId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Location`);
+                showSuccess(`Successfully Updated Location`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);
@@ -81,28 +81,28 @@ export const LocationSettings = () => {
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`Location`}
-                description={t`Event location & venue details`}
+                heading={`Location`}
+                description={`Event location & venue details`}
             />
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>
                     <Switch
                         {...form.getInputProps('is_online_event', {type: 'checkbox'})}
-                        label={t`This is an online event`}
+                        label={`This is an online even`}
                     />
 
                     {form.values.is_online_event && (
                         <Editor
                             value={form.values.online_event_connection_details || ''}
                             error={form.errors.online_event_connection_details as string}
-                            label={t`Connection Details`}
+                            label={`Connection Details`}
                             description={(
                                 <>
                                     <p>
-                                        {t`Include connection details for your online event. These details will be shown on the order summary page and attendee ticket page.`}
+                                        {`Include connection details for your online event. These details will be shown on the order summary page and attendee ticket page.`}
                                     </p>
                                     <p>
-                                        {t`These details will only be shown if order is completed successfully. Orders awaiting payment will not show this message.`}
+                                        {`These details will only be shown if order is completed successfully. Orders awaiting payment will not show this message.`}
                                     </p>
                                 </>
                             )}
@@ -113,57 +113,57 @@ export const LocationSettings = () => {
                         <>
                             <TextInput
                                 {...form.getInputProps('location_details.venue_name')}
-                                label={t`Venue Name`}
-                                placeholder={t`Conference Center`}
+                                label={`Venue Name`}
+                                placeholder={`Conference Center`}
                             />
                             <InputGroup>
                                 <TextInput
                                     {...form.getInputProps('location_details.address_line_1')}
-                                    label={t`Address Line 1`}
-                                    placeholder={t`123 Main Street`}
+                                    label={`Address Line 1`}
+                                    placeholder={`123 Main Stree`}
                                 />
                                 <TextInput
                                     {...form.getInputProps('location_details.address_line_2')}
-                                    label={t`Address Line 2`}
-                                    placeholder={t`Suite 100`}
+                                    label={`Address Line 2`}
+                                    placeholder={`Suite 100`}
                                 />
                             </InputGroup>
                             <InputGroup>
                                 <TextInput
                                     {...form.getInputProps('location_details.city')}
-                                    label={t`City`}
-                                    placeholder={t`San Francisco`}
+                                    label={`City`}
+                                    placeholder={`San Francisco`}
                                 />
                                 <TextInput
                                     {...form.getInputProps('location_details.state_or_region')}
-                                    label={t`State or Region`}
-                                    placeholder={t`California`}
+                                    label={`State or Region`}
+                                    placeholder={`California`}
                                 />
                             </InputGroup>
                             <InputGroup>
                                 <TextInput
                                     {...form.getInputProps('location_details.zip_or_postal_code')}
-                                    label={t`Zip or Postal Code`}
-                                    placeholder={t`94103`}
+                                    label={`Zip or Postal Code`}
+                                    placeholder={`94103`}
                                 />
                                 <Select searchable
                                         data={countries}
                                         {...form.getInputProps('location_details.country')}
-                                        label={t`Country`}
-                                        placeholder={t`United States`}
+                                        label={`Country`}
+                                        placeholder={`United States`}
                                 />
                             </InputGroup>
                             <TextInput
                                 {...form.getInputProps('maps_url')}
-                                description={t`If blank, the address will be used to generate a Google Mapa link`}
-                                label={t`Custom Maps URL`}
-                                placeholder={t`https://example-maps-service.com/...`}
+                                description={`If blank, the address will be used to generate a Google Mapa link`}
+                                label={`Custom Maps URL`}
+                                placeholder={`https://example-maps-service.com/...`}
                             />
                         </>
                     )}
 
                     <Button loading={updateMutation.isPending} type={'submit'}>
-                        {t`Save`}
+                        {`Save`}
                     </Button>
                 </fieldset>
             </form>

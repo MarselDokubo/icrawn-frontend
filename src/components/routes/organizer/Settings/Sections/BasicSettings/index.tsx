@@ -37,7 +37,7 @@ const Settings = () => {
             organizerData: values,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Organizer`);
+                showSuccess(`Successfully Updated Organizer`);
             },
             onError: (error: any) => {
                 useFormErrorResponseHandler()(form, error);
@@ -60,8 +60,8 @@ const Settings = () => {
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`Basic Information`}
-                description={t`General information about your organizer`}
+                heading={`Basic Information`}
+                description={`General information about your organizer`}
             />
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <fieldset disabled={organizerMutation.isPending}>
@@ -69,24 +69,24 @@ const Settings = () => {
                         <TextInput
                             {...form.getInputProps('name')}
                             required
-                            label={t`Organizer Name`}
-                            description={t`This is the name of your organizer that will be displayed to your users.`}
-                            placeholder={t`Awesome Organizer Ltd.`}
+                            label={`Organizer Name`}
+                            description={`This is the name of your organizer that will be displayed to your users.`}
+                            placeholder={`Awesome Organizer Ltd.`}
                         />
                         <TextInput
                             {...form.getInputProps('email')}
-                            label={t`Email`}
+                            label={`Email`}
                             required
-                            description={t`This will be used for notifications and communication with your users.`}
-                            placeholder={t`hello@awesome-events.com`}
+                            description={`This will be used for notifications and communication with your users.`}
+                            placeholder={`hello@awesome-events.com`}
                         />
                     </InputGroup>
 
                     <Editor
-                        label={t`Description`}
+                        label={`Description`}
                         value={form.values.description || ''}
                         editorType={'simple'}
-                        description={t`A short description of your organizer that will be displayed to your users.`}
+                        description={`A short description of your organizer that will be displayed to your users.`}
                         onChange={(value) => form.setFieldValue('description', value)}
                         maxLength={1000}
                     />
@@ -94,14 +94,14 @@ const Settings = () => {
                     <InputGroup>
                         <TextInput
                             {...form.getInputProps('phone')}
-                            label={t`Phone`}
-                            placeholder={t`+1 234 567 890`}
+                            label={`Phone`}
+                            placeholder={`+1 234 567 890`}
                         />
                         <TextInput
                             {...form.getInputProps('website')}
-                            label={t`Website`}
+                            label={`Website`}
                             type={'url'}
-                            placeholder={t`https://awesome-events.com`}
+                            placeholder={`https://awesome-events.com`}
                         />
                     </InputGroup>
                     <InputGroup>
@@ -113,23 +113,23 @@ const Settings = () => {
                                 value: value,
                                 label: key,
                             }))}
-                            label={t`Currency`}
-                            placeholder={t`EUR`}
-                            description={t`The default currency for your events.`}
+                            label={`Currency`}
+                            placeholder={`EUR`}
+                            description={`The default currency for your events.`}
                         />
                         <Select
                             {...form.getInputProps('timezone')}
                             searchable
                             required
                             data={timezones}
-                            label={t`Timezone`}
-                            placeholder={t`UTC`}
-                            description={t`The default timezone for your events.`}
+                            label={`Timezone`}
+                            placeholder={`UTC`}
+                            description={`The default timezone for your events.`}
                         />
                     </InputGroup>
 
                     <Button loading={organizerMutation.isPending} type={'submit'}>
-                        {t`Save`}
+                        {`Save`}
                     </Button>
                 </fieldset>
             </form>

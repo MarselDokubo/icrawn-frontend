@@ -28,10 +28,10 @@ export const PromoCodes = () => {
     return (
         <>
             <PageBody>
-                <PageTitle>{t`Promo Codes`}</PageTitle>
+                <PageTitle>{`Promo Codes`}</PageTitle>
                 <ToolBar searchComponent={() => (
                     <SearchBarWrapper
-                        placeholder={t`Search by name...`}
+                        placeholder={`Search by name...`}
                         setSearchParams={setSearchParams}
                         searchParams={searchParams}
                         pagination={pagination}

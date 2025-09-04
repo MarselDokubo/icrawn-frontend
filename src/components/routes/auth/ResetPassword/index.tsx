@@ -26,7 +26,7 @@ export const ResetPassword = () => {
 
     useEffect(() => {
         if (verifyQuery.isError) {
-            showError(t`This reset password link is invalid or expired.`);
+            showError(`This reset password link is invalid or expired.`);
             navigate('/auth/login');
         }
     }, [verifyQuery.isError]);
@@ -43,7 +43,7 @@ export const ResetPassword = () => {
             errorHandler(form, error);
         },
         onSuccess: () => {
-            showSuccess(t`Password reset successfully. Please login with your new password.`);
+            showSuccess(`Password reset successfully. Please login with your new password.`);
             navigate('/auth/login');
         },
     });
@@ -51,19 +51,19 @@ export const ResetPassword = () => {
     return (
         <>
             <header className={classes.header}>
-                <h2>{t`Reset Password`}</h2>
-                <p>{t`Please enter your new password`}</p>
+                <h2>{`Reset Password`}</h2>
+                <p>{`Please enter your new password`}</p>
             </header>
             <Card>
                 <form onSubmit={form.onSubmit(handleSubmit)}>
-                    <PasswordInput {...form.getInputProps('password')} label={t`New Password`} required/>
-                    <PasswordInput {...form.getInputProps('password_confirmation')} label={t`Confirm Password`} required/>
+                    <PasswordInput {...form.getInputProps('password')} label={`New Password`} required/>
+                    <PasswordInput {...form.getInputProps('password_confirmation')} label={`Confirm Password`} required/>
                     <Button color={'var(--hi-pink)'} type="submit" fullWidth disabled={mutate.isPending}>
-                        {mutate.isPending ? t`Working...` : t`Reset password`}
+                        {mutate.isPending ? `Working...` : `Reset password`}
                     </Button>
                 </form>
                 <footer>
-                    <NavLink to={'/auth/login'}>{t`Back to login`}</NavLink>
+                    <NavLink to={'/auth/login'}>{`Back to login`}</NavLink>
                 </footer>
             </Card>
         </>

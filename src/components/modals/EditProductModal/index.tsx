@@ -86,7 +86,7 @@ export const EditProductModal = ({onClose, productId}: GenericModalProps & { pro
             productId: productId
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully updated product ` + product.title);
+                showSuccess(`Successfully updated product ` + product.title);
                 form.reset();
                 onClose();
             },
@@ -97,7 +97,7 @@ export const EditProductModal = ({onClose, productId}: GenericModalProps & { pro
     return (
         <Modal
             onClose={onClose}
-            heading={t`Edit Product`}
+            heading={`Edit Produc`}
             opened
         >
             <form onSubmit={form.onSubmit(handleEditProduct)}>
@@ -105,7 +105,7 @@ export const EditProductModal = ({onClose, productId}: GenericModalProps & { pro
                 <LoadingMask/>
 
                 <Button type="submit" fullWidth mt="xl" disabled={mutation.isPending}>
-                    {mutation.isPending ? t`Working...` : t`Edit Product`}
+                    {mutation.isPending ? `Working...` : `Edit Produc`}
                 </Button>
             </form>
         </Modal>

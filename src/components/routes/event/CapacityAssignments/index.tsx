@@ -29,12 +29,12 @@ const CapacityAssignments = () => {
     return (
         <PageBody>
             <PageTitle>
-                {t`Capacity Management`}
+                {`Capacity Managemen`}
             </PageTitle>
 
             <ToolBar searchComponent={() => (
                 <SearchBarWrapper
-                    placeholder={t`Search capacity assignments...`}
+                    placeholder={`Search capacity assignments...`}
                     setSearchParams={setSearchParams}
                     searchParams={searchParams}
                     pagination={pagination}
@@ -43,7 +43,7 @@ const CapacityAssignments = () => {
                 <Button
                     leftSection={<IconPlus/>}
                     color={'green'}
-                    onClick={() => openCreateModal()}>{t`Create Capacity Assignment`}
+                    onClick={() => openCreateModal()}>{`Create Capacity Assignmen`}
                 </Button>
             </ToolBar>
 

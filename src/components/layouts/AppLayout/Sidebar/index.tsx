@@ -22,7 +22,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                                                     navItems,
                                                     sidebarFooter,
                                                 }) => {
-    const isMobile = useMediaQuery(t`(max-width: 768px)`);
+    const isMobile = useMediaQuery(`(max-width: 768px)`);
     const renderLinks = () => {
         return navItems.map((item) => {
 
@@ -64,7 +64,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     {item.badge !== undefined &&
                         <Badge size="xs" radius="xl" className={classes.navBadge}>{item.badge}</Badge>}
                     {item.comingSoon &&
-                        <Badge ml={'4px'} size={'xs'} className={classes.comingSoonBadge}>{t`Coming Soon`}</Badge>}
+                        <Badge ml={'4px'} size={'xs'} className={classes.comingSoonBadge}>{`Coming Soon`}</Badge>}
                 </NavLink>
             );
         });
@@ -75,12 +75,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div className={classes.logo}>
                 <NavLink to={`/manage/events`}>
                     {(() => {
-                        const appName = getConfig("VITE_APP_NAME", t`iCrawn.Events`) ?? t`iCrawn.Events`;
+                        const appName = getConfig("VITE_APP_NAME", `iCrawn.Events`) ?? `iCrawn.Events`;
                         return (
                             <img
                                 style={{maxWidth: '160px', margin: "10px auto"}}
                                 src={getConfig("VITE_APP_LOGO_LIGHT", "/icrawn_logo.jpg")}
-                                alt={t`${appName} logo`}
+                                alt={`${appName} logo`}
                             />
                         );
                     })()}
@@ -99,7 +99,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     className={classes.sidebarClose}
                     onClick={() => setSidebarOpen(!sidebarOpen)}>
                     <IconChevronLeft size={20}/>
-                    <VisuallyHidden>{t`Close sidebar`}</VisuallyHidden>
+                    <VisuallyHidden>{`Close sidebar`}</VisuallyHidden>
                 </UnstyledButton>
             )}
         </div>

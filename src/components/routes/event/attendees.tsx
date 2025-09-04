@@ -36,17 +36,17 @@ const Attendees = () => {
             },
             {
                 loading: {
-                    title: t`Exporting Attendees`,
-                    message: t`Please wait while we prepare your attendees for export...`
+                    title: `Exporting Attendees`,
+                    message: `Please wait while we prepare your attendees for export...`
                 },
                 success: {
-                    title: t`Attendees Exported`,
-                    message: t`Your attendees have been exported successfully.`,
+                    title: `Attendees Exported`,
+                    message: `Your attendees have been exported successfully.`,
                     onRun: () => setDownloadPending(false)
                 },
                 error: {
-                    title: t`Failed to export attendees`,
-                    message: t`Please try again.`,
+                    title: `Failed to export attendees`,
+                    message: `Please try again.`,
                     onRun: () => setDownloadPending(false)
                 }
             });
@@ -56,19 +56,19 @@ const Attendees = () => {
         <>
             <PageBody>
                 <PageTitle>
-                    {t`Attendees`}
+                    {`Attendees`}
                 </PageTitle>
 
                 <ToolBar searchComponent={() => (
                     <SearchBarWrapper
-                        placeholder={t`Search by attendee name, email or order #...`}
+                        placeholder={`Search by attendee name, email or order #...`}
                         setSearchParams={setSearchParams}
                         searchParams={searchParams}
                         pagination={pagination}
                     />
                 )}>
                     <Button color={'green'} size={'sm'} onClick={openCreateModal} rightSection={<IconPlus/>}>
-                        {t`Create`}
+                        {`Create`}
                     </Button>
 
                     <Button color={'green'}
@@ -77,7 +77,7 @@ const Attendees = () => {
                             onClick={() => handleExport(eventId)}
                             rightSection={<IconDownload/>}
                     >
-                        {t`Export`}
+                        {`Expor`}
                     </Button>
                 </ToolBar>
 

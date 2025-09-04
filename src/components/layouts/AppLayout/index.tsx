@@ -25,7 +25,7 @@ interface SidebarToggleButtonProps {
 
 const SidebarToggleButton: React.FC<SidebarToggleButtonProps> = ({open, onClick}) => {
     const Icon = IconLayoutSidebar;
-    const label = t`Open sidebar`;
+    const label = `Open sidebar`;
 
     return (
         <UnstyledButton

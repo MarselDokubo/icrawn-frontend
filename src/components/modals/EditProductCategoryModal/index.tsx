@@ -50,7 +50,7 @@ export const EditProductCategoryModal = ({onClose, productCategoryId}: GenericMo
         }, {
             onError: (error) => errorHandler(form, error),
             onSuccess: () => {
-                showSuccess(t`Product category updated successfully.`);
+                showSuccess(`Product category updated successfully.`);
                 onClose();
             },
         });
@@ -59,7 +59,7 @@ export const EditProductCategoryModal = ({onClose, productCategoryId}: GenericMo
     return (
         <Modal
             onClose={onClose}
-            heading={t`Edit Product Category`}
+            heading={`Edit Product Category`}
             opened
         >
             <form onSubmit={form.onSubmit(handleEditProduct)}>
@@ -67,7 +67,7 @@ export const EditProductCategoryModal = ({onClose, productCategoryId}: GenericMo
                 <LoadingMask/>
 
                 <Button type="submit" fullWidth mt="xl" disabled={mutation.isPending}>
-                    {mutation.isPending ? t`Working...` : t`Edit Product Category`}
+                    {mutation.isPending ? `Working...` : `Edit Product Category`}
                 </Button>
             </form>
         </Modal>

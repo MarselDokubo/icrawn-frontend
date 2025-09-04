@@ -56,7 +56,7 @@ export const ManageProfile = () => {
         }, {
             onSuccess: () => {
                 form.reset();
-                showSuccess(t`Profile updated successfully`);
+                showSuccess(`Profile updated successfully`);
                 document.cookie = `locale=${formValues.locale};path=/;max-age=31536000`;
 
                 if (form.isDirty('locale')) {
@@ -74,10 +74,10 @@ export const ManageProfile = () => {
             userId: me?.id
         }, {
             onSuccess: () => {
-                showSuccess(t`Email change cancelled successfully`)
+                showSuccess(`Email change cancelled successfully`)
             },
             onError: () => {
-                showError(t`Something went wrong. Please try again.`)
+                showError(`Something went wrong. Please try again.`)
             }
         })
     }
@@ -87,43 +87,43 @@ export const ManageProfile = () => {
             userId: me?.id
         }, {
             onSuccess: () => {
-                showSuccess(t`Email confirmation resent successfully`);
+                showSuccess(`Email confirmation resent successfully`);
                 setEmailConfirmationResent(true);
             },
             onError: () => {
-                showError(t`Something went wrong. Please try again.`);
+                showError(`Something went wrong. Please try again.`);
             }
         })
     }
 
     return (
         <div className={classes.container}>
-            <h1>{t`Manage Profile`}</h1>
+            <h1>{`Manage Profile`}</h1>
             <Card className={classes.tabsCard}>
                 <Tabs defaultValue="profile">
                     <Tabs.List grow>
                         <Tabs.Tab value="profile" leftSection={<IconUser/>}>
-                            {t`Profile`}
+                            {`Profile`}
                         </Tabs.Tab>
                         <Tabs.Tab value="password" leftSection={<IconPassword/>}>
-                            {t`Password`}
+                            {`Password`}
                         </Tabs.Tab>
                     </Tabs.List>
                     <Tabs.Panel value="profile">
                         <div className={classes.tabWrapper}>
                             {me?.has_pending_email_change && (
                                 <Alert className={classes.emailChangeAlert} variant="light" color="blue"
-                                       title={t`Email change pending`} icon={<IconInfoCircle/>}>
+                                       title={`Email change pending`} icon={<IconInfoCircle/>}>
                                     <p>
                                         <Trans>Your email request change to <b>{me?.pending_email}</b> is pending.
                                             Please check your email to confirm</Trans>
                                     </p>
                                     <p>
-                                        {t`If you did not request this change, please immediately change your password.`}
+                                        {`If you did not request this change, please immediately change your password.`}
                                     </p>
                                     <p>
                                         <Button onClick={handleCancelEmailChange} size={'xs'}>
-                                            {t`Cancel email change`}
+                                            {`Cancel email change`}
                                         </Button>
                                     </p>
                                 </Alert>
@@ -132,24 +132,24 @@ export const ManageProfile = () => {
                                 onSubmit={profileForm.onSubmit((values) => handleProfileFormSubmit(values, profileForm))}>
                                 <fieldset disabled={isFetching}>
                                     <TextInput required {...profileForm.getInputProps('first_name')}
-                                               label={t`First Name`}/>
+                                               label={`First Name`}/>
                                     <TextInput required {...profileForm.getInputProps('last_name')}
-                                               label={t`Last Name`}/>
-                                    <TextInput required {...profileForm.getInputProps('email')} label={t`Email`}/>
+                                               label={`Last Name`}/>
+                                    <TextInput required {...profileForm.getInputProps('email')} label={`Email`}/>
                                     {(me && !me.is_email_verified && !emailConfirmationResent) && (
                                         <Alert variant="light" mb={10}
-                                               title={t`Email not verified`} icon={<IconInfoCircle/>}>
-                                            <p>{t`Please verify your email address to access all features`}</p>
+                                               title={`Email not verified`} icon={<IconInfoCircle/>}>
+                                            <p>{`Please verify your email address to access all features`}</p>
                                             <Button size={'xs'} onClick={handleEmailConfirmationResend}>
-                                                {resendEmailConfirmationMutation.isPending ? t`Resending...` : t`Resend email confirmation`}
+                                                {resendEmailConfirmationMutation.isPending ? `Resending...` : `Resend email confirmation`}
                                             </Button>
                                         </Alert>
                                     )}
 
                                     {emailConfirmationResent && (
                                         <Alert variant="light" mb={10} color="green"
-                                               title={t`Email confirmation resent`} icon={<IconInfoCircle/>}>
-                                            <p>{t`Please check your email to confirm your email address`}</p>
+                                               title={`Email confirmation resen`} icon={<IconInfoCircle/>}>
+                                            <p>{`Please check your email to confirm your email address`}</p>
                                         </Alert>
                                     )}
 
@@ -158,8 +158,8 @@ export const ManageProfile = () => {
                                         searchable
                                         data={timezones}
                                         {...profileForm.getInputProps('timezone')}
-                                        label={t`Timezone`}
-                                        placeholder={t`UTC`}
+                                        label={`Timezone`}
+                                        placeholder={`UTC`}
                                     />
 
                                     <Select
@@ -169,12 +169,12 @@ export const ManageProfile = () => {
                                             label: localeToFlagEmojiMap[locale as SupportedLocales] + ' ' + getLocaleName(locale as SupportedLocales),
                                         }))}
                                         {...profileForm.getInputProps('locale')}
-                                        label={t`Language`}
-                                        placeholder={t`English`}
+                                        label={`Language`}
+                                        placeholder={`English`}
                                     />
 
                                     <Button fullWidth loading={mutation.isPending}
-                                            type={'submit'}>{t`Update profile`}</Button>
+                                            type={'submit'}>{`Update profile`}</Button>
                                 </fieldset>
                             </form>
                         </div>
@@ -188,17 +188,17 @@ export const ManageProfile = () => {
                                     <PasswordInput
                                         required
                                         {...passwordForm.getInputProps('current_password')}
-                                        label={t`Current Password`}/>
+                                        label={`Current Password`}/>
                                     <PasswordInput
                                         required
                                         {...passwordForm.getInputProps('password')}
-                                        label={t`New Password`}/>
+                                        label={`New Password`}/>
                                     <PasswordInput
                                         required
                                         {...passwordForm.getInputProps('password_confirmation')}
-                                        label={t`Confirm New Password`}/>
+                                        label={`Confirm New Password`}/>
                                     <Button fullWidth loading={mutation.isPending}
-                                            type={'submit'}>{t`Change password`}</Button>
+                                            type={'submit'}>{`Change password`}</Button>
                                 </fieldset>
                             </form>
                         </div>

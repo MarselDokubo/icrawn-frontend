@@ -4,9 +4,9 @@ import { t } from '@lingui/macro';
 
 const AboutPage: React.FC = () => (
   <Container size="md" py={40}>
-    <Title order={1}>{t`About Us`}</Title>
+    <Title order={1}>{`About Us`}</Title>
     <Text mt="md" size="lg">
-        {t`We are dedicated to bringing you the best events and experiences. Learn more about our mission and team here.`}
+        {`We are dedicated to bringing you the best events and experiences. Learn more about our mission and team here.`}
     </Text>
   </Container>
 );

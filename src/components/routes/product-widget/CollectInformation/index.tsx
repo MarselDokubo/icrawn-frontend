@@ -207,7 +207,7 @@ export const CollectInformation = () => {
 
     useEffect(() => {
         if ((order && event) && order?.is_expired) {
-            showInfo(t`This order has expired. Please start again.`);
+            showInfo(`This order has expired. Please start again.`);
             navigate(`/event/${eventId}/${event.slug}`);
         }
     }, [order, event]);
@@ -218,25 +218,25 @@ export const CollectInformation = () => {
 
     if (order?.payment_status === 'AWAITING_PAYMENT') {
         return <HomepageInfoMessage
-            message={t`This order is awaiting payment`}
+            message={`This order is awaiting paymen`}
             link={eventCheckoutPath(eventId, orderShortId, 'payment')}
-            linkText={t`Complete payment`}
+            linkText={`Complete paymen`}
         />;
     }
 
     if (order?.status === 'COMPLETED') {
         return <HomepageInfoMessage
-            message={t`This order is complete`}
+            message={`This order is complete`}
             link={eventCheckoutPath(eventId, orderShortId, 'summary')}
-            linkText={t`View order details`}
+            linkText={`View order details`}
         />;
     }
 
     if (order?.status === 'CANCELLED') {
         return <HomepageInfoMessage
-            message={t`This order has been cancelled`}
+            message={`This order has been cancelled`}
             link={eventHomepagePath(event as Event)}
-            linkText={t`Go to event homepage`}
+            linkText={`Go to event homepage`}
         />;
     }
 
@@ -244,9 +244,9 @@ export const CollectInformation = () => {
         return (
             <>
                 <HomepageInfoMessage
-                    message={t`Sorry, this order no longer exists.`}
+                    message={`Sorry, this order no longer exists.`}
                     link={eventHomepagePath(event as Event)}
-                    linkText={t`Back to event page`}
+                    linkText={`Back to event page`}
                 />
             </>
         );
@@ -256,9 +256,9 @@ export const CollectInformation = () => {
         return (
             <>
                 <HomepageInfoMessage
-                    message={t`Sorry, something went wrong loading this page.`}
+                    message={`Sorry, something went wrong loading this page.`}
                     link={eventHomepagePath(event as Event)}
-                    linkText={t`Back to event page`}
+                    linkText={`Back to event page`}
                 />
             </>
         );
@@ -273,21 +273,21 @@ export const CollectInformation = () => {
         <form onSubmit={form.onSubmit(handleSubmit)}>
             <CheckoutContent>
                 <h2>
-                    {t`Your Details`}
+                    {`Your Details`}
                 </h2>
 
                 <Card>
                     <InputGroup>
                         <TextInput
                             withAsterisk
-                            label={t`First Name`}
-                            placeholder={t`First name`}
+                            label={`First Name`}
+                            placeholder={`First name`}
                             {...form.getInputProps("order.first_name")}
                         />
                         <TextInput
                             withAsterisk
-                            label={t`Last Name`}
-                            placeholder={t`Last Name`}
+                            label={`Last Name`}
+                            placeholder={`Last Name`}
                             {...form.getInputProps("order.last_name")}
                         />
                     </InputGroup>
@@ -295,34 +295,34 @@ export const CollectInformation = () => {
                     <TextInput
                         withAsterisk
                         type={"email"}
-                        label={t`Email Address`}
-                        placeholder={t`Email Address`}
+                        label={`Email Address`}
+                        placeholder={`Email Address`}
                         {...form.getInputProps("order.email")}
                     />
 
                     {orderRequiresAttendeeDetails && (
                         <Button p={0} ml={0} size={'sm'} variant={'transparent'} leftSection={<IconCopy size={14}/>}
                                 onClick={copyDetailsToAllAttendees}>
-                            {t`Copy details to all attendees`}
+                            {`Copy details to all attendees`}
                         </Button>
                     )}
 
                     {requireBillingAddress && (
                         <>
                             <h3 style={{marginBottom: 5}}>
-                                {t`Billing Address`}
+                                {`Billing Address`}
                             </h3>
 
                             <InputGroup>
                                 <TextInput
                                     withAsterisk
-                                    label={t`Address Line 1`}
-                                    placeholder={t`Address Line 1`}
+                                    label={`Address Line 1`}
+                                    placeholder={`Address Line 1`}
                                     {...form.getInputProps("order.address.address_line_1")}
                                 />
                                 <TextInput
-                                    label={t`Address Line 2`}
-                                    placeholder={t`Address Line 2`}
+                                    label={`Address Line 2`}
+                                    placeholder={`Address Line 2`}
                                     {...form.getInputProps("order.address.address_line_2")}
                                 />
                             </InputGroup>
@@ -330,14 +330,14 @@ export const CollectInformation = () => {
                             <InputGroup>
                                 <TextInput
                                     withAsterisk
-                                    label={t`City`}
-                                    placeholder={t`City`}
+                                    label={`City`}
+                                    placeholder={`City`}
                                     {...form.getInputProps("order.address.city")}
                                 />
                                 <TextInput
                                     withAsterisk
-                                    label={t`State or Region`}
-                                    placeholder={t`State or Region`}
+                                    label={`State or Region`}
+                                    placeholder={`State or Region`}
                                     {...form.getInputProps("order.address.state_or_region")}
                                 />
                             </InputGroup>
@@ -345,13 +345,13 @@ export const CollectInformation = () => {
                             <InputGroup>
                                 {/* Postal Code and Country */}
                                 <TextInput
-                                    label={t`ZIP / Postal Code`}
-                                    placeholder={t`ZIP or Postal Code`}
+                                    label={`ZIP / Postal Code`}
+                                    placeholder={`ZIP or Postal Code`}
                                     {...form.getInputProps("order.address.zip_or_postal_code")}
                                 />
                                 <NativeSelect
                                     withAsterisk
-                                    label={t`Country`}
+                                    label={`Country`}
                                     data={countries}
                                     {...form.getInputProps("order.address.country")}
                                 />
@@ -383,7 +383,7 @@ export const CollectInformation = () => {
                                     <>
                                         <Card key={`${orderItem.id} ${index}`}>
                                             <h4 style={{marginTop: 0}}>
-                                                {product.product_type === 'TICKET' ? t`Attendee` : t`Item`} {index + 1} {t`Details`}
+                                                {product.product_type === 'TICKET' ? `Attendee` : `Item`} {index + 1} {`Details`}
                                             </h4>
 
                                             {productRequiresDetails && (
@@ -391,22 +391,22 @@ export const CollectInformation = () => {
                                                     <InputGroup>
                                                         <TextInput
                                                             withAsterisk
-                                                            label={t`First Name`}
-                                                            placeholder={t`First name`}
+                                                            label={`First Name`}
+                                                            placeholder={`First name`}
                                                             {...form.getInputProps(`products.${productIndex}.first_name`)}
                                                         />
                                                         <TextInput
                                                             withAsterisk
-                                                            label={t`Last Name`}
-                                                            placeholder={t`Last Name`}
+                                                            label={`Last Name`}
+                                                            placeholder={`Last Name`}
                                                             {...form.getInputProps(`products.${productIndex}.last_name`)}
                                                         />
                                                     </InputGroup>
 
                                                     <TextInput
                                                         withAsterisk
-                                                        label={t`Email Address`}
-                                                        placeholder={t`Email Address`}
+                                                        label={`Email Address`}
+                                                        placeholder={`Email Address`}
                                                         {...form.getInputProps(`products.${productIndex}.email`)}
                                                     />
                                                 </>
@@ -441,7 +441,7 @@ export const CollectInformation = () => {
                 buttonContent={order?.is_payment_required ? (
                     <Group gap={'10px'}>
                         <div style={{fontWeight: "bold"}}>
-                            {t`Continue`}
+                            {`Continue`}
                         </div>
                         <div style={{fontSize: 14}}>
                             {formatCurrency(order.total_gross, order.currency)}
@@ -450,7 +450,7 @@ export const CollectInformation = () => {
                             {order.currency}
                         </div>
                     </Group>
-                ) : t`Complete Order`}
+                ) : `Complete Order`}
                 event={event as Event}
                 order={order as Order}
             />

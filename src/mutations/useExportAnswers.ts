@@ -12,9 +12,9 @@ export const useExportAnswers = (eventId: IdParam) => {
     const startExportMutation = useMutation({
         mutationFn: async () => {
             const {job_uuid} = await questionClient.exportAnswers(eventId);
-            if (!job_uuid) throw new Error(t`Failed to start export job`);
+            if (!job_uuid) throw new Error(`Failed to start export job`);
             setJobUuid(job_uuid);
-            showSuccess(t`Export started. Preparing file...`);
+            showSuccess(`Export started. Preparing file...`);
             return job_uuid;
         },
     });
@@ -30,19 +30,19 @@ export const useExportAnswers = (eventId: IdParam) => {
                 const data = await questionClient.checkExportStatus(eventId, jobUuid);
 
                 if (data.status === "FINISHED" && data.download_url) {
-                    showSuccess(t`Exporting complete. Downloading file...`);
+                    showSuccess(`Exporting complete. Downloading file...`);
                     downloadFile(data.download_url as string, data.download_url.split("/").pop() as string);
                     setJobUuid(null);
                 }
 
                 if (data.status === "FAILED" || data.status === "NOT_FOUND") {
-                    showError(t`Export failed. Please try again.`);
+                    showError(`Export failed. Please try again.`);
                     setJobUuid(null);
                 }
 
                 return data;
             } catch (error) {
-                showError(t`An error occurred while checking export status.`);
+                showError(`An error occurred while checking export status.`);
                 setJobUuid(null);
                 return null;
             }

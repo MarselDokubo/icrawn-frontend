@@ -38,7 +38,7 @@ const FeePlanDisplay = ({configuration}: FeePlanDisplayProps) => {
 
     return (
         <div className={paymentClasses.stripeInfo}>
-            <Title mb={10} order={3}>{t`Platform Fees`}</Title>
+            <Title mb={10} order={3}>{`Platform Fees`}</Title>
 
             <Text size="sm" c="dimmed" mb="lg">
                 {getConfig("VITE_APP_NAME", "iCrawn.Events")} charges platform fees to maintain and improve our services. These fees are automatically deducted from each transaction.
@@ -51,7 +51,7 @@ const FeePlanDisplay = ({configuration}: FeePlanDisplayProps) => {
                         <Grid.Col span={{base: 12, sm: 6}}>
                             <Group gap="xs" wrap={'nowrap'}>
                                 <Text size="sm">
-                                    {t`Transaction Fee:`}{' '}
+                                    {`Transaction Fee:`}{' '}
                                     <Text span fw={600}>
                                         {formatPercentage(configuration.application_fees.percentage)}
                                     </Text>
@@ -63,7 +63,7 @@ const FeePlanDisplay = ({configuration}: FeePlanDisplayProps) => {
                         <Grid.Col span={{base: 12, sm: 6}}>
                             <Group gap="xs" wrap={'nowrap'}>
                                 <Text size="sm">
-                                    {t`Fixed Fee:`}{' '}
+                                    {`Fixed Fee:`}{' '}
                                     <Text span fw={600}>
                                         {formatCurrency(configuration.application_fees.fixed)}
                                     </Text>
@@ -78,7 +78,7 @@ const FeePlanDisplay = ({configuration}: FeePlanDisplayProps) => {
                 <Group gap="xs" align="center" wrap={'nowrap'}>
                     <IconAlertCircle size={14}/>
                     <Text
-                        span>{t`Fees are subject to change. You will be notified of any changes to your fee structure.`}</Text>
+                        span>{`Fees are subject to change. You will be notified of any changes to your fee structure.`}</Text>
                 </Group>
             </Text>
         </div>
@@ -108,7 +108,7 @@ const ConnectStatus = ({account}: { account: Account }) => {
     useEffect(() => {
         if (fetchStripeDetails && !stripeDetailsQuery.isLoading) {
             setFetchStripeDetails(false);
-            showSuccess(t`Redirecting to Stripe...`);
+            showSuccess(`Redirecting to Stripe...`);
             window.location.href = String(stripeDetails?.connect_url);
         }
 
@@ -123,7 +123,7 @@ const ConnectStatus = ({account}: { account: Account }) => {
                             <ThemeIcon size="lg" radius="md" variant="light">
                                 <IconAlertCircle size={20}/>
                             </ThemeIcon>
-                            <Title order={2}>{t`Access Denied`}</Title>
+                            <Title order={2}>{`Access Denied`}</Title>
                         </Group>
                         <Text size="md">
                             {error?.response?.data?.message}
@@ -136,7 +136,7 @@ const ConnectStatus = ({account}: { account: Account }) => {
 
     return (
         <div className={paymentClasses.stripeInfo}>
-            <Title mb={10} order={3}>{t`Payment Processing`}</Title>
+            <Title mb={10} order={3}>{`Payment Processing`}</Title>
 
             {stripeDetails?.is_connect_setup_complete ? (
                 <>
@@ -146,12 +146,12 @@ const ConnectStatus = ({account}: { account: Account }) => {
                         </ThemeIcon>
                         <Text size="sm" fw={500}>
                             <b>
-                                {t`Connected to Stripe`}
+                                {`Connected to Stripe`}
                             </b>
                         </Text>
                     </Group>
                     <Text size="sm" c="dimmed" mb="lg">
-                        {t`Your Stripe account is connected and ready to process payments.`}
+                        {`Your Stripe account is connected and ready to process payments.`}
                     </Text>
                     <Group gap="xs">
                         <Anchor
@@ -160,7 +160,7 @@ const ConnectStatus = ({account}: { account: Account }) => {
                             size="sm"
                         >
                             <Group gap="xs" wrap={'nowrap'}>
-                                <Text span>{t`Go to Stripe Dashboard`}</Text>
+                                <Text span>{`Go to Stripe Dashboard`}</Text>
                                 <IconExternalLink size={14}/>
                             </Group>
                         </Anchor>
@@ -171,7 +171,7 @@ const ConnectStatus = ({account}: { account: Account }) => {
                             size="sm"
                         >
                             <Group gap="xs">
-                                <Text span>{t`Connect Documentation`}</Text>
+                                <Text span>{`Connect Documentation`}</Text>
                                 <IconExternalLink size={14}/>
                             </Group>
                         </Anchor>
@@ -180,7 +180,7 @@ const ConnectStatus = ({account}: { account: Account }) => {
             ) : (
                 <>
                     <Text size="sm" c="dimmed" mb="lg">
-                        {t`To receive credit card payments, you need to connect your Stripe account. Stripe is our payment processing partner that ensures secure transactions and timely payouts.`}
+                        {`To receive credit card payments, you need to connect your Stripe account. Stripe is our payment processing partner that ensures secure transactions and timely payouts.`}
                     </Text>
                     <Group gap="md">
                         <Button
@@ -193,14 +193,14 @@ const ConnectStatus = ({account}: { account: Account }) => {
                                     return;
                                 } else {
                                     if (typeof window !== 'undefined') {
-                                        showSuccess(t`Redirecting to Stripe...`);
+                                        showSuccess(`Redirecting to Stripe...`);
                                         window.location.href = String(stripeDetails?.connect_url)
                                     }
                                 }
                             }}
                         >
-                            {(!isReturningFromStripe && !account?.stripe_account_id) && t`Connect with Stripe`}
-                            {(isReturningFromStripe || account?.stripe_account_id) && t`Complete Stripe Setup`}
+                            {(!isReturningFromStripe && !account?.stripe_account_id) && `Connect with Stripe`}
+                            {(isReturningFromStripe || account?.stripe_account_id) && `Complete Stripe Setup`}
                         </Button>
                         <Group gap="xs">
                             <Anchor
@@ -209,7 +209,7 @@ const ConnectStatus = ({account}: { account: Account }) => {
                                 size="sm"
                             >
                                 <Group gap="xs">
-                                    <Text span>{t`About Stripe Connect`}</Text>
+                                    <Text span>{`About Stripe Connec`}</Text>
                                     <IconExternalLink size={14}/>
                                 </Group>
                             </Anchor>
@@ -220,7 +220,7 @@ const ConnectStatus = ({account}: { account: Account }) => {
                                 size="sm"
                             >
                                 <Group gap="xs">
-                                    <Text span>{t`Documentation`}</Text>
+                                    <Text span>{`Documentation`}</Text>
                                     <IconExternalLink size={14}/>
                                 </Group>
                             </Anchor>
@@ -238,8 +238,8 @@ const PaymentSettings = () => {
     return (
         <>
             <HeadingCard
-                heading={t`Payment Settings`}
-                subHeading={t`Manage your payment processing and view platform fees`}
+                heading={`Payment Settings`}
+                subHeading={`Manage your payment processing and view platform fees`}
             />
             <Card className={classes.tabContent}>
                 <LoadingMask/>

@@ -68,7 +68,7 @@ export const EventInformation: FC<{
                         <div className={classes.details}>
                             <IconWorld size={20}/>
                             <div className={classes.detail}>
-                                <b>{t`Online Event`}</b>
+                                <b>{`Online Even`}</b>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ export const EventInformation: FC<{
                                         size="xs"
                                         rightSection={<IconExternalLink size={15}/>}
                                     >
-                                        {event.settings.maps_url ? t`View map` : t`View on Google Maps`}
+                                        {event.settings.maps_url ? `View map` : `View on Google Maps`}
                                     </Button>
                                 </div>
                             </div>

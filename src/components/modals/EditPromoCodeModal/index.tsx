@@ -35,7 +35,7 @@ export const EditPromoCodeModal = ({onClose, promoCodeId}: EditPromoCodeModalPro
             max_allowed_usages: undefined,
         },
         validate: {
-            code: hasLength({min: 3, max: 50}, t`Code must be between 3 and 50 characters long`),
+            code: hasLength({min: 3, max: 50}, `Code must be between 3 and 50 characters long`),
         },
         validateInputOnBlur: true,
     });
@@ -49,7 +49,7 @@ export const EditPromoCodeModal = ({onClose, promoCodeId}: EditPromoCodeModalPro
             promoCodeData: values,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Promo Code`);
+                showSuccess(`Successfully Updated Promo Code`);
                 form.reset();
                 onClose();
             },
@@ -76,12 +76,12 @@ export const EditPromoCodeModal = ({onClose, promoCodeId}: EditPromoCodeModalPro
         <Modal
             opened
             onClose={onClose}
-            heading={t`Edit Promo Code`}
+            heading={`Edit Promo Code`}
         >
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <PromoCodeForm form={form}/>
                 <Button type="submit" fullWidth mt="xl" disabled={mutation.isPending}>
-                    {mutation.isPending ? t`Working...` : t`Edit Promo Code`}
+                    {mutation.isPending ? `Working...` : `Edit Promo Code`}
                 </Button>
             </form>
             <LoadingMask/>

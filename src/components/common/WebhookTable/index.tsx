@@ -50,7 +50,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
 
     const handleDelete = (webhookId: IdParam) => {
         deleteMutation.mutate({eventId, webhookId}, {
-            onSuccess: () => showSuccess(t`Webhook deleted successfully`),
+            onSuccess: () => showSuccess(`Webhook deleted successfully`),
             onError: (error) => showError(error.message)
         });
     }
@@ -101,7 +101,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
                             openEditModal();
                         }}
                     >
-                        {t`Edit webhook`}
+                        {`Edit webhook`}
                     </Menu.Item>
                     <Menu.Item
                         leftSection={<IconClipboardList size={14}/>}
@@ -110,21 +110,21 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
                             openLogsModal();
                         }}
                     >
-                        {t`View logs`}
+                        {`View logs`}
                     </Menu.Item>
                     <Menu.Divider/>
-                    <Menu.Label>{t`Danger zone`}</Menu.Label>
+                    <Menu.Label>{`Danger zone`}</Menu.Label>
                     <Menu.Item
                         color="red"
                         leftSection={<IconTrash size={14}/>}
                         onClick={() => {
                             confirmationDialog(
-                                t`Are you sure you want to delete this webhook?`,
+                                `Are you sure you want to delete this webhook?`,
                                 () => handleDelete(webhook.id as IdParam)
                             );
                         }}
                     >
-                        {t`Delete webhook`}
+                        {`Delete webhook`}
                     </Menu.Item>
                 </Menu.Dropdown>
             </Menu>
@@ -138,7 +138,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
                 <Text c="dimmed" size="sm">
                     <Group gap={6} wrap="nowrap">
                         <IconClockHour4 size={14}/>
-                        <span>{t`No responses yet`}</span>
+                        <span>{`No responses ye`}</span>
                     </Group>
                 </Text>
             );
@@ -171,7 +171,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
                                 color={statusColor}
                                 size="sm"
                             >
-                                {webhook.last_response_code > 0 ? webhook.last_response_code : t`No response`}
+                                {webhook.last_response_code > 0 ? webhook.last_response_code : `No response`}
                             </Badge>
                         </Group>
 
@@ -198,7 +198,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
     if (webhooks.length === 0) {
         return (
             <NoResultsSplash
-                heading={t`No Webhooks`}
+                heading={`No Webhooks`}
                 imageHref={'/blank-slate/webhooks.svg'}
                 subHeading={(
                     <>
@@ -220,7 +220,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
                             size={'xs'}
                             leftSection={<IconPlus/>}
                             color={'green'}
-                            onClick={() => openCreateModal()}>{t`Add Webhook`}
+                            onClick={() => openCreateModal()}>{`Add Webhook`}
                         </Button>
                     </>
                 )}
@@ -233,11 +233,11 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
             <Table>
                 <TableHead>
                     <MantineTable.Tr>
-                        <MantineTable.Th>{t`URL`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Event Types`}</MantineTable.Th>
-                        <MantineTable.Th miw={120}>{t`Status`}</MantineTable.Th>
-                        <MantineTable.Th miw={140}>{t`Last Response`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Last Triggered`}</MantineTable.Th>
+                        <MantineTable.Th>{`URL`}</MantineTable.Th>
+                        <MantineTable.Th>{`Event Types`}</MantineTable.Th>
+                        <MantineTable.Th miw={120}>{`Status`}</MantineTable.Th>
+                        <MantineTable.Th miw={140}>{`Last Response`}</MantineTable.Th>
+                        <MantineTable.Th>{`Last Triggered`}</MantineTable.Th>
                         <MantineTable.Th></MantineTable.Th>
                     </MantineTable.Tr>
                 </TableHead>
@@ -263,7 +263,7 @@ export const WebhookTable = ({webhooks, openCreateModal}: WebhookTableProps) => 
                             </MantineTable.Td>
                             <MantineTable.Td>
                                 <Text size="sm" c="dimmed" title={webhook.last_triggered_at as string}>
-                                    {webhook.last_triggered_at ? relativeDate(webhook.last_triggered_at as string) : t`Never`}
+                                    {webhook.last_triggered_at ? relativeDate(webhook.last_triggered_at as string) : `Never`}
                                 </Text>
                             </MantineTable.Td>
                             <MantineTable.Td>

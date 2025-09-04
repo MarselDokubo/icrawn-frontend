@@ -6,11 +6,11 @@ import {isHiEvents} from "../../../../utilites/helpers.ts";
 export const EventNotAvailable = () => {
     return (
         <GenericErrorPage
-            title={t`Event Not Available`}
-            description={t`The event you're looking for is not available at the moment. It may have been removed, expired, or the URL might be incorrect.`}
-            pageTitle={t`Event Not Available`}
-            metaDescription={t`The event you're looking for is not available at the moment. It may have been removed, expired, or the URL might be incorrect.`}
-            buttonText={isHiEvents() ? t`Create your own event` : undefined}
+            title={`Event Not Available`}
+            description={`The event you're looking for is not available at the moment. It may have been removed, expired, or the URL might be incorrect.`}
+            pageTitle={`Event Not Available`}
+            metaDescription={`The event you're looking for is not available at the moment. It may have been removed, expired, or the URL might be incorrect.`}
+            buttonText={isHiEvents() ? `Create your own even` : undefined}
             buttonUrl={isHiEvents() ? "https://app.iCrawn.Events/auth/register?utm_source=app.iCrawn.Events&utm_content=organizer-not-found/create-event" : undefined}
             buttonIcon={<IconCalendarPlus size={18}/>}
         />

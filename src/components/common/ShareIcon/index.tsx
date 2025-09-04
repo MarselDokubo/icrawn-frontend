@@ -25,7 +25,7 @@ export const ShareComponent = ({
                                    title,
                                    text,
                                    url,
-                                   shareButtonText = t`Share`,
+                                   shareButtonText = `Share`,
                                    hideShareButtonText = false,
                                }: ShareComponentProps) => {
     const [opened, setOpened] = useState(false);

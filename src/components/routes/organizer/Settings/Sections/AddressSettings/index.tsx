@@ -53,7 +53,7 @@ export const AddressSettings = () => {
             organizerId: organizerId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Address`);
+                showSuccess(`Successfully Updated Address`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);
@@ -64,56 +64,56 @@ export const AddressSettings = () => {
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`Address`}
-                description={t`Your organizer address`}
+                heading={`Address`}
+                description={`Your organizer address`}
             />
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <fieldset disabled={organizerSettingsQuery.isLoading || updateMutation.isPending}>
                     <TextInput
                         {...form.getInputProps('location_details.venue_name')}
-                        label={t`Office or venue name`}
-                        placeholder={t`Office or venue name`}
+                        label={`Office or venue name`}
+                        placeholder={`Office or venue name`}
                     />
                     <InputGroup>
                         <TextInput
                             {...form.getInputProps('location_details.address_line_1')}
-                            label={t`Address Line 1`}
-                            placeholder={t`123 Main Street`}
+                            label={`Address Line 1`}
+                            placeholder={`123 Main Stree`}
                         />
                         <TextInput
                             {...form.getInputProps('location_details.address_line_2')}
-                            label={t`Address Line 2`}
-                            placeholder={t`Suite 100`}
+                            label={`Address Line 2`}
+                            placeholder={`Suite 100`}
                         />
                     </InputGroup>
                     <InputGroup>
                         <TextInput
                             {...form.getInputProps('location_details.city')}
-                            label={t`City`}
-                            placeholder={t`San Francisco`}
+                            label={`City`}
+                            placeholder={`San Francisco`}
                         />
                         <TextInput
                             {...form.getInputProps('location_details.state_or_region')}
-                            label={t`State or Region`}
-                            placeholder={t`California`}
+                            label={`State or Region`}
+                            placeholder={`California`}
                         />
                     </InputGroup>
                     <InputGroup>
                         <TextInput
                             {...form.getInputProps('location_details.zip_or_postal_code')}
-                            label={t`Zip or Postal Code`}
-                            placeholder={t`94103`}
+                            label={`Zip or Postal Code`}
+                            placeholder={`94103`}
                         />
                         <Select searchable
                                 data={countries}
                                 {...form.getInputProps('location_details.country')}
-                                label={t`Country`}
-                                placeholder={t`United States`}
+                                label={`Country`}
+                                placeholder={`United States`}
                         />
                     </InputGroup>
 
                     <Button loading={updateMutation.isPending} type={'submit'}>
-                        {t`Save`}
+                        {`Save`}
                     </Button>
                 </fieldset>
             </form>

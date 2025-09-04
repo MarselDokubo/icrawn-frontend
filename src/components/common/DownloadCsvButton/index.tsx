@@ -45,7 +45,7 @@ export const DownloadCsvButton = ({
             variant="light"
             {...buttonProps}
         >
-            {t`Download CSV`}
+            {`Download CSV`}
         </Button>
     );
 };

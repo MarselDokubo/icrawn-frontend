@@ -158,7 +158,7 @@ const SelectProducts = (props: SelectProductsProps) => {
             }
 
             notifications.show({
-                message: error.response.data.errors?.products[0] || t`Unable to create product. Please check your details`,
+                message: error.response.data.errors?.products[0] || `Unable to create product. Please check your details`,
                 color: 'red',
             });
         }
@@ -173,7 +173,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                 );
 
                 if (!validPromoCode.valid) {
-                    showError(t`That promo code is invalid`);
+                    showError(`That promo code is invalid`);
                     return;
                 }
             }
@@ -213,7 +213,7 @@ const SelectProducts = (props: SelectProductsProps) => {
     useEffect(() => {
         if (form.values.promo_code) {
             const promo_code = form.values.promo_code;
-            showSuccess(t`Promo ${promo_code} code applied`);
+            showSuccess(`Promo ${promo_code} code applied`);
             addQueryStringToUrl('promo_code', promo_code);
         }
     }, [form.values.promo_code])
@@ -221,7 +221,7 @@ const SelectProducts = (props: SelectProductsProps) => {
     useEffect(() => {
         if (typeof props.promoCodeValid !== 'undefined') {
             if (!props.promoCodeValid) {
-                showError(t`That promo code is invalid`);
+                showError(`That promo code is invalid`);
                 removeQueryStringFromUrl('promo_code');
             }
         }
@@ -272,7 +272,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                 session_identifier: getSessionIdentifier()
             });
         } else {
-            showInfo(t`Please select at least one product`);
+            showInfo(`Please select at least one produc`);
         }
     };
 
@@ -281,7 +281,7 @@ const SelectProducts = (props: SelectProductsProps) => {
         if (promoCode && promoCode.length >= 3) {
             promoCodeEventRefetchMutation.mutate(promoCode);
         } else {
-            showError(t`Sorry, this promo code is not recognized`);
+            showError(`Sorry, this promo code is not recognized`);
         }
     }
 
@@ -307,7 +307,7 @@ const SelectProducts = (props: SelectProductsProps) => {
             {!productAreAvailable && (
                 <div className={classNames(['hi-no-products'])}>
                     <p className={classNames(['hi-no-products-message'])}>
-                        {t`There are no products available for this event`}
+                        {`There are no products available for this even`}
                     </p>
                 </div>
             )}
@@ -341,7 +341,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                                 fontWeight: '600',
                                 color: props.colors?.primaryText || 'inherit'
                             }}>
-                                {t`Please continue in the new tab`}
+                                {`Please continue in the new tab`}
                             </h3>
 
                             <p style={{
@@ -350,7 +350,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                                 lineHeight: '1.5',
                                 color: props.colors?.primaryText || 'inherit'
                             }}>
-                                {t`If a new tab did not open automatically, please click the button below to continue to checkout.`}
+                                {`If a new tab did not open automatically, please click the button below to continue to checkout.`}
                             </p>
 
                             <Button
@@ -372,7 +372,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                                     }
                                 }}
                             >
-                                {t`Continue to Checkout`}
+                                {`Continue to Checkou`}
                             </Button>
 
                             <Button
@@ -389,7 +389,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                                     }
                                 }}
                             >
-                                {t`Dismiss this message`}
+                                {`Dismiss this message`}
                             </Button>
                         </div>
                     </div>
@@ -410,7 +410,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                                     </h2>
                                     {category.description && (
                                         <div className={'hi-product-category-description'}>
-                                            <Spoiler maxHeight={500} showLabel={t`Show more`} hideLabel={t`Hide`}>
+                                            <Spoiler maxHeight={500} showLabel={`Show more`} hideLabel={`Hide`}>
                                                 <div dangerouslySetInnerHTML={{__html: category.description}}/>
                                             </Spoiler>
                                         </div>
@@ -419,7 +419,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                                         {category.products?.length === 0 && (
                                             <div className={'hi-no-products'}>
                                                 <p className={'hi-no-products-message'}>
-                                                    {category.no_products_message || t`There are no products available in this category`}
+                                                    {category.no_products_message || `There are no products available in this category`}
                                                 </p>
                                             </div>
                                         )}
@@ -503,8 +503,8 @@ const SelectProducts = (props: SelectProductsProps) => {
                                                         {product.description && (
                                                             <div
                                                                 className={'hi-product-description-row'}>
-                                                                <Spoiler maxHeight={87} showLabel={t`Show more`}
-                                                                         hideLabel={t`Hide`}>
+                                                                <Spoiler maxHeight={87} showLabel={`Show more`}
+                                                                         hideLabel={`Hide`}>
                                                                     <div dangerouslySetInnerHTML={{
                                                                         __html: product.description
                                                                     }}/>
@@ -530,7 +530,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                         <Button disabled={isButtonDisabled} fullWidth className={'hi-continue-button'}
                                 type={"submit"}
                                 loading={productMutation.isPending}>
-                            {props.continueButtonText || event?.settings?.continue_button_text || t`Continue`}
+                            {props.continueButtonText || event?.settings?.continue_button_text || `Continue`}
                         </Button>
                     </div>
                 </form>
@@ -539,17 +539,17 @@ const SelectProducts = (props: SelectProductsProps) => {
                 {(!showPromoCodeInput && !form.values.promo_code) && (
                     <Anchor className={'hi-have-a-promo-code-link'}
                             onClick={() => setShowPromoCodeInput(true)}>
-                        {t`Have a promo code?`}
+                        {`Have a promo code?`}
                     </Anchor>
                 )}
                 {form.values.promo_code && (
                     <div className={'hi-promo-code-applied'}>
-                        <span><b>{form.values.promo_code}</b> {t`applied`}</span>
+                        <span><b>{form.values.promo_code}</b> {`applied`}</span>
                         <ActionIcon
                             className={'hi-promo-code-applied-remove-icon-button'}
                             variant="transparent"
-                            aria-label={t`remove`}
-                            title={t`Remove`}
+                            aria-label={`remove`}
+                            title={`Remove`}
                             onClick={() => {
                                 promoCodeEventRefetchMutation.mutate(null)
                             }}
@@ -572,13 +572,13 @@ const SelectProducts = (props: SelectProductsProps) => {
                         <Button disabled={promoCodeEventRefetchMutation.isPending}
                                 className={'hi-apply-promo-code-button'} variant={'outline'}
                                 onClick={handleApplyPromoCode}>
-                            {t`Apply Promo Code`}
+                            {`Apply Promo Code`}
                         </Button>
                         <ActionIcon
                             className={'hi-close-promo-code-input-button'}
                             variant="transparent"
-                            aria-label={t`close`}
-                            title={t`Close`}
+                            aria-label={`close`}
+                            title={`Close`}
                             onClick={() => setShowPromoCodeInput(false)}
                         >
                             <IconX stroke={1.5} size={20}/>

@@ -13,9 +13,9 @@ export const TaxSettings = () => {
     return (
         <>
             <HeadingCard
-                heading={t`Tax & Fees`}
-                subHeading={t`Manage taxes and fees which can be applied to your products`}
-                buttonText={t`Add Tax or Fee`}
+                heading={`Tax & Fees`}
+                subHeading={`Manage taxes and fees which can be applied to your products`}
+                buttonText={`Add Tax or Fee`}
                 buttonAction={openCreateModal}
             />
             <Card className={accountClasses.tabContent}>

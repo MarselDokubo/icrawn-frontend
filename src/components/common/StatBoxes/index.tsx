@@ -42,37 +42,37 @@ export const StatBoxes = () => {
     const data = [
         {
             number: formatNumber(eventStats?.total_products_sold as number),
-            description: t`Products sold`,
+            description: `Products sold`,
             icon: <IconShoppingCart size={18}/>,
             backgroundColor: '#4B7BE5' // Deep blue
         },
         {
             number: formatNumber(eventStats?.total_attendees_registered as number),
-            description: t`Attendees`,
+            description: `Attendees`,
             icon: <IconUsers size={18}/>,
             backgroundColor: '#E6677E' // Rose pink
         },
         {
             number: formatCurrency(eventStats?.total_refunded as number || 0, event?.currency),
-            description: t`Refunded`,
+            description: `Refunded`,
             icon: <IconCreditCardRefund size={18}/>,
             backgroundColor: '#49A6B7' // Teal
         },
         {
             number: formatCurrency(eventStats?.total_gross_sales || 0, event?.currency),
-            description: t`Gross sales`,
+            description: `Gross sales`,
             icon: <IconCash size={18}/>,
             backgroundColor: '#7C63E6' // Purple
         },
         {
             number: formatNumber(eventStats?.total_views as number),
-            description: t`Page views`,
+            description: `Page views`,
             icon: <IconEye size={18}/>,
             backgroundColor: '#63B3A1' // Sage green
         },
         {
             number: formatNumber(eventStats?.total_orders as number),
-            description: t`Completed orders`,
+            description: `Completed orders`,
             icon: <IconReceipt size={18}/>,
             backgroundColor: '#E67D49' // Coral orange
         }

@@ -38,7 +38,7 @@ const Login = () => {
 
         onError: () => {
             notifications.show({
-                message: t`Please check your email and password and try again`,
+                message: `Please check your email and password and try again`,
                 color: 'red',
                 position: 'top-center',
             });
@@ -52,7 +52,7 @@ const Login = () => {
     return (
         <>
             <header className={classes.header}>
-                <h2>{t`Welcome back 👋`}</h2>
+                <h2>{`Welcome back 👋`}</h2>
                 <p>
                     <Trans>
                         Don't have an account? {'  '}
@@ -65,23 +65,23 @@ const Login = () => {
             <div className={classes.loginCard}>
                 <form onSubmit={form.onSubmit((values) => loginUser(values))}>
                     <TextInput {...form.getInputProps('email')}
-                               label={t`Email`}
+                               label={`Email`}
                                placeholder="hello@example.com"
                                required
                     />
                     <PasswordInput {...form.getInputProps('password')}
-                                   label={t`Password`}
-                                   placeholder={t`Your password`}
+                                   label={`Password`}
+                                   placeholder={`Your password`}
                                    required
                                    mt="md"
                     />
                     <p>
                         <NavLink to={`/auth/forgot-password`}>
-                            {t`Forgot password?`}
+                            {`Forgot password?`}
                         </NavLink>
                     </p>
                     <Button color={'var(--hi-pink)'} type="submit" fullWidth loading={isPending} disabled={isPending}>
-                        {isPending ? t`Logging in` : t`Log in`}
+                        {isPending ? `Logging in` : `Log in`}
                     </Button>
                 </form>
             </div>

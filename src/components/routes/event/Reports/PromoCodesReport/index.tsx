@@ -17,22 +17,22 @@ const PromoCodesReport = () => {
     const columns = [
         {
             key: 'promo_code' as const,
-            label: t`Promo Code`,
+            label: `Promo Code`,
             sortable: true
         },
         {
             key: 'times_used' as const,
-            label: t`Times Used`,
+            label: `Times Used`,
             sortable: true
         },
         {
             key: 'unique_customers' as const,
-            label: t`Unique Customers`,
+            label: `Unique Customers`,
             sortable: true
         },
         {
             key: 'configured_discount' as const,
-            label: t`Configured Discount`,
+            label: `Configured Discoun`,
             sortable: true,
             render: (value: number, row: any) => {
                 if (row.discount_type === 'percentage') {
@@ -43,56 +43,56 @@ const PromoCodesReport = () => {
         },
         {
             key: 'total_gross_sales' as const,
-            label: t`Total Gross Sales`,
+            label: `Total Gross Sales`,
             sortable: true,
             render: (value: string) => formatCurrency(value, event?.currency)
         },
         {
             key: 'total_before_discounts' as const,
-            label: t`Total Before Discounts`,
+            label: `Total Before Discounts`,
             sortable: true,
             render: (value: string) => formatCurrency(value, event?.currency)
         },
         {
             key: 'total_discount_amount' as const,
-            label: t`Total Discount Amount`,
+            label: `Total Discount Amoun`,
             sortable: true,
             render: (value: string) => formatCurrency(value, event?.currency)
         },
         {
             key: 'first_used_at' as const,
-            label: t`First Used`,
+            label: `First Used`,
             sortable: true,
             render: (value: string) => value ? formatDate(value, 'MMM D, YYYY', event.timezone) : '-'
         },
         {
             key: 'last_used_at' as const,
-            label: t`Last Used`,
+            label: `Last Used`,
             sortable: true,
             render: (value: string) => value ? formatDate(value, 'MMM D, YYYY', event.timezone) : '-'
         },
         {
             key: 'max_allowed_usages' as const,
-            label: t`Usage Limit`,
+            label: `Usage Limi`,
             sortable: true,
-            render: (value: number) => value || t`Unlimited`
+            render: (value: number) => value || `Unlimited`
         },
         {
             key: 'remaining_uses' as const,
-            label: t`Remaining Uses`,
+            label: `Remaining Uses`,
             sortable: true,
-            render: (value: number) => value || t`Unlimited`
+            render: (value: number) => value || `Unlimited`
         },
         {
             key: 'status' as const,
-            label: t`Status`,
+            label: `Status`,
             sortable: true
         }
     ];
 
     return (
         <ReportTable
-            title={t`Promo Codes Report`}
+            title={`Promo Codes Repor`}
             columns={columns}
             isLoading={eventQuery.isLoading}
             downloadFileName="promo_codes_report.csv"

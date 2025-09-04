@@ -87,7 +87,7 @@ const SortableQuestion = ({question, onEditModalOpen, onDelete}: {
 
                 <div className={classes.title}>
                     <Truncate text={question.title}/> {question.is_hidden && (
-                    <Tooltip label={t`This question is only visible to the event organizer`}>
+                    <Tooltip label={`This question is only visible to the event organizer`}>
                         <IconEyeClosed className={classes.hiddenIcon} size={14}/>
                     </Tooltip>
                 )}
@@ -105,19 +105,19 @@ const SortableQuestion = ({question, onEditModalOpen, onDelete}: {
                             </Menu.Target>
 
                             <Menu.Dropdown>
-                                <Menu.Label>{t`Actions`}</Menu.Label>
+                                <Menu.Label>{`Actions`}</Menu.Label>
                                 <Menu.Item
                                     onClick={() => onEditModalOpen ? onEditModalOpen(question.id) : null}
                                     leftSection={<IconPencil
-                                        size={14}/>}>{t`Edit question`}</Menu.Item>
+                                        size={14}/>}>{`Edit question`}</Menu.Item>
                                 <Menu.Divider/>
 
-                                <Menu.Label>{t`Danger zone`}</Menu.Label>
+                                <Menu.Label>{`Danger zone`}</Menu.Label>
                                 <Menu.Item color="red"
                                            leftSection={<IconTrash size={14}/>}
                                            onClick={() => onDelete(question.id)}
                                 >
-                                    {t`Delete question`}
+                                    {`Delete question`}
                                 </Menu.Item>
                             </Menu.Dropdown>
                         </Menu>
@@ -142,10 +142,10 @@ const QuestionsList = ({questions, onEditModalOpen, showHiddenQuestions}: Questi
                 eventId: eventId
             }, {
                 onSuccess: () => {
-                    showSuccess(t`Questions sorted successfully`);
+                    showSuccess(`Questions sorted successfully`);
                 },
                 onError: () => {
-                    showError(t`An error occurred while sorting the questions. Please try again or refresh the page`);
+                    showError(`An error occurred while sorting the questions. Please try again or refresh the page`);
                 }
             });
         },
@@ -161,18 +161,18 @@ const QuestionsList = ({questions, onEditModalOpen, showHiddenQuestions}: Questi
     );
 
     const onDelete = (id: IdParam) => {
-        confirmationDialog(t`Are you sure you want to delete this question?`, () => {
+        confirmationDialog(`Are you sure you want to delete this question?`, () => {
             deleteQuestionMutation.mutate({
                 eventId: eventId,
                 questionId: id
             }, {
                 onSuccess: () => {
-                    showSuccess(t`Question deleted`)
+                    showSuccess(`Question deleted`)
                 },
                 onError: (error) => {
                     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                     // @ts-ignore
-                    showError(error?.response?.data?.message || t`Failed to delete message. Please try again.`);
+                    showError(error?.response?.data?.message || `Failed to delete message. Please try again.`);
                 }
             });
         });
@@ -204,21 +204,21 @@ const DefaultQuestions = () => (
         <InputGroup>
             <TextInput
                 withAsterisk
-                label={t`First Name`}
-                placeholder={t`First name`}
+                label={`First Name`}
+                placeholder={`First name`}
             />
             <TextInput
                 withAsterisk
-                label={t`Last Name`}
-                placeholder={t`Last Name`}
+                label={`Last Name`}
+                placeholder={`Last Name`}
             />
         </InputGroup>
 
         <TextInput
             withAsterisk
             type={"email"}
-            label={t`Email Address`}
-            placeholder={t`Email Address`}
+            label={`Email Address`}
+            placeholder={`Email Address`}
         />
     </>
 );
@@ -249,7 +249,7 @@ export const QuestionsTable = ({questions}: QuestionsTableProp) => {
     const onCompleted = (question: Question) => {
         if (question.is_hidden && !showHiddenQuestions) {
             setShowHiddenQuestions(true);
-            showSuccess(t`You created a hidden question but disabled the option to show hidden questions. It has been enabled.`);
+            showSuccess(`You created a hidden question but disabled the option to show hidden questions. It has been enabled.`);
         }
     }
 
@@ -264,7 +264,7 @@ export const QuestionsTable = ({questions}: QuestionsTableProp) => {
                 rightSection={<IconTableExport size={20}/>}
                 onClick={() => startExport()}
             >
-                {t`Export answers`}
+                {`Export answers`}
             </Button>
         );
     };
@@ -272,13 +272,13 @@ export const QuestionsTable = ({questions}: QuestionsTableProp) => {
     return (
         <div className={classes.outer}>
             <PageTitle>
-                <span>{t`Questions`}</span>
+                <span>{`Questions`}</span>
             </PageTitle>
             <Card>
                 <div className={classes.actions}>
                     <>
                         <Button color={'green'} rightSection={<IconPlus/>} onClick={openCreateModal}>
-                            {t`Add question`}
+                            {`Add question`}
                         </Button>
                         <ExportAnswersButton/>
                     </>
@@ -287,12 +287,12 @@ export const QuestionsTable = ({questions}: QuestionsTableProp) => {
                             <span className={classes.hiddenCount}>
                                     {questions.filter(question => question.is_hidden).length}{' '}
                                 {questions.filter(question => question.is_hidden).length === 1
-                                    ? t`hidden question`
-                                    : t`hidden questions`
+                                    ? `hidden question`
+                                    : `hidden questions`
                                 }
                             </span>
                             <Tooltip
-                                label={showHiddenQuestions ? t`Hide hidden questions` : t`Show hidden questions`}
+                                label={showHiddenQuestions ? `Hide hidden questions` : `Show hidden questions`}
                             >
                                 <Switch
                                     offLabel={<IconEyeClosed size={14}/>}
@@ -310,7 +310,7 @@ export const QuestionsTable = ({questions}: QuestionsTableProp) => {
             <div className={classes.container}>
                 <div className={classes.questionsContainer}>
                     <div className={classes.questions}>
-                        <h3>{t`Order questions`}</h3>
+                        <h3>{`Order questions`}</h3>
                         <QuestionsList
                             questions={orderQuestions}
                             onEditModalOpen={handleModalOpen}
@@ -320,12 +320,12 @@ export const QuestionsTable = ({questions}: QuestionsTableProp) => {
                             .filter(question => showHiddenQuestions || !question.is_hidden)
                             .length === 0 && (
                             <Card className={classes.noQuestionsAlert}>
-                                <IconInfoCircle/> {t`You have no order questions.`}
+                                <IconInfoCircle/> {`You have no order questions.`}
                             </Card>
                         )}
                     </div>
                     <div className={classes.questions}>
-                        <h3>{t`Product questions`}</h3>
+                        <h3>{`Product questions`}</h3>
                         <QuestionsList
                             questions={productQuestions}
                             onEditModalOpen={handleModalOpen}
@@ -335,7 +335,7 @@ export const QuestionsTable = ({questions}: QuestionsTableProp) => {
                             .filter(question => showHiddenQuestions || !question.is_hidden)
                             .length === 0 && (
                             <Card className={classes.noQuestionsAlert}>
-                                <IconInfoCircle/> {t`You have no attendee questions.`}
+                                <IconInfoCircle/> {`You have no attendee questions.`}
                             </Card>
                         )}
                     </div>
@@ -344,15 +344,15 @@ export const QuestionsTable = ({questions}: QuestionsTableProp) => {
                 <div className={classes.previewContainer}>
                     <h3>
                         <Group>
-                            {t`Preview`}
+                            {`Preview`}
                             <Popover width={'400px'}
-                                     title={t`First Name, Last Name, and Email Address are default questions and are always included in the checkout process.`}>
+                                     title={`First Name, Last Name, and Email Address are default questions and are always included in the checkout process.`}>
                                 <IconInfoCircle size={18}/>
                             </Popover>
                         </Group>
                     </h3>
                     <Card className={classes.previewCard}>
-                        <h3>{t`Order questions`}</h3>
+                        <h3>{`Order questions`}</h3>
                         <div className={classes.previewForm}>
                             <div className={classes.mask}/>
                             <DefaultQuestions/>
@@ -366,7 +366,7 @@ export const QuestionsTable = ({questions}: QuestionsTableProp) => {
                                     />
                                 ))}
 
-                            <h3>{t`Attendee questions`}</h3>
+                            <h3>{`Attendee questions`}</h3>
                             <DefaultQuestions/>
                             {productQuestions
                                 .filter(question => showHiddenQuestions || !question.is_hidden)

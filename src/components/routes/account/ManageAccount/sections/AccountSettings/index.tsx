@@ -39,7 +39,7 @@ const AccountSettings = () => {
             accountData: values,
         }, {
             onSuccess: () => {
-                showSuccess(t`Account updated successfully`);
+                showSuccess(`Account updated successfully`);
             },
             onError: (error) => {
                 formErrorHandler(form, error);
@@ -50,8 +50,8 @@ const AccountSettings = () => {
     return (
         <>
             <HeadingCard
-                heading={t`Account`}
-                subHeading={t`Manage your account details and default settings`}
+                heading={`Accoun`}
+                subHeading={`Manage your account details and default settings`}
             />
             <Card className={classes.tabContent}>
                 <LoadingMask/>
@@ -59,9 +59,9 @@ const AccountSettings = () => {
                     <form onSubmit={form.onSubmit(handleSubmit as any)}>
                         <TextInput
                             {...form.getInputProps('name')}
-                            label={t`Account Name`}
-                            placeholder={t`Name`}
-                            description={t`Your account name is used on event pages and in emails.`}
+                            label={`Account Name`}
+                            placeholder={`Name`}
+                            description={`Your account name is used on event pages and in emails.`}
                         />
                         <Select
                             searchable
@@ -70,24 +70,24 @@ const AccountSettings = () => {
                                 label: key,
                             }))}
                             {...form.getInputProps('currency_code')}
-                            label={t`Currency`}
-                            placeholder={t`EUR`}
-                            description={t`The default currency for your events.`}
+                            label={`Currency`}
+                            placeholder={`EUR`}
+                            description={`The default currency for your events.`}
                         />
                         <Select
                             mb={0}
                             searchable
                             data={timezones}
                             {...form.getInputProps('timezone')}
-                            label={t`Timezone`}
-                            placeholder={t`UTC`}
-                            description={t`The default timezone for your events.`}
+                            label={`Timezone`}
+                            placeholder={`UTC`}
+                            description={`The default timezone for your events.`}
                         />
 
                         {isUserAdmin && (
                             <div className={classes.footer}>
                                 <Button disabled={updateMutation.isPending} type={'submit'}
-                                        fullWidth>{t`Save Settings`}</Button>
+                                        fullWidth>{`Save Settings`}</Button>
                             </div>
                         )}
                     </form>

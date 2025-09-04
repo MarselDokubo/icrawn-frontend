@@ -71,7 +71,7 @@ export const ManageOrderModal = ({onClose, orderId}: GenericModalProps & ManageO
             },
             {
                 onSuccess: () => {
-                    showSuccess(t`Successfully updated order`);
+                    showSuccess(`Successfully updated order`);
                     setActiveTab("view");
                 },
                 onError: (error) => errorHandler(form, error),
@@ -83,13 +83,13 @@ export const ManageOrderModal = ({onClose, orderId}: GenericModalProps & ManageO
         {
             value: 'details',
             icon: IconInfoCircle,
-            title: t`Order Details`,
+            title: `Order Details`,
             content: <OrderDetails order={order} event={event} cardVariant="noStyle" style={{padding: 0}}/>
         },
         {
             value: "notes",
             icon: IconNotebook,
-            title: t`Order Notes`,
+            title: `Order Notes`,
             hidden: !order.notes,
             content: (
                 <Box p="md">
@@ -102,13 +102,13 @@ export const ManageOrderModal = ({onClose, orderId}: GenericModalProps & ManageO
         {
             value: 'summary',
             icon: IconReceipt,
-            title: t`Order Summary`,
+            title: `Order Summary`,
             content: <OrderSummary event={event} order={order}/>
         },
         {
             value: 'questions',
             icon: IconQuestionMark,
-            title: t`Questions & Answers`,
+            title: `Questions & Answers`,
             count: orderHasQuestions ? order.question_answers.length : undefined,
             content: orderHasQuestions ? (
                 <QuestionAndAnswerList
@@ -116,20 +116,20 @@ export const ManageOrderModal = ({onClose, orderId}: GenericModalProps & ManageO
                     questionAnswers={order.question_answers as QuestionAnswer[]}/>
             ) : (
                 <Text c="dimmed" ta="center" py="xl">
-                    {t`No questions have been asked for this order.`}
+                    {`No questions have been asked for this order.`}
                 </Text>
             )
         },
         {
             value: 'attendees',
             icon: IconUsers,
-            title: t`Attendees`,
+            title: `Attendees`,
             count: orderHasAttendees ? order.attendees.length : undefined,
             content: orderHasAttendees ? (
                 <AttendeeList refetchOrder={refetchOrder} order={order} products={products as Product[]} questionAnswers={order.question_answers}/>
             ) : (
                 <Text c="dimmed" ta="center" py="xl">
-                    {t`No attendees have been added to this order.`}
+                    {`No attendees have been added to this order.`}
                 </Text>
             )
         }
@@ -141,38 +141,38 @@ export const ManageOrderModal = ({onClose, orderId}: GenericModalProps & ManageO
                 <InputGroup>
                     <TextInput
                         {...form.getInputProps("first_name")}
-                        label={t`First name`}
-                        placeholder={t`Homer`}
+                        label={`First name`}
+                        placeholder={`Homer`}
                         required
                     />
                     <TextInput
                         {...form.getInputProps("last_name")}
-                        label={t`Last name`}
-                        placeholder={t`Simpson`}
+                        label={`Last name`}
+                        placeholder={`Simpson`}
                         required
                     />
                 </InputGroup>
                 <TextInput
                     {...form.getInputProps("email")}
-                    label={t`Email address`}
+                    label={`Email address`}
                     placeholder="homer@simpson.com"
                     required
                 />
                 <Textarea
                     label={
                         <InputLabelWithHelp
-                            label={t`Notes`}
-                            helpText={t`Add any notes about the order. These will not be visible to the customer.`}
+                            label={`Notes`}
+                            helpText={`Add any notes about the order. These will not be visible to the customer.`}
                         />
                     }
                     {...form.getInputProps("notes")}
-                    placeholder={t`Add any notes about the order...`}
+                    placeholder={`Add any notes about the order...`}
                     minRows={3}
                     maxRows={6}
                     autosize
                 />
                 <Button type="submit" fullWidth disabled={mutation.isPending}>
-                    {mutation.isPending ? t`Working...` : t`Save Changes`}
+                    {mutation.isPending ? `Working...` : `Save Changes`}
                 </Button>
             </Stack>
         </form>
@@ -197,10 +197,10 @@ export const ManageOrderModal = ({onClose, orderId}: GenericModalProps & ManageO
                 <Tabs value={activeTab} onChange={setActiveTab as any}>
                     <Tabs.List>
                         <Tabs.Tab value="view" leftSection={<IconInfoCircle size={16}/>}>
-                            {t`View`}
+                            {`View`}
                         </Tabs.Tab>
                         <Tabs.Tab value="edit" leftSection={<IconEdit size={16}/>}>
-                            {t`Edit`}
+                            {`Edi`}
                         </Tabs.Tab>
                     </Tabs.List>
 

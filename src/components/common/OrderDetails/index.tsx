@@ -20,7 +20,7 @@ export const OrderDetails = ({order, event, cardVariant = 'lightGray', style = {
         <Card className={classes.orderDetails} variant={cardVariant} style={style}>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Name`}
+                    {`Name`}
                 </div>
                 <div className={classes.amount}>
                     {order.first_name} {order.last_name}
@@ -28,7 +28,7 @@ export const OrderDetails = ({order, event, cardVariant = 'lightGray', style = {
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Email`}
+                    {`Email`}
                 </div>
                 <div className={classes.value}>
                     <Anchor href={'mailto:' + order.email} target={'_blank'}>{order.email}</Anchor>
@@ -36,7 +36,7 @@ export const OrderDetails = ({order, event, cardVariant = 'lightGray', style = {
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Date`}
+                    {`Date`}
                 </div>
                 <div className={classes.amount}>
                     <Tooltip label={prettyDate(order.created_at, event.timezone)} position={'bottom'} withArrow>
@@ -48,7 +48,7 @@ export const OrderDetails = ({order, event, cardVariant = 'lightGray', style = {
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Status`}
+                    {`Status`}
                 </div>
                 <div className={classes.amount}>
                     <OrderStatusBadge order={order} variant={'outline'}/>
@@ -56,7 +56,7 @@ export const OrderDetails = ({order, event, cardVariant = 'lightGray', style = {
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Total order amount`}
+                    {`Total order amoun`}
                 </div>
                 <div className={classes.amount}>
                     <Currency currency={order.currency} price={order.total_gross}/>
@@ -64,7 +64,7 @@ export const OrderDetails = ({order, event, cardVariant = 'lightGray', style = {
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Total refunded`}
+                    {`Total refunded`}
                 </div>
                 <div className={classes.amount}>
                     <Currency currency={order.currency} price={order.total_refunded}/>
@@ -73,7 +73,7 @@ export const OrderDetails = ({order, event, cardVariant = 'lightGray', style = {
             {order.payment_provider && (
                 <div className={classes.block}>
                     <div className={classes.title}>
-                        {t`Payment provider`}
+                        {`Payment provider`}
                     </div>
                     <div className={classes.amount}>
                         {capitalize(order.payment_provider)}
@@ -83,7 +83,7 @@ export const OrderDetails = ({order, event, cardVariant = 'lightGray', style = {
             {order.promo_code && (
                 <div className={classes.block}>
                     <div className={classes.title}>
-                        {t`Promo code`}
+                        {`Promo code`}
                     </div>
                     <div className={classes.amount}>
                         {order.promo_code}
@@ -93,7 +93,7 @@ export const OrderDetails = ({order, event, cardVariant = 'lightGray', style = {
             {order.address && (
                 <div className={classes.block}>
                     <div className={classes.title}>
-                        {t`Address`}
+                        {`Address`}
                     </div>
                     <div className={classes.amount}>
                         {formatAddress(order.address)}

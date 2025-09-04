@@ -68,7 +68,7 @@ export const ImageUploadDropzone = ({
                     if (uploadedUrl && uploadedId) {
                         setPreviewImage(uploadedUrl);
                         setImageId(uploadedId);
-                        showSuccess(t`Image uploaded successfully`);
+                        showSuccess(`Image uploaded successfully`);
                         onUploadSuccess?.();
                     }
                     setLoading(false);
@@ -85,7 +85,7 @@ export const ImageUploadDropzone = ({
                     } else if (error?.response?.data?.message) {
                         errorMessages = [error.response.data.message];
                     } else {
-                        errorMessages = [t`Failed to upload image. Please try again.`];
+                        errorMessages = [`Failed to upload image. Please try again.`];
                     }
 
                     setErrors(errorMessages);
@@ -106,7 +106,7 @@ export const ImageUploadDropzone = ({
                 onSuccess: () => {
                     setPreviewImage(null);
                     setImageId(null);
-                    showSuccess(t`Image deleted successfully`);
+                    showSuccess(`Image deleted successfully`);
                     setErrors([]);
                     onDeleteSuccess?.();
                 },
@@ -129,7 +129,7 @@ export const ImageUploadDropzone = ({
                     <Loader size={displayMode === 'compact' ? 'sm' : 'md'}/>
                     {displayMode !== 'compact' && (
                         <Text size="sm" mt="xs" c="dimmed">
-                            {t`Processing image...`}
+                            {`Processing image...`}
                         </Text>
                     )}
                 </div>
@@ -139,7 +139,7 @@ export const ImageUploadDropzone = ({
         if (previewImage) {
             return (
                 <div className={classes.previewContainer}>
-                    <img src={previewImage} alt={t`Uploaded preview`} className={classes.previewImage}/>
+                    <img src={previewImage} alt={`Uploaded preview`} className={classes.previewImage}/>
                     <Button
                         variant="light"
                         color="blue"
@@ -148,7 +148,7 @@ export const ImageUploadDropzone = ({
                         onClick={handleReplace}
                         className={classes.replaceButton}
                     >
-                        {t`Replace Image`}
+                        {`Replace Image`}
                     </Button>
                 </div>
             );
@@ -160,7 +160,7 @@ export const ImageUploadDropzone = ({
                     <Group justify="center" gap="xs">
                         <IconUpload size={20} stroke={1.5}/>
                         <Text size="sm" fw={500}>
-                            {t`Click to upload`}
+                            {`Click to upload`}
                         </Text>
                     </Group>
                     {helpText && (
@@ -180,7 +180,7 @@ export const ImageUploadDropzone = ({
                     </div>
                 </Group>
                 <Text ta="center" fw={600} size="md" mt="md">
-                    {t`Drag & drop or click to upload`}
+                    {`Drag & drop or click to upload`}
                 </Text>
                 {helpText && (
                     <Text ta="center" c="dimmed" size="sm" mt="xs">
@@ -188,7 +188,7 @@ export const ImageUploadDropzone = ({
                     </Text>
                 )}
                 <Text ta="center" c="dimmed" size="xs" mt="xs">
-                    {t`Images only · Max 5MB`}
+                    {`Images only · Max 5MB`}
                 </Text>
             </div>
         );
@@ -236,7 +236,7 @@ export const ImageUploadDropzone = ({
                     <ActionIcon
                         variant="outline"
                         color="red"
-                        title={t`Delete image`}
+                        title={`Delete image`}
                         onClick={handleDelete}
                         disabled={loading}
                     >

@@ -34,7 +34,7 @@ const OrderField = ({orderId, eventId}: { orderId: IdParam, eventId: IdParam }) 
     return (
         <TextInput
             mt={20}
-            label={t`Recipient`}
+            label={`Recipien`}
             disabled
             placeholder={`${order.first_name} ${order.last_name} <${order.email}>`}
         />
@@ -69,7 +69,7 @@ const AttendeeField = ({orderId, eventId, attendeeId, form}: {
     return (
         <MultiSelect
             mt={20}
-            label={t`Message individual attendees`}
+            label={`Message individual attendees`}
             searchable
             data={groups}
             {...form.getInputProps('attendee_ids')}
@@ -106,7 +106,7 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
             order_statuses: ['COMPLETED'],
         },
         validate: {
-            acknowledgement: (value) => value === true ? null : t`You must acknowledge that this email is not promotional`,
+            acknowledgement: (value) => value === true ? null : `You must acknowledge that this email is not promotional`,
         }
     });
 
@@ -116,7 +116,7 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
             messageData: values,
         }, {
             onSuccess: () => {
-                showSuccess(t`Message Sent`);
+                showSuccess(`Message Sen`);
                 form.reset();
                 onClose();
             },
@@ -137,7 +137,7 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
             withCloseButton
             opened
             onClose={onClose}
-            heading={t`Send a message`}
+            heading={`Send a message`}
         >
             {!isAccountFetched && (
                 <div style={{height: 200}}>
@@ -149,15 +149,15 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
 
                 {(!isAccountVerified && isAccountFetched) && (
                     <Alert mt={20} variant={'light'} icon={<IconAlertCircle size="1rem"/>}>
-                        {t`You need to verify your account email before you can send messages.`}
+                        {`You need to verify your account email before you can send messages.`}
                     </Alert>
                 )}
 
                 {accountRequiresManualVerification && (
                     <>
                         <Alert mt={20} variant={'light'} icon={<IconAlertCircle size="1rem"/>}
-                               title={t`Contact us to enable messaging`}>
-                            {t`Due to the high risk of spam, we require manual verification before you can send messages.
+                               title={`Contact us to enable messaging`}>
+                            {`Due to the high risk of spam, we require manual verification before you can send messages.
                          Please contact us to request access.`}
                             <Button
                                 mt={20}
@@ -165,7 +165,7 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                                 variant={'outline'}
                                 fullWidth
                             >
-                                {t`Contact Support`}
+                                {`Contact Suppor`}
                             </Button>
                         </Alert>
 
@@ -181,19 +181,19 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                                 data={[
                                     {
                                         value: 'TICKET_HOLDERS',
-                                        label: t`Attendees with a specific ticket`,
+                                        label: `Attendees with a specific ticke`,
                                     },
                                     {
                                         value: 'ALL_ATTENDEES',
-                                        label: t`All attendees of this event`,
+                                        label: `All attendees of this even`,
                                     },
                                     {
                                         value: 'ORDER_OWNERS_WITH_PRODUCT',
-                                        label: t`Order owners with a specific product`,
+                                        label: `Order owners with a specific produc`,
                                     },
                                 ]}
-                                label={t`Who is this message to?`}
-                                placeholder={t`Please select`}
+                                label={`Who is this message to?`}
+                                placeholder={`Please selec`}
                                 {...form.getInputProps('message_type')}
                             />
                         )}
@@ -204,8 +204,8 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
 
                         {((form.values.message_type === MessageType.TicketHolders && event.product_categories)) && (
                             <ProductSelector
-                                label={t`Message attendees with specific tickets`}
-                                placeholder={t`Select tickets`}
+                                label={`Message attendees with specific tickets`}
+                                placeholder={`Select tickets`}
                                 productCategories={event.product_categories}
                                 form={form}
                                 productFieldName={'product_ids'}
@@ -216,20 +216,20 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                         {((form.values.message_type === MessageType.OrderOwnersWithProduct && event.product_categories)) && (
                             <>
                                 <ProductSelector
-                                    label={t`Message order owners with specific products`}
-                                    placeholder={t`Select products`}
+                                    label={`Message order owners with specific products`}
+                                    placeholder={`Select products`}
                                     productCategories={event.product_categories}
                                     form={form}
                                     productFieldName={'product_ids'}
                                     includedProductTypes={[ProductType.Ticket, ProductType.General]}
                                 />
                                 <MultiSelect
-                                    description={t`Only send to orders with these statuses`}
+                                    description={`Only send to orders with these statuses`}
                                     mt={20}
-                                    label={t`Order statuses`}
+                                    label={`Order statuses`}
                                     data={[
-                                        {value: 'COMPLETED', label: t`Completed`},
-                                        {value: 'AWAITING_OFFLINE_PAYMENT', label: t`Awaiting offline payment`},
+                                        {value: 'COMPLETED', label: `Completed`},
+                                        {value: 'AWAITING_OFFLINE_PAYMENT', label: `Awaiting offline paymen`},
                                     ]}
                                     {...form.getInputProps('order_statuses')}
                                 />
@@ -243,12 +243,12 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                         <TextInput
                             required
                             mt={20}
-                            label={t`Subject`}
+                            label={`Subjec`}
                             {...form.getInputProps('subject')}
                         />
 
                         <Editor
-                            label={t`Message Content`}
+                            label={`Message Conten`}
                             value={form.values.message || ''}
                             onChange={(value) => form.setFieldValue('message', value)}
                             error={form.errors.message as string}
@@ -276,8 +276,8 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                         />
 
                         <Alert variant={'outline'} mt={20} icon={<IconAlertCircle size="1rem"/>}
-                               title={t`Before you send!`}>
-                            {t`Only important emails, which are directly related to this event, should be sent using this form.
+                               title={`Before you send!`}>
+                            {`Only important emails, which are directly related to this event, should be sent using this form.
                          Any misuse, including sending promotional emails, will lead to an immediate account ban.`}
                         </Alert>
 
@@ -293,7 +293,7 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                                 type={'submit'} fullWidth
                                 leftSection={<IconSend/>}
                                 disabled={!form.values.acknowledgement || !isAccountVerified || accountRequiresManualVerification}>
-                            {form.values.is_test ? t`Send Test` : t`Send`}
+                            {form.values.is_test ? `Send Tes` : `Send`}
                         </Button>
                     </fieldset>
                 )}

@@ -22,7 +22,7 @@ export const accountClient = {
         return response.data;
     },
     getStripeConnectDetails: async (accountId: IdParam) => {
-        const response = await api.post<GenericDataResponse<any>>(`accounts/${accountId}/stripe/connect`);
+        const response = await api.post<GenericDataResponse<any>>(`accounts/${accountId}/stripe/connec`);
         return response.data;
     }
 }

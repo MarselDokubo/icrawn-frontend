@@ -46,25 +46,25 @@ export const AttendeeTable = ({attendees, openCreateModal}: AttendeeTableProps) 
             attendeeId: attendee.id,
             eventId: eventId,
         }, {
-            onSuccess: () => showSuccess(t`Ticket email has been resent to attendee`),
-            onError: (error: any) => showError(error.response.data.message || t`Failed to resend ticket email`)
+            onSuccess: () => showSuccess(`Ticket email has been resent to attendee`),
+            onError: (error: any) => showError(error.response.data.message || `Failed to resend ticket email`)
         });
     }
 
     if (attendees.length === 0) {
         return <NoResultsSplash
-            heading={t`No Attendees to show`}
+            heading={`No Attendees to show`}
             imageHref={'/blank-slate/attendees.svg'}
             subHeading={(
                 <>
                     <p>
-                        {t`Your attendees will appear here once they have registered for your event. You can also manually add attendees.`}
+                        {`Your attendees will appear here once they have registered for your event. You can also manually add attendees.`}
                     </p>
                     <Button
                         size={'xs'}
                         leftSection={<IconPlus/>}
                         color={'green'}
-                        onClick={() => openCreateModal()}>{t`Manually add an Attendee`}
+                        onClick={() => openCreateModal()}>{`Manually add an Attendee`}
                     </Button>
                 </>
             )}
@@ -73,8 +73,8 @@ export const AttendeeTable = ({attendees, openCreateModal}: AttendeeTableProps) 
 
     const handleCancel = (attendee: Attendee) => {
         const message = attendee.status === 'CANCELLED'
-            ? t`Are you sure you want to activate this attendee?`
-            : t`Are you sure you want to cancel this attendee? This will void their ticket`
+            ? `Are you sure you want to activate this attendee?`
+            : `Are you sure you want to cancel this attendee? This will void their ticke`
 
         confirmationDialog(message, () => {
             modifyMutation.mutate({
@@ -94,7 +94,7 @@ export const AttendeeTable = ({attendees, openCreateModal}: AttendeeTableProps) 
                         color: 'green',
                     });
                 },
-                onError: () => showError(t`Failed to cancel attendee`),
+                onError: () => showError(`Failed to cancel attendee`),
             });
         })
     };
@@ -105,11 +105,11 @@ export const AttendeeTable = ({attendees, openCreateModal}: AttendeeTableProps) 
                 <TableHead>
                     <MantineTable.Tr>
                         <MantineTable.Th></MantineTable.Th>
-                        <MantineTable.Th>{t`Name`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Email`}</MantineTable.Th>
-                        <MantineTable.Th miw={140}>{t`Order`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Ticket`}</MantineTable.Th>
-                        <MantineTable.Th miw={120}>{t`Status`}</MantineTable.Th>
+                        <MantineTable.Th>{`Name`}</MantineTable.Th>
+                        <MantineTable.Th>{`Email`}</MantineTable.Th>
+                        <MantineTable.Th miw={140}>{`Order`}</MantineTable.Th>
+                        <MantineTable.Th>{`Ticke`}</MantineTable.Th>
+                        <MantineTable.Th miw={120}>{`Status`}</MantineTable.Th>
                         <MantineTable.Th></MantineTable.Th>
                     </MantineTable.Tr>
                 </TableHead>
@@ -156,20 +156,20 @@ export const AttendeeTable = ({attendees, openCreateModal}: AttendeeTableProps) 
                                 <MantineTable.Td style={{paddingRight: 0}}>
                                     <ActionMenu itemsGroups={[
                                         {
-                                            label: t`Actions`,
+                                            label: `Actions`,
                                             items: [
                                                 {
-                                                    label: t`Manage attendee`,
+                                                    label: `Manage attendee`,
                                                     icon: <IconUserCog size={14}/>,
                                                     onClick: () => handleModalClick(attendee, viewModalOpen),
                                                 },
                                                 {
-                                                    label: t`Message attendee`,
+                                                    label: `Message attendee`,
                                                     icon: <IconSend size={14}/>,
                                                     onClick: () => handleModalClick(attendee, messageModal),
                                                 },
                                                 {
-                                                    label: t`Resend ticket email`,
+                                                    label: `Resend ticket email`,
                                                     icon: <IconMailForward size={14}/>,
                                                     onClick: () => handleResendTicket(attendee),
                                                     visible: attendee.status === 'ACTIVE',
@@ -177,10 +177,10 @@ export const AttendeeTable = ({attendees, openCreateModal}: AttendeeTableProps) 
                                             ],
                                         },
                                         {
-                                            label: t`Danger Zone`,
+                                            label: `Danger Zone`,
                                             items: [
                                                 {
-                                                    label: attendee.status === 'CANCELLED' ? t`Activate` : t`Cancel` + ` ` + t`ticket`,
+                                                    label: attendee.status === 'CANCELLED' ? `Activate` : `Cancel` + ` ` + `ticke`,
                                                     icon: <IconTrash size={14}/>,
                                                     onClick: () => handleCancel(attendee),
                                                     color: attendee.status === 'CANCELLED' ? 'green' : 'red',

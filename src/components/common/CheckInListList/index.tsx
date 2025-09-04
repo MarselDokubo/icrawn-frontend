@@ -30,7 +30,7 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
     const handleDeleteCheckInList = (checkInListId: IdParam, eventId: IdParam) => {
         deleteMutation.mutate({checkInListId, eventId}, {
             onSuccess: () => {
-                showSuccess(t`Check-In List deleted successfully`);
+                showSuccess(`Check-In List deleted successfully`);
             },
             onError: (error: any) => {
                 showError(error.message);
@@ -41,7 +41,7 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
     if (checkInLists.length === 0) {
         return (
             <NoResultsSplash
-                heading={t`No Check-In Lists`}
+                heading={`No Check-In Lists`}
                 imageHref={'/blank-slate/check-in-lists.svg'}
                 subHeading={(
                     <>
@@ -58,7 +58,7 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                             size={'xs'}
                             leftSection={<IconPlus/>}
                             color={'green'}
-                            onClick={() => openCreateModal()}>{t`Create Check-In List`}
+                            onClick={() => openCreateModal()}>{`Create Check-In Lis`}
                         </Button>
                     </>
                 )}
@@ -72,14 +72,14 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                 {checkInLists.map((list) => {
                     const statusMessage = (function () {
                             if (list.is_expired) {
-                                return t`This check-in list has expired`;
+                                return `This check-in list has expired`;
                             }
 
                             if (!list.is_active) {
-                                return t`This check-in list is not active yet`;
+                                return `This check-in list is not active ye`;
                             }
 
-                            return t`This check-in list is active`;
+                            return `This check-in list is active`;
                         }
                     )();
 
@@ -101,7 +101,7 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                                                 <div>
                                                     {list.products.length > 1 &&
                                                         <Trans>Includes {list.products.length} products</Trans>}
-                                                    {list.products.length === 1 && t`Includes 1 product`}
+                                                    {list.products.length === 1 && `Includes 1 produc`}
                                                 </div>
                                                 &nbsp;
                                                 <IconHelp size={16}/>
@@ -113,7 +113,7 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                                     <Popover title={statusMessage} position={'bottom'} withArrow>
                                         <Badge variant={'light'}
                                                color={(!list.is_expired && list.is_active) ? 'green' : 'gray'}>
-                                            {!list.is_expired && list.is_active ? t`Active` : t`Inactive`}
+                                            {!list.is_expired && list.is_active ? `Active` : `Inactive`}
                                         </Badge>
                                     </Popover>
                                 </div>
@@ -142,10 +142,10 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                                     <ActionMenu
                                         itemsGroups={[
                                             {
-                                                label: t`Manage`,
+                                                label: `Manage`,
                                                 items: [
                                                     {
-                                                        label: t`Edit Check-In List`,
+                                                        label: `Edit Check-In Lis`,
                                                         icon: <IconPencil size={14}/>,
                                                         onClick: () => {
                                                             setSelectedCheckInListId(list.id as IdParam);
@@ -153,18 +153,18 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                                                         }
                                                     },
                                                     {
-                                                        label: t`Copy Check-In URL`,
+                                                        label: `Copy Check-In URL`,
                                                         icon: <IconCopy size={14}/>,
                                                         onClick: () => {
                                                             navigator.clipboard.writeText(
                                                                 `${window.location.origin}/check-in/${list.short_id}`
                                                             ).then(() => {
-                                                                showSuccess(t`Check-In URL copied to clipboard`);
+                                                                showSuccess(`Check-In URL copied to clipboard`);
                                                             });
                                                         }
                                                     },
                                                     {
-                                                        label: t`Open Check-In Page`,
+                                                        label: `Open Check-In Page`,
                                                         icon: <IconExternalLink size={14}/>,
                                                         onClick: () => {
                                                             window.open(`/check-in/${list.short_id}`, '_blank');
@@ -173,14 +173,14 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                                                 ],
                                             },
                                             {
-                                                label: t`Danger zone`,
+                                                label: `Danger zone`,
                                                 items: [
                                                     {
-                                                        label: t`Delete Check-In List`,
+                                                        label: `Delete Check-In Lis`,
                                                         icon: <IconTrash size={14}/>,
                                                         onClick: () => {
                                                             confirmationDialog(
-                                                                t`Are you sure you would like to delete this Check-In List?`,
+                                                                `Are you sure you would like to delete this Check-In List?`,
                                                                 () => {
                                                                     handleDeleteCheckInList(
                                                                         list.id as IdParam,

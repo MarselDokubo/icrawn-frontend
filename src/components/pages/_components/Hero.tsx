@@ -48,19 +48,19 @@ function GlassCountdownCard({ target }: { target?: Date }) {
       style={{
         backdropFilter: "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
-        background: t`linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.10))`,
-        border: t`1px solid rgba(255,255,255,0.22)`,
-        boxShadow: t`0 24px 48px rgba(0,0,0,0.25)`,
+        background: `linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.10))`,
+        border: `1px solid rgba(255,255,255,0.22)`,
+        boxShadow: `0 24px 48px rgba(0,0,0,0.25)`,
       }}
     >
       <Group justify="space-around" gap="xl" wrap="nowrap">
-        <Stat label={t`Days`} value={days} />
+        <Stat label={`Days`} value={days} />
         <Divider orientation="vertical" style={{ opacity: 0.4 }} />
-        <Stat label={t`Hours`} value={hours} />
+        <Stat label={`Hours`} value={hours} />
         <Divider orientation="vertical" style={{ opacity: 0.4 }} />
-        <Stat label={t`Minutes`} value={minutes} />
+        <Stat label={`Minutes`} value={minutes} />
         <Divider orientation="vertical" style={{ opacity: 0.4 }} />
-        <Stat label={t`Seconds`} value={seconds} />
+        <Stat label={`Seconds`} value={seconds} />
       </Group>
     </Paper>
   );
@@ -71,7 +71,7 @@ function getCoverUrl(event?: Event): string | undefined {
   return cover?.url;
 }
 function formatMonthYear(date?: Date) {
-  if (!date) return t`Upcoming Event`;
+  if (!date) return `Upcoming Even`;
   return new Intl.DateTimeFormat(undefined, { month: "long", year: "numeric" }).format(date);
 }
 
@@ -144,11 +144,11 @@ export default function Hero() {
         : undefined,
     [fullEvent, upcomingEventSummary]
   );
-  const eventTitle = fullEvent?.title ?? upcomingEventSummary?.title ?? t`Upcoming Event`;
+  const eventTitle = fullEvent?.title ?? upcomingEventSummary?.title ?? `Upcoming Even`;
   const eventDescription =
     fullEvent?.description_preview ??
     upcomingEventSummary?.description_preview ??
-    t`Join us for our upcoming event featuring forward-thinking leaders and great experiences.`;
+    `Join us for our upcoming event featuring forward-thinking leaders and great experiences.`;
 
   // 4) dynamic tags
   const dynamicTags: string[] = useMemo(() => {
@@ -168,7 +168,7 @@ export default function Hero() {
         : "#";
 
   // darker, brand-tinted overlay
-  const heroBg = t`
+  const heroBg = `
     radial-gradient(1200px 400px at 20% 10%, rgba(99,102,241,0.25) 0%, transparent 60%),
     radial-gradient(1200px 500px at 80% 20%, rgba(168,85,247,0.25) 0%, transparent 60%),
     linear-gradient(135deg, rgba(30,27,75,0.70), rgba(17,24,39,0.65)),
@@ -176,9 +176,9 @@ export default function Hero() {
   `;
 
   // responsive offsets for the floating card
-  const isSm = useMediaQuery(t`(max-width: 768px)`);
+  const isSm = useMediaQuery(`(max-width: 768px)`);
   const floatBottom = isSm ? -48 : -64;
-  const floatWidth  = isSm ? t`calc(100% - 24px)` : t`min(100%, 1000px)`;
+  const floatWidth  = isSm ? `calc(100% - 24px)` : `min(100%, 1000px)`;
 
   if (isLoading) return <LoadingHero />;
 
@@ -187,12 +187,12 @@ export default function Hero() {
       <Container size="lg" pt="xl" pb="xl">
         <Alert
           icon={<IconAlertCircle size={16} />}
-          title={t`Failed to load event`}
+          title={`Failed to load even`}
           color="red"
           variant="light"
           radius="md"
         >
-          {error?.message ?? t`An error occurred while fetching the upcoming event.`}
+          {error?.message ?? `An error occurred while fetching the upcoming event.`}
         </Alert>
       </Container>
     );
@@ -203,12 +203,12 @@ export default function Hero() {
       <Container size="lg" pt="xl" pb="xl">
         <Alert
           icon={<IconAlertCircle size={16} />}
-          title={t`No upcoming events`}
+          title={`No upcoming events`}
           color="gray"
           variant="light"
           radius="md"
         >
-          {t`There are currently no upcoming events. Once an event is scheduled, its cover image and countdown will appear here.`}
+          {`There are currently no upcoming events. Once an event is scheduled, its cover image and countdown will appear here.`}
         </Alert>
       </Container>
     );
@@ -253,7 +253,7 @@ export default function Hero() {
                   to={eventPath}
                   disabled={!eventId}
                 >
-                  {t`Get Tickets`}
+                  {`Get Tickets`}
                 </Button>
                 <Button
                   size="md"
@@ -264,7 +264,7 @@ export default function Hero() {
                   to="/contact"
                   style={{color:"#ffffffcc"}}
                 >
-                  {t`Inquire`}
+                  {`Inquire`}
                 </Button>
               </Group>
             </Stack>
@@ -282,8 +282,8 @@ export default function Hero() {
                   ))
                 ) : (
                   <>
-                    <Badge variant="outline">{t`CONF`}</Badge>
-                    <Badge color="grape" variant="light">{t`Public`}</Badge>
+                    <Badge variant="outline">{`CONF`}</Badge>
+                    <Badge color="grape" variant="light">{`Public`}</Badge>
                   </>
                 )}
               </Group>
@@ -316,7 +316,7 @@ export default function Hero() {
               <ThemeIcon variant="light" color="grape" radius="md">
                 <IconMail />
               </ThemeIcon>
-              <Text>{t`icrawnevents@gmail.com`}</Text>
+              <Text>{`icrawnevents@gmail.com`}</Text>
             </Group>
           </Paper>
           <Paper withBorder radius="lg" p="md">
@@ -324,7 +324,7 @@ export default function Hero() {
               <ThemeIcon variant="light" color="indigo" radius="md">
                 <IconMapPin />
               </ThemeIcon>
-              <Text>{t`1000 S Eighth Ave, NYC`}</Text>
+              <Text>{`1000 S Eighth Ave, NYC`}</Text>
             </Group>
           </Paper>
           <Paper withBorder radius="lg" p="md">
@@ -332,7 +332,7 @@ export default function Hero() {
               <ThemeIcon variant="light" color="violet" radius="md">
                 <IconPhone />
               </ThemeIcon>
-              <Text>{t`(+234)-706-7823-892`}</Text>
+              <Text>{`(+234)-706-7823-892`}</Text>
             </Group>
           </Paper>
         </SimpleGrid>

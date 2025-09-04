@@ -71,48 +71,48 @@ const EventLayout = () => {
             userId: me?.id
         }, {
             onSuccess: () => {
-                showSuccess(t`Email confirmation resent successfully`);
+                showSuccess(`Email confirmation resent successfully`);
                 setEmailConfirmationResent(true);
             },
             onError: () => {
-                showError(t`Something went wrong. Please try again.`);
+                showError(`Something went wrong. Please try again.`);
             }
         })
     }
 
     const navItems: NavItem[] = [
-        {link: '/manage/organizer/' + event?.organizer?.id, label: t`Organizer Dashboard`, icon: IconArrowLeft},
-        {label: t`Overview`},
+        {link: '/manage/organizer/' + event?.organizer?.id, label: `Organizer Dashboard`, icon: IconArrowLeft},
+        {label: `Overview`},
         {
             link: 'getting-started',
-            label: t`Getting Started`,
+            label: `Getting Started`,
             icon: IconStar,
             showWhen: () => !eventSettings?.hide_getting_started_page
         },
-        {link: 'dashboard', label: t`Dashboard`, icon: IconDashboard},
+        {link: 'dashboard', label: `Dashboard`, icon: IconDashboard},
         {
             link: 'reports',
-            label: t`Reports`,
+            label: `Reports`,
             icon: IconChartPie,
             isActive: (isActive) => isActive || location.pathname.includes('/report/')
         },
 
-        {label: t`Manage`},
-        {link: 'settings', label: t`Settings`, icon: IconSettings},
-        {link: 'attendees', label: t`Attendees`, icon: IconUsers, badge: eventStats?.total_products_sold},
-        {link: 'orders', label: t`Orders`, icon: IconReceipt, badge: eventStats?.total_orders},
-        {link: 'products', label: t`Tickets & Products`, icon: IconTicket},
-        {link: 'questions', label: t`Questions`, icon: IconUserQuestion},
-        {link: 'capacity-assignments', label: t`Capacity`, icon: IconUsersGroup},
-        {link: 'check-in', label: t`Check-In Lists`, icon: IconQrcode},
-        {link: 'messages', label: t`Messages`, icon: IconSend},
-        {link: 'promo-codes', label: t`Promo Codes`, icon: IconDiscount2},
-        {link: 'affiliates', label: t`Affiliates`, icon: IconTrendingUp},
+        {label: `Manage`},
+        {link: 'settings', label: `Settings`, icon: IconSettings},
+        {link: 'attendees', label: `Attendees`, icon: IconUsers, badge: eventStats?.total_products_sold},
+        {link: 'orders', label: `Orders`, icon: IconReceipt, badge: eventStats?.total_orders},
+        {link: 'products', label: `Tickets & Products`, icon: IconTicket},
+        {link: 'questions', label: `Questions`, icon: IconUserQuestion},
+        {link: 'capacity-assignments', label: `Capacity`, icon: IconUsersGroup},
+        {link: 'check-in', label: `Check-In Lists`, icon: IconQrcode},
+        {link: 'messages', label: `Messages`, icon: IconSend},
+        {link: 'promo-codes', label: `Promo Codes`, icon: IconDiscount2},
+        {link: 'affiliates', label: `Affiliates`, icon: IconTrendingUp},
 
-        {label: t`Tools`},
-        {link: 'homepage-designer', label: t`Homepage Designer`, icon: IconPaint},
-        {link: 'widget', label: t`Widget Embed`, icon: IconDeviceTabletCode},
-        {link: 'webhooks', label: t`Webhooks`, icon: IconWebhook},
+        {label: `Tools`},
+        {link: 'homepage-designer', label: `Homepage Designer`, icon: IconPaint},
+        {link: 'widget', label: `Widget Embed`, icon: IconDeviceTabletCode},
+        {link: 'webhooks', label: `Webhooks`, icon: IconWebhook},
     ];
 
     const navItemsWithLoading = !isEventSettingsFetched || !isEventFetched
@@ -125,7 +125,7 @@ const EventLayout = () => {
     const breadcrumbItems: BreadcrumbItem[] = [
         {
             link: '/manage/events',
-            content: t`Home`
+            content: `Home`
         },
         ...(isEventFetched ? [
             {
@@ -143,8 +143,8 @@ const EventLayout = () => {
 
     const handleStatusToggle = () => {
         const message = event?.status === 'LIVE'
-            ? t`Are you sure you want to make this event draft? This will make the event invisible to the public`
-            : t`Are you sure you want to make this event public? This will make the event visible to the public`;
+            ? `Are you sure you want to make this event draft? This will make the event invisible to the public`
+            : `Are you sure you want to make this event public? This will make the event visible to the public`;
 
         confirmationDialog(message, () => {
             statusToggleMutation.mutate({
@@ -152,10 +152,10 @@ const EventLayout = () => {
                 status: event?.status === 'LIVE' ? 'DRAFT' : 'LIVE'
             }, {
                 onSuccess: () => {
-                    showSuccess(t`Event status updated`);
+                    showSuccess(`Event status updated`);
                 },
                 onError: (error: any) => {
-                    showError(error?.response?.data?.message || t`Event status update failed. Please try again later`);
+                    showError(error?.response?.data?.message || `Event status update failed. Please try again later`);
                 }
             });
         });
@@ -176,10 +176,10 @@ const EventLayout = () => {
                             rightSection={<IconChevronRight size={14}/>}
                         >
                             {event?.status === 'DRAFT'
-                                ? <span>{t`Draft`} <span
-                                    className={classes.statusAction}>{t`- Click to Publish`}</span></span>
-                                : <span>{t`Live`} <span
-                                    className={classes.statusAction}>{t`- Click to Unpublish`}</span></span>
+                                ? <span>{`Draf`} <span
+                                    className={classes.statusAction}>{`- Click to Publish`}</span></span>
+                                : <span>{`Live`} <span
+                                    className={classes.statusAction}>{`- Click to Unpublish`}</span></span>
                             }
                         </TopBarButton>
                     )}
@@ -194,13 +194,13 @@ const EventLayout = () => {
                                 variant="transparent"
                                 leftSection={<IconShare size={16}/>}
                             >
-                                {t`Share Event`}
+                                {`Share Even`}
                             </Button>
 
                             {event && <ShareModal
                                 url={eventHomepageUrl(event)}
                                 title={event.title}
-                                modalTitle={t`Share Event`}
+                                modalTitle={`Share Even`}
                                 opened={opened}
                                 onClose={close}
                             />}
@@ -216,14 +216,14 @@ const EventLayout = () => {
                     variant={'transparent'}
                     leftSection={<IconExternalLink size={17}/>}
                     className={classes.eventPageButton}
-                    title={t`Preview Event page`}
+                    title={`Preview Event page`}
                 >
                     <div className={classes.eventPageButtonText}>
                                 <span className={classes.desktop}>
-                                    {t`Preview Event page`}
+                                    {`Preview Event page`}
                                 </span>
                         <span className={classes.mobile}>
-                                    {t`Event Page`}
+                                    {`Event Page`}
                                 </span>
                     </div>
 
@@ -233,10 +233,10 @@ const EventLayout = () => {
                 (me && !me.is_email_verified && !emailConfirmationResent ? (
                     <SidebarCallout
                         icon={<IconMailCheck size={20}/>}
-                        heading={t`Verify your email`}
-                        description={t`Confirm your email to access all features.`}
+                        heading={`Verify your email`}
+                        description={`Confirm your email to access all features.`}
                         buttonIcon={<IconMailForward size={16}/>}
-                        buttonText={t`Resend email`}
+                        buttonText={`Resend email`}
                         onClick={() => handleEmailConfirmationResend()}
                     />
                 ) : null)

@@ -60,10 +60,10 @@ export const OrdersTable = ({orders, event}: OrdersTableProps) => {
     if (orders.length === 0) {
         return <NoResultsSplash
             imageHref={'/blank-slate/orders.svg'}
-            heading={t`No orders to show`}
+            heading={`No orders to show`}
             subHeading={(
                 <p>
-                    {t`Your orders will appear here once they start rolling in.`}
+                    {`Your orders will appear here once they start rolling in.`}
                 </p>
             )}
         />
@@ -76,8 +76,8 @@ export const OrdersTable = ({orders, event}: OrdersTableProps) => {
 
     const handleMarkAsPaid = (eventId: IdParam, orderId: IdParam) => {
         markAsPaidMutation.mutate({eventId, orderId}, {
-            onSuccess: () => showSuccess(t`Order marked as paid`),
-            onError: () => showError(t`There was an error marking the order as paid`)
+            onSuccess: () => showSuccess(`Order marked as paid`),
+            onError: () => showError(`There was an error marking the order as paid`)
         });
     }
 
@@ -85,14 +85,14 @@ export const OrdersTable = ({orders, event}: OrdersTableProps) => {
         resendConfirmationMutation.mutate({eventId, orderId}, {
             onSuccess: () => {
                 notifications.show({
-                    message: t`Your message has been sent`,
+                    message: `Your message has been sen`,
                     icon: <IconCheck/>,
                     position: 'top-center',
                 })
             },
             onError: () => {
                 notifications.show({
-                    message: t`There was an error sending your message`,
+                    message: `There was an error sending your message`,
                     icon: <IconCheck/>,
                     position: 'top-center',
                 })
@@ -108,16 +108,16 @@ export const OrdersTable = ({orders, event}: OrdersTableProps) => {
             },
             {
                 loading: {
-                    title: t`Downloading Invoice`,
-                    message: t`Please wait while we prepare your invoice...`
+                    title: `Downloading Invoice`,
+                    message: `Please wait while we prepare your invoice...`
                 },
                 success: {
-                    title: t`Success`,
-                    message: t`Invoice downloaded successfully`
+                    title: `Success`,
+                    message: `Invoice downloaded successfully`
                 },
                 error: {
-                    title: t`Error`,
-                    message: t`Failed to download invoice. Please try again.`
+                    title: `Error`,
+                    message: `Failed to download invoice. Please try again.`
                 }
             }
         );
@@ -136,7 +136,7 @@ export const OrdersTable = ({orders, event}: OrdersTableProps) => {
                         <div className={classes.mobileAction}>
                             <ShowForMobile>
                                 <Button size={"xs"} variant={"light"}>
-                                    {t`Manage`}
+                                    {`Manage`}
                                 </Button>
                             </ShowForMobile>
                         </div>
@@ -151,43 +151,43 @@ export const OrdersTable = ({orders, event}: OrdersTableProps) => {
                 </Menu.Target>
 
                 <Menu.Dropdown>
-                    <Menu.Label>{t`Manage`}</Menu.Label>
+                    <Menu.Label>{`Manage`}</Menu.Label>
                     <Menu.Item onClick={() => handleModalClick(order.id, viewModal)}
-                               leftSection={<IconBasketCog size={14}/>}>{t`Manage order`}</Menu.Item>
+                               leftSection={<IconBasketCog size={14}/>}>{`Manage order`}</Menu.Item>
                     <Menu.Item onClick={() => handleModalClick(order.id, messageModal)}
-                               leftSection={<IconSend size={14}/>}>{t`Message buyer`}</Menu.Item>
+                               leftSection={<IconSend size={14}/>}>{`Message buyer`}</Menu.Item>
 
                     {order.latest_invoice && (
                         <Menu.Item onClick={() => handleInvoiceDownload(order.latest_invoice as Invoice)}
-                                   leftSection={<IconReceipt2 size={14}/>}>{t`Download invoice`}</Menu.Item>
+                                   leftSection={<IconReceipt2 size={14}/>}>{`Download invoice`}</Menu.Item>
                     )}
 
                     {order.status === 'AWAITING_OFFLINE_PAYMENT' && (
                         <Menu.Item onClick={() => handleMarkAsPaid(event.id, order.id)}
-                                   leftSection={<IconReceiptDollar size={14}/>}>{t`Mark as paid`}</Menu.Item>
+                                   leftSection={<IconReceiptDollar size={14}/>}>{`Mark as paid`}</Menu.Item>
                     )}
 
                     {isRefundable && (
                         <Menu.Item onClick={() => handleModalClick(order.id, refundModal)}
-                                   leftSection={<IconReceiptRefund size={14}/>}>{t`Refund order`}</Menu.Item>
+                                   leftSection={<IconReceiptRefund size={14}/>}>{`Refund order`}</Menu.Item>
                     )}
 
                     {order.status === 'COMPLETED' && (
                         <Menu.Item
                             onClick={() => handleResendConfirmation(event.id, order.id)}
                             leftSection={<IconRepeat size={14}/>}>
-                            {t`Resend order email`}
+                            {`Resend order email`}
                         </Menu.Item>
                     )}
 
                     {order.status !== 'CANCELLED' && (
                         <>
                             <Menu.Divider/>
-                            <Menu.Label>{t`Danger zone`}</Menu.Label>
+                            <Menu.Label>{`Danger zone`}</Menu.Label>
                             <Menu.Item color="red"
                                        onClick={() => handleModalClick(order.id, cancelModal)}
                                        leftSection={<IconTrash size={14}/>}>
-                                {t`Cancel order`}
+                                {`Cancel order`}
                             </Menu.Item>
                         </>
                     )}
@@ -201,12 +201,12 @@ export const OrdersTable = ({orders, event}: OrdersTableProps) => {
             <Table>
                 <TableHead>
                     <MantineTable.Tr>
-                        <MantineTable.Th miw={120}>{t`Reference`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Customer`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Attendees`}</MantineTable.Th>
-                        <MantineTable.Th miw={140}>{t`Amount`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Created`}</MantineTable.Th>
-                        <MantineTable.Th miw={120}>{t`Status`}</MantineTable.Th>
+                        <MantineTable.Th miw={120}>{`Reference`}</MantineTable.Th>
+                        <MantineTable.Th>{`Customer`}</MantineTable.Th>
+                        <MantineTable.Th>{`Attendees`}</MantineTable.Th>
+                        <MantineTable.Th miw={140}>{`Amoun`}</MantineTable.Th>
+                        <MantineTable.Th>{`Created`}</MantineTable.Th>
+                        <MantineTable.Th miw={120}>{`Status`}</MantineTable.Th>
                         <MantineTable.Th></MantineTable.Th>
                     </MantineTable.Tr>
                 </TableHead>
@@ -271,14 +271,14 @@ export const OrdersTable = ({orders, event}: OrdersTableProps) => {
                                     href={`mailto:${order.email}`}>{order.email}</Anchor>
 
                             <span className={classes.reference}>
-                                {t`Reference`}: <b>{order.public_id}</b>
+                                {`Reference`}: <b>{order.public_id}</b>
                                 <Anchor onClick={() => handleModalClick(order.id, viewModal)}>
                                     <IconInfoCircle size={13}/>
                                 </Anchor>
                             </span>
                             <Tooltip.Floating label={prettyDate(order.created_at, event.timezone)}>
                                 <span className={classes.createdDate}>
-                                    {t`Created`}: <b>{relativeDate(order.created_at)}</b>
+                                    {`Created`}: <b>{relativeDate(order.created_at)}</b>
                                 </span>
                             </Tooltip.Floating>
 

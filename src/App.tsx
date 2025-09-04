@@ -66,8 +66,8 @@ export const App: FC<
                         primary: generateColors(getConfig("VITE_APP_PRIMARY_COLOR", "#40296C") as string),
                         secondary: generateColors(getConfig("VITE_APP_SECONDARY_COLOR", "#5A1065") as string),
                     },
-                    fontFamily: t`Inter, sans-serif`,
-                    headings: { fontFamily: t`Inter, sans-serif` },
+                    fontFamily: `Inter, sans-serif`,
+                    headings: { fontFamily: `Inter, sans-serif` },
                     primaryShade: 7
                 }}
             >

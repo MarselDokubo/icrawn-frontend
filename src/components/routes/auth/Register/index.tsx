@@ -19,7 +19,7 @@ function isAxiosError(error: unknown): error is AxiosError {
 export const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const appName = getConfig("VITE_APP_NAME", t`iCrawn.Events`) || t`iCrawn.Events`;
+    const appName = getConfig("VITE_APP_NAME", `iCrawn.Events`) || `iCrawn.Events`;
 
     const form = useForm({
         validateInputOnBlur: true,
@@ -37,9 +37,9 @@ export const Register = () => {
             currency_code: getUserCurrency(),
         },
         validate: {
-            password: hasLength({min: 8}, t`Password must be at least 8 characters`),
-            password_confirmation: matchesField('password', t`Passwords are not the same`),
-            email: isEmail(t`Please check your email is valid`),
+            password: hasLength({min: 8}, `Password must be at least 8 characters`),
+            password_confirmation: matchesField('password', `Passwords are not the same`),
+            email: isEmail(`Please check your email is valid`),
         },
     });
     const errorHandler = useFormErrorResponseHandler();
@@ -76,11 +76,11 @@ export const Register = () => {
     return (
         <>
             <header className={classes.header}>
-                <h2>{"Welcome to ${appName} 👋"}</h2>
+                <h2>{`Welcome to ${appName} 👋`}</h2>
                 <p>
                     <Trans>
                         Create an account or <NavLink to={'/auth/login'}>
-                        {t`Log in`}
+                        {`Log in`}
                     </NavLink> to get started
                     </Trans>
                 </p>
@@ -92,21 +92,21 @@ export const Register = () => {
                     <SimpleGrid verticalSpacing={0} cols={{base: 2, xs: 2}}>
                         <TextInput
                             {...form.getInputProps('first_name')}
-                            label={t`First Name`}
-                            placeholder={t`John`}
+                            label={`First Name`}
+                            placeholder={`John`}
                             required
                         />
                         <TextInput
                             {...form.getInputProps('last_name')}
-                            label={t`Last Name`}
-                            placeholder={t`Smith`}
+                            label={`Last Name`}
+                            placeholder={`Smith`}
                         />
                     </SimpleGrid>
 
                     <TextInput
                         mb={0}
                         {...form.getInputProps('email')}
-                        label={t`Email`}
+                        label={`Email`}
                         placeholder={'your@email.com'}
                         required
                     />
@@ -115,16 +115,16 @@ export const Register = () => {
                         <SimpleGrid verticalSpacing={0} cols={{base: 2, xs: 2}}>
                             <PasswordInput
                                 {...form.getInputProps('password')}
-                                label={t`Password`}
-                                placeholder={t`Your password`}
+                                label={`Password`}
+                                placeholder={`Your password`}
                                 required
                                 mt="md"
                                 mb={0}
                             />
                             <PasswordInput
                                 {...form.getInputProps('password_confirmation')}
-                                label={t`Confirm Password`}
-                                placeholder={t`Confirm password`}
+                                label={`Confirm Password`}
+                                placeholder={`Confirm password`}
                                 required
                                 mt="md"
                                 mb={0}
@@ -138,7 +138,7 @@ export const Register = () => {
                         type="hidden"
                     />
                     <Button color={'var(--hi-pink)'} type="submit" fullWidth disabled={mutate.isPending}>
-                        {mutate.isPending ? t`Working...` : t`Register`}
+                        {mutate.isPending ? `Working...` : `Register`}
                     </Button>
                 </form>
                 <footer>

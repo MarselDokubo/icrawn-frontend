@@ -35,7 +35,7 @@ export const CheckoutFooter = ({isLoading, buttonContent, event, order, onClick,
                             type="submit"
                             onClick={onClick}
                         >
-                            {buttonContent || t`Continue`}
+                            {buttonContent || `Continue`}
                         </Button>
                     )}
                     <ActionIcon onClick={() => setIsSidebarOpen(!isSidebarOpen)}

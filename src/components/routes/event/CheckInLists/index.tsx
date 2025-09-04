@@ -29,12 +29,12 @@ const CheckInLists = () => {
     return (
         <PageBody>
             <PageTitle>
-                {t`Check-In Lists`}
+                {`Check-In Lists`}
             </PageTitle>
 
             <ToolBar searchComponent={() => (
                 <SearchBarWrapper
-                    placeholder={t`Search check-in lists...`}
+                    placeholder={`Search check-in lists...`}
                     setSearchParams={setSearchParams}
                     searchParams={searchParams}
                     pagination={pagination}
@@ -43,7 +43,7 @@ const CheckInLists = () => {
                 <Button
                     leftSection={<IconPlus/>}
                     color={'green'}
-                    onClick={openCreateModal}>{t`Create Check-In List`}
+                    onClick={openCreateModal}>{`Create Check-In Lis`}
                 </Button>
             </ToolBar>
 

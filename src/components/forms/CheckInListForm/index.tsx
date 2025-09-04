@@ -17,13 +17,13 @@ export const CheckInListForm = ({form, productCategories}: CheckInListFormProps)
             <TextInput
                 {...form.getInputProps('name')}
                 required
-                label={t`Name`}
-                placeholder={t`VIP check-in list`}
+                label={`Name`}
+                placeholder={`VIP check-in lis`}
             />
 
             <ProductSelector
-                label={t`Which tickets should be associated with this check-in list?`}
-                placeholder={t`Select tickets`}
+                label={`Which tickets should be associated with this check-in list?`}
+                placeholder={`Select tickets`}
                 productCategories={productCategories}
                 form={form}
                 productFieldName="product_ids"
@@ -33,10 +33,10 @@ export const CheckInListForm = ({form, productCategories}: CheckInListFormProps)
             <Textarea
                 {...form.getInputProps('description')}
                 label={<InputLabelWithHelp
-                    label={t`Description for check-in staff`}
-                    helpText={t`This description will be shown to the check-in staff`}
+                    label={`Description for check-in staff`}
+                    helpText={`This description will be shown to the check-in staff`}
                 />}
-                placeholder={t`Add a description for this check-in list`}
+                placeholder={`Add a description for this check-in lis`}
             />
 
             <InputGroup>
@@ -44,19 +44,19 @@ export const CheckInListForm = ({form, productCategories}: CheckInListFormProps)
                     {...form.getInputProps('activates_at')}
                     type="datetime-local"
                     label={<InputLabelWithHelp
-                        label={t`Activation date`}
-                        helpText={t`No attendees will be able to check in before this date using this list`}
+                        label={`Activation date`}
+                        helpText={`No attendees will be able to check in before this date using this lis`}
                     />}
-                    placeholder={t`What date should this check-in list become active?`}
+                    placeholder={`What date should this check-in list become active?`}
                 />
                 <TextInput
                     {...form.getInputProps('expires_at')}
                     type="datetime-local"
                     label={<InputLabelWithHelp
-                        label={t`Expiration date`}
-                        helpText={t`This list will no longer be available for check-ins after this date`}
+                        label={`Expiration date`}
+                        helpText={`This list will no longer be available for check-ins after this date`}
                     />}
-                    placeholder={t`When should this check-in list expire?`}
+                    placeholder={`When should this check-in list expire?`}
                 />
             </InputGroup>
         </>

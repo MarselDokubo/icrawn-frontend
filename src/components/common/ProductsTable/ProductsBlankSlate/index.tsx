@@ -17,7 +17,7 @@ export const ProductsBlankSlate = ({openCreateModal, productCategories, searchTe
         return (
             <NoResultsSplash
                 imageHref={'/blank-slate/tickets.svg'}
-                heading={t`No Search Results`}
+                heading={`No Search Results`}
                 subHeading={(
                     <>
                         <p>
@@ -36,11 +36,11 @@ export const ProductsBlankSlate = ({openCreateModal, productCategories, searchTe
         return (
             <NoResultsSplash
                 imageHref={'/blank-slate/tickets.svg'}
-                heading={t`No Products Yet`}
+                heading={`No Products Ye`}
                 subHeading={(
                     <>
                         <p>
-                            {t`You'll need at least one product to get started. Free, paid or let the user decide what to pay.`}
+                            {`You'll need at least one product to get started. Free, paid or let the user decide what to pay.`}
                         </p>
                         <Button
                             size={'xs'}
@@ -48,7 +48,7 @@ export const ProductsBlankSlate = ({openCreateModal, productCategories, searchTe
                             color={'green'}
                             onClick={() => openCreateModal()}
                         >
-                            {t`Add Product to Category`}
+                            {`Add Product to Category`}
                         </Button>
                     </>
                 )}
@@ -58,14 +58,14 @@ export const ProductsBlankSlate = ({openCreateModal, productCategories, searchTe
 
     return (
         <div style={{textAlign: 'center'}}><p style={{marginBottom: 20, marginTop: 0}}>
-            {t`This category doesn't have any products yet.`}
+            {`This category doesn't have any products yet.`}
         </p>
             <Button
                 size={'xs'}
                 leftSection={<IconPlus/>}
                 color={'green'}
                 onClick={() => openCreateModal()}
-            >{t`Add Product`}
+            >{`Add Produc`}
             </Button>
         </div>
     )

@@ -109,7 +109,7 @@ export const AddToEventCalendarButton = ({event}: AddToCalendarProps) => {
     return (
         <Popover width={200} position="bottom" withArrow shadow="md">
             <Popover.Target>
-                <Tooltip label={t`Add to Calendar`}>
+                <Tooltip label={`Add to Calendar`}>
                     <ActionIcon variant="subtle">
                         <IconCalendarPlus size={20}/>
                     </ActionIcon>
@@ -117,7 +117,7 @@ export const AddToEventCalendarButton = ({event}: AddToCalendarProps) => {
             </Popover.Target>
             <Popover.Dropdown>
                 <Stack gap="xs">
-                    <Text size="sm" fw={500}>{t`Add to Calendar`}</Text>
+                    <Text size="sm" fw={500}>{`Add to Calendar`}</Text>
                     <Button
                         variant="light"
                         size="xs"
@@ -125,7 +125,7 @@ export const AddToEventCalendarButton = ({event}: AddToCalendarProps) => {
                         onClick={() => window.open(createGoogleCalendarUrl(event), '_blank')}
                         fullWidth
                     >
-                        {t`Google Calendar`}
+                        {`Google Calendar`}
                     </Button>
                     <Button
                         variant="light"
@@ -134,7 +134,7 @@ export const AddToEventCalendarButton = ({event}: AddToCalendarProps) => {
                         onClick={() => downloadICSFile(event)}
                         fullWidth
                     >
-                        {t`Download .ics`}
+                        {`Download .ics`}
                     </Button>
                 </Stack>
             </Popover.Dropdown>

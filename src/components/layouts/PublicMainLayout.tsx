@@ -12,16 +12,16 @@ import { Text } from '@mantine/core';
 
 export function NavBar() {
     const navLinks = [
-  { to: '/', label: () => t`Home` },
-  { to: '/events', label: () => t`Events` },
-  { to: '/about', label: () => t`About` },
-  { to: '/contact', label: () => t`Contact` },
+  { to: '/', label: () => `Home` },
+  { to: '/events', label: () => `Events` },
+  { to: '/about', label: () => `Abou` },
+  { to: '/contact', label: () => `Contac` },
 ];
   return (
     <Container size="lg" py="md">
       <Group justify="space-between">
         <Group>
-          <img src="/icrawn_logo.jpg" alt={t`Logo`} style={{ height: 48 }} />
+          <img src="/icrawn_logo.jpg" alt={`Logo`} style={{ height: 48 }} />
         </Group>
         <Group visibleFrom="sm">
           {navLinks.map((link) => (
@@ -31,7 +31,7 @@ export function NavBar() {
           ))}
         </Group>
         <Button radius="xl" variant="gradient" gradient={{ from: "grape", to: "indigo" }}>
-          {t`Book Event`}
+          {`Book Even`}
         </Button>
       </Group>
     </Container>
@@ -40,33 +40,33 @@ export function NavBar() {
 
 function Footer() {
   return (
-    <Box py={40} style={{ background: t`linear-gradient(180deg, rgba(0,0,0,0.02), transparent)` }}>
+    <Box py={40} style={{ background: `linear-gradient(180deg, rgba(0,0,0,0.02), transparent)` }}>
       <Container size="lg">
         <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="xl">
           <Stack>
             <Group>
               <ThemeIcon radius="xl" size={34} variant="gradient" gradient={{ from: "grape", to: "indigo" }}></ThemeIcon>
-              <Title order={4}>{t`ICRAWN EVENTS`}</Title>
+              <Title order={4}>{`ICRAWN EVENTS`}</Title>
             </Group>
             <Text c="dimmed">
-              {t`Your Vision, Our Creation. Premium event planning and branding for weddings, corporate events, shows and more.`}
+              {`Your Vision, Our Creation. Premium event planning and branding for weddings, corporate events, shows and more.`}
             </Text>
           </Stack>
           <Stack>
-            <Title order={5}>{t`Quick Links`}</Title>
-            <Anchor href="#about">{t`About`}</Anchor>
-            <Anchor href="#video">{t`Video`}</Anchor>
-            <Anchor href="#contact">{t`Contact`}</Anchor>
+            <Title order={5}>{`Quick Links`}</Title>
+            <Anchor href="#about">{`Abou`}</Anchor>
+            <Anchor href="#video">{`Video`}</Anchor>
+            <Anchor href="#contact">{`Contac`}</Anchor>
           </Stack>
           <Stack>
-            <Title order={5}>{t`Contact`}</Title>
-            <Text>{t`icrawnevents@gmail.com`}</Text>
-            <Text>{t`1000 S Eighth Ave, NYC`}</Text>
-            <Text>{t`(+234)-706-7823-892`}</Text>
+            <Title order={5}>{`Contac`}</Title>
+            <Text>{`icrawnevents@gmail.com`}</Text>
+            <Text>{`1000 S Eighth Ave, NYC`}</Text>
+            <Text>{`(+234)-706-7823-892`}</Text>
           </Stack>
         </SimpleGrid>
         <Divider my="lg" />
-        <Text size="sm" c="dimmed">© {new Date().getFullYear()} {t`ICRAWN EVENTS.`} {t`All rights reserved.`}</Text>
+        <Text size="sm" c="dimmed">© {new Date().getFullYear()} {`ICRAWN EVENTS.`} {`All rights reserved.`}</Text>
       </Container>
     </Box>
   );
@@ -98,7 +98,7 @@ const PublicMainLayout: React.FC = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             leftSection={<IconArrowUp size={16} />}
           >
-            {t`Top`}
+            {`Top`}
           </Button>
         )}
         </AppShell.Main>

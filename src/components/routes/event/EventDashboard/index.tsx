@@ -61,8 +61,8 @@ export const EventDashboard = () => {
 
     const handleStatusToggle = () => {
         const message = event?.status === 'LIVE'
-            ? t`Are you sure you want to make this event draft? This will make the event invisible to the public`
-            : t`Are you sure you want to make this event public? This will make the event visible to the public`;
+            ? `Are you sure you want to make this event draft? This will make the event invisible to the public`
+            : `Are you sure you want to make this event public? This will make the event visible to the public`;
 
         confirmationDialog(message, () => {
             statusToggleMutation.mutate({
@@ -70,10 +70,10 @@ export const EventDashboard = () => {
                 status: event?.status === 'LIVE' ? 'DRAFT' : 'LIVE'
             }, {
                 onSuccess: () => {
-                    showSuccess(t`Event status updated`);
+                    showSuccess(`Event status updated`);
                 },
                 onError: (error: any) => {
-                    showError(error?.response?.data?.message || t`Event status update failed. Please try again later`);
+                    showError(error?.response?.data?.message || `Event status update failed. Please try again later`);
                 }
             });
         })
@@ -122,9 +122,9 @@ export const EventDashboard = () => {
 
                         <div className={classes.setupCardContent}>
                             <div className={classes.checklistContainer}>
-                                <h2>🚀 {t`Get your event ready`}</h2>
+                                <h2>🚀 {`Get your event ready`}</h2>
                                 <p className={classes.setupDescription}>
-                                    {t`Complete these steps to start selling tickets for your event.`}
+                                    {`Complete these steps to start selling tickets for your event.`}
                                 </p>
 
                                 <div className={classes.checklistItems}>
@@ -145,9 +145,9 @@ export const EventDashboard = () => {
                                                     )}
                                                 </div>
                                             </div>
-                                            {t`Make your event live`}
+                                            {`Make your event live`}
                                         </h3>
-                                        <p>{t`Your event must be live before you can sell tickets to attendees.`}</p>
+                                        <p>{`Your event must be live before you can sell tickets to attendees.`}</p>
                                         {event?.status !== 'LIVE' && (
                                             <Button
                                                 onClick={handleStatusToggle}
@@ -156,7 +156,7 @@ export const EventDashboard = () => {
                                                 radius="md"
                                                 fullWidth
                                             >
-                                                {t`Publish Event`}
+                                                {`Publish Even`}
                                             </Button>
                                         )}
                                         {event?.status === 'LIVE' && (
@@ -167,7 +167,7 @@ export const EventDashboard = () => {
                                                 radius="md"
                                                 fullWidth
                                             >
-                                                {t`Unpublish Event`}
+                                                {`Unpublish Even`}
                                             </Button>
                                         )}
                                     </div>
@@ -189,9 +189,9 @@ export const EventDashboard = () => {
                                                     )}
                                                 </div>
                                             </div>
-                                            {t`Connect payment processing`}
+                                            {`Connect payment processing`}
                                         </h3>
-                                        <p>{t`Link your Stripe account to receive funds from ticket sales.`}</p>
+                                        <p>{`Link your Stripe account to receive funds from ticket sales.`}</p>
                                         {!account?.stripe_connect_setup_complete && (
                                             <Button
                                                 onClick={() => {
@@ -202,7 +202,7 @@ export const EventDashboard = () => {
                                                 radius="md"
                                                 fullWidth
                                             >
-                                                {account?.stripe_account_id ? t`Complete Stripe Setup` : t`Connect to Stripe`}
+                                                {account?.stripe_account_id ? `Complete Stripe Setup` : `Connect to Stripe`}
                                             </Button>
                                         )}
                                     </div>
@@ -214,7 +214,7 @@ export const EventDashboard = () => {
 
                 <Card className={classes.chartCard}>
                     <div className={classes.chartCardTitle}>
-                        <h2>{t`Product Sales`}</h2>
+                        <h2>{`Product Sales`}</h2>
                         <div className={classes.dateRange}>
                         <span>
                             {dateRange}
@@ -234,9 +234,9 @@ export const EventDashboard = () => {
                         legendProps={{verticalAlign: 'bottom', height: 50}}
 
                         series={[
-                            {name: 'orders_created', color: 'blue.6', label: t`Completed Orders`},
-                            {name: 'products_sold', color: 'blue.2', label: t`Products Sold`},
-                            {name: 'attendees_registered', color: 'blue.4', label: t`Attendees Registered`},
+                            {name: 'orders_created', color: 'blue.6', label: `Completed Orders`},
+                            {name: 'products_sold', color: 'blue.2', label: `Products Sold`},
+                            {name: 'attendees_registered', color: 'blue.4', label: `Attendees Registered`},
                         ]}
                         curveType="bump"
                         tickLine="none"
@@ -246,7 +246,7 @@ export const EventDashboard = () => {
 
                 <Card className={classes.chartCard}>
                     <div className={classes.chartCardTitle}>
-                        <h2>{t`Revenue`}</h2>
+                        <h2>{`Revenue`}</h2>
                         <div className={classes.dateRange}>
                         <span>
                             {dateRange}
@@ -270,10 +270,10 @@ export const EventDashboard = () => {
                         withLegend
                         legendProps={{verticalAlign: 'bottom', height: 50}}
                         series={[
-                            {name: 'total_fees', label: t`Total Fees`, color: 'primary.3'},
-                            {name: 'total_sales_gross', label: t`Gross Sales`, color: 'grape.5'},
-                            {name: 'total_tax', label: t`Total Tax`, color: 'grape.7'},
-                            {name: 'total_refunded', label: t`Total Refunded`, color: 'red.6'},
+                            {name: 'total_fees', label: `Total Fees`, color: 'primary.3'},
+                            {name: 'total_sales_gross', label: `Gross Sales`, color: 'grape.5'},
+                            {name: 'total_tax', label: `Total Tax`, color: 'grape.7'},
+                            {name: 'total_refunded', label: `Total Refunded`, color: 'red.6'},
                         ]}
                         curveType="natural"
                         tickLine="none"

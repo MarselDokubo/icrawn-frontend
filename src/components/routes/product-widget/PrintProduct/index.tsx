@@ -39,7 +39,7 @@ const PrintProduct = () => {
      */
     return (
         <Container>
-            <h2>{t`Your ticket for`} {event.title}</h2>
+            <h2>{`Your ticket for`} {event.title}</h2>
             <AttendeeTicket
                 attendee={attendee as Attendee}
                 product={attendee.product as Product}

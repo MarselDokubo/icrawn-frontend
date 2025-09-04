@@ -14,7 +14,7 @@ const EventPage: React.FC = () => {
   }
 
   if (error || !event) {
-    return <Container size="md" py={40}><Title order={2}>{t`Event not found`}</Title></Container>;
+    return <Container size="md" py={40}><Title order={2}>{`Event not found`}</Title></Container>;
   }
 
   const coverImage = event.images?.find(img => img.type === 'EVENT_COVER');
@@ -30,15 +30,15 @@ const EventPage: React.FC = () => {
           />
         ) : (
           <div style={{ width: '100%', height: '100%', background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48 }}>
-            {t`No image`}
+            {`No image`}
           </div>
         )}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(4,27,69,0.3)' }} />
       </div>
       <Title order={1}>{event.title}</Title>
       <Text mt="md" size="lg">{event.description}</Text>
-      <Text mt="md" size="md" color="dimmed">{t`Starts:`} {event.start_date}</Text>
-      <Text mt="md" size="md" color="dimmed">{t`Ends:`} {event.end_date ?? t`N/A`}</Text>
+      <Text mt="md" size="md" color="dimmed">{`Starts:`} {event.start_date}</Text>
+      <Text mt="md" size="md" color="dimmed">{`Ends:`} {event.end_date ?? `N/A`}</Text>
       <Text mt="md" size="md" color="dimmed">
         <Countdown targetDate={event.start_date} displayType="short" />
       </Text>

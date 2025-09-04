@@ -116,37 +116,37 @@ export const OrganizerDashboard = () => {
         organizerStatItems.push(
             {
                 value: formatCurrency(stats.total_gross_sales, selectedCurrency),
-                description: t`Gross Sales`,
+                description: `Gross Sales`,
                 icon: <IconCash size={18}/>,
                 backgroundColor: '#7C63E6'
             },
             {
                 value: formatNumber(stats.total_products_sold),
-                description: t`Products Sold`,
+                description: `Products Sold`,
                 icon: <IconTicket size={18}/>,
                 backgroundColor: '#4B7BE5'
             },
             {
                 value: formatNumber(stats.total_attendees_registered),
-                description: t`Attendees`,
+                description: `Attendees`,
                 icon: <IconUsers size={18}/>,
                 backgroundColor: '#E6677E'
             },
             {
                 value: formatNumber(stats.total_orders),
-                description: t`Total Orders`,
+                description: `Total Orders`,
                 icon: <IconBuildingStore size={18}/>,
                 backgroundColor: '#E67D49'
             },
             {
                 value: formatCurrency(stats.total_tax, selectedCurrency),
-                description: t`Total Tax`,
+                description: `Total Tax`,
                 icon: <IconReceiptTax size={18}/>,
                 backgroundColor: '#49A6B7'
             },
             {
                 value: formatCurrency(stats.total_fees, selectedCurrency),
-                description: t`Total Fees`,
+                description: `Total Fees`,
                 icon: <IconReportMoney size={18}/>,
                 backgroundColor: '#63B3A1'
             },
@@ -157,7 +157,7 @@ export const OrganizerDashboard = () => {
         <PageBody>
             <div className={classes.headerSection}>
                 <PageTitle className={classes.pageTitle}>
-                    {organizer ? `${organizer.name} - ${t`Dashboard`}` : t`Organizer Dashboard`}
+                    {organizer ? `${organizer.name} - ${`Dashboard`}` : `Organizer Dashboard`}
                 </PageTitle>
                 {currencies?.length > 1 && (
                     <Menu
@@ -277,7 +277,7 @@ export const OrganizerDashboard = () => {
                                             {(() => {
                                                 const publicId = order.public_id;
                                                 return (
-                                                    <Tooltip label={t`Order ID: ${publicId}`} openDelay={500}>
+                                                    <Tooltip label={`Order ID: ${publicId}`} openDelay={500}>
                                                         <span className={classes.orderId}>{publicId}</span>
                                                     </Tooltip>
                                                 );
@@ -349,19 +349,19 @@ const getOrderStatusColor = (status: Order['status'], paymentStatus?: Order['pay
 
 const formatOrderStatus = (status: Order['status'], paymentStatus?: Order['payment_status']): string => {
     if (status === 'COMPLETED') {
-        return t`Completed`;
+        return `Completed`;
     }
     if (status === 'CANCELLED') {
-        return t`Cancelled`;
+        return `Cancelled`;
     }
     if ((status === 'RESERVED' || !status) && paymentStatus === 'AWAITING_PAYMENT') {
-        return t`Awaiting Payment`;
+        return `Awaiting Paymen`;
     }
     if (status === 'AWAITING_OFFLINE_PAYMENT' || paymentStatus === 'AWAITING_OFFLINE_PAYMENT') {
-        return t`Awaiting Offline Pmt.`;
+        return `Awaiting Offline Pmt.`;
     }
 
-    return status ? status.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : t`Unknown`;
+    return status ? status.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : `Unknown`;
 };
 
 

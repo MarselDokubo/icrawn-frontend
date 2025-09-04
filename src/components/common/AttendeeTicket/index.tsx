@@ -37,7 +37,7 @@ export const AttendeeTicket = ({attendee, product, event, hideButtons = false}: 
                     <div className={classes.productPrice}>
                         <div className={classes.badge}>
                             {productPrice > 0 && formatCurrency(productPrice, event?.currency)}
-                            {productPrice === 0 && t`Free`}
+                            {productPrice === 0 && `Free`}
                         </div>
                     </div>
                 </div>
@@ -58,13 +58,13 @@ export const AttendeeTicket = ({attendee, product, event, hideButtons = false}: 
                 <div className={classes.qrImage}>
                     {attendee.status === 'CANCELLED' && (
                         <div className={classes.cancelled}>
-                            {t`Cancelled`}
+                            {`Cancelled`}
                         </div>
                     )}
 
                     {attendee.status === 'AWAITING_PAYMENT' && (
                         <div className={classes.awaitingPayment}>
-                            {t`Awaiting Payment`}
+                            {`Awaiting Paymen`}
                         </div>
                     )}
                     {attendee.status !== 'CANCELLED' && <QRCode value={String(attendee.public_id)}/>}
@@ -75,10 +75,10 @@ export const AttendeeTicket = ({attendee, product, event, hideButtons = false}: 
                     <div className={classes.productButtons}>
                         <Button variant={'transparent'}
                                 size={'sm'}
-                                onClick={() => window?.open(`/product/${event.id}/${attendee.short_id}/print`, '_blank', 'noopener,noreferrer')}
+                                onClick={() => window?.open(`/product/${event.id}/${attendee.short_id}/prin`, '_blank', 'noopener,noreferrer')}
                                 leftSection={<IconPrinter size={18}/>
                                 }>
-                            {t`Print`}
+                            {`Prin`}
                         </Button>
 
                         <CopyButton value={`${window?.location.origin}/product/${event.id}/${attendee.short_id}`}>
@@ -88,7 +88,7 @@ export const AttendeeTicket = ({attendee, product, event, hideButtons = false}: 
                                         onClick={copy}
                                         leftSection={<IconCopy size={18}/>
                                         }>
-                                    {copied ? t`Copied` : t`Copy Link`}
+                                    {copied ? `Copied` : `Copy Link`}
                                 </Button>
                             )}
                         </CopyButton>

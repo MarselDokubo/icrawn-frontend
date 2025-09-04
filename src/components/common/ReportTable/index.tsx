@@ -41,16 +41,16 @@ interface ReportProps<T> {
 }
 
 const TIME_PERIODS = [
-    {value: '24h', label: t`Last 24 hours`},
-    {value: '48h', label: t`Last 48 hours`},
-    {value: '7d', label: t`Last 7 days`},
-    {value: '14d', label: t`Last 14 days`},
-    {value: '30d', label: t`Last 30 days`},
-    {value: '90d', label: t`Last 90 days`},
-    {value: '6m', label: t`Last 6 months`},
-    {value: 'ytd', label: t`Year to date`},
-    {value: '12m', label: t`Last 12 months`},
-    {value: 'custom', label: t`Custom Range`}
+    {value: '24h', label: `Last 24 hours`},
+    {value: '48h', label: `Last 48 hours`},
+    {value: '7d', label: `Last 7 days`},
+    {value: '14d', label: `Last 14 days`},
+    {value: '30d', label: `Last 30 days`},
+    {value: '90d', label: `Last 90 days`},
+    {value: '6m', label: `Last 6 months`},
+    {value: 'ytd', label: `Year to date`},
+    {value: '12m', label: `Last 12 months`},
+    {value: 'custom', label: `Custom Range`}
 ];
 
 const ReportTable = <T extends Record<string, any>>({
@@ -207,15 +207,15 @@ const ReportTable = <T extends Record<string, any>>({
         );
 
         if (reportQuery.isLoading) {
-            return wrapper(t`Loading...`);
+            return wrapper(`Loading...`);
         }
 
         if (showDateFilter && (!dateRange[0] || !dateRange[1])) {
-            return wrapper(t`No data to show. Please select a date range`);
+            return wrapper(`No data to show. Please select a date range`);
         }
 
         if (!showDateFilter && dateRange[0] && dateRange[1]) {
-            return wrapper(t`No data available`);
+            return wrapper(`No data available`);
         }
     };
 
@@ -237,12 +237,12 @@ const ReportTable = <T extends Record<string, any>>({
     if (reportQuery.isFetched && !reportQuery.isLoading && !data.length) {
         return (
             <NoResultsSplash
-                heading={t`Nothing to show yet`}
+                heading={`Nothing to show ye`}
                 imageHref={'/blank-slate/reports.svg'}
                 subHeading={(
                     <>
                         <p>
-                            {t`Once you start collecting data, you'll see it here.`}
+                            {`Once you start collecting data, you'll see it here.`}
                         </p>
                     </>
                 )}
@@ -258,7 +258,7 @@ const ReportTable = <T extends Record<string, any>>({
                     {showDateFilter && (
                         <Select
                             style={{minWidth: '200px'}}
-                            placeholder={t`Select time period`}
+                            placeholder={`Select time period`}
                             data={TIME_PERIODS}
                             value={selectedPeriod}
                             onChange={handlePeriodChange}
@@ -300,7 +300,7 @@ const ReportTable = <T extends Record<string, any>>({
                                 style={{cursor: column.sortable ? 'pointer' : 'default', minWidth: '180px'}}
                             >
                                 <Group gap="xs" wrap={'nowrap'}>
-                                    {t`${column.label}`}
+                                    {`${column.label}`}
                                     {column.sortable && getSortIcon(column.key)}
                                 </Group>
                             </MantineTable.Th>

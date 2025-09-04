@@ -25,43 +25,43 @@ export const Settings = () => {
     const SECTIONS = [
         {
             id: 'event-details',
-            label: t`Event Details`,
+            label: `Event Details`,
             icon: IconBuildingStore,
             component: EventDetailsForm
         },
         {
             id: 'location-settings',
-            label: t`Location`,
+            label: `Location`,
             icon: IconMapPin,
             component: LocationSettings
         },
         {
             id: 'homepage-settings',
-            label: t`Checkout`,
+            label: `Checkou`,
             icon: IconHome,
             component: HomepageAndCheckoutSettings
         },
         {
             id: 'seo-settings',
-            label: t`SEO`,
+            label: `SEO`,
             icon: IconBrandGoogleAnalytics,
             component: SeoSettings
         },
         {
             id: 'email-settings',
-            label: t`Email`,
+            label: `Email`,
             icon: IconAt,
             component: EmailSettings
         },
         {
             id: 'misc-settings',
-            label: t`Miscellaneous`,
+            label: `Miscellaneous`,
             icon: IconAdjustments,
             component: MiscSettings
         },
         {
             id: 'payment-settings',
-            label: t`Payment & Invoicing`,
+            label: `Payment & Invoicing`,
             icon: IconCreditCard,
             component: PaymentAndInvoicingSettings,
         }
@@ -100,7 +100,7 @@ export const Settings = () => {
 
     return (
         <PageBody>
-            <PageTitle>{t`Settings`}</PageTitle>
+            <PageTitle>{`Settings`}</PageTitle>
 
             {isLargeScreen ? (
                 <Group align="flex-start" gap="md">

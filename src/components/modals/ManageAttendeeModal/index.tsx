@@ -93,7 +93,7 @@ export const ManageAttendeeModal = ({onClose, attendeeId}: ManageAttendeeModalPr
             },
             {
                 onSuccess: () => {
-                    showSuccess(t`Successfully updated attendee`);
+                    showSuccess(`Successfully updated attendee`);
                     setActiveTab("view");
                 },
                 onError: (error) => errorHandler(form, error),
@@ -107,16 +107,16 @@ export const ManageAttendeeModal = ({onClose, attendeeId}: ManageAttendeeModalPr
     const detailsTab = (
         <div>
             <InputGroup>
-                <TextInput {...form.getInputProps("first_name")} label={t`First name`} placeholder={t`Homer`} required/>
-                <TextInput {...form.getInputProps("last_name")} label={t`Last name`} placeholder={t`Simpson`} required/>
+                <TextInput {...form.getInputProps("first_name")} label={`First name`} placeholder={`Homer`} required/>
+                <TextInput {...form.getInputProps("last_name")} label={`Last name`} placeholder={`Simpson`} required/>
             </InputGroup>
             <InputGroup>
-                <TextInput {...form.getInputProps("email")} label={t`Email address`} placeholder="homer@simpson.com"
+                <TextInput {...form.getInputProps("email")} label={`Email address`} placeholder="homer@simpson.com"
                            required/>
                 {event?.product_categories && event.product_categories.length > 0 && (
                     <ProductSelector
-                        placeholder={t`Select Product`}
-                        label={t`Product`}
+                        placeholder={`Select Produc`}
+                        label={`Produc`}
                         productCategories={event.product_categories as ProductCategory[]}
                         form={form}
                         productFieldName={"product_id"}
@@ -127,10 +127,10 @@ export const ManageAttendeeModal = ({onClose, attendeeId}: ManageAttendeeModalPr
                 )}
             </InputGroup>
             <Textarea
-                label={<InputLabelWithHelp label={t`Notes`}
-                                           helpText={t`Add any notes about the attendee. These will not be visible to the attendee.`}/>}
+                label={<InputLabelWithHelp label={`Notes`}
+                                           helpText={`Add any notes about the attendee. These will not be visible to the attendee.`}/>}
                 {...form.getInputProps("notes")}
-                placeholder={t`Add any notes about the attendee...`}
+                placeholder={`Add any notes about the attendee...`}
                 minRows={3}
                 maxRows={6}
                 autosize
@@ -144,13 +144,13 @@ export const ManageAttendeeModal = ({onClose, attendeeId}: ManageAttendeeModalPr
                 {
                     value: "details",
                     icon: IconUser,
-                    title: t`Attendee Details`,
+                    title: `Attendee Details`,
                     content: <AttendeeDetails attendee={attendee}/>,
                 },
                 {
                     value: "notes",
                     icon: IconNotebook,
-                    title: t`Attendee Notes`,
+                    title: `Attendee Notes`,
                     hidden: !attendee.notes,
                     content: (
                         <Box p="md">
@@ -163,25 +163,25 @@ export const ManageAttendeeModal = ({onClose, attendeeId}: ManageAttendeeModalPr
                 {
                     value: "order",
                     icon: IconReceipt,
-                    title: t`Order Details`,
+                    title: `Order Details`,
                     content: <OrderDetails order={order} event={event} cardVariant="noStyle"/>,
                 },
                 {
                     value: "ticket",
                     icon: IconTicket,
-                    title: t`Attendee Ticket`,
+                    title: `Attendee Ticke`,
                     content: attendee.product ? (
                         <AttendeeTicket event={event} attendee={attendee} product={attendee.product}/>
                     ) : (
                         <Text c="dimmed" ta="center" py="xl">
-                            {t`No product associated with this attendee.`}
+                            {`No product associated with this attendee.`}
                         </Text>
                     ),
                 },
                 {
                     value: "questions",
                     icon: IconQuestionMark,
-                    title: t`Questions & Answers`,
+                    title: `Questions & Answers`,
                     count: hasQuestions ? attendee?.question_answers?.length : undefined,
                     content: hasQuestions ? (
                         <QuestionList
@@ -190,7 +190,7 @@ export const ManageAttendeeModal = ({onClose, attendeeId}: ManageAttendeeModalPr
                         />
                     ) : (
                         <Text c="dimmed" ta="center" py="xl">
-                            {t`No questions answered by this attendee.`}
+                            {`No questions answered by this attendee.`}
                         </Text>
                     ),
                 },
@@ -217,8 +217,8 @@ export const ManageAttendeeModal = ({onClose, attendeeId}: ManageAttendeeModalPr
                 </div>
                 <Tabs value={activeTab} onChange={setActiveTab as any}>
                     <Tabs.List>
-                        <Tabs.Tab value="view" leftSection={<IconUser size={16}/>}>{t`View`}</Tabs.Tab>
-                        <Tabs.Tab value="edit" leftSection={<IconEdit size={16}/>}>{t`Edit`}</Tabs.Tab>
+                        <Tabs.Tab value="view" leftSection={<IconUser size={16}/>}>{`View`}</Tabs.Tab>
+                        <Tabs.Tab value="edit" leftSection={<IconEdit size={16}/>}>{`Edi`}</Tabs.Tab>
                     </Tabs.List>
 
                     <Box mt="md">
@@ -228,7 +228,7 @@ export const ManageAttendeeModal = ({onClose, attendeeId}: ManageAttendeeModalPr
                                 <Stack gap="md">
                                     {detailsTab}
                                     <Button type="submit" fullWidth disabled={mutation.isPending}>
-                                        {mutation.isPending ? t`Working...` : t`Save Changes`}
+                                        {mutation.isPending ? `Working...` : `Save Changes`}
                                     </Button>
                                 </Stack>
                             </form>

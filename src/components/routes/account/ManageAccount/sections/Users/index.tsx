@@ -36,11 +36,11 @@ const Users = () => {
             userId: user.id,
         }, {
             onSuccess: () => {
-                showSuccess(t`Invitation resent!`);
+                showSuccess(`Invitation resent!`);
             },
             onError: (error) => {
                 console.error(error);
-                showError(t`Something went wrong! Please try again`);
+                showError(`Something went wrong! Please try again`);
             }
         });
     }
@@ -50,11 +50,11 @@ const Users = () => {
             userId: user.id,
         }, {
             onSuccess: () => {
-                showSuccess(t`Invitation revoked!`);
+                showSuccess(`Invitation revoked!`);
             },
             onError: (error) => {
                 console.error(error);
-                showError(t`Something went wrong! Please try again`);
+                showError(`Something went wrong! Please try again`);
             }
         });
     }
@@ -98,7 +98,7 @@ const Users = () => {
                 </Badge>
             </Table.Td>
             <Table.Td>
-                {user.last_login_at ? relativeDate(user.last_login_at) : t`Never`}
+                {user.last_login_at ? relativeDate(user.last_login_at) : `Never`}
             </Table.Td>
             <Table.Td>
                 <Badge color={statusColor(user.status as string)} variant="light">
@@ -116,18 +116,18 @@ const Users = () => {
                     <Menu.Dropdown>
                         <Menu.Item onClick={() => handleEdit(user)}
                                    leftSection={<IconEye size={14}/>}>
-                            {t`Edit user`}
+                            {`Edit user`}
                         </Menu.Item>
                         {user.status === 'INVITED' && (
                             <Menu.Item onClick={() => handleResendInvitation(user)}
                                        leftSection={<IconSend size={14}/>}>
-                                {t`Resend invitation`}
+                                {`Resend invitation`}
                             </Menu.Item>
                         )}
                         {user.status === 'INVITED' && (
                             <Menu.Item color={'red'} onClick={() => handleRevokeInvitation(user)}
                                        leftSection={<IconSend size={14}/>}>
-                                {t`Revoke invitation`}
+                                {`Revoke invitation`}
                             </Menu.Item>
                         )}
                     </Menu.Dropdown>
@@ -139,9 +139,9 @@ const Users = () => {
     return (
         <>
             <HeadingCard
-                heading={t`User Management`}
-                subHeading={t`Manage your users and their permissions`}
-                buttonText={t`Invite User`}
+                heading={`User Managemen`}
+                subHeading={`Manage your users and their permissions`}
+                buttonText={`Invite User`}
                 buttonAction={openCreateModal}
             />
 
@@ -151,10 +151,10 @@ const Users = () => {
                     <Table verticalSpacing="sm">
                         <Table.Thead>
                             <Table.Tr>
-                                <Table.Th>{t`User`}</Table.Th>
-                                <Table.Th>{t`Role`}</Table.Th>
-                                <Table.Th>{t`Last login`}</Table.Th>
-                                <Table.Th>{t`Status`}</Table.Th>
+                                <Table.Th>{`User`}</Table.Th>
+                                <Table.Th>{`Role`}</Table.Th>
+                                <Table.Th>{`Last login`}</Table.Th>
+                                <Table.Th>{`Status`}</Table.Th>
                             </Table.Tr>
                         </Table.Thead>
                         <Table.Tbody>{rows}</Table.Tbody>

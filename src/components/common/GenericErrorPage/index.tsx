@@ -49,7 +49,7 @@ export const GenericErrorPage: React.FC<GenericErrorPageProps> = ({
 
                         <Image
                             src={getConfig("VITE_APP_LOGO_DARK", "/logo-dark.svg")}
-                            alt={getConfig("VITE_APP_NAME", "iCrawn.Events") + t` Logo`}
+                            alt={getConfig("VITE_APP_NAME", "iCrawn.Events") + ` Logo`}
                             w={rem(140)}
                             h="auto"
                             fit="contain"

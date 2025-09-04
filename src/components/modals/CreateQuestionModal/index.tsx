@@ -42,7 +42,7 @@ export const CreateQuestionModal = ({onClose, onCompleted}: CreateQuestionModalP
 
         onSuccess: ({data: question}) => {
             notifications.show({
-                message: t`Successfully Created Question`,
+                message: `Successfully Created Question`,
                 color: 'green',
                 position: 'top-center',
             });
@@ -57,7 +57,7 @@ export const CreateQuestionModal = ({onClose, onCompleted}: CreateQuestionModalP
             if (error?.response?.data?.errors) {
                 form.setErrors(error.response.data.errors);
             } else {
-                showError(t`Unable to create question. Please check the your details`);
+                showError(`Unable to create question. Please check the your details`);
             }
         }
     });
@@ -66,12 +66,12 @@ export const CreateQuestionModal = ({onClose, onCompleted}: CreateQuestionModalP
         <Modal
             opened
             onClose={onClose}
-            heading={t`Create Question`}
+            heading={`Create Question`}
         >
             <form onSubmit={form.onSubmit((values) => mutation.mutate(values as any as Question))}>
                 <QuestionForm form={form} productCategories={productCategories}/>
                 <Button loading={mutation.isPending} type="submit" fullWidth mt="xl">
-                    {mutation.isPending ? t`Working...` : t`Create Question`}
+                    {mutation.isPending ? `Working...` : `Create Question`}
                 </Button>
             </form>
         </Modal>

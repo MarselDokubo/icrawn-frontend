@@ -11,12 +11,12 @@ export const ErrorDisplay = () => {
     const error = useRouteError() as any;
 
     const title = error?.status === 404
-        ? t`Page not found`
-        : t`Something went wrong`;
+        ? `Page not found`
+        : `Something went wrong`;
 
     const description = error?.status === 404
-        ? t`The page you are looking for does not exist`
-        : t`An error occurred while loading the page`;
+        ? `The page you are looking for does not exis`
+        : `An error occurred while loading the page`;
 
     console.log('ErrorDisplay error:', error);
 
@@ -64,7 +64,7 @@ export const ErrorDisplay = () => {
                                 gradient={{from: 'primary', to: 'secondary'}}
                                 className={classes.button}
                             >
-                                {t`Go to home page`}
+                                {`Go to home page`}
                             </Button>
                         </Stack>
 

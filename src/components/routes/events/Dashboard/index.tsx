@@ -69,11 +69,11 @@ export function Dashboard() {
 
     const getHeading = () => {
         if (eventsState === 'upcoming' || !eventsState) {
-            return t`All Upcoming Events`;
+            return `All Upcoming Events`;
         } else if (eventsState === 'ended') {
-            return t`All Ended Events`;
+            return `All Ended Events`;
         } else if (eventsState === 'archived') {
-            return t`All Archived Events`;
+            return `All Archived Events`;
         }
     }
 
@@ -137,7 +137,7 @@ export function Dashboard() {
                             )}
                         </div>
                         <span className={classes.organizerCount}>
-                            {t`${organizers.length} organizers`}
+                            {`${organizers.length} organizers`}
                         </span>
                         <IconArrowRight size={16} className={classes.arrowIcon}/>
                     </button>
@@ -146,7 +146,7 @@ export function Dashboard() {
 
             <ToolBar searchComponent={() => (
                 <SearchBarWrapper
-                    placeholder={t`Search by event name...`}
+                    placeholder={`Search by event name...`}
                     setSearchParams={setSearchParams}
                     searchParams={searchParams}
                     pagination={pagination}
@@ -168,7 +168,7 @@ export function Dashboard() {
                                 }
                                 pr={12}
                             >
-                                {t`Create new`}
+                                {`Create new`}
                             </Button>
                         </Menu.Target>
                         <Menu.Dropdown>
@@ -180,7 +180,7 @@ export function Dashboard() {
                                 }
                                 onClick={openCreateModal}
                             >
-                                {t`Event`}
+                                {`Even`}
                             </Menu.Item>
                             <Menu.Item
                                 leftSection={
@@ -190,7 +190,7 @@ export function Dashboard() {
                                 }
                                 onClick={openCreateOrganizerModal}
                             >
-                                {t`Organizer`}
+                                {`Organizer`}
                             </Menu.Item>
                         </Menu.Dropdown>
                     </Menu>
@@ -226,13 +226,13 @@ export function Dashboard() {
             <Modal
                 opened={organizerModalOpen}
                 onClose={() => setOrganizerModalOpen(false)}
-                title={t`Choose an Organizer`}
+                title={`Choose an Organizer`}
                 size="md"
                 centered
             >
                 <div className={classes.organizerModalContent}>
                     <p className={classes.modalDescription}>
-                        {t`Select an organizer to view their dashboard and events.`}
+                        {`Select an organizer to view their dashboard and events.`}
                     </p>
                     <div className={classes.organizerGrid}>
                         {organizers?.map((organizer) => (

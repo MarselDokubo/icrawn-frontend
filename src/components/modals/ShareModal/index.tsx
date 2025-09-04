@@ -34,7 +34,7 @@ export const ShareModal = ({
     onClose,
     url,
     title,
-    modalTitle = t`Share`,
+    modalTitle = `Share`,
     shareText
 }: ShareModalProps) => {
     const [activeTab, setActiveTab] = useState<string | null>('share');
@@ -162,13 +162,13 @@ export const ShareModal = ({
             <Tabs value={activeTab} onChange={setActiveTab}>
                 <Tabs.List>
                     <Tabs.Tab value="share" leftSection={<IconShare size={16}/>}>
-                        {t`Share`}
+                        {`Share`}
                     </Tabs.Tab>
                     <Tabs.Tab value="qr" leftSection={<IconQrcode size={16}/>}>
-                        {t`QR Code`}
+                        {`QR Code`}
                     </Tabs.Tab>
                     <Tabs.Tab value="url" leftSection={<IconLink size={16}/>}>
-                        {t`Copy Link`}
+                        {`Copy Link`}
                     </Tabs.Tab>
                 </Tabs.List>
 
@@ -183,7 +183,7 @@ export const ShareModal = ({
                                     onClick={handleNativeShare}
                                     className={classes.nativeShareButton}
                                 >
-                                    {t`Share`}
+                                    {`Share`}
                                 </Button>
                             )}
 
@@ -225,7 +225,7 @@ export const ShareModal = ({
                                 leftSection={<IconDownload size={16}/>}
                                 onClick={downloadQR}
                             >
-                                {t`Download QR Code`}
+                                {`Download QR Code`}
                             </Button>
                         </div>
                     </Tabs.Panel>
@@ -233,7 +233,7 @@ export const ShareModal = ({
                     <Tabs.Panel value="url" pt="lg">
                         <div className={classes.urlSection}>
                             <TextInput
-                                label={t`Page URL`}
+                                label={`Page URL`}
                                 value={url}
                                 readOnly
                                 styles={{
@@ -245,14 +245,14 @@ export const ShareModal = ({
                                 rightSection={(
                                     <CopyButton value={url} timeout={2000}>
                                         {({copied, copy}) => (
-                                            <Tooltip label={copied ? t`Copied!` : t`Copy to clipboard`}>
+                                            <Tooltip label={copied ? `Copied!` : `Copy to clipboard`}>
                                                 <Button
                                                     variant="light"
                                                     color={copied ? 'teal' : 'gray'}
                                                     onClick={copy}
                                                     leftSection={copied ? <IconCheck size={16}/> : <IconCopy size={16}/>}
                                                 >
-                                                    {copied ? t`Copied` : t`Copy`}
+                                                    {copied ? `Copied` : `Copy`}
                                                 </Button>
                                             </Tooltip>
                                         )}
@@ -261,7 +261,7 @@ export const ShareModal = ({
                             />
 
                             <Text className={classes.helperText} mt="md">
-                                {t`Copy this link to share it anywhere`}
+                                {`Copy this link to share it anywhere`}
                             </Text>
                         </div>
                     </Tabs.Panel>

@@ -122,7 +122,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
 
       <div style={styleOverrides} key={`${event.id}`} className={classes.pageWrapper}>
         <style>
-          {t`
+          {`
             body, .ssr-loader {
               background-color: ${backgroundColor}} !important;
             }
@@ -157,7 +157,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
           {event?.description && (
             <div className={classes.contentSection}>
               <div className={`${classes.sectionContent} ${classes.glassCard}`}>
-                <h2 className={classes.sectionTitle}>{t`About`}</h2>
+                <h2 className={classes.sectionTitle}>{`Abou`}</h2>
                 <div
                   className={classes.eventDescription}
                   dangerouslySetInnerHTML={{
@@ -210,7 +210,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
                           <Anchor
                             href={getGoogleMapsUrl(organizerLocation as VenueAddress)}
                             target="_blank"
-                            rel={t`noopener noreferrer`}
+                            rel={`noopener noreferrer`}
                             className={classes.mapLink}
                           >
                             <span>{getShortLocationDisplay(organizerLocation)}</span>&nbsp;
@@ -222,7 +222,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
                       {websiteUrl && (
                         <div className={classes.organizerWebsite}>
                           <IconWorld size={16} />
-                          <Anchor href={websiteUrl} target="_blank" rel={t`noopener noreferrer`}>
+                          <Anchor href={websiteUrl} target="_blank" rel={`noopener noreferrer`}>
                             {new URL(websiteUrl).hostname}
                           </Anchor>
                         </div>
@@ -248,7 +248,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
                           key={platform}
                           href={url}
                           target="_blank"
-                          rel={t`noopener noreferrer`}
+                          rel={`noopener noreferrer`}
                           className={classes.socialLink}
                         >
                           <IconComponent size={24} />
@@ -262,7 +262,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
                       variant="outline"
                       size="sm"
                     >
-                      {t`Contact`}
+                      {`Contac`}
                     </Button>
                   </div>
                 </div>
@@ -285,7 +285,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
                       }
                       className={classes.footerLink}
                     >
-                      {t`Privacy Policy`}
+                      {`Privacy Policy`}
                     </Anchor>
                     <span className={classes.footerSeparator}>•</span>
                     <Anchor
@@ -297,7 +297,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
                       }
                       className={classes.footerLink}
                     >
-                      {t`Terms of Service`}
+                      {`Terms of Service`}
                     </Anchor>
                   </div>
                   <PoweredByFooter className={classes.poweredByFooter} />
@@ -319,7 +319,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
                 color: "var(--homepage-primary-text-color)",
               }}
             >
-              {t`Scroll to Tickets`}
+              {`Scroll to Tickets`}
             </Button>
           )}
         </div>

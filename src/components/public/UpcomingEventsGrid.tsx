@@ -38,7 +38,7 @@ export default function UpcomingEventsGrid({
   }
 
   if (!data || data.length === 0) {
-    return <Text c="dimmed">{t`No upcoming events yet.`}</Text>;
+    return <Text c="dimmed">{`No upcoming events yet.`}</Text>;
   }
 
   return (
@@ -79,13 +79,13 @@ export default function UpcomingEventsGrid({
 
             {typeof ev.lowestPrice === "number" && (
               <Text mt="xs">
-                {t`From`} ₦{ev.lowestPrice.toLocaleString("en-NG")}
+                {`From`} ₦{ev.lowestPrice.toLocaleString("en-NG")}
               </Text>
             )}
 
             <Group mt="md">
               <Button component={Link} to={eventUrl(ev)} radius="xl">
-                {t`View details`}
+                {`View details`}
               </Button>
             </Group>
           </Card>

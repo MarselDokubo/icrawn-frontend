@@ -10,7 +10,7 @@ interface ErrorLoadingMessageProps {
 export const ErrorLoadingMessage = ({error}: ErrorLoadingMessageProps) => {
     useEffect(() => {
         if (error) {
-            showError(error.message || t`We couldn't load the data. Please try again.`);
+            showError(error.message || `We couldn't load the data. Please try again.`);
         }
     }, []);
 

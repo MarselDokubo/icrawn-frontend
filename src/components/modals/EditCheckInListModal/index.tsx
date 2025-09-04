@@ -46,7 +46,7 @@ export const EditCheckInListModal = ({
             checkInListId: checkInListId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully updated Check-In List`);
+                showSuccess(`Successfully updated Check-In Lis`);
                 onClose();
             },
             onError: (error) => errorHandler(form, error),
@@ -66,7 +66,7 @@ export const EditCheckInListModal = ({
     }, [checkInList]);
 
     return (
-        <Modal opened onClose={onClose} heading={t`Edit Check-In List`}>
+        <Modal opened onClose={onClose} heading={`Edit Check-In Lis`}>
 
             {checkInListLoading && (
                 <Center>
@@ -76,7 +76,7 @@ export const EditCheckInListModal = ({
 
             {!!checkInListError && (
                 <Alert color={'red'}>
-                    {t`Failed to load Check-In List`}
+                    {`Failed to load Check-In Lis`}
                 </Alert>
             )}
 
@@ -88,7 +88,7 @@ export const EditCheckInListModal = ({
                         fullWidth
                         loading={editMutation.isPending}
                     >
-                        {t`Edit Check-In List`}
+                        {`Edit Check-In Lis`}
                     </Button>
                 </form>
             )}

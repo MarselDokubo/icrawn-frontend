@@ -20,17 +20,17 @@ export const localeToFlagEmojiMap: Record<SupportedLocales, string> = {
 };
 
 export const getLocaleName = (locale: SupportedLocales) => {
-    if (locale === "en") return t`English`;
-    if (locale === "de") return t`German`;
-    if (locale === "fr") return t`French`;
-    if (locale === "it") return t`Italian`;
-    if (locale === "nl") return t`Dutch`;
-    if (locale === "pt") return t`Portuguese`;
-    if (locale === "es") return t`Spanish`;
-    if (locale === "zh-cn") return t`Chinese`;
-    if (locale === "zh-hk") return t`Cantonese`;
-    if (locale === "pt-br") return t`Portuguese (Brazil)`;
-    if (locale === "vi") return t`Vietnamese`;
+    if (locale === "en") return `English`;
+    if (locale === "de") return `German`;
+    if (locale === "fr") return `French`;
+    if (locale === "it") return `Italian`;
+    if (locale === "nl") return `Dutch`;
+    if (locale === "pt") return `Portuguese`;
+    if (locale === "es") return `Spanish`;
+    if (locale === "zh-cn") return `Chinese`;
+    if (locale === "zh-hk") return `Cantonese`;
+    if (locale === "pt-br") return `Portuguese (Brazil)`;
+    if (locale === "vi") return `Vietnamese`;
     return locale;
 }
 

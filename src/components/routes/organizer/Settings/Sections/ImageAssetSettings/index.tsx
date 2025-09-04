@@ -20,12 +20,12 @@ const Settings = () => {
         <>
             <Card>
                 <HeadingWithDescription
-                    heading={t`Logo & Cover`}
-                    description={t`Logo and cover image for your organizer`}
+                    heading={`Logo & Cover`}
+                    description={`Logo and cover image for your organizer`}
                 />
-                <h2>{t`Logo`}</h2>
+                <h2>{`Logo`}</h2>
                 <ImageUploadDropzone
-                    helpText={t`Upload a logo for your organizer`}
+                    helpText={`Upload a logo for your organizer`}
                     imageType={'ORGANIZER_LOGO'}
                     entityId={organizerId}
                     onUploadSuccess={handleImageChange}
@@ -34,9 +34,9 @@ const Settings = () => {
                         id: organizerLogo?.id,
                     }}
                 />
-                <h2>{t`Cover`}</h2>
+                <h2>{`Cover`}</h2>
                 <ImageUploadDropzone
-                    helpText={t`Upload a cover image for your organizer`}
+                    helpText={`Upload a cover image for your organizer`}
                     imageType={'ORGANIZER_COVER'}
                     entityId={organizerId}
                     onUploadSuccess={handleImageChange}

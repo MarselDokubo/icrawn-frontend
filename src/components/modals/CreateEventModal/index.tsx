@@ -37,15 +37,15 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
             category: undefined,
         },
         validate: {
-            title: hasLength({max: 150}, t`Event name should be less than 150 characters`),
+            title: hasLength({max: 150}, `Event name should be less than 150 characters`),
             end_date: (value, values) => {
                 if (value && values.start_date && dayjs(value).isBefore(dayjs(values.start_date))) {
-                    return t`End date must be after start date`;
+                    return `End date must be after start date`;
                 }
             },
             organizer_id: (value) => {
                 if (!value) {
-                    return t`Organizer is required`;
+                    return `Organizer is required`;
                 }
             },
         },
@@ -116,7 +116,7 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                 <button
                     className={classes.closeButton}
                     onClick={onClose}
-                    aria-label={t`Close modal`}
+                    aria-label={`Close modal`}
                 >
                     <IconX size={20}/>
                 </button>
@@ -124,8 +124,8 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                 <div className={classes.modalHeader}>
                     <div className={classes.headerContent}>
                         <div className={classes.magicWand}>✨</div>
-                        <h1 className={classes.headerTitle}>{t`Create Your Event`}</h1>
-                        <p className={classes.headerSubtitle}>{t`Tell us about your event`}</p>
+                        <h1 className={classes.headerTitle}>{`Create Your Even`}</h1>
+                        <p className={classes.headerSubtitle}>{`Tell us about your even`}</p>
                     </div>
                 </div>
 
@@ -135,7 +135,7 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                             <div className={classes.createOrganizerCard}>
                                 <h3 className={classes.createOrganizerHeading}>
                                     <IconUsers size={20}/>
-                                    {t`Create Organizer`}
+                                    {`Create Organizer`}
                                 </h3>
                                 <OrganizerCreateForm
                                     onCancel={() => setShowCreateOrganizer(false)}
@@ -150,10 +150,10 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                             <>
                                 <Select
                                     {...form.getInputProps('organizer_id')}
-                                    label={t`Who is organizing this event?`}
+                                    label={`Who is organizing this event?`}
                                     required
                                     leftSection={<IconUsers size={18}/>}
-                                    placeholder={t`Select organizer`}
+                                    placeholder={`Select organizer`}
                                     data={organizersQuery.data?.data?.map((organizer) => ({
                                         value: String(organizer.id),
                                         label: organizer.name,
@@ -161,10 +161,10 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                                     mb={0}
                                 />
                                 <div className={classes.createOrganizerLink}>
-                                    {t`or`} {'  '}
+                                    {`or`} {'  '}
                                     <Anchor href={'#'} variant={'transparent'}
                                             onClick={() => setShowCreateOrganizer(true)}>
-                                        {t`create an organizer`}
+                                        {`create an organizer`}
                                     </Anchor>
                                 </div>
                             </>
@@ -173,8 +173,8 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                         <form onSubmit={form.onSubmit(handleCreate)}>
                             <TextInput
                                 {...form.getInputProps('title')}
-                                label={t`Event Name`}
-                                placeholder={t`Summer Music Festival ${placeholderDate}`}
+                                label={`Event Name`}
+                                placeholder={`Summer Music Festival ${placeholderDate}`}
                                 required
                                 size="lg"
                                 leftSection={<IconSparkles size={18}/>}
@@ -182,8 +182,8 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
 
                             <Select
                                 {...form.getInputProps('category')}
-                                label={t`Event Category`}
-                                placeholder={t`Select a category`}
+                                label={`Event Category`}
+                                placeholder={`Select a category`}
                                 data={EventCategories.map((category) => ({
                                     value: category.id,
                                     label: `${category.emoji} ${category.name}`,
@@ -194,8 +194,8 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
 
                             <div className={classes.editorField}>
                                 <Editor
-                                    label={t`Event Description`}
-                                    description={t`Tell people what to expect at your event`}
+                                    label={`Event Description`}
+                                    description={`Tell people what to expect at your even`}
                                     value={form.values.description || ''}
                                     onChange={(value) => form.setFieldValue('description', value)}
                                     error={form.errors.description as string}
@@ -207,12 +207,12 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
 
                             <div className={classes.dateTimeGrid}>
                                 <DateTimePicker
-                                    label={t`Start Date & Time`}
+                                    label={`Start Date & Time`}
                                     {...form.getInputProps('start_date')}
                                     required
                                     size="md"
-                                    placeholder={t`Select start date and time`}
-                                    valueFormat={t`MMM DD, YYYY [at] h:mm A`}
+                                    placeholder={`Select start date and time`}
+                                    valueFormat={`MMM DD, YYYY [at] h:mm A`}
                                     clearable
                                     dropdownType="modal"
                                     timePickerProps={{
@@ -231,11 +231,11 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                                     }}
                                 />
                                 <DateTimePicker
-                                    label={t`End Date & Time (optional)`}
+                                    label={`End Date & Time (optional)`}
                                     {...form.getInputProps('end_date')}
                                     size="md"
-                                    placeholder={t`Select end date and time`}
-                                    valueFormat={t`MMM DD, YYYY [at] h:mm A`}
+                                    placeholder={`Select end date and time`}
+                                    valueFormat={`MMM DD, YYYY [at] h:mm A`}
                                     clearable
                                     dropdownType="modal"
                                     timePickerProps={{
@@ -263,7 +263,7 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                                 className={classes.createButton}
                                 leftSection={<IconCalendarEvent size={24}/>}
                             >
-                                {t`Continue Setup`}
+                                {`Continue Setup`}
                             </Button>
                         </form>
                     </div>

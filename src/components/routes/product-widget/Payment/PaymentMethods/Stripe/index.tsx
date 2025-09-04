@@ -45,9 +45,9 @@ export const StripePaymentMethod = ({enabled, setSubmitHandler}: StripePaymentMe
         return (
             <CheckoutContent>
                 <HomepageInfoMessage
-                    message={t`Stripe payments are not enabled for this event.`}
+                    message={`Stripe payments are not enabled for this event.`}
                     link={eventHomepagePath(event as Event)}
-                    linkText={t`Return to event page`}
+                    linkText={`Return to event page`}
                 />
             </CheckoutContent>
         );
@@ -58,9 +58,9 @@ export const StripePaymentMethod = ({enabled, setSubmitHandler}: StripePaymentMe
             <CheckoutContent>
                 <HomepageInfoMessage
                     /* @ts-ignore */
-                    message={stripePaymentIntentError.response?.data?.message || t`Sorry, something has gone wrong. Please restart the checkout process.`}
+                    message={stripePaymentIntentError.response?.data?.message || `Sorry, something has gone wrong. Please restart the checkout process.`}
                     link={eventHomepagePath(event)}
-                    linkText={t`Return to event page`}
+                    linkText={`Return to event page`}
                 />
             </CheckoutContent>
         );

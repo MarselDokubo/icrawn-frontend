@@ -38,30 +38,30 @@ export const InviteUserModal = ({onClose}: GenericModalProps) => {
     const calcTypeOptions: ItemProps[] = [
         {
             icon: <IconUserShield/>,
-            label: t`Admin`,
+            label: `Admin`,
             value: 'ADMIN',
-            description: t`Admin users have full access to events and account settings.`,
+            description: `Admin users have full access to events and account settings.`,
         },
         {
             icon: <IconUser/>,
-            label: t`Organizer`,
+            label: `Organizer`,
             value: 'ORGANIZER',
-            description: t`Organizers can only manage events and products. They cannot manage users, account settings or billing information.`,
+            description: `Organizers can only manage events and products. They cannot manage users, account settings or billing information.`,
         },
     ];
 
     return (
-        <Modal heading={t`Invite a team member`} onClose={onClose} opened modalHeader={'branded'}>
+        <Modal heading={`Invite a team member`} onClose={onClose} opened modalHeader={'branded'}>
             <form onSubmit={form.onSubmit(values => handleCreate(values))}>
                 <SimpleGrid cols={2}>
-                    <TextInput required {...form.getInputProps('first_name')} label={t`First Name`}/>
-                    <TextInput  {...form.getInputProps('last_name')} label={t`Last Name`}/>
+                    <TextInput required {...form.getInputProps('first_name')} label={`First Name`}/>
+                    <TextInput  {...form.getInputProps('last_name')} label={`Last Name`}/>
                 </SimpleGrid>
 
-                <TextInput required type={'email'}  {...form.getInputProps('email')} label={t`Email`}/>
+                <TextInput required type={'email'}  {...form.getInputProps('email')} label={`Email`}/>
 
                 <CustomSelect
-                    label={t`Role`}
+                    label={`Role`}
                     optionList={calcTypeOptions}
                     form={form}
                     name={'role'}
@@ -71,7 +71,7 @@ export const InviteUserModal = ({onClose}: GenericModalProps) => {
                     fullWidth
                     loading={createMutation.isPending}
                     type={'submit'}>
-                    {t`Invite Team Member`}
+                    {`Invite Team Member`}
                 </Button>
             </form>
         </Modal>

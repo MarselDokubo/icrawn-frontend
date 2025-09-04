@@ -57,14 +57,14 @@ export const attendeesClient = {
         return response.data;
     },
     export: async (eventId: IdParam): Promise<Blob> => {
-        const response = await api.post(`events/${eventId}/attendees/export`, {}, {
+        const response = await api.post(`events/${eventId}/attendees/expor`, {}, {
             responseType: 'blob',
         });
 
         return new Blob([response.data]);
     },
     resendTicket: async (eventId: IdParam, attendeeId: IdParam) => {
-        return await api.post(`events/${eventId}/attendees/${attendeeId}/resend-ticket`);
+        return await api.post(`events/${eventId}/attendees/${attendeeId}/resend-ticke`);
     },
 }
 

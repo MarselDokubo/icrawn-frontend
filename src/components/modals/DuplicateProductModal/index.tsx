@@ -92,7 +92,7 @@ export const DuplicateProductModal = ({onClose, originalProductId}: DuplicatePro
     const handleDuplicateProduct = (values: Product) => {
         createProductMutation.mutate({eventId, productData: values}, {
             onSuccess: () => {
-                showSuccess(t`Successfully Duplicated Product`);
+                showSuccess(`Successfully Duplicated Produc`);
                 form.reset();
                 onClose();
             },
@@ -100,17 +100,17 @@ export const DuplicateProductModal = ({onClose, originalProductId}: DuplicatePro
                 if (error?.response?.data?.errors) {
                     form.setErrors(error.response.data.errors);
                 }
-                showError(t`Unable to duplicate product. Please check the your details`);
+                showError(`Unable to duplicate product. Please check the your details`);
             },
         });
     };
 
     return (
-        <Modal onClose={onClose} heading={t`Duplicate Product`} opened size={"lg"} withCloseButton>
+        <Modal onClose={onClose} heading={`Duplicate Produc`} opened size={"lg"} withCloseButton>
             <form onSubmit={form.onSubmit(handleDuplicateProduct)}>
                 <ProductForm form={form}/>
                 <Button type="submit" fullWidth disabled={createProductMutation.isPending}>
-                    {createProductMutation.isPending ? t`Working...` : t`Duplicate Product`}
+                    {createProductMutation.isPending ? `Working...` : `Duplicate Produc`}
                 </Button>
             </form>
         </Modal>

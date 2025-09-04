@@ -74,7 +74,7 @@ export const QRScannerComponent = (props: QRScannerComponentProps) => {
             }
 
             if (alreadyScanned) {
-                showError(t`You already scanned this ticket`);
+                showError(`You already scanned this ticke`);
 
                 setIsScanFailed(true);
                 setInterval(() => setIsScanFailed(false), 500);
@@ -120,7 +120,7 @@ export const QRScannerComponent = (props: QRScannerComponentProps) => {
 
     const handleFlashToggle = () => {
         if (!isFlashAvailable) {
-            showError(t`Flash is not available on this device`);
+            showError(`Flash is not available on this device`);
             return;
         }
         if (qrScannerRef.current) {
@@ -183,7 +183,7 @@ export const QRScannerComponent = (props: QRScannerComponentProps) => {
 
                     <div>
                         <Button color={'green'} mt={20} onClick={handleClose} variant={'filled'}>
-                            {t`Close`}
+                            {`Close`}
                         </Button>
                     </div>
                 </div>
@@ -211,7 +211,7 @@ export const QRScannerComponent = (props: QRScannerComponentProps) => {
                         <IconCameraRotate color={'#ffffff95'} size={30}/>
                     </Menu.Target>
                     <Menu.Dropdown>
-                        <Menu.Label>{t`Select Camera`}</Menu.Label>
+                        <Menu.Label>{`Select Camera`}</Menu.Label>
                         {cameraList?.map((camera, index) => (
                             <Menu.Item key={index} onClick={handleCameraSelection(camera)}>
                                 {camera.label}

@@ -33,7 +33,7 @@ export const SearchBarWrapper = ({setSearchParams, searchParams, pagination, pla
                 query: '',
                 pageNumber: 1,
             })}
-            placeholder={placeholder || t`Search...`}
+            placeholder={placeholder || `Search...`}
             sortProps={pagination ? {
                 selected: searchParams.sortBy && searchParams.sortDirection
                     ? searchParams.sortBy + ':' + searchParams.sortDirection
@@ -72,7 +72,7 @@ export const SearchBar = ({sortProps, onClear, value, onChange, ...props}: Searc
                         onChange(event);
                     }
                 }}
-                rightSection={<IconX aria-label={t`Clear Search Text`}
+                rightSection={<IconX aria-label={`Clear Search Tex`}
                                      color={'#ddd'}
                                      style={{cursor: 'pointer'}}
                                      display={value ? 'block' : 'none'}

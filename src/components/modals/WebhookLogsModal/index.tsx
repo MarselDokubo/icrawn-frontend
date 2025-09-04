@@ -148,7 +148,7 @@ export const WebhookLogsModal = ({onClose, webhookId}: WebhookLogsModalProps) =>
         <Modal
             opened
             onClose={onClose}
-            heading={t`Webhook Logs`}
+            heading={`Webhook Logs`}
             size="xl"
         >
             {logsQuery.isLoading && (
@@ -163,7 +163,7 @@ export const WebhookLogsModal = ({onClose, webhookId}: WebhookLogsModalProps) =>
             {!!logsQuery.error && (
                 <Alert
                     color="red"
-                    title={t`Error loading logs`}
+                    title={`Error loading logs`}
                     icon={<IconX size={18}/>}
                     radius="md"
                 >
@@ -174,10 +174,10 @@ export const WebhookLogsModal = ({onClose, webhookId}: WebhookLogsModalProps) =>
             {logs && logs.length === 0 && !logsQuery.isLoading && (
                 <Alert style={{textAlign: 'center'}} radius="md">
                     <h2>
-                        {t`No logs found`}
+                        {`No logs found`}
                     </h2>
                     <p>
-                        {t`No webhook events have been recorded for this endpoint yet. Events will appear here once they are triggered.`}
+                        {`No webhook events have been recorded for this endpoint yet. Events will appear here once they are triggered.`}
                     </p>
                 </Alert>
             )}

@@ -109,7 +109,7 @@ const OrganizerHomepageDesigner = () => {
             },
             {
                 onSuccess: () => {
-                    showSuccess(t`Successfully Updated Homepage Design`);
+                    showSuccess(`Successfully Updated Homepage Design`);
                 },
                 onError: (error) => {
                     formErrorHandle(form, error);
@@ -181,8 +181,8 @@ const OrganizerHomepageDesigner = () => {
             <div className={classes.sidebar}>
                 <div className={classes.sticky}>
                     <div className={classes.header}>
-                        <h2>{t`Homepage Design`}</h2>
-                        <Text c="dimmed" size="sm">{t`Customize your organizer page appearance`}</Text>
+                        <h2>{`Homepage Design`}</h2>
+                        <Text c="dimmed" size="sm">{`Customize your organizer page appearance`}</Text>
                     </div>
 
                     <Accordion 
@@ -194,15 +194,15 @@ const OrganizerHomepageDesigner = () => {
                     >
                         <Accordion.Item value="images" className={classes.accordionItem}>
                             <Accordion.Control icon={<IconPhoto size={20} />}>
-                                <Text fw={500}>{t`Images`}</Text>
+                                <Text fw={500}>{`Images`}</Text>
                             </Accordion.Control>
                             <Accordion.Panel>
                                 <Stack gap="lg">
                                     <div>
                                         <Group justify={'space-between'} mb="xs">
-                                            <Text fw={500} size="sm">{t`Cover Image`}</Text>
+                                            <Text fw={500} size="sm">{`Cover Image`}</Text>
                                             <Tooltip
-                                                label={t`We recommend dimensions of 1950px by 650px, a ratio of 3:1, and a maximum file size of 5MB`}>
+                                                label={`We recommend dimensions of 1950px by 650px, a ratio of 3:1, and a maximum file size of 5MB`}>
                                                 <IconHelp size={16} style={{ color: 'var(--mantine-color-gray-6)' }}/>
                                             </Tooltip>
                                         </Group>
@@ -215,15 +215,15 @@ const OrganizerHomepageDesigner = () => {
                                                 url: existingCover?.url,
                                                 id: existingCover?.id,
                                             }}
-                                            helpText={t`Cover image will be displayed at the top of your organizer page`}
+                                            helpText={`Cover image will be displayed at the top of your organizer page`}
                                             displayMode="compact"
                                         />
                                     </div>
 
                                     <div>
                                         <Group justify={'space-between'} mb="xs">
-                                            <Text fw={500} size="sm">{t`Logo`}</Text>
-                                            <Tooltip label={t`We recommend dimensions of 400px by 400px, and a maximum file size of 5MB`}>
+                                            <Text fw={500} size="sm">{`Logo`}</Text>
+                                            <Tooltip label={`We recommend dimensions of 400px by 400px, and a maximum file size of 5MB`}>
                                                 <IconHelp size={16} style={{ color: 'var(--mantine-color-gray-6)' }}/>
                                             </Tooltip>
                                         </Group>
@@ -236,7 +236,7 @@ const OrganizerHomepageDesigner = () => {
                                                 url: existingLogo?.url,
                                                 id: existingLogo?.id,
                                             }}
-                                            helpText={t`Logo will be displayed in the header`}
+                                            helpText={`Logo will be displayed in the header`}
                                             displayMode="compact"
                                         />
                                     </div>
@@ -246,19 +246,19 @@ const OrganizerHomepageDesigner = () => {
 
                         <Accordion.Item value="theme" className={classes.accordionItem}>
                             <Accordion.Control icon={<IconPalette size={20} />}>
-                                <Text fw={500}>{t`Theme & Colors`}</Text>
+                                <Text fw={500}>{`Theme & Colors`}</Text>
                             </Accordion.Control>
                             <Accordion.Panel>
                                 <Stack gap="lg">
 
                                     <div>
-                                        <Text fw={500} size="sm" mb="xs">{t`Color Presets`}</Text>
-                                        <Text size="xs" c="dimmed" mb="md">{t`Choose from predefined color schemes`}</Text>
+                                        <Text fw={500} size="sm" mb="xs">{`Color Presets`}</Text>
+                                        <Text size="xs" c="dimmed" mb="md">{`Choose from predefined color schemes`}</Text>
                                         
                                         <div className={classes.themePresets}>
                                             <Group gap={12} wrap="wrap">
                                                 {colorThemesQuery.isLoading && (
-                                                    <Text size="sm" c="dimmed">{t`Loading themes...`}</Text>
+                                                    <Text size="sm" c="dimmed">{`Loading themes...`}</Text>
                                                 )}
                                                 {colorThemesQuery.data?.map((theme) => (
                                                     <UnstyledButton
@@ -327,7 +327,7 @@ const OrganizerHomepageDesigner = () => {
                                                             </div>
                                                         )}
                                                     </div>
-                                                    <Text size="xs" c="dimmed" mt={6}>{t`Custom`}</Text>
+                                                    <Text size="xs" c="dimmed" mt={6}>{`Custom`}</Text>
                                                 </UnstyledButton>
                                             </Group>
                                         </div>
@@ -340,20 +340,20 @@ const OrganizerHomepageDesigner = () => {
                                                     optionList={[
                                                         {
                                                             icon: <IconColorPicker/>,
-                                                            label: t`Color`,
+                                                            label: `Color`,
                                                             value: 'COLOR',
-                                                            description: t`Choose a color for your background`,
+                                                            description: `Choose a color for your background`,
                                                         },
                                                         {
                                                             icon: <IconPhoto/>,
-                                                            label: t`Use cover image`,
+                                                            label: `Use cover image`,
                                                             value: 'MIRROR_COVER_IMAGE',
-                                                            description: t`Use a blurred version of the cover image as the background`,
+                                                            description: `Use a blurred version of the cover image as the background`,
                                                             disabled: !existingCover,
                                                         },
                                                     ]}
                                                     form={form}
-                                                    label={t`Background Type`}
+                                                    label={`Background Type`}
                                                     name={'homepage_background_type'}
                                                 />
 
@@ -366,7 +366,7 @@ const OrganizerHomepageDesigner = () => {
                                                         fullWidth
                                                         size="sm"
                                                     >
-                                                        {colorInputsExpanded ? t`Hide color settings` : t`Show color settings`}
+                                                        {colorInputsExpanded ? `Hide color settings` : `Show color settings`}
                                                     </Button>
                                                 )}
 
@@ -375,40 +375,40 @@ const OrganizerHomepageDesigner = () => {
                                                         {form.values.homepage_background_type === 'COLOR' && (
                                                             <ColorInput
                                                                 format="hexa"
-                                                                label={t`Page Background Color`}
-                                                                description={t`The background color of the entire page`}
+                                                                label={`Page Background Color`}
+                                                                description={`The background color of the entire page`}
                                                                 size="sm"
                                                                 {...form.getInputProps('homepage_background_color')}
                                                             />
                                                         )}
                                                         <ColorInput
                                                             format="hexa"
-                                                            label={t`Content Background Color`}
-                                                            description={t`The background color of content areas (cards, header, etc.)`}
+                                                            label={`Content Background Color`}
+                                                            description={`The background color of content areas (cards, header, etc.)`}
                                                             size="sm"
                                                             {...form.getInputProps('homepage_content_background_color')}
                                                         />
                                                         <ColorInput
                                                             format="hexa"
-                                                            label={t`Primary Color`}
+                                                            label={`Primary Color`}
                                                             size="sm"
                                                             {...form.getInputProps('homepage_primary_color')}
                                                         />
                                                         <ColorInput
                                                             format="hexa"
-                                                            label={t`Primary Text Color`}
+                                                            label={`Primary Text Color`}
                                                             size="sm"
                                                             {...form.getInputProps('homepage_primary_text_color')}
                                                         />
                                                         <ColorInput
                                                             format="hexa"
-                                                            label={t`Secondary Color`}
+                                                            label={`Secondary Color`}
                                                             size="sm"
                                                             {...form.getInputProps('homepage_secondary_color')}
                                                         />
                                                         <ColorInput
                                                             format="hexa"
-                                                            label={t`Secondary Text Color`}
+                                                            label={`Secondary Text Color`}
                                                             size="sm"
                                                             {...form.getInputProps('homepage_secondary_text_color')}
                                                         />
@@ -429,13 +429,13 @@ const OrganizerHomepageDesigner = () => {
                         mt="md"
                         onClick={() => form.onSubmit(handleSubmit)()}
                     >
-                        {t`Save Changes`}
+                        {`Save Changes`}
                     </Button>
                 </div>
             </div>
 
             <div className={classes.previewContainer}>
-                <h2>{t`Homepage Preview`}</h2>
+                <h2>{`Homepage Preview`}</h2>
                 <div className={classes.iframeContainer}>
                     {iframeSrc ? (
                         <iframe

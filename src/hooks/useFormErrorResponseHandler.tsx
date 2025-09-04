@@ -15,7 +15,7 @@ export const useFormErrorResponseHandler = () => {
     return (
         form: UseFormReturnType<any>,
         error: ErrorResponse | any,
-        errorMessage = t`Please check the provided information is correct`
+        errorMessage = `Please check the provided information is correc`
     ) => {
         if (error?.response?.data?.errors) {
             form.setErrors(error.response.data.errors);
@@ -25,7 +25,7 @@ export const useFormErrorResponseHandler = () => {
             showError((
                 <>
                     <p>
-                        {t`There was an error processing your request. Please try again.`}
+                        {`There was an error processing your request. Please try again.`}
                     </p>
                     <p style={{fontSize: '0.8rem', color: '#ccc'}}>
                         Error: {error.response.status}
@@ -45,6 +45,6 @@ export const useFormErrorResponseHandler = () => {
             return;
         }
 
-        showError(t`An unexpected error occurred. Please try again.`);
+        showError(`An unexpected error occurred. Please try again.`);
     };
 };

@@ -49,7 +49,7 @@ export const CreateProductModal = ({onClose, selectedCategoryId = undefined}: Cr
     const handleCreateProduct = (values: Product) => {
         createProductMutation.mutate({eventId, productData: values}, {
             onSuccess: () => {
-                showSuccess(t`Successfully Created Product`);
+                showSuccess(`Successfully Created Produc`);
                 form.reset();
                 onClose();
             },
@@ -58,7 +58,7 @@ export const CreateProductModal = ({onClose, selectedCategoryId = undefined}: Cr
                 if (error?.response?.data?.errors) {
                     form.setErrors(error.response.data.errors);
                 }
-                showError(t`Unable to create product. Please check the your details`);
+                showError(`Unable to create product. Please check the your details`);
             }
         });
     }
@@ -75,7 +75,7 @@ export const CreateProductModal = ({onClose, selectedCategoryId = undefined}: Cr
     return (
         <Modal
             onClose={onClose}
-            heading={t`Create Ticket or Product`}
+            heading={`Create Ticket or Produc`}
             opened
             size={'lg'}
             withCloseButton
@@ -83,7 +83,7 @@ export const CreateProductModal = ({onClose, selectedCategoryId = undefined}: Cr
             <form onSubmit={form.onSubmit((values) => handleCreateProduct(values))}>
                 <ProductForm form={form}/>
                 <Button type="submit" fullWidth disabled={createProductMutation.isPending}>
-                    {createProductMutation.isPending ? t`Working...` : t`Create Product`}
+                    {createProductMutation.isPending ? `Working...` : `Create Produc`}
                 </Button>
             </form>
         </Modal>

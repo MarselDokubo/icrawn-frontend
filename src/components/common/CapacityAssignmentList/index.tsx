@@ -28,7 +28,7 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
     const handleDeleteProduct = (capacityAssignmentId: IdParam, eventId: IdParam) => {
         deleteMutation.mutate({capacityAssignmentId, eventId}, {
             onSuccess: () => {
-                showSuccess(t`Capacity Assignment deleted successfully`);
+                showSuccess(`Capacity Assignment deleted successfully`);
             },
             onError: (error: any) => {
                 showError(error.message);
@@ -39,7 +39,7 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
     if (capacityAssignments.length === 0) {
         return (
             <NoResultsSplash
-                heading={t`No Capacity Assignments`}
+                heading={`No Capacity Assignments`}
                 imageHref={'/blank-slate/capacity-assignments.svg'}
                 subHeading={(
                     <>
@@ -60,7 +60,7 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
                             size={'xs'}
                             leftSection={<IconPlus/>}
                             color={'green'}
-                            onClick={() => openCreateModal()}>{t`Create Capacity Assignment`}
+                            onClick={() => openCreateModal()}>{`Create Capacity Assignmen`}
                         </Button>
                     </>
                 )}
@@ -95,7 +95,7 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
                                                 <div>
                                                     {assignment.products.length > 1 &&
                                                         <Trans>Applies to {assignment.products.length} products</Trans>}
-                                                    {assignment.products.length === 1 && t`Applies to 1 product`}
+                                                    {assignment.products.length === 1 && `Applies to 1 produc`}
                                                 </div>
                                                 &nbsp;
                                                 <IconHelp size={16}/>
@@ -140,10 +140,10 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
                                     <ActionMenu
                                         itemsGroups={[
                                             {
-                                                label: t`Manage`,
+                                                label: `Manage`,
                                                 items: [
                                                     {
-                                                        label: t`Edit Capacity`,
+                                                        label: `Edit Capacity`,
                                                         icon: <IconPencil size={14}/>,
                                                         onClick: () => {
                                                             setSelectedCapacityAssignmentId(assignment.id as IdParam);
@@ -153,14 +153,14 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
                                                 ],
                                             },
                                             {
-                                                label: t`Danger zone`,
+                                                label: `Danger zone`,
                                                 items: [
                                                     {
-                                                        label: t`Delete Capacity`,
+                                                        label: `Delete Capacity`,
                                                         icon: <IconTrash size={14}/>,
                                                         onClick: () => {
                                                             confirmationDialog(
-                                                                t`Are you sure you would like to delete this Capacity Assignment?`,
+                                                                `Are you sure you would like to delete this Capacity Assignment?`,
                                                                 () => {
                                                                     handleDeleteProduct(
                                                                         assignment.id as IdParam,

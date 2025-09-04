@@ -24,7 +24,7 @@ export const HeadingCard = ({className = '', subHeading, heading, buttonAction, 
             </div>
             {buttonAction && (
                 <div className={classes.button}>
-                    <Button size={'xs'} onClick={buttonAction} variant={'light'}>{buttonText || t`Add New`}</Button>
+                    <Button size={'xs'} onClick={buttonAction} variant={'light'}>{buttonText || `Add New`}</Button>
                 </div>
             )}
         </Card>

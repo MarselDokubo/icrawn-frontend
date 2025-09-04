@@ -23,7 +23,7 @@ export default function PaystackCheckoutForm() {
             );
             window.location.href = result.authorization_url;
         } catch (e: any) {
-            setError(e?.message || t`Unable to initialize Paystack payment.`);
+            setError(e?.message || `Unable to initialize Paystack payment.`);
         } finally {
             setLoading(false);
         }
@@ -31,21 +31,21 @@ export default function PaystackCheckoutForm() {
 
     return (
         <div>
-            <h2>{t`Pay with Paystack`}</h2>
+            <h2>{`Pay with Paystack`}</h2>
             <input
                 type="email"
-                placeholder={t`Email`}
+                placeholder={`Email`}
                 value={email}
                 onChange={e => setEmail(e.target.value)}
             />
             <input
                 type="number"
-                placeholder={t`Amount`}
+                placeholder={`Amoun`}
                 value={amount}
                 onChange={e => setAmount(Number(e.target.value))}
             />
             <Button onClick={handlePaystack} loading={loading} color="green">
-                {t`Pay Now`}
+                {`Pay Now`}
             </Button>
             {error && <Alert color="red">{error}</Alert>}
         </div>

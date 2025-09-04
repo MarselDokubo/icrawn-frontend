@@ -14,10 +14,10 @@ export default function PublicNavbar() {
   }, []);
 
       const navLinks = [
-    { to: '/', label: () => t`Home` },
-    { to: '/events', label: () => t`Events` },
-    { to: '/about', label: () => t`About` },
-    { to: '/contact', label: () => t`Contact` },
+    { to: '/', label: () => `Home` },
+    { to: '/events', label: () => `Events` },
+    { to: '/about', label: () => `Abou` },
+    { to: '/contact', label: () => `Contac` },
   ];
     return (
         <div style={{
@@ -26,17 +26,17 @@ export default function PublicNavbar() {
         zIndex: 50,
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",
-        transition: t`background 200ms ease`,
+        transition: `background 200ms ease`,
         background: scrolled
-          ? t`linear-gradient(135deg, rgba(30,27,75,0.80), rgba(17,24,39,0.75))`
-          : t`linear-gradient(135deg, rgba(30,27,75,0.30), rgba(17,24,39,0.25))`,
-        borderBottom: t`1px solid rgba(255,255,255,0.12)`,
+          ? `linear-gradient(135deg, rgba(30,27,75,0.80), rgba(17,24,39,0.75))`
+          : `linear-gradient(135deg, rgba(30,27,75,0.30), rgba(17,24,39,0.25))`,
+        borderBottom: `1px solid rgba(255,255,255,0.12)`,
       }}>
 
       <Container size="lg" py="md">
         <Group justify="space-between">
           <Group>
-            <img src="/icrawn_logo.jpg" alt={t`Logo`} style={{ height: 48 }} />
+            <img src="/icrawn_logo.jpg" alt={`Logo`} style={{ height: 48 }} />
           </Group>
           <Group visibleFrom="sm">
             {navLinks.map((link) => (
@@ -46,7 +46,7 @@ export default function PublicNavbar() {
             ))}
           </Group>
           <Button radius="xl" variant="gradient" gradient={{ from: "grape", to: "indigo" }}>
-            {t`Book Event`}
+            {`Book Even`}
           </Button>
         </Group>
       </Container>

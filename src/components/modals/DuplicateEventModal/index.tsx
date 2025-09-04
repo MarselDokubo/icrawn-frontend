@@ -21,15 +21,15 @@ interface DuplicateEventModalProps extends GenericModalProps {
 
 export const DuplicateEventModal = ({onClose, eventId}: DuplicateEventModalProps) => {
     const duplicateOptions = [
-        { key: 'duplicate_products', label: t`Products` },
-        { key: 'duplicate_questions', label: t`Questions` },
-        { key: 'duplicate_settings', label: t`Settings` },
-        { key: 'duplicate_promo_codes', label: t`Promo Codes` },
-        { key: 'duplicate_capacity_assignments', label: t`Capacity Assignments` },
-        { key: 'duplicate_check_in_lists', label: t`Check-In Lists` },
-        { key: 'duplicate_event_cover_image', label: t`Event Cover Image` },
-        { key: 'duplicate_webhooks', label: t`Webhooks` },
-        { key: 'duplicate_affiliates', label: t`Affiliates` },
+        { key: 'duplicate_products', label: `Products` },
+        { key: 'duplicate_questions', label: `Questions` },
+        { key: 'duplicate_settings', label: `Settings` },
+        { key: 'duplicate_promo_codes', label: `Promo Codes` },
+        { key: 'duplicate_capacity_assignments', label: `Capacity Assignments` },
+        { key: 'duplicate_check_in_lists', label: `Check-In Lists` },
+        { key: 'duplicate_event_cover_image', label: `Event Cover Image` },
+        { key: 'duplicate_webhooks', label: `Webhooks` },
+        { key: 'duplicate_affiliates', label: `Affiliates` },
     ];
 
     const form = useForm({
@@ -84,7 +84,7 @@ export const DuplicateEventModal = ({onClose, eventId}: DuplicateEventModalProps
         mutation.mutate({eventId, duplicateData}, {
             onSuccess: ({data}) => {
                 nav(`/manage/event/${data.id}`);
-                showSuccess(t`Event duplicated successfully`);
+                showSuccess(`Event duplicated successfully`);
             },
             onError: (error) => {
                 errorHandler(form, error);
@@ -95,7 +95,7 @@ export const DuplicateEventModal = ({onClose, eventId}: DuplicateEventModalProps
     return (
         <Modal
             onClose={onClose}
-            heading={t`Duplicate Event`}
+            heading={`Duplicate Even`}
             opened
             size={'lg'}
             withCloseButton
@@ -104,13 +104,13 @@ export const DuplicateEventModal = ({onClose, eventId}: DuplicateEventModalProps
                 <fieldset disabled={eventQuery.isLoading || mutation.isPending}>
                     <TextInput
                         {...form.getInputProps('title')}
-                        label={t`Name`}
-                        placeholder={t`Summer Music Festival ${new Date().getFullYear()}`}
+                        label={`Name`}
+                        placeholder={`Summer Music Festival ${new Date().getFullYear()}`}
                         required
                     />
 
                     <Editor
-                        label={t`Description`}
+                        label={`Description`}
                         value={form.values.description || ''}
                         onChange={(value) => form.setFieldValue('description', value)}
                         error={form.errors?.description as string}
@@ -119,21 +119,21 @@ export const DuplicateEventModal = ({onClose, eventId}: DuplicateEventModalProps
                     <InputGroup>
                         <TextInput type={'datetime-local'}
                                    {...form.getInputProps('start_date')}
-                                   label={t`Start Date`}
+                                   label={`Start Date`}
                                    required
                         />
                         <TextInput type={'datetime-local'}
                                    {...form.getInputProps('end_date')}
-                                   label={t`End Date`}
+                                   label={`End Date`}
                         />
                     </InputGroup>
 
                     <Group justify="space-between" align="center" mb="md">
                         <h3 style={{margin: 0}}>
-                            {t`Duplicate Options`}
+                            {`Duplicate Options`}
                         </h3>
                         <Group gap="xs">
-                            <Tooltip label={t`Select All`}>
+                            <Tooltip label={`Select All`}>
                                 <ActionIcon
                                     variant="light"
                                     size="sm"
@@ -144,7 +144,7 @@ export const DuplicateEventModal = ({onClose, eventId}: DuplicateEventModalProps
                                     <IconCheckbox size={16} />
                                 </ActionIcon>
                             </Tooltip>
-                            <Tooltip label={t`Deselect All`}>
+                            <Tooltip label={`Deselect All`}>
                                 <ActionIcon
                                     variant="light"
                                     size="sm"
@@ -172,7 +172,7 @@ export const DuplicateEventModal = ({onClose, eventId}: DuplicateEventModalProps
                     </Card>
                 </fieldset>
                 <Button type="submit" fullWidth disabled={mutation.isPending}>
-                    {mutation.isPending ? t`Working...` : t`Duplicate Event`}
+                    {mutation.isPending ? `Working...` : `Duplicate Even`}
                 </Button>
             </form>
         </Modal>

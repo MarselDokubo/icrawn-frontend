@@ -36,11 +36,11 @@ import classes from './OrderSummaryAndProducts.module.scss';
 
 const PaymentStatus = ({order}: { order: Order }) => {
     const paymentStatuses: Record<string, string> = {
-        'NO_PAYMENT_REQUIRED': t`No Payment Required`,
-        'AWAITING_PAYMENT': t`Awaiting Payment`,
-        'PAYMENT_FAILED': t`Payment Failed`,
-        'PAYMENT_RECEIVED': t`Payment Received`,
-        'AWAITING_OFFLINE_PAYMENT': t`Awaiting Offline Payment`,
+        'NO_PAYMENT_REQUIRED': `No Payment Required`,
+        'AWAITING_PAYMENT': `Awaiting Paymen`,
+        'PAYMENT_FAILED': `Payment Failed`,
+        'PAYMENT_RECEIVED': `Payment Received`,
+        'AWAITING_OFFLINE_PAYMENT': `Awaiting Offline Paymen`,
     };
 
     return order?.payment_status ? <span>{paymentStatuses[order.payment_status] || ''}</span> : null;
@@ -48,10 +48,10 @@ const PaymentStatus = ({order}: { order: Order }) => {
 
 const RefundStatusType = ({order}: { order: Order }) => {
     const refundStatuses: Record<string, string> = {
-        'REFUND_PENDING': t`Refund Pending`,
-        'REFUND_FAILED': t`Refund Failed`,
-        'REFUNDED': t`Refunded`,
-        'PARTIALLY_REFUNDED': t`Partially Refunded`,
+        'REFUND_PENDING': `Refund Pending`,
+        'REFUND_FAILED': `Refund Failed`,
+        'REFUNDED': `Refunded`,
+        'PARTIALLY_REFUNDED': `Partially Refunded`,
     };
 
     return order?.refund_status ? <span>{refundStatuses[order.refund_status] || ''}</span> : null;
@@ -59,11 +59,11 @@ const RefundStatusType = ({order}: { order: Order }) => {
 
 const OrderStatusType = ({order}: { order: Order }) => {
     const statuses: Record<string, { label: string, color: string }> = {
-        'COMPLETED': {label: t`Order Completed`, color: 'green'},
-        'CANCELLED': {label: t`Order Cancelled`, color: 'red'},
-        'PAYMENT_FAILED': {label: t`Payment Failed`, color: 'red'},
-        'AWAITING_PAYMENT': {label: t`Awaiting Payment`, color: 'orange'},
-        'AWAITING_OFFLINE_PAYMENT': {label: t`Awaiting Offline Payment`, color: 'orange'},
+        'COMPLETED': {label: `Order Completed`, color: 'green'},
+        'CANCELLED': {label: `Order Cancelled`, color: 'red'},
+        'PAYMENT_FAILED': {label: `Payment Failed`, color: 'red'},
+        'AWAITING_PAYMENT': {label: `Awaiting Paymen`, color: 'orange'},
+        'AWAITING_OFFLINE_PAYMENT': {label: `Awaiting Offline Paymen`, color: 'orange'},
     };
 
     const status = statuses[order?.status];
@@ -90,10 +90,10 @@ const DetailItem = ({icon: Icon, label, value}: { icon: any, label: string, valu
 
 const WelcomeHeader = ({order, event}: { order: Order; event: Event }) => {
     const message = {
-        'COMPLETED': t`You're going to ${event.title}! 🎉`,
-        'CANCELLED': t`Your order has been cancelled`,
+        'COMPLETED': `You're going to ${event.title}! 🎉`,
+        'CANCELLED': `Your order has been cancelled`,
         'RESERVED': null,
-        'AWAITING_OFFLINE_PAYMENT': t`Your order is awaiting payment 🏦`
+        'AWAITING_OFFLINE_PAYMENT': `Your order is awaiting payment 🏦`
     }[order.status];
 
     return message ? <div className={classes.welcomeHeader}>{message}</div> : null;
@@ -104,42 +104,42 @@ const OrderDetails = ({order, event}: { order: Order, event: Event }) => (
         <SimpleGrid cols={{base: 1, sm: 2}} spacing="md">
             <DetailItem
                 icon={IconUser}
-                label={t`Name`}
+                label={`Name`}
                 value={`${order.first_name} ${order.last_name}`}
             />
             <DetailItem
                 icon={IconId}
-                label={t`Order Reference`}
+                label={`Order Reference`}
                 value={order.public_id}
             />
             <DetailItem
                 icon={IconMail}
-                label={t`Email`}
+                label={`Email`}
                 value={order.email}
             />
             <DetailItem
                 icon={IconCalendar}
-                label={t`Order Date`}
+                label={`Order Date`}
                 value={dateToBrowserTz(order.created_at, event.timezone)}
             />
             {!!order.refund_status && (
                 <DetailItem
                     icon={IconMenuOrder}
-                    label={t`Refund Status`}
+                    label={`Refund Status`}
                     value={<RefundStatusType order={order}/>}
                 />
             )}
             {(order.payment_status !== 'PAYMENT_RECEIVED' && order.payment_status !== 'NO_PAYMENT_REQUIRED') && (
                 <DetailItem
                     icon={IconCash}
-                    label={t`Payment Status`}
+                    label={`Payment Status`}
                     value={<PaymentStatus order={order}/>}
                 />
             )}
             {order.address && (
                 <DetailItem
                     icon={IconMapPin}
-                    label={t`Billing Address`}
+                    label={`Billing Address`}
                     value={formatAddress(order.address)}
                 />
             )}
@@ -158,13 +158,13 @@ const EventDetails = ({event}: { event: Event }) => {
             <SimpleGrid cols={{base: 1, sm: 2}} spacing="md">
                 <DetailItem
                     icon={IconCalendarEvent}
-                    label={t`Event Date`}
+                    label={`Event Date`}
                     value={<EventDateRange event={event}/>}
                 />
                 {venueDetails && (
                     <DetailItem
                         icon={IconMapPin}
-                        label={t`Location`}
+                        label={`Location`}
                         value={(
                             <NavLink
                                 to={event.settings?.maps_url || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(formatAddress(event?.settings?.location_details))}`}
@@ -178,12 +178,12 @@ const EventDetails = ({event}: { event: Event }) => {
                 )}
                 <DetailItem
                     icon={IconClock}
-                    label={t`Timezone`}
+                    label={`Timezone`}
                     value={event.timezone}
                 />
                 <DetailItem
                     icon={IconBuilding}
-                    label={t`Organizer`}
+                    label={`Organizer`}
                     value={(
                         <>
                             {event.organizer?.email && (
@@ -201,14 +201,14 @@ const EventDetails = ({event}: { event: Event }) => {
 };
 
 const OrderStatus = ({order}: { order: Order }) => {
-    let message = t`This order is processing.`;
+    let message = `This order is processing.`;
 
     if (order?.payment_status === 'AWAITING_PAYMENT') {
-        message = t`This order is processing.`;
+        message = `This order is processing.`;
     } else if (order?.status === 'CANCELLED') {
-        message = t`This order has been cancelled.`;
+        message = `This order has been cancelled.`;
     } else if (order?.status === 'COMPLETED') {
-        message = t`This order is complete.`;
+        message = `This order is complete.`;
     }
 
     return <HomepageInfoMessage message={message}/>;
@@ -216,7 +216,7 @@ const OrderStatus = ({order}: { order: Order }) => {
 
 const PostCheckoutMessage = ({ message }: { message: string }) => (
     <div style={{ marginTop: '20px', marginBottom: '40px' }}>
-        <h1 className={classes.heading}>{t`Additional Information`}</h1>
+        <h1 className={classes.heading}>{`Additional Information`}</h1>
         <Card>
             <div dangerouslySetInnerHTML={{ __html: message }} />
         </Card>
@@ -225,7 +225,7 @@ const PostCheckoutMessage = ({ message }: { message: string }) => (
 
 const OfflinePaymentInstructions = ({ event }: { event: Event }) => (
     <div style={{ marginTop: '20px', marginBottom: '40px' }}>
-        <h2>{t`Payment Instructions`}</h2>
+        <h2>{`Payment Instructions`}</h2>
         <Card>
             <div
                 dangerouslySetInnerHTML={{
@@ -263,7 +263,7 @@ export const OrderSummaryAndProducts = () => {
                 {order?.status === 'AWAITING_OFFLINE_PAYMENT' && <OfflinePaymentInstructions event={event}/>}
 
                 <Group justify="space-between" align="center">
-                    <h1 className={classes.heading}>{t`Order Details`}</h1>
+                    <h1 className={classes.heading}>{`Order Details`}</h1>
                     <OrderStatusType order={order}/>
                 </Group>
 
@@ -273,19 +273,19 @@ export const OrderSummaryAndProducts = () => {
 
                 {!!event?.settings?.post_checkout_message && <PostCheckoutMessage message={event.settings.post_checkout_message}/>}
 
-                <h1 className={classes.heading}>{t`Event Details`}</h1>
+                <h1 className={classes.heading}>{`Event Details`}</h1>
                 <EventDetails event={event}/>
 
                 {(order?.attendees && order.attendees.length > 0) && (
                     <Group justify="space-between" align="center">
-                        <h1 className={classes.heading}>{t`Guests`}</h1>
+                        <h1 className={classes.heading}>{`Guests`}</h1>
                         <Button
                             size="sm"
                             variant="transparent"
                             leftSection={<IconPrinter size={16}/>}
-                            onClick={() => window?.open(`/order/${eventId}/${orderShortId}/print`, '_blank')}
+                            onClick={() => window?.open(`/order/${eventId}/${orderShortId}/prin`, '_blank')}
                         >
-                            {t`Print All Tickets`}
+                            {`Print All Tickets`}
                         </Button>
                     </Group>
                 )}

@@ -22,15 +22,15 @@ export const CreateWebhookModal = ({onClose}: GenericModalProps) => {
         },
         validate: {
             url: (value) => {
-                if (!value) return t`URL is required`;
+                if (!value) return `URL is required`;
                 try {
                     new URL(value);
                     return null;
                 } catch {
-                    return t`Please enter a valid URL`;
+                    return `Please enter a valid URL`;
                 }
             },
-            event_types: (value) => value.length === 0 ? t`At least one event type must be selected` : null,
+            event_types: (value) => value.length === 0 ? `At least one event type must be selected` : null,
         }
     });
 
@@ -43,7 +43,7 @@ export const CreateWebhookModal = ({onClose}: GenericModalProps) => {
             webhook: requestData
         }, {
             onSuccess: () => {
-                showSuccess(t`Webhook created successfully`);
+                showSuccess(`Webhook created successfully`);
                 onClose();
             },
             onError: (error) => errorHandler(form, error),
@@ -54,7 +54,7 @@ export const CreateWebhookModal = ({onClose}: GenericModalProps) => {
         <Modal
             opened
             onClose={onClose}
-            heading={t`Create Webhook`}
+            heading={`Create Webhook`}
         >
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <WebhookForm form={form}/>
@@ -64,7 +64,7 @@ export const CreateWebhookModal = ({onClose}: GenericModalProps) => {
                     mt="xl"
                     loading={createMutation.isPending}
                 >
-                    {t`Create Webhook`}
+                    {`Create Webhook`}
                 </Button>
             </form>
         </Modal>

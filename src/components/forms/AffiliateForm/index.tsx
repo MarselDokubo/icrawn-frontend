@@ -18,15 +18,15 @@ export const AffiliateForm = ({form, isEditing = false, existingCode, onGenerate
     const statusOptions: ItemProps[] = [
         {
             icon: <IconCheck/>,
-            label: t`Active`,
+            label: `Active`,
             value: 'ACTIVE',
-            description: t`Affiliate sales will be tracked`,
+            description: `Affiliate sales will be tracked`,
         },
         {
             icon: <IconX/>,
-            label: t`Inactive`,
+            label: `Inactive`,
             value: 'INACTIVE',
-            description: t`Affiliate sales will not be tracked. This will deactivate the affiliate.`,
+            description: `Affiliate sales will not be tracked. This will deactivate the affiliate.`,
         },
     ];
 
@@ -35,10 +35,10 @@ export const AffiliateForm = ({form, isEditing = false, existingCode, onGenerate
             {!isEditing && (
                 <>
                     <TextInput
-                        label={t`Code`}
-                        placeholder={t`Enter unique affiliate code`}
+                        label={`Code`}
+                        placeholder={`Enter unique affiliate code`}
                         required
-                        description={t`This code will be used to track sales. Only letters, numbers, hyphens, and underscores allowed.`}
+                        description={`This code will be used to track sales. Only letters, numbers, hyphens, and underscores allowed.`}
                         {...form.getInputProps('code')}
                         onChange={(event) => {
                             form.setFieldValue('code', event.target.value.toUpperCase());
@@ -50,14 +50,14 @@ export const AffiliateForm = ({form, isEditing = false, existingCode, onGenerate
                                 color="gray"
                                 onClick={onGenerateCode}
                                 style={{fontWeight: 400}}
-                                title={t`Generate code`}
+                                title={`Generate code`}
                                 leftSection={<IconRefresh size={16}/>}
                             >
                                 <ShowForMobile>
-                                    {t`Generate`}
+                                    {`Generate`}
                                 </ShowForMobile>
                                 <ShowForDesktop>
-                                    {t`Generate code`}
+                                    {`Generate code`}
                                 </ShowForDesktop>
 
                             </Button>
@@ -69,33 +69,33 @@ export const AffiliateForm = ({form, isEditing = false, existingCode, onGenerate
 
             {isEditing && existingCode && (
                 <TextInput
-                    label={t`Code`}
+                    label={`Code`}
                     value={existingCode}
                     disabled
-                    description={t`Affiliate code cannot be changed`}
+                    description={`Affiliate code cannot be changed`}
                 />
             )}
 
             <InputGroup>
                 <TextInput
-                    label={t`Name`}
-                    description={t`This will not be visible to customers, but helps you identify the affiliate.`}
-                    placeholder={t`Enter affiliate name`}
+                    label={`Name`}
+                    description={`This will not be visible to customers, but helps you identify the affiliate.`}
+                    placeholder={`Enter affiliate name`}
                     required
                     {...form.getInputProps('name')}
                 />
 
                 <TextInput
-                    label={t`Email`}
-                    description={t`An email to associate with this affiliate. The affiliate will not be notified.`}
-                    placeholder={t`Enter affiliate email (optional)`}
+                    label={`Email`}
+                    description={`An email to associate with this affiliate. The affiliate will not be notified.`}
+                    placeholder={`Enter affiliate email (optional)`}
                     type="email"
                     {...form.getInputProps('email')}
                 />
             </InputGroup>
 
             <CustomSelect
-                label={t`Status`}
+                label={`Status`}
                 required
                 form={form}
                 name={'status'}

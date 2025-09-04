@@ -40,7 +40,7 @@ export const MiscSettings = () => {
             eventId: eventId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Misc Settings`);
+                showSuccess(`Successfully Updated Misc Settings`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);
@@ -51,23 +51,23 @@ export const MiscSettings = () => {
     const priceOptions: ItemProps[] = [
         {
             icon: <IconCoins/>,
-            label: t`Include tax and fees in the price`,
+            label: `Include tax and fees in the price`,
             value: 'INCLUSIVE',
-            description: t`The price displayed to the customer will include taxes and fees.`,
+            description: `The price displayed to the customer will include taxes and fees.`,
         },
         {
             icon: <IconCoin/>,
-            label: t`Show tax and fees separately`,
+            label: `Show tax and fees separately`,
             value: 'EXCLUSIVE',
-            description: t`The price displayed to the customer will not include taxes and fees. They will be shown separately`,
+            description: `The price displayed to the customer will not include taxes and fees. They will be shown separately`,
         },
     ];
 
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`Miscellaneous Settings`}
-                description={t`Customize the miscellaneous settings for this event`}
+                heading={`Miscellaneous Settings`}
+                description={`Customize the miscellaneous settings for this even`}
             />
             <form onSubmit={form.onSubmit(handleSubmit as any)}>
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>
@@ -75,7 +75,7 @@ export const MiscSettings = () => {
                         optionList={priceOptions}
                         form={form}
                         name={'price_display_mode'}
-                        label={t`Price display mode`}
+                        label={`Price display mode`}
                         required
                     />
                     {form.errors['price_display_mode'] && (
@@ -86,12 +86,12 @@ export const MiscSettings = () => {
 
                     <Switch
                         {...form.getInputProps('hide_getting_started_page', {type: 'checkbox'})}
-                        label={t`Hide getting started page`}
-                        description={t`Hide the getting started page from the sidebar`}
+                        label={`Hide getting started page`}
+                        description={`Hide the getting started page from the sidebar`}
                     />
 
                     <Button loading={updateMutation.isPending} type={'submit'}>
-                        {t`Save`}
+                        {`Save`}
                     </Button>
                 </fieldset>
             </form>

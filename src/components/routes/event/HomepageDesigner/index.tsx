@@ -84,7 +84,7 @@ const HomepageDesigner = () => {
             {eventSettings: values, eventId: eventId},
             {
                 onSuccess: () => {
-                    showSuccess(t`Successfully Updated Homepage Design`);
+                    showSuccess(`Successfully Updated Homepage Design`);
                 },
                 onError: (error) => {
                     formErrorHandle(form, error);
@@ -125,8 +125,8 @@ const HomepageDesigner = () => {
             <div className={classes.sidebar}>
                 <div className={classes.sticky}>
                     <div className={classes.header}>
-                        <h2>{t`Homepage Design`}</h2>
-                        <Text c="dimmed" size="sm">{t`Customize your event page appearance`}</Text>
+                        <h2>{`Homepage Design`}</h2>
+                        <Text c="dimmed" size="sm">{`Customize your event page appearance`}</Text>
                     </div>
 
                     <Accordion 
@@ -138,15 +138,15 @@ const HomepageDesigner = () => {
                     >
                         <Accordion.Item value="images" className={classes.accordionItem}>
                             <Accordion.Control icon={<IconPhoto size={20} />}>
-                                <Text fw={500}>{t`Images`}</Text>
+                                <Text fw={500}>{`Images`}</Text>
                             </Accordion.Control>
                             <Accordion.Panel>
                                 <Stack gap="lg">
                                     <div>
                                         <Group justify={'space-between'} mb="xs">
-                                            <Text fw={500} size="sm">{t`Cover Image`}</Text>
+                                            <Text fw={500} size="sm">{`Cover Image`}</Text>
                                             <Tooltip
-                                                label={t`We recommend dimensions of 1950px by 650px, a ratio of 3:1, and a maximum file size of 5MB`}>
+                                                label={`We recommend dimensions of 1950px by 650px, a ratio of 3:1, and a maximum file size of 5MB`}>
                                                 <IconHelp size={16} style={{ color: 'var(--mantine-color-gray-6)' }}/>
                                             </Tooltip>
                                         </Group>
@@ -159,7 +159,7 @@ const HomepageDesigner = () => {
                                                 url: existingCover?.url,
                                                 id: existingCover?.id,
                                             }}
-                                            helpText={t`Cover image will be displayed at the top of your event page`}
+                                            helpText={`Cover image will be displayed at the top of your event page`}
                                             displayMode="compact"
                                         />
                                     </div>
@@ -169,7 +169,7 @@ const HomepageDesigner = () => {
 
                         <Accordion.Item value="colors" className={classes.accordionItem}>
                             <Accordion.Control icon={<IconPalette size={20} />}>
-                                <Text fw={500}>{t`Theme & Colors`}</Text>
+                                <Text fw={500}>{`Theme & Colors`}</Text>
                             </Accordion.Control>
                             <Accordion.Panel>
                                 <form onSubmit={form.onSubmit(handleSubmit as any)}>
@@ -179,60 +179,60 @@ const HomepageDesigner = () => {
                                                 optionList={[
                                                     {
                                                         icon: <IconColorPicker/>,
-                                                        label: t`Color`,
+                                                        label: `Color`,
                                                         value: 'COLOR',
-                                                        description: t`Choose a color for your background`,
+                                                        description: `Choose a color for your background`,
                                                     },
                                                     {
                                                         icon: <IconPhoto/>,
-                                                        label: t`Use cover image`,
+                                                        label: `Use cover image`,
                                                         value: 'MIRROR_COVER_IMAGE',
-                                                        description: t`Use a blurred version of the cover image as the background`,
+                                                        description: `Use a blurred version of the cover image as the background`,
                                                         disabled: !existingCover,
                                                     },
                                                 ]}
                                                 form={form}
-                                                label={t`Background Type`}
+                                                label={`Background Type`}
                                                 name={'homepage_background_type'}
                                             />
 
                                             {form.values.homepage_background_type === 'COLOR' && (
                                                 <ColorInput
                                                     format="hexa"
-                                                    label={t`Page Background Color`}
-                                                    description={t`The background color of the entire page`}
+                                                    label={`Page Background Color`}
+                                                    description={`The background color of the entire page`}
                                                     size="sm"
                                                     {...form.getInputProps('homepage_body_background_color')}
                                                 />
                                             )}
                                             <ColorInput 
                                                 format="hexa"
-                                                label={t`Content Background Color`}
-                                                description={t`The background color of content areas`}
+                                                label={`Content Background Color`}
+                                                description={`The background color of content areas`}
                                                 size="sm"
                                                 {...form.getInputProps('homepage_background_color')} 
                                             />
                                             <ColorInput 
                                                 format="hexa"
-                                                label={t`Primary Color`}
+                                                label={`Primary Color`}
                                                 size="sm"
                                                 {...form.getInputProps('homepage_primary_color')} 
                                             />
                                             <ColorInput 
                                                 format="hexa"
-                                                label={t`Primary Text Color`}
+                                                label={`Primary Text Color`}
                                                 size="sm"
                                                 {...form.getInputProps('homepage_primary_text_color')} 
                                             />
                                             <ColorInput 
                                                 format="hexa"
-                                                label={t`Secondary Color`}
+                                                label={`Secondary Color`}
                                                 size="sm"
                                                 {...form.getInputProps('homepage_secondary_color')} 
                                             />
                                             <ColorInput 
                                                 format="hexa"
-                                                label={t`Secondary Text Color`}
+                                                label={`Secondary Text Color`}
                                                 size="sm"
                                                 {...form.getInputProps('homepage_secondary_text_color')} 
                                             />
@@ -244,16 +244,16 @@ const HomepageDesigner = () => {
 
                         <Accordion.Item value="button" className={classes.accordionItem}>
                             <Accordion.Control icon={<IconTypography size={20} />}>
-                                <Text fw={500}>{t`Button Text`}</Text>
+                                <Text fw={500}>{`Button Tex`}</Text>
                             </Accordion.Control>
                             <Accordion.Panel>
                                 <form onSubmit={form.onSubmit(handleSubmit as any)}>
                                     <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending} className={classes.fieldset}>
                                         <Stack gap="md">
                                             <TextInput
-                                                label={t`Continue Button Text`}
-                                                description={t`Customize the text shown on the continue button`}
-                                                placeholder={t`e.g., Get Tickets, Register Now`}
+                                                label={`Continue Button Tex`}
+                                                description={`Customize the text shown on the continue button`}
+                                                placeholder={`e.g., Get Tickets, Register Now`}
                                                 size="sm"
                                                 {...form.getInputProps('continue_button_text')} 
                                             />
@@ -271,13 +271,13 @@ const HomepageDesigner = () => {
                         mt="md"
                         onClick={() => form.onSubmit(handleSubmit as any)()}
                     >
-                        {t`Save Changes`}
+                        {`Save Changes`}
                     </Button>
                 </div>
             </div>
 
             <div className={classes.previewContainer}>
-                <h2>{t`Homepage Preview`}</h2>
+                <h2>{`Homepage Preview`}</h2>
                 <div className={classes.iframeContainer}>
                     {iframeSrc ? (
                         <iframe

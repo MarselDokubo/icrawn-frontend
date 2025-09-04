@@ -37,7 +37,7 @@ export default function StripeCheckoutForm({setSubmitHandler}: {
         if (error?.type === "card_error" || error?.type === "validation_error") {
             setMessage(error.message);
         } else {
-            setMessage(t`An unexpected error occurred.`);
+            setMessage(`An unexpected error occurred.`);
         }
     };
 
@@ -57,16 +57,16 @@ export default function StripeCheckoutForm({setSubmitHandler}: {
         stripe.retrievePaymentIntent(clientSecret).then(({paymentIntent}) => {
             switch (paymentIntent?.status) {
                 case "succeeded":
-                    setMessage(t`Payment succeeded!`);
+                    setMessage(`Payment succeeded!`);
                     break;
                 case "processing":
-                    setMessage(t`Your payment is processing.`);
+                    setMessage(`Your payment is processing.`);
                     break;
                 case "requires_payment_method":
-                    setMessage(t`Your payment was not successful, please try again.`);
+                    setMessage(`Your payment was not successful, please try again.`);
                     break;
                 default:
-                    setMessage(t`Something went wrong.`);
+                    setMessage(`Something went wrong.`);
                     break;
             }
         });
@@ -90,8 +90,8 @@ export default function StripeCheckoutForm({setSubmitHandler}: {
     if (order?.payment_status === 'PAYMENT_RECEIVED') {
         return (
             <HomepageInfoMessage
-                message={t`This order has already been paid.`}
-                linkText={t`View order details`}
+                message={`This order has already been paid.`}
+                linkText={`View order details`}
                 link={eventCheckoutPath(eventId, orderShortId, 'summary')}
             />
         );
@@ -100,8 +100,8 @@ export default function StripeCheckoutForm({setSubmitHandler}: {
     if (order?.payment_status !== 'AWAITING_PAYMENT' && order?.payment_status !== 'PAYMENT_FAILED') {
         return (
             <HomepageInfoMessage
-                message={t`This order page is no longer available.`}
-                linkText={t`View order details`}
+                message={`This order page is no longer available.`}
+                linkText={`View order details`}
                 link={eventHomepagePath(event as Event)}
             />
         );
@@ -120,10 +120,10 @@ export default function StripeCheckoutForm({setSubmitHandler}: {
         <form id="payment-form">
             <>
                 <h2>
-                    {t`Payment`}
+                    {`Paymen`}
                 </h2>
                 {(order?.payment_status === 'PAYMENT_FAILED' || window?.location.search.includes('payment_failed')) && (
-                    <Alert mb={20} color={'red'}>{t`Your payment was unsuccessful. Please try again.`}</Alert>
+                    <Alert mb={20} color={'red'}>{`Your payment was unsuccessful. Please try again.`}</Alert>
                 )}
 
                 {message !== '' && <Alert mb={20}>{message}</Alert>}

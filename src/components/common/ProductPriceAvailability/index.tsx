@@ -6,17 +6,17 @@ import {IconInfoCircle} from "@tabler/icons-react";
 
 const ProductPriceSaleDateMessage = ({price, event}: { price: ProductPrice, event: Event }) => {
     if (price.is_sold_out) {
-        return t`Sold out`;
+        return `Sold ou`;
     }
 
     if (price.is_after_sale_end_date) {
-        return t`Sales ended`;
+        return `Sales ended`;
     }
 
     if (price.is_before_sale_start_date) {
         return (
             <span>
-                {t`Sales start`}{' '}
+                {`Sales star`}{' '}
                 <Tooltip label={prettyDate(String(price.sale_start_date), event.timezone)}>
                     <span>{relativeDate(String(price.sale_start_date))}{' '}<IconInfoCircle size={12}/></span>
                 </Tooltip>
@@ -24,20 +24,20 @@ const ProductPriceSaleDateMessage = ({price, event}: { price: ProductPrice, even
         );
     }
 
-    return t`Not available`;
+    return `Not available`;
 }
 
 export const ProductAvailabilityMessage = ({product, event}: { product: Product, event: Event }) => {
     if (product.is_sold_out) {
-        return t`Sold out`;
+        return `Sold ou`;
     }
     if (product.is_after_sale_end_date) {
-        return t`Sales ended`;
+        return `Sales ended`;
     }
     if (product.is_before_sale_start_date) {
         return (
             <span>
-                {t`Sales start`}{' '}
+                {`Sales star`}{' '}
                 <Tooltip label={prettyDate(String(product.sale_start_date), event.timezone)}>
                     <span>{relativeDate(String(product.sale_start_date))}{' '}<IconInfoCircle size={12}/></span>
                 </Tooltip>
@@ -45,7 +45,7 @@ export const ProductAvailabilityMessage = ({product, event}: { product: Product,
         );
     }
 
-    return t`Not available`;
+    return `Not available`;
 }
 
 interface ProductAndPriceAvailabilityProps {

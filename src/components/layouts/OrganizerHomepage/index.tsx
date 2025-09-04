@@ -111,7 +111,7 @@ export const OrganizerHomepage = ({
             {organizer && <OrganizerDocumentHead organizer={organizer}/>}
             <main className={classes.pageWrapper} style={themeStyles}>
                 <style>
-                    {t`
+                    {`
                         body, .ssr-loader {
                             background-color: ${backgroundColor} !important;
                         }
@@ -136,7 +136,7 @@ export const OrganizerHomepage = ({
                                 <div className={classes.coverWrapper}>
                                     <img
                                         src={organizerCover.url}
-                                        alt={t`Cover`}
+                                        alt={`Cover`}
                                         className={classes.coverImage}
                                     />
                                 </div>
@@ -150,7 +150,7 @@ export const OrganizerHomepage = ({
                                                 <div className={classes.logoWrapper}>
                                                     <img
                                                         src={organizerLogo.url}
-                                                        alt={t`Logo`}
+                                                        alt={`Logo`}
                                                         className={classes.logo}
                                                     />
                                                 </div>
@@ -201,7 +201,7 @@ export const OrganizerHomepage = ({
                                                                         component="a"
                                                                         href={url}
                                                                         target="_blank"
-                                                                        rel={t`noopener noreferrer`}
+                                                                        rel={`noopener noreferrer`}
                                                                         className={classes.socialIcon}
                                                                         size="lg"
                                                                     >
@@ -218,7 +218,7 @@ export const OrganizerHomepage = ({
                                                         variant="outline"
                                                         size="sm"
                                                     >
-                                                        {t`Contact`}
+                                                        {`Contac`}
                                                     </Button>
                                                 </div>
                                             </div>
@@ -236,7 +236,7 @@ export const OrganizerHomepage = ({
                         {/* Events Header Card - Compact Section */}
                         <div className={classes.eventsHeaderSection}>
                             <div className={classes.eventsHeaderCard}>
-                                <h2 className={classes.eventsTitle}>{isPastEvents ? t`Past Events` : t`Upcoming Events`}</h2>
+                                <h2 className={classes.eventsTitle}>{isPastEvents ? `Past Events` : `Upcoming Events`}</h2>
                                 <div className={classes.eventsControls}>
                                     <Button.Group>
                                         <Button
@@ -251,7 +251,7 @@ export const OrganizerHomepage = ({
                                                 borderColor: themeSettings?.homepage_primary_color,
                                             }}
                                         >
-                                            {t`Upcoming`}
+                                            {`Upcoming`}
                                         </Button>
                                         <Button
                                             variant={isPastEvents ? 'filled' : 'default'}
@@ -265,7 +265,7 @@ export const OrganizerHomepage = ({
                                                 borderColor: themeSettings?.homepage_primary_color,
                                             }}
                                         >
-                                            {t`Past`}
+                                            {`Pas`}
                                         </Button>
                                     </Button.Group>
                                 </div>
@@ -277,7 +277,7 @@ export const OrganizerHomepage = ({
                             <div className={classes.eventsContainer}>
                                 {events.length === 0 ? (
                                     <div className={classes.noEvents}>
-                                        <p>{isPastEvents ? t`No past events` : t`No upcoming events`}</p>
+                                        <p>{isPastEvents ? `No past events` : `No upcoming events`}</p>
                                     </div>
                                 ) : (
                                     events.map((event) => (
@@ -311,20 +311,20 @@ export const OrganizerHomepage = ({
                                         styles={{
                                             control: {
                                                 backgroundColor: 'var(--content-bg-color)',
-                                                border: t`1px solid rgba(0, 0, 0, 0.1)`,
+                                                border: `1px solid rgba(0, 0, 0, 0.1)`,
                                                 color: 'var(--secondary-text-color)',
                                                 fontSize: '0.875rem',
                                                 fontWeight: 500,
                                                 borderRadius: '8px',
-                                                transition: t`all 0.2s ease`,
+                                                transition: `all 0.2s ease`,
                                                 '&[data-active]': {
                                                     backgroundColor: themeSettings?.homepage_primary_color || 'var(--primary-color)',
                                                     borderColor: themeSettings?.homepage_primary_color || 'var(--primary-color)',
                                                     color: themeSettings?.homepage_content_background_color || 'white',
                                                 },
                                                 '&:hover': {
-                                                    backgroundColor: t`rgba(0, 0, 0, 0.05)`,
-                                                    borderColor: t`rgba(0, 0, 0, 0.15)`,
+                                                    backgroundColor: `rgba(0, 0, 0, 0.05)`,
+                                                    borderColor: `rgba(0, 0, 0, 0.15)`,
                                                 },
                                             },
                                             dots: {
@@ -344,14 +344,14 @@ export const OrganizerHomepage = ({
                                         href={getConfig('VITE_PRIVACY_URL', 'https://iCrawn.Events/privacy-policy?utm_source=app-organizer-footer')}
                                         className={classes.footerLink}
                                     >
-                                        {t`Privacy Policy`}
+                                        {`Privacy Policy`}
                                     </Anchor>
                                     <span className={classes.footerSeparator}>•</span>
                                     <Anchor
                                         href={getConfig('VITE_TOS_URL', 'https://iCrawn.Events/terms-of-service?utm_source=app-organizer-footer')}
                                         className={classes.footerLink}
                                     >
-                                        {t`Terms of Service`}
+                                        {`Terms of Service`}
                                     </Anchor>
                                 </div>
                                 <PoweredByFooter

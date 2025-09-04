@@ -34,27 +34,27 @@ export const PromoCodeTable = ({event, promoCodes, openCreateModal}: PromoCodeTa
 
     const handleDeleteCode = (promoCodeId: number) => {
         confirmationDialog(
-            t`Are you sure you want to delete this promo code?`,
+            `Are you sure you want to delete this promo code?`,
             () => {
                 deleteMutation.mutate({eventId: event.id, promoCodeId});
-            }, {confirm: t`Delete`, cancel: t`Cancel`}
+            }, {confirm: `Delete`, cancel: `Cancel`}
         );
     }
 
     if (promoCodes.length === 0) {
         return <NoResultsSplash
-            heading={t`No Promo Codes to show`}
+            heading={`No Promo Codes to show`}
             imageHref={'/blank-slate/promo-codes.svg'}
             subHeading={(
                 <>
                     <p>
-                        {t`Promo codes can be used to offer discounts, presale access, or provide special access to your event.`}
+                        {`Promo codes can be used to offer discounts, presale access, or provide special access to your event.`}
                     </p>
                     <Button
                         size={'xs'}
                         leftSection={<IconPlus/>}
                         color={'green'}
-                        onClick={() => openCreateModal()}>{t`Create a Promo Code`}
+                        onClick={() => openCreateModal()}>{`Create a Promo Code`}
                     </Button>
                 </>
             )}
@@ -66,11 +66,11 @@ export const PromoCodeTable = ({event, promoCodes, openCreateModal}: PromoCodeTa
             <Table>
                 <TableHead>
                     <MantineTable.Tr>
-                        <MantineTable.Th>{t`Code`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Discount`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Times used`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Products`}</MantineTable.Th>
-                        <MantineTable.Th>{t`Expires`}</MantineTable.Th>
+                        <MantineTable.Th>{`Code`}</MantineTable.Th>
+                        <MantineTable.Th>{`Discoun`}</MantineTable.Th>
+                        <MantineTable.Th>{`Times used`}</MantineTable.Th>
+                        <MantineTable.Th>{`Products`}</MantineTable.Th>
+                        <MantineTable.Th>{`Expires`}</MantineTable.Th>
                         <MantineTable.Th></MantineTable.Th>
                     </MantineTable.Tr>
                 </TableHead>
@@ -79,7 +79,7 @@ export const PromoCodeTable = ({event, promoCodes, openCreateModal}: PromoCodeTa
                     {promoCodes?.map(code => {
                         const Discount = () => {
                             if (code?.discount === 0) {
-                                return <>{t`None`}</>;
+                                return <>{`None`}</>;
                             }
 
                             if (code.discount_type === PromoCodeDiscountType.Fixed) {
@@ -95,7 +95,7 @@ export const PromoCodeTable = ({event, promoCodes, openCreateModal}: PromoCodeTa
                             return (
                                 <Badge
                                     variant={'outline'}
-                                    title={t`Click to copy`}
+                                    title={`Click to copy`}
                                     style={{cursor: 'pointer', alignItems: 'center'}}
                                     rightSection={(<Flex>
                                         {clipboard.copied ? <IconCheck color={'green'} size={'12'}/> :
@@ -103,7 +103,7 @@ export const PromoCodeTable = ({event, promoCodes, openCreateModal}: PromoCodeTa
                                     </Flex>)}
                                     onClick={() => {
                                         clipboard.copy(code.code.toUpperCase());
-                                        showSuccess(`${code?.code.toUpperCase()} ${t`copied to clipboard`}`)
+                                        showSuccess(`${code?.code.toUpperCase()} ${`copied to clipboard`}`)
                                     }}>
                                     {code.code.toUpperCase()}
                                 </Badge>
@@ -123,12 +123,12 @@ export const PromoCodeTable = ({event, promoCodes, openCreateModal}: PromoCodeTa
                                 <MantineTable.Td>
                                     {code.order_usage_count} / {code.max_allowed_usages
                                     ? code.max_allowed_usages
-                                    : <span title={t`Unlimited usages allowed`}>∞</span>}
+                                    : <span title={`Unlimited usages allowed`}>∞</span>}
                                 </MantineTable.Td>
                                 <MantineTable.Td>
                                     <div style={{cursor: 'pointer'}}>
                                         {code.applicable_product_ids?.length === 0 && (
-                                            <Badge variant={'light'} color={'primary'}>{t`All Products`}</Badge>
+                                            <Badge variant={'light'} color={'primary'}>{`All Products`}</Badge>
                                         )}
 
                                         {Number(code.applicable_product_ids?.length) > 0 && (
@@ -145,7 +145,7 @@ export const PromoCodeTable = ({event, promoCodes, openCreateModal}: PromoCodeTa
                                                     })}>
                                                 <Badge
                                                     variant={'light'}
-                                                    color={'pink'}>{code.applicable_product_ids?.length} {t`Product(s)`}</Badge>
+                                                    color={'pink'}>{code.applicable_product_ids?.length} {`Product(s)`}</Badge>
                                             </Tooltip>
                                         )}
                                     </div>
@@ -155,7 +155,7 @@ export const PromoCodeTable = ({event, promoCodes, openCreateModal}: PromoCodeTa
                                     <span>
                                         {relativeDate(String(code.expiry_date))}
                                     </span>
-                                    </Tooltip> : t`Never`}</MantineTable.Td>
+                                    </Tooltip> : `Never`}</MantineTable.Td>
                                 <MantineTable.Td>
                                     <Group wrap={'nowrap'} gap={0} justify={'flex-end'}>
                                         <Menu shadow="md" width={200}>
@@ -164,25 +164,25 @@ export const PromoCodeTable = ({event, promoCodes, openCreateModal}: PromoCodeTa
                                             </Menu.Target>
 
                                             <Menu.Dropdown>
-                                                <Menu.Label>{t`Manage`}</Menu.Label>
+                                                <Menu.Label>{`Manage`}</Menu.Label>
                                                 <Menu.Item leftSection={<IconSend size={14}/>}
                                                            onClick={() => handleEditModal(code?.id)}>
-                                                    {t`Edit Code`}
+                                                    {`Edit Code`}
                                                 </Menu.Item>
                                                 <Menu.Item leftSection={<IconCopy size={14}/>}
                                                            onClick={() => {
                                                                 clipboard.copy(eventHomepageUrl(event) + `?promo_code=${code?.code}`);
-                                                                showSuccess(t`URL copied to clipboard`)
+                                                                showSuccess(`URL copied to clipboard`)
                                                            }}>
-                                                    {t`Copy URL`}
+                                                    {`Copy URL`}
                                                 </Menu.Item>
                                                 <Menu.Divider/>
 
-                                                <Menu.Label>{t`Danger zone`}</Menu.Label>
+                                                <Menu.Label>{`Danger zone`}</Menu.Label>
                                                 <Menu.Item color="red"
                                                            onClick={() => handleDeleteCode(code?.id as number)}
                                                            leftSection={<IconTrash size={14}/>}>
-                                                    {t`Delete code`}
+                                                    {`Delete code`}
                                                 </Menu.Item>
 
                                             </Menu.Dropdown>

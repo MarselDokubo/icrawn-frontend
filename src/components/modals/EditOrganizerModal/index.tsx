@@ -60,14 +60,14 @@ export const EditOrganizerModal = ({organizerId, onClose}: EditOrganizerModalPro
         <Modal
             opened
             onClose={onClose}
-            heading={t`Edit Organizer`}
+            heading={`Edit Organizer`}
         >
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <OrganizerForm form={form as any}/>
                 <Group gap={10}>
                     <Button fullWidth loading={organizerMutation.isPending}
                             type={'submit'}
-                    >{t`Save Organizer`}
+                    >{`Save Organizer`}
                     </Button>
                 </Group>
             </form>

@@ -33,7 +33,7 @@ export const TieredPricing = ({product, event, form, productIndex}: TieredPricin
                                                 min={product.price}
                                                 step={0.01}
                                                 placeholder={'0.00'}
-                                                label={t`Amount`}
+                                                label={`Amoun`}
                                                 required={true}
                                                 w={150}
                                                 mb={0}
@@ -50,7 +50,7 @@ export const TieredPricing = ({product, event, form, productIndex}: TieredPricin
                                             product={product}
                                             currency={event?.currency}
                                             className={'hi-price-tier-price-amount'}
-                                            freeLabel={t`Free`}
+                                            freeLabel={`Free`}
                                             taxAndServiceFeeDisplayType={event?.settings?.price_display_mode}
                                         />
                                     )}

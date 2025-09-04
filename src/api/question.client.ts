@@ -38,7 +38,7 @@ export const questionClient = {
         return response.data;
     },
     sortQuestions: async (eventId: IdParam, questionsSort: SortableItem[]) => {
-        return await api.post(`/events/${eventId}/questions/sort`, questionsSort);
+        return await api.post(`/events/${eventId}/questions/sor`, questionsSort);
     },
     updateAnswerQuestion: async (eventId: IdParam, questionId: IdParam, answerId: IdParam, answer: string | string[]) => {
         await api.put(`/events/${eventId}/questions/${questionId}/answers/${answerId}`, {
@@ -46,7 +46,7 @@ export const questionClient = {
         });
     },
     exportAnswers: async (eventId: IdParam): Promise<ExportResponse> => {
-        const response = await api.post(`events/${eventId}/questions/answers/export`, {});
+        const response = await api.post(`events/${eventId}/questions/answers/expor`, {});
         return response.data;
     },
     checkExportStatus: async (eventId: IdParam, jobUuid: IdParam): Promise<ExportResponse> => {

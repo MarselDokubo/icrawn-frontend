@@ -36,10 +36,10 @@ export const CreateOrganizer = ({progressInfo}: {
                     </div>
                 )}
                 <h2 className={classes.stepTitle}>
-                    {t`Set up your organization`}
+                    {`Set up your organization`}
                 </h2>
                 <p className={classes.stepDescription}>
-                    {t`Tell us about your organization. This information will be displayed on your event pages.`}
+                    {`Tell us about your organization. This information will be displayed on your event pages.`}
                 </p>
             </div>
             <div className={classes.stepContent}>
@@ -57,14 +57,14 @@ const ConfirmVerificationPin = ({progressInfo}: {
     const resendMutation = useResendEmailConfirmation();
     const [resendCooldown, setResendCooldown] = useState(0);
     const [completedPin, setCompletedPin] = useState('');
-    const isMobile = useMediaQuery(t`(max-width: 768px)`);
+    const isMobile = useMediaQuery(`(max-width: 768px)`);
 
     const form = useForm({
         initialValues: {
             pin: '',
         },
         validate: {
-            pin: (value) => value.length !== 5 ? t`Please enter the 5-digit code` : null,
+            pin: (value) => value.length !== 5 ? `Please enter the 5-digit code` : null,
         }
     });
 
@@ -76,13 +76,13 @@ const ConfirmVerificationPin = ({progressInfo}: {
             code: values.pin,
         }, {
             onSuccess: () => {
-                showSuccess(t`Email verified successfully!`);
+                showSuccess(`Email verified successfully!`);
                 form.reset();
                 setCompletedPin('');
             },
             onError: (error) => {
                 const err = error as { response?: { data?: { message?: string } } };
-                showError(err.response?.data?.message || t`Failed to verify email`);
+                showError(err.response?.data?.message || `Failed to verify email`);
                 form.reset();
                 setCompletedPin('');
             }
@@ -109,7 +109,7 @@ const ConfirmVerificationPin = ({progressInfo}: {
 
         try {
             await resendMutation.mutateAsync({userId: userData.id});
-            showSuccess(t`A new verification code has been sent to your email`);
+            showSuccess(`A new verification code has been sent to your email`);
             setResendCooldown(30);
             form.reset();
         } catch (error) {
@@ -117,9 +117,9 @@ const ConfirmVerificationPin = ({progressInfo}: {
                 if (err?.response?.status === 429) {
                     const remainingSeconds = err.response.data?.message?.match(/\d+/)?.[0] || 30;
                     setResendCooldown(parseInt(remainingSeconds as string));
-                    showError(err.response.data?.message || t`Please wait before requesting another code`);
+                    showError(err.response.data?.message || `Please wait before requesting another code`);
                 } else {
-                    showError(t`Failed to resend verification code`);
+                    showError(`Failed to resend verification code`);
                 }
         }
     }
@@ -136,10 +136,10 @@ const ConfirmVerificationPin = ({progressInfo}: {
                     </div>
                 )}
                 <h2 className={classes.stepTitle}>
-                    {t`Check your email`}
+                    {`Check your email`}
                 </h2>
                 <p className={classes.stepDescription}>
-                    {t`We've sent a 5-digit verification code to:`}
+                    {`We've sent a 5-digit verification code to:`}
                 </p>
                 <div className={classes.emailDisplay}>
                     {userData?.email}
@@ -153,7 +153,7 @@ const ConfirmVerificationPin = ({progressInfo}: {
                             <PinInput
                                 {...form.getInputProps('pin')}
                                 inputMode={'numeric'}
-                                aria-label={t`Verification code`}
+                                aria-label={`Verification code`}
                                 size={isMobile ? 'sm' : 'xl'}
                                 length={5}
                                 placeholder="•"
@@ -181,13 +181,13 @@ const ConfirmVerificationPin = ({progressInfo}: {
                             leftSection={<IconMailCheck size={20}/>}
                             className={classes.primaryButton}
                         >
-                            {confirmEmailMutation.isPending ? t`Verifying...` : t`Verify Email`}
+                            {confirmEmailMutation.isPending ? `Verifying...` : `Verify Email`}
                         </Button>
 
                         <Center>
                             <Stack gap="xs" align="center">
                                 <Text size="sm" c="dimmed">
-                                    {t`Didn't receive the code?`}
+                                    {`Didn't receive the code?`}
                                 </Text>
                                 <Button
                                     variant="subtle"
@@ -198,14 +198,14 @@ const ConfirmVerificationPin = ({progressInfo}: {
                                     leftSection={resendCooldown > 0 ? <IconClock size={16}/> : null}
                                 >
                                     {resendCooldown > 0
-                                        ? t`Resend in ${resendCooldown}s`
-                                        : t`Resend code`}
+                                        ? `Resend in ${resendCooldown}s`
+                                        : `Resend code`}
                                 </Button>
                             </Stack>
                         </Center>
 
                         <Text size="xs" c="dimmed" ta="center" className={classes.helpText}>
-                            {t`The code will expire in 10 minutes. Check your spam folder if you don't see the email.`}
+                            {`The code will expire in 10 minutes. Check your spam folder if you don't see the email.`}
                         </Text>
                     </Stack>
                 </form>
@@ -226,11 +226,11 @@ export const CreateEvent = ({progressInfo}: {
             category: '',
         },
         validate: {
-            title: (value) => !value ? t`Event name is required` : null,
-            start_date: (value) => !value ? t`Start date is required` : null,
+            title: (value) => !value ? `Event name is required` : null,
+            start_date: (value) => !value ? `Start date is required` : null,
             end_date: (value, values) => {
                 if (value && values.start_date && dayjs(value).isBefore(dayjs(values.start_date))) {
-                    return t`End date must be after start date`;
+                    return `End date must be after start date`;
                 }
             },
         }
@@ -262,7 +262,7 @@ export const CreateEvent = ({progressInfo}: {
         if (organizersFetched) {
             const organizerName = organizers?.data?.[0].name ?? '';
             form.setFieldValue('organizer_id', organizers?.data?.[0].id);
-            form.setFieldValue('title', t`${organizerName}'s first event`);
+            form.setFieldValue('title', `${organizerName}'s first even`);
         }
     }, [organizersFetched, form, organizers?.data]);
 
@@ -295,7 +295,7 @@ export const CreateEvent = ({progressInfo}: {
                         </div>
                     )}
                     <h2 className={classes.stepTitle}>
-                        {t`Create your first event`}
+                        {`Create your first even`}
                     </h2>
                 </div>
 
@@ -304,7 +304,7 @@ export const CreateEvent = ({progressInfo}: {
                         <Stack gap={24}>
                             {/* Event Category */}
                             <div>
-                                <Text size="lg" fw={600} mb="lg">{t`What type of event?`}</Text>
+                                <Text size="lg" fw={600} mb="lg">{`What type of event?`}</Text>
 
                                 {/* Desktop Grid */}
                                 <div className={classes.categoryGrid}>
@@ -333,7 +333,7 @@ export const CreateEvent = ({progressInfo}: {
                                             value: category.id,
                                             label: `${category.emoji} ${category.name}`,
                                         }))}
-                                        placeholder={t`Select event category`}
+                                        placeholder={`Select event category`}
                                         size="lg"
                                         required
                                         disabled={eventMutation.isPending}
@@ -345,8 +345,8 @@ export const CreateEvent = ({progressInfo}: {
                             <div>
                                 <TextInput
                                     {...form.getInputProps('title')}
-                                    label={t`Event name`}
-                                    placeholder={t`Summer Music Festival 2025`}
+                                    label={`Event name`}
+                                    placeholder={`Summer Music Festival 2025`}
                                     size="lg"
                                     required
                                     disabled={eventMutation.isPending}
@@ -357,9 +357,9 @@ export const CreateEvent = ({progressInfo}: {
                             <div className={classes.dateTimeGrid}>
                                 <DateTimePicker
                                     {...form.getInputProps('start_date')}
-                                    label={t`Start date & time`}
-                                    placeholder={t`Select start time`}
-                                    valueFormat={t`MMM DD, h:mm A`}
+                                    label={`Start date & time`}
+                                    placeholder={`Select start time`}
+                                    valueFormat={`MMM DD, h:mm A`}
                                     size="lg"
                                     required
                                     dropdownType="modal"
@@ -384,9 +384,9 @@ export const CreateEvent = ({progressInfo}: {
 
                                 <DateTimePicker
                                     {...form.getInputProps('end_date')}
-                                    label={t`End time (optional)`}
-                                    placeholder={t`Select end time`}
-                                    valueFormat={t`MMM DD, h:mm A`}
+                                    label={`End time (optional)`}
+                                    placeholder={`Select end time`}
+                                    valueFormat={`MMM DD, h:mm A`}
                                     size="lg"
                                     dropdownType="modal"
                                     timePickerProps={{
@@ -407,9 +407,9 @@ export const CreateEvent = ({progressInfo}: {
                             leftSection={eventMutation.isPending ? null : <IconSparkles size={20}/>}
                             className={classes.primaryButton}
                             disabled={eventMutation.isPending || !selectedCategory}
-                            aria-label={eventMutation.isPending ? t`Creating your event, please wait` : t`Continue to next step`}
+                            aria-label={eventMutation.isPending ? `Creating your event, please wai` : `Continue to next step`}
                         >
-                            {eventMutation.isPending ? t`Creating Event...` : t`Continue Setup`}
+                            {eventMutation.isPending ? `Creating Event...` : `Continue Setup`}
                         </Button>
                     </form>
                 </div>
@@ -460,7 +460,7 @@ const Welcome = () => {
                     </div>
                     <h1 className={classes.welcomeTitle}>
                         <Trans>
-                            Welcome to {getConfig("VITE_APP_NAME", t`iCrawn.Events`)}, {userData?.first_name} 👋
+                            Welcome to {getConfig("VITE_APP_NAME", `iCrawn.Events`)}, {userData?.first_name} 👋
                         </Trans>
                     </h1>
                 </div>
@@ -483,7 +483,7 @@ const Welcome = () => {
                             size="sm"
                             c="dimmed"
                         >
-                            {t`Skip this step`}
+                            {`Skip this step`}
                         </Button>
                     </Center>
                 )}

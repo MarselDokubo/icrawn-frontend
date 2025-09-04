@@ -47,7 +47,7 @@ export const HomepageAndCheckoutSettings = () => {
             eventId: eventId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Homepage Settings`);
+                showSuccess(`Successfully Updated Homepage Settings`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);
@@ -58,28 +58,28 @@ export const HomepageAndCheckoutSettings = () => {
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`Checkout Settings`}
-                description={t`Customize the event homepage and checkout messaging`}
+                heading={`Checkout Settings`}
+                description={`Customize the event homepage and checkout messaging`}
             />
             <form onSubmit={form.onSubmit(handleSubmit as any)}>
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>
                     <Editor
-                        label={t`Pre Checkout message`}
+                        label={`Pre Checkout message`}
                         value={form.values.pre_checkout_message || ''}
-                        description={t`Shown to the customer before they checkout`}
+                        description={`Shown to the customer before they checkou`}
                         onChange={(value) => form.setFieldValue('pre_checkout_message', value)}
                     />
 
                     <Editor
-                        label={t`Post Checkout message`}
+                        label={`Post Checkout message`}
                         value={form.values.post_checkout_message || ''}
                         description={(
                             <>
                                 <p>
-                                    {t`Shown to the customer after they checkout, on the order summary page.`}
+                                    {`Shown to the customer after they checkout, on the order summary page.`}
                                 </p>
                                 <p>
-                                    {t`This message will only be shown if order is completed successfully. Orders awaiting payment will not show this message`}
+                                    {`This message will only be shown if order is completed successfully. Orders awaiting payment will not show this message`}
                                 </p>
                             </>
                         )}
@@ -87,13 +87,13 @@ export const HomepageAndCheckoutSettings = () => {
                     />
 
                     <NumberInput
-                        label={t`Order timeout`}
-                        description={t`How many minutes the customer has to complete their order. We recommend at least 15 minutes`}
+                        label={`Order timeou`}
+                        description={`How many minutes the customer has to complete their order. We recommend at least 15 minutes`}
                         {...form.getInputProps('order_timeout_in_minutes')}
                     />
 
                     <Button loading={updateMutation.isPending} type={'submit'}>
-                        {t`Save`}
+                        {`Save`}
                     </Button>
                 </fieldset>
             </form>

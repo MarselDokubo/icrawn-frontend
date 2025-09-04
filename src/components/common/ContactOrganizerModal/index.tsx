@@ -29,16 +29,16 @@ export const ContactOrganizerModal: React.FC<ContactOrganizerModalProps> = ({
         },
         validateInputOnBlur: true,
         validate: {
-            name: (value) => !value ? t`Name is required` : null,
+            name: (value) => !value ? `Name is required` : null,
             email: (value) => {
-                if (!value) return t`Email is required`;
-                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return t`Invalid email`;
+                if (!value) return `Email is required`;
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return `Invalid email`;
                 return null;
             },
             message: (value) => {
-                if (value.length > 5000) return t`Message cannot exceed 5000 characters`;
+                if (value.length > 5000) return `Message cannot exceed 5000 characters`;
 
-                return !value ? t`Message is required` : null;
+                return !value ? `Message is required` : null;
             },
         },
     });
@@ -49,12 +49,12 @@ export const ContactOrganizerModal: React.FC<ContactOrganizerModalProps> = ({
             contactData: values,
         }, {
             onSuccess: () => {
-                showSuccess(t`Your message has been sent successfully!`);
+                showSuccess(`Your message has been sent successfully!`);
                 onClose();
                 contactForm.reset();
             },
             onError: (error: any) => {
-                showError(error?.response?.data?.message || t`Failed to send message. Please try again.`);
+                showError(error?.response?.data?.message || `Failed to send message. Please try again.`);
             },
         });
     };
@@ -63,21 +63,21 @@ export const ContactOrganizerModal: React.FC<ContactOrganizerModalProps> = ({
         <Modal
             opened={opened}
             onClose={onClose}
-            title={t`Contact ${organizer?.name || 'Organizer'}`}
+            title={`Contact ${organizer?.name || 'Organizer'}`}
             size="md"
             className={classes.contactModal}
         >
             <form onSubmit={contactForm.onSubmit(handleContactSubmit)}>
                 <InputGroup>
                     <TextInput
-                        label={t`Your Name`}
-                        placeholder={t`Enter your name`}
+                        label={`Your Name`}
+                        placeholder={`Enter your name`}
                         required
                         {...contactForm.getInputProps('name')}
                     />
                     <TextInput
-                        label={t`Your Email`}
-                        placeholder={t`Enter your email`}
+                        label={`Your Email`}
+                        placeholder={`Enter your email`}
                         required
                         type="email"
                         {...contactForm.getInputProps('email')}
@@ -85,8 +85,8 @@ export const ContactOrganizerModal: React.FC<ContactOrganizerModalProps> = ({
                 </InputGroup>
 
                 <Textarea
-                    label={t`Message`}
-                    placeholder={t`Write your message here...`}
+                    label={`Message`}
+                    placeholder={`Write your message here...`}
                     required
                     minRows={4}
                     autosize
@@ -101,7 +101,7 @@ export const ContactOrganizerModal: React.FC<ContactOrganizerModalProps> = ({
                         onClick={onClose}
                         className={classes.cancelButton}
                     >
-                        {t`Cancel`}
+                        {`Cancel`}
                     </Button>
                     <Button
                         type="submit"
@@ -109,7 +109,7 @@ export const ContactOrganizerModal: React.FC<ContactOrganizerModalProps> = ({
                         loading={contactMutation.isPending}
                         disabled={contactMutation.isPending}
                     >
-                        {t`Send Message`}
+                        {`Send Message`}
                     </Button>
                 </Group>
             </form>

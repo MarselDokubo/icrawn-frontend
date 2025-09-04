@@ -25,24 +25,24 @@ const RegisterFeatures = () => (
         <div className={classes.feature}>
             <IconClock size={16} className={classes.checkIcon}/>
             <div className={classes.featureText}>
-                <h3>{t`Setup in Minutes`}</h3>
-                <p>{t`Create and customize your event page instantly`}</p>
+                <h3>{`Setup in Minutes`}</h3>
+                <p>{`Create and customize your event page instantly`}</p>
             </div>
         </div>
 
         <div className={classes.feature}>
             <IconCreditCard size={16} className={classes.checkIcon}/>
             <div className={classes.featureText}>
-                <h3>{t`No Credit Card Required`}</h3>
-                <p>{t`Get started for free, no subscription fees`}</p>
+                <h3>{`No Credit Card Required`}</h3>
+                <p>{`Get started for free, no subscription fees`}</p>
             </div>
         </div>
 
         <div className={classes.feature}>
             <IconTicket size={16} className={classes.checkIcon}/>
             <div className={classes.featureText}>
-                <h3>{t`Sell More Than Tickets`}</h3>
-                <p>{t`Products, merchandise, and flexible pricing options`}</p>
+                <h3>{`Sell More Than Tickets`}</h3>
+                <p>{`Products, merchandise, and flexible pricing options`}</p>
             </div>
         </div>
     </div>
@@ -52,43 +52,43 @@ const GenericFeatures = () => {
     const allFeatures = [
         {
             icon: IconChartBar,
-            title: t`In-depth Analytics`,
-            description: t`Track revenue, page views, and sales with detailed analytics and exportable reports`
+            title: `In-depth Analytics`,
+            description: `Track revenue, page views, and sales with detailed analytics and exportable reports`
         },
         {
             icon: IconTicket,
-            title: t`Flexible Ticketing`,
-            description: t`Support for tiered, donation-based, and product sales with customizable pricing and capacity`
+            title: `Flexible Ticketing`,
+            description: `Support for tiered, donation-based, and product sales with customizable pricing and capacity`
         },
         {
             icon: IconDeviceMobile,
-            title: t`Mobile Check-in`,
-            description: t`QR code scanning with instant feedback and secure sharing for staff access`
+            title: `Mobile Check-in`,
+            description: `QR code scanning with instant feedback and secure sharing for staff access`
         },
         {
             icon: IconBuildingStore,
-            title: t`Sell Anything`,
-            description: t`Sell merchandise alongside tickets with integrated tax and promo code support`
+            title: `Sell Anything`,
+            description: `Sell merchandise alongside tickets with integrated tax and promo code suppor`
         },
         {
             icon: IconMessages,
-            title: t`Attendee Management`,
-            description: t`Message attendees, manage orders, and handle refunds all in one place`
+            title: `Attendee Managemen`,
+            description: `Message attendees, manage orders, and handle refunds all in one place`
         },
         {
             icon: IconQrcode,
-            title: t`Smart Check-in`,
-            description: t`Automated entry management with multiple check-in lists and real-time validation`
+            title: `Smart Check-in`,
+            description: `Automated entry management with multiple check-in lists and real-time validation`
         },
         {
             icon: IconPalette,
-            title: t`Match Your Brand`,
-            description: t`Customize your event page and widget design to match your brand perfectly`
+            title: `Match Your Brand`,
+            description: `Customize your event page and widget design to match your brand perfectly`
         },
         {
             icon: IconWebhook,
-            title: t`Fully Integrated`,
-            description: t`Connect with CRM and automate tasks using webhooks and integrations`
+            title: `Fully Integrated`,
+            description: `Connect with CRM and automate tasks using webhooks and integrations`
         }
     ];
 

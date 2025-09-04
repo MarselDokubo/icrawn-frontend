@@ -32,7 +32,7 @@ export const InsertImageControl = () => {
         try {
             const finalUrl = uploadedImageUrl || imageUrl;
             if (!finalUrl) {
-                setUrlError(t`Please provide an image.`);
+                setUrlError(`Please provide an image.`);
                 return;
             }
             await checkImageExists(finalUrl);
@@ -43,7 +43,7 @@ export const InsertImageControl = () => {
             resetState();
         } catch (error) {
             console.log(error)
-            setUrlError(t`Please enter a valid image URL that points to an image.`);
+            setUrlError(`Please enter a valid image URL that points to an image.`);
         } finally {
             setLoading(false);
         }
@@ -51,7 +51,7 @@ export const InsertImageControl = () => {
 
     const handleFileUpload = async (file: File) => {
         if (!file) {
-            setUploadError(t`Please select an image.`);
+            setUploadError(`Please select an image.`);
             return;
         }
         setIsUploading(true);
@@ -63,7 +63,7 @@ export const InsertImageControl = () => {
                 setIsUploading(false);
             },
             onError: (error: any) => {
-                const message = error?.response?.data?.message ?? t`Failed to upload image.`;
+                const message = error?.response?.data?.message ?? `Failed to upload image.`;
                 setUploadError(message);
                 setIsUploading(false);
             }
@@ -96,18 +96,18 @@ export const InsertImageControl = () => {
                         setModalOpen(false);
                         resetState();
                     }}
-                    title={t`Insert Image`}
+                    title={`Insert Image`}
                 >
                     <Tabs value={tab} onChange={setTab} variant="outline">
                         <Tabs.List grow>
-                            <Tabs.Tab value="url">{t`Paste URL`}</Tabs.Tab>
-                            <Tabs.Tab value="upload">{t`Upload Image`}</Tabs.Tab>
+                            <Tabs.Tab value="url">{`Paste URL`}</Tabs.Tab>
+                            <Tabs.Tab value="upload">{`Upload Image`}</Tabs.Tab>
                         </Tabs.List>
 
                         <Tabs.Panel value="url" pt="md">
                             <Stack>
                                 <TextInput
-                                    label={t`Image URL`}
+                                    label={`Image URL`}
                                     placeholder="https://example.com/image.jpg"
                                     value={imageUrl}
                                     onChange={(event) => {
@@ -117,7 +117,7 @@ export const InsertImageControl = () => {
                                     error={urlError}
                                 />
                                 <Button onClick={handleImageInsert} loading={loading}>
-                                    {t`Insert Image`}
+                                    {`Insert Image`}
                                 </Button>
                             </Stack>
                         </Tabs.Panel>
@@ -128,7 +128,7 @@ export const InsertImageControl = () => {
                                     <Stack align="center" py="xl">
                                         <Loader size="lg" />
                                         <Text size="sm" c="dimmed">
-                                            {t`Uploading image...`}
+                                            {`Uploading image...`}
                                         </Text>
                                     </Stack>
                                 ) : uploadedImageUrl ? (
@@ -140,10 +140,10 @@ export const InsertImageControl = () => {
                                         />
                                         <Group grow>
                                             <Button onClick={handleImageInsert} loading={loading}>
-                                                {t`Insert Image`}
+                                                {`Insert Image`}
                                             </Button>
                                             <Button variant="outline" color="red" onClick={resetState}>
-                                                {t`Remove`}
+                                                {`Remove`}
                                             </Button>
                                         </Group>
                                     </>
@@ -155,7 +155,7 @@ export const InsertImageControl = () => {
                                         }} accept="image/*">
                                             {(props) => (
                                                 <Button {...props} variant="outline">
-                                                    {t`Upload Image`}
+                                                    {`Upload Image`}
                                                 </Button>
                                             )}
                                         </FileButton>

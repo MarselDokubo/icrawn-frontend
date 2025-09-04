@@ -23,7 +23,7 @@ export const CreatePromoCodeModal = ({onClose}: GenericModalProps) => {
             max_allowed_usages: undefined,
         },
         validate: {
-            code: hasLength({min: 3, max: 50}, t`Code must be between 3 and 50 characters long`),
+            code: hasLength({min: 3, max: 50}, `Code must be between 3 and 50 characters long`),
         },
         validateInputOnBlur: true,
     });
@@ -36,7 +36,7 @@ export const CreatePromoCodeModal = ({onClose}: GenericModalProps) => {
             },
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Created Promo Code`);
+                showSuccess(`Successfully Created Promo Code`);
                 form.reset();
                 onClose();
             },
@@ -48,12 +48,12 @@ export const CreatePromoCodeModal = ({onClose}: GenericModalProps) => {
         <Modal
             opened
             onClose={onClose}
-            heading={t`Create Promo Code`}
+            heading={`Create Promo Code`}
         >
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <PromoCodeForm form={form}/>
                 <Button type="submit" fullWidth mt="xl" disabled={mutation.isPending}>
-                    {mutation.isPending ? t`Working...` : t`Create Promo Code`}
+                    {mutation.isPending ? `Working...` : `Create Promo Code`}
                 </Button>
             </form>
         </Modal>

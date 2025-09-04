@@ -9,9 +9,9 @@ const EventsPage: React.FC = () => {
 
   return (
     <Container size="md" py={40}>
-      <Title order={1}>{t`All Events`}</Title>
+      <Title order={1}>{`All Events`}</Title>
       {isLoading ? (
-        <div>{t`Loading events...`}</div>
+        <div>{`Loading events...`}</div>
       ) : (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginTop: '2rem' }}>
           {events?.data?.map((event) => (

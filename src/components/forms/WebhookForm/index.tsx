@@ -16,96 +16,96 @@ export const WebhookForm = ({form}: WebhookFormProps) => {
     const statusOptions: ItemProps[] = [
         {
             icon: <IconWebhook/>,
-            label: t`Enabled`,
+            label: `Enabled`,
             value: 'ENABLED',
-            description: t`Webhook will send notifications`,
+            description: `Webhook will send notifications`,
         },
         {
             icon: <IconWebhookOff/>,
-            label: t`Paused`,
+            label: `Paused`,
             value: 'PAUSED',
-            description: t`Webhook will not send notifications`,
+            description: `Webhook will not send notifications`,
         },
     ];
 
     const eventTypeOptions: ItemProps[] = [
         {
             icon: <IconBolt size={14}/>,
-            label: t`Product Created`,
+            label: `Product Created`,
             value: 'product.created',
-            description: t`When a new product is created`,
+            description: `When a new product is created`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Product Updated`,
+            label: `Product Updated`,
             value: 'product.updated',
-            description: t`When a product is updated`,
+            description: `When a product is updated`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Product Deleted`,
+            label: `Product Deleted`,
             value: 'product.deleted',
-            description: t`When a product is deleted`,
+            description: `When a product is deleted`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Order Created`,
+            label: `Order Created`,
             value: 'order.created',
-            description: t`When a new order is created`,
+            description: `When a new order is created`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Order Updated`,
+            label: `Order Updated`,
             value: 'order.updated',
-            description: t`When an order is updated`,
+            description: `When an order is updated`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Order Marked as Paid`,
+            label: `Order Marked as Paid`,
             value: 'order.marked_as_paid',
-            description: t`When an order is marked as paid`,
+            description: `When an order is marked as paid`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Order Refunded`,
+            label: `Order Refunded`,
             value: 'order.refunded',
-            description: t`When an order is refunded`,
+            description: `When an order is refunded`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Order Cancelled`,
+            label: `Order Cancelled`,
             value: 'order.cancelled',
-            description: t`When an order is cancelled`,
+            description: `When an order is cancelled`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Attendee Created`,
+            label: `Attendee Created`,
             value: 'attendee.created',
-            description: t`When a new attendee is created`,
+            description: `When a new attendee is created`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Attendee Updated`,
+            label: `Attendee Updated`,
             value: 'attendee.updated',
-            description: t`When an attendee is updated`,
+            description: `When an attendee is updated`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Attendee Cancelled`,
+            label: `Attendee Cancelled`,
             value: 'attendee.cancelled',
-            description: t`When an attendee is cancelled`,
+            description: `When an attendee is cancelled`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Check-in Created`,
+            label: `Check-in Created`,
             value: 'checkin.created',
-            description: t`When an attendee is checked in`,
+            description: `When an attendee is checked in`,
         },
         {
             icon: <IconBolt size={14}/>,
-            label: t`Check-in Deleted`,
+            label: `Check-in Deleted`,
             value: 'checkin.deleted',
-            description: t`When a check-in is deleted`,
+            description: `When a check-in is deleted`,
         },
     ];
 
@@ -114,14 +114,14 @@ export const WebhookForm = ({form}: WebhookFormProps) => {
             <TextInput
                 {...form.getInputProps('url')}
                 required
-                label={t`Webhook URL`}
-                placeholder={t`https://webhook-domain.com/webhook`}
+                label={`Webhook URL`}
+                placeholder={`https://webhook-domain.com/webhook`}
             />
 
             <CustomSelect
-                label={t`Event Types`}
-                description={t`Select which events will trigger this webhook`}
-                placeholder={t`Select event types`}
+                label={`Event Types`}
+                description={`Select which events will trigger this webhook`}
+                placeholder={`Select event types`}
                 required
                 form={form}
                 name="event_types"
@@ -130,7 +130,7 @@ export const WebhookForm = ({form}: WebhookFormProps) => {
             />
 
             <CustomSelect
-                label={t`Status`}
+                label={`Status`}
                 required
                 form={form}
                 name="status"

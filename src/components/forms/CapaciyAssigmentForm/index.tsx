@@ -16,15 +16,15 @@ export const CapacityAssigmentForm = ({form, productsCategories}: CapacityAssigm
     const statusOptions: ItemProps[] = [
         {
             icon: <IconCheck/>,
-            label: t`Active`,
+            label: `Active`,
             value: 'ACTIVE',
-            description: t`Enable this capacity to stop product sales when the limit is reached`,
+            description: `Enable this capacity to stop product sales when the limit is reached`,
         },
         {
             icon: <IconX/>,
-            label: t`Inactive`,
+            label: `Inactive`,
             value: 'INACTIVE',
-            description: t`Disabling this capacity will track sales but not stop them when the limit is reached`,
+            description: `Disabling this capacity will track sales but not stop them when the limit is reached`,
         },
     ];
 
@@ -34,26 +34,26 @@ export const CapacityAssigmentForm = ({form, productsCategories}: CapacityAssigm
                 <TextInput
                     {...form.getInputProps('name')}
                     required
-                    label={t`Name`}
-                    placeholder={t`Day one capacity`}
+                    label={`Name`}
+                    placeholder={`Day one capacity`}
                 />
                 <NumberInput
                     {...form.getInputProps('capacity')}
-                    label={t`Capacity`}
-                    placeholder={t`Unlimited`}
+                    label={`Capacity`}
+                    placeholder={`Unlimited`}
                 />
             </InputGroup>
 
             <ProductSelector
-                label={t`What products should this capacity apply to?`}
-                placeholder={t`Select products`}
+                label={`What products should this capacity apply to?`}
+                placeholder={`Select products`}
                 productCategories={productsCategories}
                 form={form}
                 productFieldName={'product_ids'}
             />
 
             <CustomSelect
-                label={t`Status`}
+                label={`Status`}
                 required
                 form={form}
                 name={'status'}

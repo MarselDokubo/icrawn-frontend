@@ -40,7 +40,7 @@ export const EmailSettings = () => {
             eventId: eventId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Email Settings`);
+                showSuccess(`Successfully Updated Email Settings`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);
@@ -51,33 +51,33 @@ export const EmailSettings = () => {
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`Email & Notification Settings`}
-                description={t`Customize the email and notification settings for this event`}
+                heading={`Email & Notification Settings`}
+                description={`Customize the email and notification settings for this even`}
             />
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>
                     <TextInput
                         {...form.getInputProps('support_email')}
-                        description={t`Any queries from product holders will be sent to this email address. This will also be used as the "reply-to" address for all emails sent from this event`}
-                        label={t`Support Email`}
+                        description={`Any queries from product holders will be sent to this email address. This will also be used as the "reply-to" address for all emails sent from this even`}
+                        label={`Support Email`}
                     />
 
                     <Editor
-                        label={t`Email footer message`}
+                        label={`Email footer message`}
                         value={form.values.email_footer_message || ''}
-                        description={t`This message will be included in the footer of all emails sent from this event`}
+                        description={`This message will be included in the footer of all emails sent from this even`}
                         onChange={(value) => form.setFieldValue('email_footer_message', value)}
                     />
 
-                    <h3>{t`Notification Settings`}</h3>
+                    <h3>{`Notification Settings`}</h3>
                     <Switch
                         {...form.getInputProps('notify_organizer_of_new_orders', {type: 'checkbox'})}
-                        label={t`Notify organizer of new orders`}
-                        description={t`If enabled, the organizer will receive an email notification when a new order is placed`}
+                        label={`Notify organizer of new orders`}
+                        description={`If enabled, the organizer will receive an email notification when a new order is placed`}
                     />
 
                     <Button loading={updateMutation.isPending} type={'submit'}>
-                        {t`Save`}
+                        {`Save`}
                     </Button>
                 </fieldset>
             </form>

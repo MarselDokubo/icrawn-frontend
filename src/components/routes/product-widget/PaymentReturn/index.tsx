@@ -74,14 +74,14 @@ export const PaymentReturn = () => {
                         iconType={'processing'}
                         message={(
                             <>
-                                {(!shouldPoll && paymentIntentQuery.isFetched) && t`We could not process your payment. Please try again or contact support.`}
-                                {(!shouldPoll && !paymentIntentQuery.isFetched) && t`Almost there! We're just waiting for your payment to be processed. This should only take a few seconds..`}
-                                {shouldPoll && t`We're processing your order. Please wait...`}
+                                {(!shouldPoll && paymentIntentQuery.isFetched) && `We could not process your payment. Please try again or contact support.`}
+                                {(!shouldPoll && !paymentIntentQuery.isFetched) && `Almost there! We're just waiting for your payment to be processed. This should only take a few seconds..`}
+                                {shouldPoll && `We're processing your order. Please wait...`}
                             </>
                         )}/>
                 )}
 
-                {cannotConfirmPayment && t`We were unable to confirm your payment. Please try again or contact support.`}
+                {cannotConfirmPayment && `We were unable to confirm your payment. Please try again or contact support.`}
             </div>
         </CheckoutContent>
     );

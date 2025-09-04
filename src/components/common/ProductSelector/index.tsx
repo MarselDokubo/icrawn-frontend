@@ -30,7 +30,7 @@ export const ProductSelector = ({
                                     includedProductTypes = [ProductType.Ticket, ProductType.General],
                                     multiSelect = true,
                                     showTierSelector = false,
-                                    noProductsMessage = t`No products available for selection`,
+                                    noProductsMessage = `No products available for selection`,
                                 }: ProductSelectorProps) => {
     const formattedData = productCategories?.map((category) => ({
         group: category.name,
@@ -60,9 +60,9 @@ export const ProductSelector = ({
             <>
                 {eventProducts?.find(product => product.id == form.values.product_id)?.type === 'TIERED' && (
                     <Select
-                        label={t`Product Tier`}
+                        label={`Product Tier`}
                         mt={20}
-                        placeholder={t`Select Product Tier`}
+                        placeholder={`Select Product Tier`}
                         {...form.getInputProps(tierFieldName)}
                         data={eventProducts?.find(product => product.id == form.values.product_id)?.prices?.map(price => {
                             return {

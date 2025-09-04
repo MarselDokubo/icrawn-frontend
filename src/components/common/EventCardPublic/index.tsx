@@ -35,9 +35,9 @@ export function EventCardPublic({ event }: EventCardPublicProps) {
                             <span className={classes.day}>{event.start_date ? formatDate(event.start_date, 'D', 'UTC') : '--'}</span>
                         </div>
                         <div className={classes.timeInfo}>
-                            <span className={classes.time}>{event.start_date ? formatDate(event.start_date, t`h:mm A`, 'UTC') : '--'}</span>
+                            <span className={classes.time}>{event.start_date ? formatDate(event.start_date, `h:mm A`, 'UTC') : '--'}</span>
                             {event.end_date && (
-                                <span className={classes.endTime}>- {formatDate(event.end_date, t`h:mm A`, 'UTC')}</span>
+                                <span className={classes.endTime}>- {formatDate(event.end_date, `h:mm A`, 'UTC')}</span>
                             )}
                         </div>
                     </div>

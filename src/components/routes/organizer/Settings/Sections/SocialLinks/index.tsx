@@ -43,66 +43,66 @@ interface SocialPlatform {
 const socialPlatforms: SocialPlatform[] = [
     // Primary platforms (always visible)
     {
-        name: t`Facebook`,
+        name: `Facebook`,
         field: 'facebook_handle',
         icon: IconBrandFacebook,
         placeholder: 'username',
         priority: 'primary'
     },
     {
-        name: t`Instagram`,
+        name: `Instagram`,
         field: 'instagram_handle',
         icon: IconBrandInstagram,
         placeholder: 'username',
         priority: 'primary'
     },
-    {name: t`X (Twitter)`, field: 'twitter_handle', icon: IconBrandX, placeholder: 'username', priority: 'primary'},
+    {name: `X (Twitter)`, field: 'twitter_handle', icon: IconBrandX, placeholder: 'username', priority: 'primary'},
     {
-        name: t`LinkedIn`,
+        name: `LinkedIn`,
         field: 'linkedin_handle',
         icon: IconBrandLinkedin,
         placeholder: 'username',
         priority: 'primary'
     },
-    {name: t`YouTube`, field: 'youtube_handle', icon: IconBrandYoutube, placeholder: 'channel', priority: 'primary'},
+    {name: `YouTube`, field: 'youtube_handle', icon: IconBrandYoutube, placeholder: 'channel', priority: 'primary'},
 
     // Secondary platforms (collapsible)
-    {name: t`TikTok`, field: 'tiktok_handle', icon: IconBrandTiktok, placeholder: 'username', priority: 'primary'},
-    {name: t`Discord`, field: 'discord_handle', icon: IconBrandDiscord, placeholder: 'user_id', priority: 'secondary'},
+    {name: `TikTok`, field: 'tiktok_handle', icon: IconBrandTiktok, placeholder: 'username', priority: 'primary'},
+    {name: `Discord`, field: 'discord_handle', icon: IconBrandDiscord, placeholder: 'user_id', priority: 'secondary'},
     {
-        name: t`Snapchat`,
+        name: `Snapcha`,
         field: 'snapchat_handle',
         icon: IconBrandSnapchat,
         placeholder: 'username',
         priority: 'secondary'
     },
-    {name: t`Twitch`, field: 'twitch_handle', icon: IconBrandTwitch, placeholder: 'username', priority: 'secondary'},
-    {name: t`Reddit`, field: 'reddit_handle', icon: IconBrandReddit, placeholder: 'username', priority: 'secondary'},
+    {name: `Twitch`, field: 'twitch_handle', icon: IconBrandTwitch, placeholder: 'username', priority: 'secondary'},
+    {name: `Reddi`, field: 'reddit_handle', icon: IconBrandReddit, placeholder: 'username', priority: 'secondary'},
     {
-        name: t`Pinterest`,
+        name: `Pinteres`,
         field: 'pinterest_handle',
         icon: IconBrandPinterest,
         placeholder: 'username',
         priority: 'secondary'
     },
     {
-        name: t`WhatsApp`,
+        name: `WhatsApp`,
         field: 'whatsapp_handle',
         icon: IconBrandWhatsapp,
         placeholder: 'phone_number',
         priority: 'secondary'
     },
     {
-        name: t`Telegram`,
+        name: `Telegram`,
         field: 'telegram_handle',
         icon: IconBrandTelegram,
         placeholder: 'username',
         priority: 'secondary'
     },
-    {name: t`GitHub`, field: 'github_handle', icon: IconBrandGithub, placeholder: 'username', priority: 'secondary'},
-    {name: t`Vimeo`, field: 'vimeo_handle', icon: IconBrandVimeo, placeholder: 'username', priority: 'secondary'},
-    {name: t`VK`, field: 'vk_handle', icon: IconBrandVk, placeholder: 'username', priority: 'secondary'},
-    {name: t`Weibo`, field: 'weibo_handle', icon: IconBrandWeibo, placeholder: 'username', priority: 'secondary'},
+    {name: `GitHub`, field: 'github_handle', icon: IconBrandGithub, placeholder: 'username', priority: 'secondary'},
+    {name: `Vimeo`, field: 'vimeo_handle', icon: IconBrandVimeo, placeholder: 'username', priority: 'secondary'},
+    {name: `VK`, field: 'vk_handle', icon: IconBrandVk, placeholder: 'username', priority: 'secondary'},
+    {name: `Weibo`, field: 'weibo_handle', icon: IconBrandWeibo, placeholder: 'username', priority: 'secondary'},
 ];
 
 export const SocialLinks = () => {
@@ -167,7 +167,7 @@ export const SocialLinks = () => {
             organizerId: organizerId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Social Links`);
+                showSuccess(`Successfully Updated Social Links`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);
@@ -181,8 +181,8 @@ export const SocialLinks = () => {
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`Social Links & Website`}
-                description={t`Add your social media handles and website URL. These will be displayed on your public organizer page.`}
+                heading={`Social Links & Website`}
+                description={`Add your social media handles and website URL. These will be displayed on your public organizer page.`}
             />
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <fieldset disabled={organizerSettingsQuery.isLoading || updateMutation.isPending}>
@@ -227,10 +227,10 @@ export const SocialLinks = () => {
                             {showMore ? <IconChevronUp size={18}/> : <IconChevronDown size={18}/>}
                             <Text size="sm" fw={500}>
                                 {showMore
-                                    ? t`Show fewer platforms`
+                                    ? `Show fewer platforms`
                                     : hasSecondaryValues
-                                        ? t`Show all platforms (${secondaryPlatforms.filter(p => form.values[p.field]).length} more with values)`
-                                        : t`Show more platforms`
+                                        ? `Show all platforms (${secondaryPlatforms.filter(p => form.values[p.field]).length} more with values)`
+                                        : `Show more platforms`
                                 }
                             </Text>
                         </Group>
@@ -260,7 +260,7 @@ export const SocialLinks = () => {
                         type={'submit'}
                         mt="xl"
                     >
-                        {t`Save Social Links`}
+                        {`Save Social Links`}
                     </Button>
                 </fieldset>
             </form>

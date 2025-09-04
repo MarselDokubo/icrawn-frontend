@@ -9,39 +9,39 @@ export const TaxAndFeeForm = ({form}: { form: UseFormReturnType<TaxAndFee> }) =>
     const typeOptions: ItemProps[] = [
         {
             icon: <IconReceiptTax/>,
-            label: t`Tax`,
+            label: `Tax`,
             value: 'TAX',
-            description: t`A standard tax, like VAT or GST`,
+            description: `A standard tax, like VAT or GS`,
         },
         {
             icon: <IconCash/>,
-            label: t`Fee`,
+            label: `Fee`,
             value: 'FEE',
-            description: t`A fee, like a booking fee or a service fee`,
+            description: `A fee, like a booking fee or a service fee`,
         },
     ];
 
     const calcTypeOptions: ItemProps[] = [
         {
             icon: <IconPercentage/>,
-            label: t`Percentage`,
+            label: `Percentage`,
             value: 'PERCENTAGE',
-            description: t`A percentage of the product price. E.g., 3.5% of the product price`,
+            description: `A percentage of the product price. E.g., 3.5% of the product price`,
         },
         {
             icon: <IconCash/>,
-            label: t`Fixed`,
+            label: `Fixed`,
             value: 'FIXED',
-            description: t`A fixed amount per product. E.g, $0.50 per product`,
+            description: `A fixed amount per product. E.g, $0.50 per produc`,
         },
     ];
 
-    const type = (form.values.type === TaxAndFeeType.Tax ? t`Tax` : t`Fee`).toLowerCase();
+    const type = (form.values.type === TaxAndFeeType.Tax ? `Tax` : `Fee`).toLowerCase();
 
     return (
         <div>
             <CustomSelect
-                label={t`Type`}
+                label={`Type`}
                 required
                 form={form}
                 name={'type'}
@@ -49,7 +49,7 @@ export const TaxAndFeeForm = ({form}: { form: UseFormReturnType<TaxAndFee> }) =>
             />
 
             <CustomSelect
-                label={t`Calculation Type`}
+                label={`Calculation Type`}
                 required
                 form={form}
                 name={'calculation_type'}
@@ -58,8 +58,8 @@ export const TaxAndFeeForm = ({form}: { form: UseFormReturnType<TaxAndFee> }) =>
 
             <TextInput
                 {...form.getInputProps('name')}
-                label={t`Name`}
-                placeholder={form.values.type === TaxAndFeeType.Tax ? t`VAT` : t`Service Fee`}
+                label={`Name`}
+                placeholder={form.values.type === TaxAndFeeType.Tax ? `VA` : `Service Fee`}
                 required
             />
 
@@ -68,24 +68,24 @@ export const TaxAndFeeForm = ({form}: { form: UseFormReturnType<TaxAndFee> }) =>
                 fixedDecimalScale
                 step={0.50}
                 {...form.getInputProps('rate')}
-                label={form.values.calculation_type === TaxAndFeeCalculationType.Percentage ? t`Percentage Amount` : t`Amount`}
+                label={form.values.calculation_type === TaxAndFeeCalculationType.Percentage ? `Percentage Amoun` : `Amoun`}
                 placeholder={form.values.calculation_type === TaxAndFeeCalculationType.Percentage ? '23' : '2.50'}
                 leftSection={form.values.calculation_type === TaxAndFeeCalculationType.Percentage ? '%' : ''}
-                description={form.values.calculation_type === TaxAndFeeCalculationType.Percentage ? t`eg. 23.5 for 23.5%` : t`eg. 2.50 for $2.50`}
+                description={form.values.calculation_type === TaxAndFeeCalculationType.Percentage ? `eg. 23.5 for 23.5%` : `eg. 2.50 for $2.50`}
                 required
                 max={form.values.calculation_type === TaxAndFeeCalculationType.Percentage ? 100 : undefined}
             />
 
             <TextInput
                 {...form.getInputProps('description')}
-                label={t`Description`}
+                label={`Description`}
             />
 
             <Switch
                 {...form.getInputProps('is_default', {type: 'checkbox'})}
-                label={t`Apply this ${type} to all new products`}
+                label={`Apply this ${type} to all new products`}
                 value={1}
-                description={t`A default ${type} is automaticaly applied to all new products. You can override this on a per product basis.`}
+                description={`A default ${type} is automaticaly applied to all new products. You can override this on a per product basis.`}
             />
         </div>
     )

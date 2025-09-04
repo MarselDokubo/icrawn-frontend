@@ -46,20 +46,20 @@ export const EditUserModal = ({onClose, user}: EditUserModalProps) => {
     const calcTypeOptions: ItemProps[] = [
         {
             icon: <IconUserShield/>,
-            label: t`Admin`,
+            label: `Admin`,
             value: 'ADMIN',
-            description: t`Admin users have full access to events and account settings.`,
+            description: `Admin users have full access to events and account settings.`,
         },
         {
             icon: <IconUser/>,
-            label: t`Organizer`,
+            label: `Organizer`,
             value: 'ORGANIZER',
-            description: t`Organizers can only manage events and products. They cannot manage users, account settings or billing information.`,
+            description: `Organizers can only manage events and products. They cannot manage users, account settings or billing information.`,
         },
     ];
 
     return (
-        <Modal heading={t`Edit User`} onClose={onClose} opened>
+        <Modal heading={`Edit User`} onClose={onClose} opened>
             {user.status === 'INVITED' && (
                 <Alert mb={20}>
                     <Trans>This user is not active, as they have not accepted their invitation.</Trans>
@@ -68,8 +68,8 @@ export const EditUserModal = ({onClose, user}: EditUserModalProps) => {
             <form onSubmit={form.onSubmit(values => handleCreate(values))}>
                 <fieldset disabled={ediMutation.isPending}>
                     <InputGroup>
-                        <TextInput required {...form.getInputProps('first_name')} label={t`First Name`}/>
-                        <TextInput required {...form.getInputProps('last_name')} label={t`Last Name`}/>
+                        <TextInput required {...form.getInputProps('first_name')} label={`First Name`}/>
+                        <TextInput required {...form.getInputProps('last_name')} label={`Last Name`}/>
                     </InputGroup>
 
                     <TextInput
@@ -77,7 +77,7 @@ export const EditUserModal = ({onClose, user}: EditUserModalProps) => {
                         readOnly
                         value={user.email}
                         type={'email'}
-                        label={t`Email`}
+                        label={`Email`}
                         description={<Trans>Users can change their email in <NavLink target={'_blank'}
                                                                                      to={'/manage/profile'}>Profile
                             Settings</NavLink></Trans>}
@@ -85,12 +85,12 @@ export const EditUserModal = ({onClose, user}: EditUserModalProps) => {
 
                     {user.is_account_owner && (
                         <Alert mb={20}>
-                            {t`You cannot edit the role or status of the account owner.`}
+                            {`You cannot edit the role or status of the account owner.`}
                         </Alert>
                     )}
 
                     <CustomSelect
-                        label={t`Role`}
+                        label={`Role`}
                         optionList={calcTypeOptions}
                         form={form}
                         name={'role'}
@@ -100,15 +100,15 @@ export const EditUserModal = ({onClose, user}: EditUserModalProps) => {
                     {user.status !== 'INVITED' && (
                         <Select
                             disabled={user.is_account_owner}
-                            label={t`Status`}
-                            placeholder={t`Select status`}
+                            label={`Status`}
+                            placeholder={`Select status`}
                             required
                             {...form.getInputProps('status')}
-                            description={t`Inactive users cannot log in.`}
+                            description={`Inactive users cannot log in.`}
 
                             data={[
-                                {value: 'ACTIVE', label: t`Active`},
-                                {value: 'INACTIVE', label: t`Inactive`},
+                                {value: 'ACTIVE', label: `Active`},
+                                {value: 'INACTIVE', label: `Inactive`},
                             ]}
                         />
                     )}
@@ -117,7 +117,7 @@ export const EditUserModal = ({onClose, user}: EditUserModalProps) => {
                     fullWidth
                     loading={ediMutation.isPending}
                     type={'submit'}>
-                    {t`Edit User`}
+                    {`Edit User`}
                 </Button>
             </form>
         </Modal>

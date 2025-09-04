@@ -52,11 +52,11 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
     const handleDeleteProduct = (productId: IdParam, eventId: IdParam) => {
         deleteMutation.mutate({productId, eventId}, {
             onSuccess: () => {
-                showSuccess(t`Product deleted successfully`);
+                showSuccess(`Product deleted successfully`);
             },
             onError: (error: any) => {
                 if (error.response?.status === 409) {
-                    showError(error.response.data.message || t`This product cannot be deleted because it is associated with an order. You can hide it instead.`);
+                    showError(error.response.data.message || `This product cannot be deleted because it is associated with an order. You can hide it instead.`);
                 }
             }
         });
@@ -64,33 +64,33 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
 
     const getProductStatus = (product: Product) => {
         if (product.is_sold_out) {
-            return t`Sold Out`;
+            return `Sold Ou`;
         }
 
         if (product.is_before_sale_start_date) {
-            return t`On sale` + ' ' + relativeDate(product.sale_start_date as string);
+            return `On sale` + ' ' + relativeDate(product.sale_start_date as string);
         }
 
         if (product.is_after_sale_end_date) {
-            return t`Sale ended ` + ' ' + relativeDate(product.sale_end_date as string);
+            return `Sale ended ` + ' ' + relativeDate(product.sale_end_date as string);
         }
 
         if (product.is_hidden) {
-            return t`Hidden from public view`;
+            return `Hidden from public view`;
         }
 
-        return product.is_available ? t`On Sale` : t`Not On Sale`;
+        return product.is_available ? `On Sale` : `Not On Sale`;
     }
 
     const getPriceRange = (product: Product) => {
         const productPrices: ProductPrice[] = product.prices as ProductPrice[];
         if (!Array.isArray(productPrices) || productPrices.length === 0) {
-            return t`Price not set`;
+            return `Price not se`;
         }
 
         if (product.type !== ProductPriceType.Tiered) {
             if (productPrices[0].price <= 0) {
-                return t`Free`;
+                return `Free`;
             }
             return formatCurrency(productPrices[0].price, currencyCode);
         }
@@ -100,7 +100,7 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
         const maxPrice = Math.max(...prices);
 
         if (minPrice <= 0 && maxPrice <= 0) {
-            return t`Free`;
+            return `Free`;
         }
 
         if (minPrice === maxPrice) {
@@ -175,8 +175,8 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
             sortedCategories,
             eventId: product.event_id,
         }, {
-            onSuccess: () => showSuccess(t`Products sorted successfully`),
-            onError: () => showError(t`Failed to sort products`)
+            onSuccess: () => showSuccess(`Products sorted successfully`),
+            onError: () => showError(`Failed to sort products`)
         });
     };
 
@@ -203,7 +203,7 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
                 <div className={classes.productInfo}>
                     <div className={classes.productDetails}>
                         <div className={classes.title}>
-                            <div className={classes.heading}>{t`Title`}</div>
+                            <div className={classes.heading}>{`Title`}</div>
                             <Truncate text={product.title} length={60}/>
                             {(product.is_hidden_without_promo_code || product.is_hidden) && (
                                 <Popover>
@@ -212,19 +212,19 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
                                     </Popover.Target>
                                     <Popover.Dropdown>
                                         {product.is_hidden
-                                            ? t`This product is hidden from public view`
-                                            : t`This product is hidden unless targeted by a Promo Code`}
+                                            ? `This product is hidden from public view`
+                                            : `This product is hidden unless targeted by a Promo Code`}
                                     </Popover.Dropdown>
                                 </Popover>
                             )}
                         </div>
                         <div className={classes.description}>
-                            <div className={classes.heading}>{t`Status`}</div>
+                            <div className={classes.heading}>{`Status`}</div>
                             <Popover>
                                 <Popover.Target>
                                     <Badge className={classes.status} color={product.is_available ? 'green' : 'orange'}
                                            variant="outline">
-                                        {product.is_available ? t`On Sale` : t`Not On Sale`}
+                                        {product.is_available ? `On Sale` : `Not On Sale`}
                                     </Badge>
                                 </Popover.Target>
                                 <Popover.Dropdown>
@@ -233,14 +233,14 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
                             </Popover>
                         </div>
                         <div className={classes.price}>
-                            <div className={classes.heading}>{t`Price`}</div>
+                            <div className={classes.heading}>{`Price`}</div>
                             <div className={classes.priceAmount}>
                                 {getPriceRange(product)}
                             </div>
                         </div>
                         <div className={classes.availability}>
                             <div className={classes.heading}>
-                                {product.product_type === ProductType.Ticket ? t`Attendees` : t`Quantity Sold`}
+                                {product.product_type === ProductType.Ticket ? `Attendees` : `Quantity Sold`}
                             </div>
                             {Number(product.quantity_sold)}
                         </div>
@@ -253,7 +253,7 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
                                 <div>
                                     <div className={classes.mobileAction}>
                                         <Button size="xs" variant="light">
-                                            {t`Manage`}
+                                            {`Manage`}
                                         </Button>
                                     </div>
                                     <div className={classes.desktopAction}>
@@ -264,32 +264,32 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
                                 </div>
                             </Menu.Target>
                             <Menu.Dropdown>
-                                <Menu.Label>{t`Actions`}</Menu.Label>
+                                <Menu.Label>{`Actions`}</Menu.Label>
 
                                 {product.product_type === ProductType.Ticket && (
                                     <Menu.Item
                                         onClick={() => handleModalClick(product.id, messageModal)}
                                         leftSection={<IconSend size={14}/>}>
-                                        {t`Message Attendees`}
+                                        {`Message Attendees`}
                                     </Menu.Item>
                                 )}
 
                                 <Menu.Item
                                     onClick={() => handleModalClick(product.id, editModal)}
                                     leftSection={<IconPencil size={14}/>}>
-                                    {t`Edit Product`}
+                                    {`Edit Produc`}
                                 </Menu.Item>
                                 <Menu.Item
                                     onClick={() => handleModalClick(product.id, duplicateModal)}
                                     leftSection={<IconCopyPlus size={14}/>}>
-                                    {t`Duplicate Product`}
+                                    {`Duplicate Produc`}
                                 </Menu.Item>
-                                <Menu.Label>{t`Danger zone`}</Menu.Label>
+                                <Menu.Label>{`Danger zone`}</Menu.Label>
                                 <Menu.Item
                                     onClick={() => handleDeleteProduct(product.id, product.event_id)}
                                     color="red"
                                     leftSection={<IconTrash size={14}/>}>
-                                    {t`Delete product`}
+                                    {`Delete produc`}
                                 </Menu.Item>
                             </Menu.Dropdown>
                         </Menu>

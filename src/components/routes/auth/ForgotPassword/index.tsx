@@ -28,7 +28,7 @@ export const ForgotPassword = () => {
         },
 
         onError: () => {
-            showError(t`Something went wrong, please try again, or contact support if the problem persists`);
+            showError(`Something went wrong, please try again, or contact support if the problem persists`);
         }
     });
 
@@ -37,7 +37,7 @@ export const ForgotPassword = () => {
             {showSuccessMessage && (
                 <div>
                     <p>
-                        {t`If you have an account with us, you will receive an email with instructions on how to reset your
+                        {`If you have an account with us, you will receive an email with instructions on how to reset your
                             password.`}
                     </p>
                     <p>
@@ -47,16 +47,16 @@ export const ForgotPassword = () => {
             )}
             {!showSuccessMessage && (
                 <>
-                    <h3>{t`Reset your password`}</h3>
+                    <h3>{`Reset your password`}</h3>
                     <form onSubmit={form.onSubmit((values) => mutate.mutate(values.email))}>
-                        <TextInput type={'email'} {...form.getInputProps('email')} label={t`Your Email`}
+                        <TextInput type={'email'} {...form.getInputProps('email')} label={`Your Email`}
                                    placeholder="joe@bloggs.com" required/>
                         <Button color={'var(--hi-pink)'} fullWidth type="submit" disabled={mutate.isPending}>
-                            {mutate.isPending ? t`Working...` : t`Reset password`}
+                            {mutate.isPending ? `Working...` : `Reset password`}
                         </Button>
                     </form>
                     <footer>
-                        <NavLink to={'/auth/login'}>{t`Back to login`}</NavLink>
+                        <NavLink to={'/auth/login'}>{`Back to login`}</NavLink>
                     </footer>
                 </>
             )}

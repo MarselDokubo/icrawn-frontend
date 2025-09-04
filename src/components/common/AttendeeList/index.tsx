@@ -20,7 +20,7 @@ export const AttendeeList = ({order, products, refetchOrder, questionAnswers = [
         return (
             <div className={classes.container}>
                 <Text size="sm" c="dimmed" ta="center" py="xl">
-                    {t`No attendees found for this order.`}
+                    {`No attendees found for this order.`}
                 </Text>
             </div>
         );
@@ -81,7 +81,7 @@ export const AttendeeList = ({order, products, refetchOrder, questionAnswers = [
                                 <Group gap="xs">
                                     {attendeeHasQuestions && (
                                         <Tooltip
-                                            label={isExpanded(attendee.id) ? t`Hide Answers` : t`View Answers`}
+                                            label={isExpanded(attendee.id) ? `Hide Answers` : `View Answers`}
                                             position="bottom"
                                             withArrow
                                         >
@@ -100,7 +100,7 @@ export const AttendeeList = ({order, products, refetchOrder, questionAnswers = [
                                     )}
 
                                     <Tooltip
-                                        label={t`View Attendee Details`}
+                                        label={`View Attendee Details`}
                                         position="bottom"
                                         withArrow
                                     >

@@ -29,12 +29,12 @@ export const GlobalMenu = () => {
 
     const links: Link[] = [
         {
-            label: t`My Profile`,
+            label: `My Profile`,
             icon: IconUser,
             link: "/manage/profile",
         },
         {
-            label: t`Account Settings`,
+            label: `Account Settings`,
             icon: IconSettingsCog,
             link: `/account/settings`,
         },
@@ -42,7 +42,7 @@ export const GlobalMenu = () => {
 
     if (me?.role === 'ADMIN') {
         links.push({
-            label: t`User Management`,
+            label: `User Managemen`,
             icon: IconUsers,
             link: `/account/users`
         })
@@ -50,14 +50,14 @@ export const GlobalMenu = () => {
 
     if (!getConfig("VITE_HIDE_ABOUT_LINK")) {
         links.push({
-            label: `About & Support`,
+            label: `About & Suppor`,
             icon: IconLifebuoy,
             onClick: openAboutModal,
         });
     }
 
     links.push({
-        label: t`Create Organizer`,
+        label: `Create Organizer`,
         icon: IconPlus,
         onClick: (event: any) => {
             event.preventDefault();
@@ -66,7 +66,7 @@ export const GlobalMenu = () => {
     });
 
     links.push({
-        label: t`Logout`,
+        label: `Logou`,
         icon: IconLogout,
         onClick: (event: any) => {
             event.preventDefault();

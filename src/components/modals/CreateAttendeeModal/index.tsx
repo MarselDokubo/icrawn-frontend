@@ -83,7 +83,7 @@ export const CreateAttendeeModal = ({onClose}: GenericModalProps) => {
             attendeeData: values,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully created attendee`);
+                showSuccess(`Successfully created attendee`);
                 onClose();
             },
             onError: (error) => errorHandler(form, error),
@@ -98,8 +98,8 @@ export const CreateAttendeeModal = ({onClose}: GenericModalProps) => {
 
     if (isEventFetched && !eventHasProducts) {
         return (
-            <Modal opened onClose={onClose} heading={t`Manually Add Attendee`}>
-                <p>{t`You must create a ticket before you can manually add an attendee.`}</p>
+            <Modal opened onClose={onClose} heading={`Manually Add Attendee`}>
+                <p>{`You must create a ticket before you can manually add an attendee.`}</p>
                 <Button
                     fullWidth
                     variant={'light'}
@@ -107,34 +107,34 @@ export const CreateAttendeeModal = ({onClose}: GenericModalProps) => {
                         navigate(`/manage/event/${eventId}/products`)
                     }}
                 >
-                    {t`Manage tickets`}
+                    {`Manage tickets`}
                 </Button>
             </Modal>
         )
     }
 
     return (
-        <Modal opened onClose={onClose} heading={t`Manually Add Attendee`}>
+        <Modal opened onClose={onClose} heading={`Manually Add Attendee`}>
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <InputGroup>
                     <TextInput
                         {...form.getInputProps('first_name')}
-                        label={t`First name`}
-                        placeholder={t`Patrick`}
+                        label={`First name`}
+                        placeholder={`Patrick`}
                         required
                     />
 
                     <TextInput
                         {...form.getInputProps('last_name')}
-                        label={t`Last name`}
-                        placeholder={t`Johnson`}
+                        label={`Last name`}
+                        placeholder={`Johnson`}
                         required
                     />
                 </InputGroup>
                 <TextInput
                     {...form.getInputProps('email')}
-                    label={t`Email address`}
-                    placeholder={t`patrick@acme.com`}
+                    label={`Email address`}
+                    placeholder={`patrick@acme.com`}
                     required
                 />
 
@@ -145,14 +145,14 @@ export const CreateAttendeeModal = ({onClose}: GenericModalProps) => {
                         label: localeToFlagEmojiMap[locale as SupportedLocales] + ' ' + getLocaleName(locale as SupportedLocales),
                     }))}
                     {...form.getInputProps('locale')}
-                    label={t`Language`}
-                    placeholder={t`English`}
-                    description={t`The language the attendee will receive emails in.`}
+                    label={`Language`}
+                    placeholder={`English`}
+                    description={`The language the attendee will receive emails in.`}
                 />
 
                 <ProductSelector
-                    placeholder={t`Select Ticket`}
-                    label={t`Ticket`}
+                    placeholder={`Select Ticke`}
+                    label={`Ticke`}
                     productCategories={event.product_categories as ProductCategory[]}
                     form={form}
                     productFieldName={'product_id'}
@@ -171,7 +171,7 @@ export const CreateAttendeeModal = ({onClose}: GenericModalProps) => {
                     decimalScale={2}
                     step={1}
                     min={0}
-                    description={t`Enter an amount excluding taxes and fees.`}
+                    description={`Enter an amount excluding taxes and fees.`}
                 />
 
                 {form.values.taxes_and_fees?.map((tax, index) => {
@@ -180,8 +180,8 @@ export const CreateAttendeeModal = ({onClose}: GenericModalProps) => {
                                 required
                                 mt={20}
                                 fixedDecimalScale
-                                {...form.getInputProps(`taxes_and_fees.${index}.amount`)}
-                                label={tax.name + ' ' + t`paid` + ' (' + event?.currency + ')'}
+                                {...form.getInputProps(`taxes_and_fees.${index}.amoun`)}
+                                label={tax.name + ' ' + `paid` + ' (' + event?.currency + ')'}
                                 placeholder="0.00"
                                 decimalScale={2}
                                 step={1}
@@ -193,11 +193,11 @@ export const CreateAttendeeModal = ({onClose}: GenericModalProps) => {
 
                 <Switch
                     mt={20}
-                    label={t`Send order confirmation and ticket email`}
+                    label={`Send order confirmation and ticket email`}
                     {...form.getInputProps('send_confirmation_email', {type: 'checkbox'})}
                 />
                 <Button type="submit" fullWidth mt="xl" disabled={mutation.isPending}>
-                    {mutation.isPending ? t`Working` + '...' : t`Create Attendee`}
+                    {mutation.isPending ? `Working` + '...' : `Create Attendee`}
                 </Button>
             </form>
         </Modal>

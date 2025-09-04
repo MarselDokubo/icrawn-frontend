@@ -14,20 +14,20 @@ const Reports = () => {
     const reports = [
         {
             id: ReportTypes.ProductSales,
-            title: t`Product Sales`,
-            description: t`Product sales, revenue, and tax breakdown`,
+            title: `Product Sales`,
+            description: `Product sales, revenue, and tax breakdown`,
             icon: <Avatar size={40} color={'#831781'}><IconReportMoney/></Avatar>
         },
         {
             id: ReportTypes.DailySales,
-            title: t`Daily Sales Report`,
-            description: t`Daily sales, tax, and fee breakdown`,
+            title: `Daily Sales Repor`,
+            description: `Daily sales, tax, and fee breakdown`,
             icon: <Avatar size={40} color={'#00a3e0'}><IconChartBar/></Avatar>
         },
         {
             id: ReportTypes.PromoCodes,
-            title: t`Promo Codes Report`,
-            description: t`Promo code usage and discount breakdown`,
+            title: `Promo Codes Repor`,
+            description: `Promo code usage and discount breakdown`,
             icon: <Avatar size={40} color={'#634fc0'}><IconReportMoney/></Avatar>
         }
     ];
@@ -35,8 +35,8 @@ const Reports = () => {
     return (
         <PageBody>
             <PageTitle
-                subheading={t`View and download reports for your event. Please note, only completed orders are included in these reports.`}>
-                {t`Reports`}
+                subheading={`View and download reports for your event. Please note, only completed orders are included in these reports.`}>
+                {`Reports`}
             </PageTitle>
 
             {reports.map((report) => (

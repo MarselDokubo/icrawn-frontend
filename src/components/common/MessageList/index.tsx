@@ -16,11 +16,11 @@ const SingleMessage = ({message}: { message: Message }) => {
     const [showFullMessage, setShowFullMessage] = useState(false);
 
     const typeToDescription = {
-        [MessageType.OrderOwnersWithProduct]: t`Order owners with products`,
-        [MessageType.IndividualAttendees]: t`Individual attendees`,
-        [MessageType.AllAttendees]: t`All attendees`,
-        [MessageType.TicketHolders]: t`Ticket holders`,
-        [MessageType.OrderOwner]: t`Order owner`,
+        [MessageType.OrderOwnersWithProduct]: `Order owners with products`,
+        [MessageType.IndividualAttendees]: `Individual attendees`,
+        [MessageType.AllAttendees]: `All attendees`,
+        [MessageType.TicketHolders]: `Ticket holders`,
+        [MessageType.OrderOwner]: `Order owner`,
     }
 
     return (
@@ -56,7 +56,7 @@ const SingleMessage = ({message}: { message: Message }) => {
                     className={classes.read_more}
                     onClick={() => setShowFullMessage(!showFullMessage)}
                 >
-                    {showFullMessage ? t`Read less` : t`View full message`}
+                    {showFullMessage ? `Read less` : `View full message`}
                 </Anchor>
             </div>
         </Card>
@@ -66,12 +66,12 @@ const SingleMessage = ({message}: { message: Message }) => {
 export const MessageList = ({messages}: MessageListProps) => {
     if (messages.length === 0) {
         return <NoResultsSplash
-            heading={t`No messages to show`}
+            heading={`No messages to show`}
             imageHref={'/blank-slate/messages.svg'}
             subHeading={(
                 <>
                     <p>
-                        {t`You haven't sent any messages yet. You can send messages to all attendees, or to specific product holders.`}
+                        {`You haven't sent any messages yet. You can send messages to all attendees, or to specific product holders.`}
                     </p>
                 </>
             )}

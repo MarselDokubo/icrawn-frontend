@@ -26,11 +26,11 @@ export const CancelOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
     const handleCancelOrder = () => {
         cancelOrderMutation.mutate({eventId, orderId}, {
             onSuccess: () => {
-                showSuccess(t`Order has been canceled and the order owner has been notified.`);
+                showSuccess(`Order has been canceled and the order owner has been notified.`);
                 onClose();
             },
             onError: (error: any) => {
-                showError(error?.response?.data?.message || t`Failed to cancel order`);
+                showError(error?.response?.data?.message || `Failed to cancel order`);
             }
         });
     }
@@ -41,7 +41,7 @@ export const CancelOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
 
     return (
         <Modal
-            heading={t`Cancel Order ${order.public_id}`}
+            heading={`Cancel Order ${order.public_id}`}
             opened
             onClose={onClose}
         >
@@ -49,14 +49,14 @@ export const CancelOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
 
             {products && <AttendeeList order={order} products={products}/>}
 
-            <Alert className={classes.alert} variant="light" color="blue" title={t`Please Note`}
+            <Alert className={classes.alert} variant="light" color="blue" title={`Please Note`}
                    icon={<IconInfoCircle/>}>
-                {t`Canceling will cancel all products associated with this order, and release the products back into the available pool.`}
+                {`Canceling will cancel all products associated with this order, and release the products back into the available pool.`}
             </Alert>
 
             <Button loading={cancelOrderMutation.isPending} className={'mb20'} color={'red'} fullWidth
                     onClick={handleCancelOrder}>
-                {t`Cancel Order`}
+                {`Cancel Order`}
             </Button>
         </Modal>
     )

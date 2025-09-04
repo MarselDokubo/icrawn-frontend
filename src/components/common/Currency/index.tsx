@@ -87,7 +87,7 @@ export const ProductPriceDisplay: React.FC<ProductPriceProps> = ({
     const formattedPrice = formatCurrency(displayPrice, currency);
 
     if (displayPrice === 0 && totalTaxAndFees === 0) {
-        return <span className={className}>{freeLabel || t`Free`}</span>;
+        return <span className={className}>{freeLabel || `Free`}</span>;
     }
 
     return (

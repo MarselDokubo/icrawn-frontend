@@ -85,12 +85,12 @@ const CheckIn = () => {
             },
             onError: (error) => {
                 if (!networkStatus.online) {
-                    showError(t`You are offline`);
+                    showError(`You are offline`);
                     return;
                 }
 
                 if (error instanceof AxiosError) {
-                    showError(error?.response?.data.message || t`Unable to check in attendee`);
+                    showError(error?.response?.data.message || `Unable to check in attendee`);
                 }
             }
         });
@@ -107,11 +107,11 @@ const CheckIn = () => {
                 },
                 onError: (error) => {
                     if (!networkStatus.online) {
-                        showError(t`You are offline`);
+                        showError(`You are offline`);
                         return;
                     }
 
-                    showError(error?.response?.data.message || t`Unable to check out attendee`);
+                    showError(error?.response?.data.message || `Unable to check out attendee`);
                 }
             });
             return;
@@ -126,7 +126,7 @@ const CheckIn = () => {
         }
 
         if (!allowOrdersAwaitingOfflinePaymentToCheckIn && isAttendeeAwaitingPayment) {
-            showError(t`You cannot check in attendees with unpaid orders. This setting can be changed in the event settings.`);
+            showError(`You cannot check in attendees with unpaid orders. This setting can be changed in the event settings.`);
             return;
         }
 
@@ -142,12 +142,12 @@ const CheckIn = () => {
                 const {data} = await publicCheckInClient.getCheckInListAttendee(checkInListShortId, attendeePublicId);
                 attendee = data;
             } catch (error) {
-                showError(t`Unable to fetch attendee`);
+                showError(`Unable to fetch attendee`);
                 return;
             }
 
             if (!attendee) {
-                showError(t`Attendee not found`);
+                showError(`Attendee not found`);
                 return;
             }
         }
@@ -161,7 +161,7 @@ const CheckIn = () => {
         }
 
         if (!allowOrdersAwaitingOfflinePaymentToCheckIn && isAttendeeAwaitingPayment) {
-            showError(t`You cannot check in attendees with unpaid orders. This setting can be changed in the event settings.`);
+            showError(`You cannot check in attendees with unpaid orders. This setting can be changed in the event settings.`);
             return;
         }
 
@@ -170,14 +170,14 @@ const CheckIn = () => {
 
     const checkInButtonText = (attendee: Attendee) => {
         if (!allowOrdersAwaitingOfflinePaymentToCheckIn && attendee.status === 'AWAITING_PAYMENT') {
-            return t`Cannot Check In`;
+            return `Cannot Check In`;
         }
 
         if (attendee.check_in) {
-            return t`Check Out`;
+            return `Check Ou`;
         }
 
-        return t`Check In`;
+        return `Check In`;
     }
 
     const CheckInOptionsModal = () => {
@@ -197,8 +197,8 @@ const CheckIn = () => {
                     <Alert
                         icon={<IconAlertCircle size={20}/>}
                         variant={'light'}
-                        title={t`Unpaid Order`}>
-                        {t`This attendee has an unpaid order.`}
+                        title={`Unpaid Order`}>
+                        {`This attendee has an unpaid order.`}
                     </Alert>
                     <Button
                         leftSection={<IconUserCheck size={20}/>}
@@ -206,7 +206,7 @@ const CheckIn = () => {
                         loading={checkInMutation.isPending}
                         fullWidth
                     >
-                        {t`Check in only`}
+                        {`Check in only`}
                     </Button>
                     <Button
                         leftSection={<IconCreditCard size={20}/>}
@@ -215,14 +215,14 @@ const CheckIn = () => {
                         variant="filled"
                         fullWidth
                     >
-                        {t`Check in and mark order as paid`}
+                        {`Check in and mark order as paid`}
                     </Button>
                     <Button
                         onClick={checkInModalHandlers.close}
                         variant="light"
                         fullWidth
                     >
-                        {t`Cancel`}
+                        {`Cancel`}
                     </Button>
                 </Stack>
             </Modal>
@@ -260,7 +260,7 @@ const CheckIn = () => {
                                     </div>
                                     {isAttendeeAwaitingPayment && (
                                         <div className={classes.awaitingPayment}>
-                                            {t`Awaiting payment`}
+                                            {`Awaiting paymen`}
                                         </div>
                                     )}
                                     <div>
@@ -308,12 +308,12 @@ const CheckIn = () => {
     if (CheckInListQuery.error && CheckInListQuery.error.response?.status === 404) {
         return (
             <NoResultsSplash
-                heading={t`Check-in list not found`}
+                heading={`Check-in list not found`}
                 imageHref={'/blank-slate/check-in-lists.svg'}
                 subHeading={(
                     <>
                         <p>
-                            {t`The check-in list you are looking for does not exist.`}
+                            {`The check-in list you are looking for does not exist.`}
                         </p>
                     </>
                 )}
@@ -323,7 +323,7 @@ const CheckIn = () => {
     if (checkInList?.is_expired) {
         return (
             <NoResultsSplash
-                heading={t`Check-in list has expired`}
+                heading={`Check-in list has expired`}
                 imageHref={'/blank-slate/check-in-lists.svg'}
                 subHeading={(
                     <>
@@ -340,12 +340,12 @@ const CheckIn = () => {
     if (checkInList && !checkInList?.is_active) {
         return (
             <NoResultsSplash
-                heading={t`Check-in list is not active`}
+                heading={`Check-in list is not active`}
                 imageHref={'/blank-slate/check-in-lists.svg'}
                 subHeading={(
                     <>
                         <p>
-                            {t`This check-in list is not yet active and is not available for check-ins.`}
+                            {`This check-in list is not yet active and is not available for check-ins.`}
                         </p>
                         <p>
                             Check-in list will activate in{' '}<br/>
@@ -391,13 +391,13 @@ const CheckIn = () => {
                             value={searchQuery}
                             onChange={(event) => setSearchQuery(event.target.value)}
                             onClear={() => setSearchQuery('')}
-                            placeholder={t`Search by name, order #, attendee # or email...`}
+                            placeholder={`Search by name, order #, attendee # or email...`}
                         />
                         <Button variant={'light'} size={'md'} className={classes.scanButton}
                                 onClick={() => setQrScannerOpen(true)} leftSection={<IconQrcode/>}>
-                            {t`Scan QR Code`}
+                            {`Scan QR Code`}
                         </Button>
-                        <ActionIcon aria-label={t`Scan QR Code`} variant={'light'} size={'xl'}
+                        <ActionIcon aria-label={`Scan QR Code`} variant={'light'} size={'xl'}
                                     className={classes.scanIcon}
                                     onClick={() => setQrScannerOpen(true)}>
                             <IconQrcode size={32}/>

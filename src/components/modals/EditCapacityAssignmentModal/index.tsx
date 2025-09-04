@@ -44,7 +44,7 @@ export const EditCapacityAssignmentModal = ({
             capacityAssignmentId: capacityAssignmentId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully updated Capacity Assignment`);
+                showSuccess(`Successfully updated Capacity Assignmen`);
                 onClose();
             },
             onError: (error) => errorHandler(form, error),
@@ -63,7 +63,7 @@ export const EditCapacityAssignmentModal = ({
     }, [capacityAssignment]);
 
     return (
-        <Modal opened onClose={onClose} heading={t`Edit Capacity Assignment`}>
+        <Modal opened onClose={onClose} heading={`Edit Capacity Assignmen`}>
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 {event && <CapacityAssigmentForm form={form} productsCategories={event.product_categories as ProductCategory[]}/>}
                 <Button
@@ -71,7 +71,7 @@ export const EditCapacityAssignmentModal = ({
                     fullWidth
                     loading={editMutation.isPending}
                 >
-                    {t`Edit Capacity Assignment`}
+                    {`Edit Capacity Assignmen`}
                 </Button>
             </form>
         </Modal>

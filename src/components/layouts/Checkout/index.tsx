@@ -44,16 +44,16 @@ const Checkout = () => {
             },
             {
                 loading: {
-                    title: t`Downloading Invoice`,
-                    message: t`Please wait while we prepare your invoice...`
+                    title: `Downloading Invoice`,
+                    message: `Please wait while we prepare your invoice...`
                 },
                 success: {
-                    title: t`Success`,
-                    message: t`Invoice downloaded successfully`
+                    title: `Success`,
+                    message: `Invoice downloaded successfully`
                 },
                 error: {
-                    title: t`Error`,
-                    message: t`Failed to download invoice. Please try again.`
+                    title: `Error`,
+                    message: `Failed to download invoice. Please try again.`
                 }
             }
         );
@@ -68,24 +68,24 @@ const Checkout = () => {
                             <div className={classes.actionBar}>
                                 <Group justify="space-between" wrap="nowrap">
                                     <Button
-                                        title={t`Back to event page`}
+                                        title={`Back to event page`}
                                         component={NavLink}
                                         variant="subtle"
                                         leftSection={<IconArrowLeft size={20}/>}
                                         to={eventHomepageUrl(event)}
                                     >
-                                        {!isMobile && t`Event Homepage`}
+                                        {!isMobile && `Event Homepage`}
                                     </Button>
 
                                     <span className={classes.title}>
-                                        {order.status === 'RESERVED' && t`Checkout`}
-                                        {order.status === 'COMPLETED' && t`Your Order`}
+                                        {order.status === 'RESERVED' && `Checkou`}
+                                        {order.status === 'COMPLETED' && `Your Order`}
                                     </span>
 
                                     {orderIsReserved && (
                                         <Group gap="5px">
                                             <span>
-                                                {t`Time left:`}
+                                                {`Time left:`}
                                             </span>
                                             <Countdown
                                                 displayType={'short'}
@@ -101,7 +101,7 @@ const Checkout = () => {
                                         <Group gap="2px">
                                             <ShareComponent
                                                 title={event.title}
-                                                text={t`Check out this event!`}
+                                                text={`Check out this event!`}
                                                 url={eventHomepageUrl(event)}
                                                 hideShareButtonText={isMobile}
                                             />
@@ -109,10 +109,10 @@ const Checkout = () => {
                                             <AddToEventCalendarButton event={event}/>
 
                                             {orderHasAttendees && (
-                                                <Tooltip label={t`Print Tickets`}>
+                                                <Tooltip label={`Print Tickets`}>
                                                     <ActionIcon
                                                         variant="subtle"
-                                                        onClick={() => window?.open(`/order/${eventId}/${orderShortId}/print`, '_blank')}
+                                                        onClick={() => window?.open(`/order/${eventId}/${orderShortId}/prin`, '_blank')}
                                                     >
                                                         <IconPrinter size={20}/>
                                                     </ActionIcon>
@@ -121,7 +121,7 @@ const Checkout = () => {
 
                                             {order.latest_invoice && (
                                                 <Tooltip
-                                                    label={t`Download Invoice`}>
+                                                    label={`Download Invoice`}>
                                                     <ActionIcon
                                                         variant="subtle"
                                                         onClick={() => handleInvoiceDownload(order.latest_invoice as Invoice)}
@@ -151,16 +151,16 @@ const Checkout = () => {
             >
                 <div style={{textAlign: 'center', padding: '20px 0'}}>
                     <h3>
-                        {t`You have run out of time to complete your order.`}
+                        {`You have run out of time to complete your order.`}
                     </h3>
                     <p>
-                        {t`Please return to the event page to start over.`}
+                        {`Please return to the event page to start over.`}
                     </p>
                     <Button
                         onClick={handleReturn}
                         variant="filled"
                     >
-                        {t`Return to Event Page`}
+                        {`Return to Event Page`}
                     </Button>
                 </div>
             </Modal>

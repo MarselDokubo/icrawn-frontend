@@ -41,7 +41,7 @@ export const EditWebhookModal = ({
             },
             {
                 onSuccess: () => {
-                    showSuccess(t`Successfully updated Webhook`);
+                    showSuccess(`Successfully updated Webhook`);
                     onClose();
                 },
                 onError: (error) => {
@@ -63,7 +63,7 @@ export const EditWebhookModal = ({
     }, [webhook]);
 
     return (
-        <Modal opened onClose={onClose} heading={t`Edit Webhook`}>
+        <Modal opened onClose={onClose} heading={`Edit Webhook`}>
             {webhookLoading && (
                 <Center>
                     <Loader/>
@@ -72,7 +72,7 @@ export const EditWebhookModal = ({
 
             {!!webhookError && (
                 <Alert color={'red'}>
-                    {t`Failed to load Webhook`}
+                    {`Failed to load Webhook`}
                 </Alert>
             )}
 
@@ -84,7 +84,7 @@ export const EditWebhookModal = ({
                         fullWidth
                         loading={editMutation.isPending}
                     >
-                        {t`Edit Webhook`}
+                        {`Edit Webhook`}
                     </Button>
                 </form>
             )}

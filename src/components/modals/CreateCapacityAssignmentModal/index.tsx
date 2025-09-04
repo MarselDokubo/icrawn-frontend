@@ -33,7 +33,7 @@ export const CreateCapacityAssignmentModal = ({onClose}: GenericModalProps) => {
             capacityAssignmentData: requestData,
         }, {
             onSuccess: () => {
-                showSuccess(t`Capacity Assignment created successfully`);
+                showSuccess(`Capacity Assignment created successfully`);
                 onClose();
             },
             onError: (error) => errorHandler(form, error),
@@ -44,19 +44,19 @@ export const CreateCapacityAssignmentModal = ({onClose}: GenericModalProps) => {
         return (
             <NoResultsSplash
                 imageHref={'/blank-slate/tickets.svg'}
-                heading={t`Please create a product`}
+                heading={`Please create a produc`}
                 subHeading={(
                     <>
                         <p>
-                            {t`You'll need at a product before you can create a capacity assignment.`}
+                            {`You'll need at a product before you can create a capacity assignment.`}
                         </p>
                         <Button
                             size={'xs'}
                             leftSection={<IconPlus/>}
                             color={'green'}
-                            onClick={() => window.location.href = `/manage/event/${eventId}/products/#create-product`}
+                            onClick={() => window.location.href = `/manage/event/${eventId}/products/#create-produc`}
                         >
-                            {t`Create a Product`}
+                            {`Create a Produc`}
                         </Button>
                     </>
                 )}
@@ -65,7 +65,7 @@ export const CreateCapacityAssignmentModal = ({onClose}: GenericModalProps) => {
     }
 
     return (
-        <Modal opened onClose={onClose} heading={eventHasProducts ? t`Create Capacity Assignment` : null}>
+        <Modal opened onClose={onClose} heading={eventHasProducts ? `Create Capacity Assignmen` : null}>
             {!eventHasProducts && <NoProducts/>}
             {eventHasProducts && (
                 <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -76,7 +76,7 @@ export const CreateCapacityAssignmentModal = ({onClose}: GenericModalProps) => {
                         fullWidth
                         loading={createMutation.isPending}
                     >
-                        {t`Create Capacity Assignment`}
+                        {`Create Capacity Assignmen`}
                     </Button>
                 </form>
             )}

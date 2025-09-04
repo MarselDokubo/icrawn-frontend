@@ -37,7 +37,7 @@ export const CreateCheckInListModal = ({onClose}: GenericModalProps) => {
             checkInListData: requestData,
         }, {
             onSuccess: () => {
-                showSuccess(t`Check-In List created successfully`);
+                showSuccess(`Check-In List created successfully`);
                 onClose();
             },
             onError: (error) => errorHandler(form, error),
@@ -48,19 +48,19 @@ export const CreateCheckInListModal = ({onClose}: GenericModalProps) => {
         return (
             <NoResultsSplash
                 imageHref={'/blank-slate/tickets.svg'}
-                heading={t`Please create a ticket`}
+                heading={`Please create a ticke`}
                 subHeading={(
                     <>
                         <p>
-                            {t`You'll need a ticket before you can create a check-in list.`}
+                            {`You'll need a ticket before you can create a check-in list.`}
                         </p>
                         <Button
                             size={'xs'}
                             leftSection={<IconPlus/>}
                             color={'green'}
-                            onClick={() => window.location.href = `/manage/event/${eventId}/products/#create-product`}
+                            onClick={() => window.location.href = `/manage/event/${eventId}/products/#create-produc`}
                         >
-                            {t`Create a Ticket`}
+                            {`Create a Ticke`}
                         </Button>
                     </>
                 )}
@@ -69,7 +69,7 @@ export const CreateCheckInListModal = ({onClose}: GenericModalProps) => {
     }
 
     return (
-        <Modal opened onClose={onClose} heading={eventHasTickets ? t`Create Check-In List` : null}>
+        <Modal opened onClose={onClose} heading={eventHasTickets ? `Create Check-In Lis` : null}>
             {!eventHasTickets && <NoProducts/>}
             {eventHasTickets && (
                 <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -79,7 +79,7 @@ export const CreateCheckInListModal = ({onClose}: GenericModalProps) => {
                         fullWidth
                         loading={createMutation.isPending}
                     >
-                        {t`Create Check-In List`}
+                        {`Create Check-In Lis`}
                     </Button>
                 </form>
             )}

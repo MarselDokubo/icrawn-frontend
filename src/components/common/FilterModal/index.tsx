@@ -72,7 +72,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
                                                             activeFilters,
                                                             onChange,
                                                             onReset,
-                                                            title = t`Filters`
+                                                            title = `Filters`
                                                         }) => {
     const [opened, {open, close}] = useDisclosure(false);
     const [localFilters, setLocalFilters] = React.useState<FilterValues>(() => {
@@ -147,7 +147,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({
             case 'multi-select': {
                 return (
                     <MultiSelect
-                        placeholder={t`Select ${filter.label.toLowerCase()}`}
+                        placeholder={`Select ${filter.label.toLowerCase()}`}
                         key={filter.field}
                         label={filter.label}
                         data={filter.options || []}
@@ -220,14 +220,14 @@ export const FilterModal: React.FC<FilterModalProps> = ({
                 onClick={open}
                 size="sm"
             >
-                {hasActiveFilters ? t`Filters (${activeFilterCount})` : t`Filters`}
+                {hasActiveFilters ? `Filters (${activeFilterCount})` : `Filters`}
             </Button>
 
             <Modal opened={opened} onClose={close} title={title} size="md">
                 <Stack>
                     {filters.length === 0 ? (
                         <Text c="dimmed" ta="center" py="md">
-                            {t`No filters available`}
+                            {`No filters available`}
                         </Text>
                     ) : (
                         filters.map(filter => {
@@ -245,12 +245,12 @@ export const FilterModal: React.FC<FilterModalProps> = ({
                             onClick={handleReset}
                             disabled={!hasActiveFilters}
                         >
-                            {t`Reset`}
+                            {`Rese`}
                         </Button>
                         <Button
                             onClick={handleSave}
                         >
-                            {t`Apply`}
+                            {`Apply`}
                         </Button>
                     </Group>
                 </Stack>

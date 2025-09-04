@@ -59,7 +59,7 @@ export const affiliateClient = {
         return response.data;
     },
     exportAffiliates: async (eventId: IdParam): Promise<Blob> => {
-        const response = await api.post(`events/${eventId}/affiliates/export`, {}, {
+        const response = await api.post(`events/${eventId}/affiliates/expor`, {}, {
             responseType: 'blob'
         });
         return response.data;

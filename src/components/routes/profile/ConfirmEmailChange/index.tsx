@@ -19,8 +19,8 @@ export const ConfirmEmailChange = () => {
     const {mutate} = useConfirmEmailChange();
 
     if (!token) {
-        return <MessageCard message={t`The link you clicked is invalid.`}
-                            linkText={t`Go back to profile`}
+        return <MessageCard message={`The link you clicked is invalid.`}
+                            linkText={`Go back to profile`}
                             linkHref="/manage/profile"
         />;
     }
@@ -28,18 +28,18 @@ export const ConfirmEmailChange = () => {
     const confirmChange = () => {
         mutate({token: token, userId: userData?.id}, {
             onSuccess: () => {
-                showSuccess(t`Successfully confirmed email change`);
+                showSuccess(`Successfully confirmed email change`);
                 navigate('/manage/profile');
             },
             onError: () => {
-                showError(t`Error confirming email change`);
+                showError(`Error confirming email change`);
             }
         });
     };
 
     if (isFetched && !userData?.pending_email) {
-        return <MessageCard message={t`You have no pending email change.`}
-                            linkText={t`Go back to profile`}
+        return <MessageCard message={`You have no pending email change.`}
+                            linkText={`Go back to profile`}
                             linkHref="/manage/profile"
         />;
     }
@@ -48,12 +48,12 @@ export const ConfirmEmailChange = () => {
         <>
             {isFetched && (
                 <>
-                    <h2>{t`Confirm Email Change`}</h2>
+                    <h2>{`Confirm Email Change`}</h2>
                     <Card style={{marginTop: 'var(--hi-spacing-lg)'}}>
                         <Trans>You are changing your email to <b>{userData?.pending_email}</b>.</Trans>
                         <p>
                             <Button onClick={confirmChange}>
-                                {t`Confirm Email Change`}
+                                {`Confirm Email Change`}
                             </Button>
                         </p>
                     </Card>

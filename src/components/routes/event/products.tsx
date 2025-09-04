@@ -43,13 +43,13 @@ export const Products = () => {
 
     return (
         <PageBody>
-            <PageTitle>{t`Tickets & Products`}</PageTitle>
+            <PageTitle>{`Tickets & Products`}</PageTitle>
 
             <ToolBar
                 searchComponent={() => (
                     <SearchBar
                         onClear={() => setSearchTerm('')}
-                        placeholder={t`Search products`}
+                        placeholder={`Search products`}
                         rightSection={<IconChevronDown/>}
                         value={searchTerm}
                         onChange={(event) => setSearchTerm(event.target.value)}
@@ -71,7 +71,7 @@ export const Products = () => {
                             }
                             pr={12}
                         >
-                            {t`Create`}
+                            {`Create`}
                         </Button>
                     </Menu.Target>
                     <Menu.Dropdown>
@@ -83,7 +83,7 @@ export const Products = () => {
                             }
                             onClick={() => openCreateProduct(undefined)}
                         >
-                            {t`Ticket or Product`}
+                            {`Ticket or Produc`}
                         </Menu.Item>
                         <Menu.Item
                             leftSection={
@@ -93,7 +93,7 @@ export const Products = () => {
                             }
                             onClick={openCreateProductCategoryModal}
                         >
-                            {t`Category`}
+                            {`Category`}
                         </Menu.Item>
                     </Menu.Dropdown>
                 </Menu>

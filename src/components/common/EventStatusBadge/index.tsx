@@ -11,11 +11,11 @@ export const EventStatusBadge = ({event, showLifecycleStatus = true}: EventLifec
     const getLifecycleStatus = (() => {
         switch (event.lifecycle_status) {
             case 'ENDED':
-                return t`Ended`;
+                return `Ended`;
             case 'UPCOMING':
-                return t`Upcoming`;
+                return `Upcoming`;
             case 'ONGOING':
-                return t`Ongoing`;
+                return `Ongoing`;
             default:
                 return undefined;
         }

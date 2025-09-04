@@ -9,7 +9,7 @@ export const AttendeeDetails = ({attendee}: { attendee: Attendee }) => {
         <div className={classes.orderDetails}>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Name`}
+                    {`Name`}
                 </div>
                 <div className={classes.amount}>
                     {attendee.first_name} {attendee.last_name}
@@ -17,7 +17,7 @@ export const AttendeeDetails = ({attendee}: { attendee: Attendee }) => {
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Email`}
+                    {`Email`}
                 </div>
                 <div className={classes.value}>
                     <Anchor href={'mailto:' + attendee.email} target={'_blank'}>{attendee.email}</Anchor>
@@ -25,15 +25,15 @@ export const AttendeeDetails = ({attendee}: { attendee: Attendee }) => {
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Checked In`}
+                    {`Checked In`}
                 </div>
                 <div className={classes.amount}>
-                    {attendee.check_in ? t`Yes` : t`No`}
+                    {attendee.check_in ? `Yes` : `No`}
                 </div>
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Product`}
+                    {`Produc`}
                 </div>
                 <div className={classes.amount}>
                     {getAttendeeProductTitle(attendee)}
@@ -41,7 +41,7 @@ export const AttendeeDetails = ({attendee}: { attendee: Attendee }) => {
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {t`Language`}
+                    {`Language`}
                 </div>
                 <div className={classes.amount}>
                     {attendee.locale}

@@ -16,26 +16,26 @@ export const ManageAccount = () => {
 
     return (
         <div className={classes.container}>
-            <h1>{t`Account Settings`}</h1>
+            <h1>{`Account Settings`}</h1>
             <Card className={classes.tabsCard}>
                 <Tabs value={tabValue} onChange={(value) => navigate(`/account/${value}`)}>
                     <Tabs.List grow>
                         <Tabs.Tab value="settings" leftSection={<IconAdjustmentsCog/>}>
-                            {t`Account`}
+                            {`Accoun`}
                         </Tabs.Tab>
                         <Tabs.Tab value="taxes-and-fees" leftSection={<IconReceiptTax/>}>
-                            {t`Tax & Fees`}
+                            {`Tax & Fees`}
                         </Tabs.Tab>
 
                         {isUserAdmin && (
                             <Tabs.Tab value="users" leftSection={<IconUsers/>}>
-                                {t`Users`}
+                                {`Users`}
                             </Tabs.Tab>
                         )}
 
                         {(isUserAdmin && account && account.is_saas_mode_enabled) && (
                             <Tabs.Tab value="payment" leftSection={<IconCreditCard/>}>
-                                {t`Payment & Plan`}
+                                {`Payment & Plan`}
                             </Tabs.Tab>
                         )}
                     </Tabs.List>

@@ -13,7 +13,7 @@ export const CreateOrganizerModal = ({onClose}: CreateOrganizerModalProps) => {
     return (
         <Modal
             onClose={onClose}
-            heading={t`Create Organizer`}
+            heading={`Create Organizer`}
             opened
             size={'lg'}
             modalHeader={'branded'}

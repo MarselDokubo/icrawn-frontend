@@ -71,7 +71,7 @@ export const PaymentAndInvoicingSettings = () => {
             eventId: eventId,
         }, {
             onSuccess: () => {
-                showSuccess(t`Successfully Updated Payment & Invoicing Settings`);
+                showSuccess(`Successfully Updated Payment & Invoicing Settings`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);
@@ -82,27 +82,27 @@ export const PaymentAndInvoicingSettings = () => {
     const paymentOptions = [
         {
             value: "STRIPE",
-            label: t`Stripe`,
-            description: t`Accept credit card payments with Stripe`
+            label: `Stripe`,
+            description: `Accept credit card payments with Stripe`
         },
         {
             value: "OFFLINE",
-            label: t`Offline Payments`,
-            description: t`Accept bank transfers, checks, or other offline payment methods`
+            label: `Offline Payments`,
+            description: `Accept bank transfers, checks, or other offline payment methods`
         },
     ];
 
     return (
         <Card>
             <HeadingWithDescription
-                heading={t`Payment & Invoicing Settings`}
-                description={t`Manage payment and invoicing settings for this event.`}
+                heading={`Payment & Invoicing Settings`}
+                description={`Manage payment and invoicing settings for this event.`}
             />
             <form onSubmit={form.onSubmit(handleSubmit as any)}>
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>
                     <Stack gap="xl">
                         <Paper withBorder p="md" radius="md">
-                            <Text size="lg" fw={500} mb="md">{t`Payment Methods`}</Text>
+                            <Text size="lg" fw={500} mb="md">{`Payment Methods`}</Text>
                             {paymentOptions.map((option) => (
                                 <Checkbox
                                     key={option.value}
@@ -131,31 +131,31 @@ export const PaymentAndInvoicingSettings = () => {
                                     <h4 style={{
                                         marginTop: '5px',
                                         marginBottom: '10px'
-                                    }}>{t`Offline Payments Settings`}</h4>
+                                    }}>{`Offline Payments Settings`}</h4>
                                     <MantineCard shadow="sm" padding="lg" radius="md" withBorder mb="md">
                                         <h4 style={{
                                             margin: 0,
                                             fontWeight: 'normal'
-                                        }}>{t`Offline Payments Information`}</h4>
+                                        }}>{`Offline Payments Information`}</h4>
                                         <Text size="sm"
-                                              mt="xs">{t`When offline payments are enabled, users will be able to complete their orders and receive their tickets. Their tickets will clearly indicate the order is not paid, and the check-in tool will notify the check-in staff if an order requires payment.`}</Text>
+                                              mt="xs">{`When offline payments are enabled, users will be able to complete their orders and receive their tickets. Their tickets will clearly indicate the order is not paid, and the check-in tool will notify the check-in staff if an order requires payment.`}</Text>
                                         <Text size="sm"
-                                              mt="xs">{t`You will have to mark an order as paid manually. This can be done on the manage order page.`}</Text>
+                                              mt="xs">{`You will have to mark an order as paid manually. This can be done on the manage order page.`}</Text>
                                         <Text size="sm"
-                                              mt="xs">{t`Offline orders are not reflected in event statistics until the order is marked as paid.`}</Text>
+                                              mt="xs">{`Offline orders are not reflected in event statistics until the order is marked as paid.`}</Text>
                                     </MantineCard>
                                     <Editor
                                         editorType={'simple'}
                                         value={form.values.offline_payment_instructions}
                                         error={form.errors.offline_payment_instructions as string}
-                                        label={<InputLabelWithHelp label={t`Offline Payment Instructions`}
-                                                                   helpText={t`This information will be shown on the payment page, order summary page, and order confirmation email.`}/>}
-                                        description={t`Add instructions for offline payments (e.g., bank transfer details, where to send checks, payment deadlines)`}
+                                        label={<InputLabelWithHelp label={`Offline Payment Instructions`}
+                                                                   helpText={`This information will be shown on the payment page, order summary page, and order confirmation email.`}/>}
+                                        description={`Add instructions for offline payments (e.g., bank transfer details, where to send checks, payment deadlines)`}
                                         onChange={(value) => form.setFieldValue('offline_payment_instructions', value)}
                                     />
                                     <Switch
-                                        label={t`Allow attendees associated with unpaid orders to check in`}
-                                        description={t`If enabled, check-in staff can either mark attendees as checked in or mark the order as paid and check in the attendees. If disabled, attendees associated with unpaid orders cannot be checked in.`}
+                                        label={`Allow attendees associated with unpaid orders to check in`}
+                                        description={`If enabled, check-in staff can either mark attendees as checked in or mark the order as paid and check in the attendees. If disabled, attendees associated with unpaid orders cannot be checked in.`}
                                         checked={form.values.allow_orders_awaiting_offline_payment_to_check_in}
                                         {...form.getInputProps('allow_orders_awaiting_offline_payment_to_check_in', {type: 'checkbox'})}
                                     />
@@ -164,22 +164,22 @@ export const PaymentAndInvoicingSettings = () => {
                         </Paper>
 
                         <Paper withBorder p="md" radius="md">
-                            <Text size="lg" fw={500} mb="md">{t`Billing Settings`}</Text>
+                            <Text size="lg" fw={500} mb="md">{`Billing Settings`}</Text>
                             <Switch
-                                label={t`Require Billing Address`}
-                                description={t`Make billing address mandatory during checkout`}
+                                label={`Require Billing Address`}
+                                description={`Make billing address mandatory during checkou`}
                                 checked={form.values.require_billing_address}
                                 onChange={(event) => form.setFieldValue('require_billing_address', event.currentTarget.checked)}
                             />
                         </Paper>
 
                         <Paper withBorder p="md" radius="md">
-                            <Text size="lg" fw={500} mb="md">{t`Invoice Settings`}</Text>
+                            <Text size="lg" fw={500} mb="md">{`Invoice Settings`}</Text>
 
                             <Stack gap="md">
                                 <Switch
-                                    label={t`Enable Invoicing`}
-                                    description={t`When enabled, invoices will be generated for ticket orders. Invoices will sent along with the order confirmation email. Attendees can also download their invoices from the order confirmation page.`}
+                                    label={`Enable Invoicing`}
+                                    description={`When enabled, invoices will be generated for ticket orders. Invoices will sent along with the order confirmation email. Attendees can also download their invoices from the order confirmation page.`}
                                     checked={form.values.enable_invoicing}
                                     onChange={(event) => form.setFieldValue('enable_invoicing', event.currentTarget.checked)}
                                 />
@@ -187,34 +187,34 @@ export const PaymentAndInvoicingSettings = () => {
                                 {form.values.enable_invoicing && (
                                     <>
                                         <TextInput
-                                            label={t`Document Label`}
-                                            description={t`Leave blank to use the default word "Invoice"`}
+                                            label={`Document Label`}
+                                            description={`Leave blank to use the default word "Invoice"`}
                                             placeholder="Invoice"
                                             {...form.getInputProps('invoice_label')}
                                         />
 
                                         <Stack gap="xs">
-                                            <h4 style={{margin: 0}}>{t`Invoice Numbering`}</h4>
+                                            <h4 style={{margin: 0}}>{`Invoice Numbering`}</h4>
                                             <TextInput
-                                                label={t`Number Prefix`}
-                                                description={t`Optional prefix for invoice numbers (e.g., INV-)`}
+                                                label={`Number Prefix`}
+                                                description={`Optional prefix for invoice numbers (e.g., INV-)`}
                                                 placeholder="INV-"
                                                 {...form.getInputProps('invoice_prefix')}
                                             />
 
                                             <NumberInput
-                                                label={t`First Invoice Number`}
-                                                description={t`Set the starting number for invoice numbering. This cannot be changed once invoices have been generated.`}
+                                                label={`First Invoice Number`}
+                                                description={`Set the starting number for invoice numbering. This cannot be changed once invoices have been generated.`}
                                                 min={1}
                                                 {...form.getInputProps('invoice_start_number')}
                                             />
                                         </Stack>
 
                                         <Stack gap="xs">
-                                            <h4 style={{margin: 0}}>{t`Payment Terms`}</h4>
+                                            <h4 style={{margin: 0}}>{`Payment Terms`}</h4>
                                             <NumberInput
-                                                label={t`Payment Due Period`}
-                                                description={t`Number of days allowed for payment (leave blank to omit payment terms from invoices)`}
+                                                label={`Payment Due Period`}
+                                                description={`Number of days allowed for payment (leave blank to omit payment terms from invoices)`}
                                                 placeholder="30"
                                                 min={0}
                                                 max={365}
@@ -223,16 +223,16 @@ export const PaymentAndInvoicingSettings = () => {
                                         </Stack>
 
                                         <Stack gap="xs">
-                                            <h4 style={{margin: 0}}>{t`Organization Details`}</h4>
+                                            <h4 style={{margin: 0}}>{`Organization Details`}</h4>
                                             <TextInput
-                                                label={t`Organization Name`}
+                                                label={`Organization Name`}
                                                 placeholder="Your Company Ltd"
                                                 {...form.getInputProps('organization_name')}
                                             />
 
                                             <Editor
                                                 value={form.values.organization_address}
-                                                label={t`Organization Address`}
+                                                label={`Organization Address`}
                                                 onChange={(value) => form.setFieldValue('organization_address', value)}
                                                 error={form.errors.organization_address as string}
                                                 editorType={'simple'}
@@ -240,8 +240,8 @@ export const PaymentAndInvoicingSettings = () => {
 
                                             <Editor
                                                 value={form.values.invoice_tax_details}
-                                                label={t`Tax Details`}
-                                                description={t`Tax information to appear at the bottom of all invoices (e.g., VAT number, tax registration)`}
+                                                label={`Tax Details`}
+                                                description={`Tax information to appear at the bottom of all invoices (e.g., VAT number, tax registration)`}
                                                 onChange={(value) => form.setFieldValue('invoice_tax_details', value)}
                                                 error={form.errors.invoice_tax_details as string}
                                                 editorType={'simple'}
@@ -249,8 +249,8 @@ export const PaymentAndInvoicingSettings = () => {
 
                                             <Editor
                                                 value={form.values.invoice_notes}
-                                                label={t`Invoice Notes`}
-                                                description={t`Optional additional information to appear on all invoices (e.g., payment terms, late payment fees, return policy)`}
+                                                label={`Invoice Notes`}
+                                                description={`Optional additional information to appear on all invoices (e.g., payment terms, late payment fees, return policy)`}
                                                 onChange={(value) => form.setFieldValue('invoice_notes', value)}
                                                 error={form.errors.invoice_notes as string}
                                                 editorType={'simple'}
@@ -262,7 +262,7 @@ export const PaymentAndInvoicingSettings = () => {
                         </Paper>
 
                         <Button loading={updateMutation.isPending} type="submit">
-                            {t`Save`}
+                            {`Save`}
                         </Button>
                     </Stack>
                 </fieldset>

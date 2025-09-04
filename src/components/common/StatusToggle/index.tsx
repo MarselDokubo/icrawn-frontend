@@ -34,11 +34,11 @@ export const StatusToggle: React.FC<StatusToggleProps> = ({
         // Confirmation messages
         const confirmMessage = isDraft
             ? entityType === 'event'
-                ? t`Are you sure you want to publish this event? Once published, it will be visible to the public.`
-                : t`Are you sure you want to publish this organizer profile? Once published, it will be visible to the public.`
+                ? `Are you sure you want to publish this event? Once published, it will be visible to the public.`
+                : `Are you sure you want to publish this organizer profile? Once published, it will be visible to the public.`
             : entityType === 'event'
-                ? t`Are you sure you want to unpublish this event? It will no longer be visible to the public.`
-                : t`Are you sure you want to unpublish this organizer profile? It will no longer be visible to the public.`;
+                ? `Are you sure you want to unpublish this event? It will no longer be visible to the public.`
+                : `Are you sure you want to unpublish this organizer profile? It will no longer be visible to the public.`;
 
         confirmationDialog(confirmMessage, () => {
             const mutationParams = entityType === 'event'
@@ -48,16 +48,16 @@ export const StatusToggle: React.FC<StatusToggleProps> = ({
             mutation.mutate(mutationParams as any, {
                 onSuccess: () => {
                     const successMessage = entityType === 'event'
-                        ? t`Event status updated`
-                        : t`Organizer status updated`;
+                        ? `Event status updated`
+                        : `Organizer status updated`;
                     showSuccess(successMessage);
                     onSuccess?.();
                 },
                 onError: (error: any) => {
                     const errorMessage = error?.response?.data?.message ||
                         (entityType === 'event'
-                            ? t`Event status update failed. Please try again later`
-                            : t`Organizer status update failed. Please try again later`);
+                            ? `Event status update failed. Please try again later`
+                            : `Organizer status update failed. Please try again later`);
                     showError(errorMessage);
                 }
             });
@@ -75,8 +75,8 @@ export const StatusToggle: React.FC<StatusToggleProps> = ({
     }
 
     const message = entityType === 'event'
-        ? t`This event is not published yet`
-        : t`This organizer profile is not published yet`;
+        ? `This event is not published ye`
+        : `This organizer profile is not published ye`;
 
     return (
         <div className={classes.banner}>
@@ -90,7 +90,7 @@ export const StatusToggle: React.FC<StatusToggleProps> = ({
                     leftSection={<IconEye size={14}/>}
                     className={classes.publishButton}
                 >
-                    {t`Publish`}
+                    {`Publish`}
                 </Button>
             </div>
         </div>

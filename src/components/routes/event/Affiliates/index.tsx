@@ -39,17 +39,17 @@ const Affiliates = () => {
             },
             {
                 loading: {
-                    title: t`Exporting Affiliates`,
-                    message: t`Please wait while we prepare your affiliates for export...`
+                    title: `Exporting Affiliates`,
+                    message: `Please wait while we prepare your affiliates for export...`
                 },
                 success: {
-                    title: t`Affiliates Exported`,
-                    message: t`Your affiliates have been exported successfully.`,
+                    title: `Affiliates Exported`,
+                    message: `Your affiliates have been exported successfully.`,
                     onRun: () => setDownloadPending(false)
                 },
                 error: {
-                    title: t`Failed to export affiliates`,
-                    message: t`Please try again.`,
+                    title: `Failed to export affiliates`,
+                    message: `Please try again.`,
                     onRun: () => setDownloadPending(false)
                 }
             });
@@ -58,12 +58,12 @@ const Affiliates = () => {
     return (
         <PageBody>
             <PageTitle>
-                {t`Affiliates`}
+                {`Affiliates`}
             </PageTitle>
 
             <ToolBar searchComponent={() => (
                 <SearchBarWrapper
-                    placeholder={t`Search affiliates...`}
+                    placeholder={`Search affiliates...`}
                     setSearchParams={setSearchParams}
                     searchParams={searchParams}
                     pagination={pagination}
@@ -76,12 +76,12 @@ const Affiliates = () => {
                     loading={downloadPending}
                     size="sm"
                 >
-                    {t`Export`}
+                    {`Expor`}
                 </Button>
                 <Button
                     leftSection={<IconPlus/>}
                     color={'green'}
-                    onClick={openCreateModal}>{t`Create Affiliate`}
+                    onClick={openCreateModal}>{`Create Affiliate`}
                 </Button>
             </ToolBar>
 

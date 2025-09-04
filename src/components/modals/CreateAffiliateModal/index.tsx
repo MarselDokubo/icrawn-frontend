@@ -25,17 +25,17 @@ export const CreateAffiliateModal = ({onClose}: CreateAffiliateModalProps) => {
         },
         validateInputOnBlur: true,
         validate: {
-            name: (value) => !value ? t`Name is required` : null,
+            name: (value) => !value ? `Name is required` : null,
             code: (value) => {
-                if (!value) return t`Code is required`;
-                if (!/^[a-zA-Z0-9_-]+$/.test(value)) return t`Code can only contain letters, numbers, hyphens, and underscores`;
-                if (value.length < 3) return t`Code must be at least 3 characters`;
-                if (value.length > 20) return t`Code must be no more than 20 characters`;
+                if (!value) return `Code is required`;
+                if (!/^[a-zA-Z0-9_-]+$/.test(value)) return `Code can only contain letters, numbers, hyphens, and underscores`;
+                if (value.length < 3) return `Code must be at least 3 characters`;
+                if (value.length > 20) return `Code must be no more than 20 characters`;
                 return null;
             },
             email: (value) => {
                 if (value && !/^\S+@\S+\.\S+$/.test(value)) {
-                    return t`Invalid email format`;
+                    return `Invalid email forma`;
                 }
                 return null;
             }
@@ -52,14 +52,14 @@ export const CreateAffiliateModal = ({onClose}: CreateAffiliateModalProps) => {
             }
         }, {
             onSuccess: () => {
-                showSuccess(t`Affiliate created successfully`);
+                showSuccess(`Affiliate created successfully`);
                 onClose();
             },
             onError: (error: any) => {
                 if (error.response?.data?.message) {
                     showError(error.response.data.message);
                 } else {
-                    showError(t`Failed to create affiliate`);
+                    showError(`Failed to create affiliate`);
                 }
             }
         });
@@ -74,7 +74,7 @@ export const CreateAffiliateModal = ({onClose}: CreateAffiliateModalProps) => {
         <Modal
             opened={true}
             onClose={onClose}
-            heading={t`Create Affiliate`}
+            heading={`Create Affiliate`}
             size="md"
         >
             <form onSubmit={handleSubmit}>
@@ -90,7 +90,7 @@ export const CreateAffiliateModal = ({onClose}: CreateAffiliateModalProps) => {
                     fullWidth
                     mt="md"
                 >
-                    {t`Create Affiliate`}
+                    {`Create Affiliate`}
                 </Button>
             </form>
         </Modal>

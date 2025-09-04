@@ -108,7 +108,7 @@ export const EventCard: React.FC<EventCardProps> = ({event, primaryColor = '#8b5
                             {isLive && (
                                 <div className={classes.liveIndicator}>
                                     <span className={classes.liveDot}></span>
-                                    <span className={classes.liveText}>{t`LIVE`}</span>
+                                    <span className={classes.liveText}>{`LIVE`}</span>
                                 </div>
                             )}
                             <div className={classes.shareButton} onClick={(e) => e.preventDefault()}>
@@ -163,7 +163,7 @@ export const EventCard: React.FC<EventCardProps> = ({event, primaryColor = '#8b5
                             {(location || isOnlineEvent) && (
                                 <div className={classes.location}>
                                     {isOnlineEvent ? (
-                                        <><IconWifi size={14}/><span>{t`Online Event`}</span></>
+                                        <><IconWifi size={14}/><span>{`Online Even`}</span></>
                                     ) : (
                                         <><IconMapPin size={14}/><span>{location}</span></>
                                     )}
@@ -176,7 +176,7 @@ export const EventCard: React.FC<EventCardProps> = ({event, primaryColor = '#8b5
                                 <IconTicket size={14}/>
                                 <span className={lowestPrice === 0 && highestPrice === 0 ? classes.free : classes.price}>
                                     {lowestPrice === 0 && highestPrice === 0 ? (
-                                        t`Free`
+                                        `Free`
                                     ) : highestPrice !== null && highestPrice !== lowestPrice ? (
                                         `${formatCurrency(lowestPrice, event.currency)} - ${formatCurrency(highestPrice, event.currency)}`
                                     ) : (

@@ -17,19 +17,19 @@ export const EventsDashboardStatusButtons = ({baseUrl, eventsState}: EventsDashb
                 variant={eventsState === 'upcoming' || !eventsState ? 'light' : 'transparent'}
                 onClick={() => navigate(baseUrl + '/upcoming' + window.location.search)}
             >
-                {t`Upcoming`}
+                {`Upcoming`}
             </Button>
             <Button size={'compact-sm'}
                     variant={eventsState === 'ended' ? 'light' : 'transparent'}
                     onClick={() => navigate(baseUrl + '/ended' + window.location.search)}
             >
-                {t`Ended`}
+                {`Ended`}
             </Button>
             <Button size={'compact-sm'}
                     variant={eventsState === 'archived' ? 'light' : 'transparent'}
                     onClick={() => navigate(baseUrl + '/archived' + window.location.search)}
             >
-                {t`Archived`}
+                {`Archived`}
             </Button>
         </Group>
     );

@@ -67,7 +67,7 @@ const Payment = () => {
                 },
                 onError: (error: any) => {
                     setIsPaymentLoading(false);
-                    showError(error.response?.data?.message || t`Offline payment failed. Please try again or contact the event organizer.`);
+                    showError(error.response?.data?.message || `Offline payment failed. Please try again or contact the event organizer.`);
                 }
             });
         }
@@ -77,7 +77,7 @@ const Payment = () => {
         return (
             <CheckoutContent>
                 <Card>
-                    {t`No payment methods are currently available. Please contact the event organizer for assistance.`}
+                    {`No payment methods are currently available. Please contact the event organizer for assistance.`}
                 </Card>
             </CheckoutContent>
         );
@@ -112,8 +112,8 @@ const Payment = () => {
                             style={{cursor: 'pointer'}}
                         >
                             {activePaymentMethod === 'PAYSTACK'
-                                ? t`I would like to pay using another method`
-                                : t`I would like to pay using Paystack (Nigerian cards, etc.)`
+                                ? `I would like to pay using another method`
+                                : `I would like to pay using Paystack (Nigerian cards, etc.)`
                             }
                         </a>
                     </div>
@@ -127,8 +127,8 @@ const Payment = () => {
                             style={{cursor: 'pointer'}}
                         >
                             {activePaymentMethod === 'STRIPE'
-                                ? t`I would like to pay using an offline method`
-                                : t`I would like to pay using an online method (credit card etc.)`
+                                ? `I would like to pay using an offline method`
+                                : `I would like to pay using an online method (credit card etc.)`
                             }
                         </a>
                     </div>
@@ -143,7 +143,7 @@ const Payment = () => {
                 buttonContent={order?.is_payment_required ? (
                     <Group gap={'10px'}>
                         <div style={{fontWeight: "bold"}}>
-                            {t`Place Order`}
+                            {`Place Order`}
                         </div>
                         <div style={{fontSize: 14}}>
                             {formatCurrency(order.total_gross, order.currency)}
@@ -152,7 +152,7 @@ const Payment = () => {
                             {order.currency}
                         </div>
                     </Group>
-                ) : t`Complete Payment`}
+                ) : `Complete Paymen`}
             />
         </>
     );

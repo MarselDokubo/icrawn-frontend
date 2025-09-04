@@ -33,7 +33,7 @@ export const productClient = {
         return response.data;
     },
     sortAllProducts: async (eventId: IdParam, sortedCategories: { product_category_id: IdParam, sorted_products: SortableItem[] }[]) => {
-        return await api.post(`/events/${eventId}/products/sort`, {
+        return await api.post(`/events/${eventId}/products/sor`, {
             'sorted_categories': sortedCategories,
         });
     }

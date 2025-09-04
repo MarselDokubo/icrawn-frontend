@@ -37,7 +37,7 @@ export const SortableCategory: React.FC<SortableCategoryProps> = ({
 
     const handleDelete = () => {
         if (isLastCategory) {
-            showError(t`You cannot delete the last category.`);
+            showError(`You cannot delete the last category.`);
             return;
         }
 
@@ -50,7 +50,7 @@ export const SortableCategory: React.FC<SortableCategoryProps> = ({
                     showError(error?.response?.data.message);
                     return;
                 } else {
-                    showError(t`We couldn't delete the category. Please try again.`);
+                    showError(`We couldn't delete the category. Please try again.`);
                 }
             }
         });
@@ -88,10 +88,10 @@ export const SortableCategory: React.FC<SortableCategoryProps> = ({
             },
             {
                 onSuccess: () => {
-                    showSuccess(t`Categories reordered successfully.`);
+                    showSuccess(`Categories reordered successfully.`);
                 },
                 onError: () => {
-                    showError(t`We couldn't reorder the categories. Please try again.`);
+                    showError(`We couldn't reorder the categories. Please try again.`);
                 }
             }
         );
@@ -109,7 +109,7 @@ export const SortableCategory: React.FC<SortableCategoryProps> = ({
                                     <IconEyeOff style={{cursor: 'pointer'}} size={14}/>
                                 </Popover.Target>
                                 <Popover.Dropdown>
-                                    {t`This category is hidden from public view`}
+                                    {`This category is hidden from public view`}
                                 </Popover.Dropdown>
                             </Popover>
                         )}
@@ -125,8 +125,8 @@ export const SortableCategory: React.FC<SortableCategoryProps> = ({
                         <ActionIcon
                             className={classes.categoryAction}
                             onClick={openCreateModal}
-                            title={t`Create category`}
-                            aria-label={t`Create category`}
+                            title={`Create category`}
+                            aria-label={`Create category`}
                             variant={'transparent'}
                         >
                             <IconPlus size={20}/>
@@ -134,8 +134,8 @@ export const SortableCategory: React.FC<SortableCategoryProps> = ({
                         <ActionIcon
                             className={classes.categoryAction}
                             onClick={editModal.open}
-                            title={t`Edit category`}
-                            aria-label={t`Edit category`}
+                            title={`Edit category`}
+                            aria-label={`Edit category`}
                             variant={'transparent'}
                         >
                             <IconPencil size={20}/>
@@ -143,8 +143,8 @@ export const SortableCategory: React.FC<SortableCategoryProps> = ({
                         <ActionIcon
                             className={classes.categoryAction}
                             onClick={handleDelete}
-                            title={t`Delete category`}
-                            aria-label={t`Delete category`}
+                            title={`Delete category`}
+                            aria-label={`Delete category`}
                             variant={'transparent'}
                         >
                             {isLastCategory ? <IconTrashOff size={20}/> : <IconTrash size={20}/>}

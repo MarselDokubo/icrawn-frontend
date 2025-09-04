@@ -55,7 +55,7 @@ export const RefundOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
         },
         {
             onSuccess: () => {
-                showSuccess(t`Your refund is processing.`)
+                showSuccess(`Your refund is processing.`)
                 form.reset();
                 onClose();
             },
@@ -71,7 +71,7 @@ export const RefundOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
                 <div className={classes.refundSummary}>
                     <div className={classes.block}>
                         <div className={classes.title}>
-                            {t`Total order amount`}
+                            {`Total order amoun`}
                         </div>
                         <div className={classes.amount}>
                             <Currency currency={order.currency} price={order.total_gross}/>
@@ -79,7 +79,7 @@ export const RefundOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
                     </div>
                     <div className={classes.block}>
                         <div className={classes.title}>
-                            {t`Total refunded`}
+                            {`Total refunded`}
                         </div>
                         <div className={classes.amount}>
                             <Currency currency={order.currency} price={order.total_refunded}/>
@@ -87,7 +87,7 @@ export const RefundOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
                     </div>
                     <div className={classes.block}>
                         <div className={classes.title}>
-                            {t`Total remaining`}
+                            {`Total remaining`}
                         </div>
                         <div className={classes.amount}>
                             <Currency currency={order.currency} price={order.total_gross - order.total_refunded}/>
@@ -101,18 +101,18 @@ export const RefundOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
                     decimalScale={2}
                     fixedDecimalScale
                     {...form.getInputProps('amount')}
-                    label={t`Refund amount (${order?.currency})`}
-                    placeholder={t`10.00`}
+                    label={`Refund amount (${order?.currency})`}
+                    placeholder={`10.00`}
                 />
                 <Checkbox mt={20} {...form.getInputProps('notify_buyer', {type: 'checkbox'})}
-                          label={t`Notify buyer of refund`}/>
+                          label={`Notify buyer of refund`}/>
 
                 {order.status !== 'CANCELLED' && (
                     <Checkbox mt={20} {...form.getInputProps('cancel_order', {type: 'checkbox'})}
-                              label={t`Cancel order`}/>
+                              label={`Cancel order`}/>
                 )}
 
-                <Button loading={mutation.isPending} fullWidth mt={20} type={'submit'}>{t`Issue refund`}</Button>
+                <Button loading={mutation.isPending} fullWidth mt={20} type={'submit'}>{`Issue refund`}</Button>
             </form>);
     };
 
@@ -122,23 +122,23 @@ export const RefundOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
                 <Alert icon={<IconInfoCircle/>} color={'blue'}>
                     {message}
                 </Alert>
-                <Button mt={20} fullWidth onClick={onClose}>{t`Close`}</Button>
+                <Button mt={20} fullWidth onClick={onClose}>{`Close`}</Button>
             </>
         )
     }
 
     const getModalBody = () => {
         if (order.is_manually_created) {
-            return <CannotRefund message={t`You cannot refund a manually created order.`}/>
+            return <CannotRefund message={`You cannot refund a manually created order.`}/>
         }
 
         if (isRefundPending) {
             return <CannotRefund
-                message={t`There is a refund pending. Please wait for it to complete before requesting another refund.`}/>
+                message={`There is a refund pending. Please wait for it to complete before requesting another refund.`}/>
         }
 
         if (isRefunded) {
-            return <CannotRefund message={t`This order has already been refunded.`}/>
+            return <CannotRefund message={`This order has already been refunded.`}/>
         }
 
         return modalForm({order, form});
@@ -148,7 +148,7 @@ export const RefundOrderModal = ({onClose, orderId}: RefundOrderModalProps) => {
         <Modal
             opened
             onClose={onClose}
-            heading={t`Refund Order`}
+            heading={`Refund Order`}
             padding={'lg'}
             overlayProps={{
                 opacity: 0.55,

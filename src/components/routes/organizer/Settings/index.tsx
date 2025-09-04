@@ -15,31 +15,31 @@ const Settings = () => {
     const SECTIONS = [
         {
             id: 'basic-settings',
-            label: t`Basic Information`,
+            label: `Basic Information`,
             icon: IconInfoCircle,
             component: BasicSettings
         },
         {
             id: 'address-settings',
-            label: t`Address`,
+            label: `Address`,
             icon: IconMapPin,
             component: AddressSettings
         },
         // {
         //     id: 'image-assets',
-        //     label: t`Images & Branding`,
+        //     label: `Images & Branding`,
         //     icon: IconPhoto,
         //     component: ImageAssetSettings
         // },
         {
             id: 'social-links',
-            label: t`Social Links`,
+            label: `Social Links`,
             icon: IconShare,
             component: SocialLinks
         },
         {
             id: 'seo-settings',
-            label: t`SEO`,
+            label: `SEO`,
             icon: IconBrandGoogleAnalytics,
             component: SeoSettings
         },
@@ -78,7 +78,7 @@ const Settings = () => {
 
     return (
         <PageBody>
-            <PageTitle>{t`Organizer Settings`}</PageTitle>
+            <PageTitle>{`Organizer Settings`}</PageTitle>
 
             {isLargeScreen ? (
                 <Group align="flex-start" gap="md">

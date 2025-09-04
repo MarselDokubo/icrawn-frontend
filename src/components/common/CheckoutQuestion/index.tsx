@@ -153,25 +153,25 @@ const AddressInput = ({question, name, form}: QuestionInputProps) => {
 
             <TextInput withAsterisk={question.required}
                        {...form.getInputProps(`${name}.address_line_1`)}
-                       label={t`Address line 1`}/>
+                       label={`Address line 1`}/>
             <TextInput mt={20}
                        {...form.getInputProps(`${name}.address_line_2`)}
-                       label={t`Address line 2`}/>
+                       label={`Address line 2`}/>
             <InputGroup>
                 <TextInput withAsterisk={question.required}
-                           {...form.getInputProps(`${name}.city`)} label={t`City`}/>
+                           {...form.getInputProps(`${name}.city`)} label={`City`}/>
                 <TextInput withAsterisk={question.required}
                            {...form.getInputProps(`${name}.state_or_region`)}
-                           label={t`State or Region`}/>
+                           label={`State or Region`}/>
             </InputGroup>
             <InputGroup>
                 <TextInput withAsterisk={question.required}
                            {...form.getInputProps(`${name}.zip_or_postal_code`)}
-                           label={t`Zip or Postal Code`}/>
+                           label={`Zip or Postal Code`}/>
                 <NativeSelect withAsterisk={question.required}
                               data={countries}
                               {...form.getInputProps(`${name}.country`)}
-                              label={t`Country`}/>
+                              label={`Country`}/>
             </InputGroup>
         </>
     );
@@ -237,7 +237,7 @@ export const CheckoutProductQuestions = ({
                 }
 
                 const name = `products.${productIndex}.questions.${questionIndex++}.response`;
-                return <QuestionInput key={`${index}-product`} question={question} name={name} form={form}/>
+                return <QuestionInput key={`${index}-produc`} question={question} name={name} form={form}/>
             })}
         </>
     )

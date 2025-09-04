@@ -30,10 +30,10 @@ export const EditAffiliateModal = ({affiliateId, onClose}: EditAffiliateModalPro
             status: 'ACTIVE'
         },
         validate: {
-            name: (value) => !value ? t`Name is required` : null,
+            name: (value) => !value ? `Name is required` : null,
             email: (value) => {
                 if (value && !/^\S+@\S+\.\S+$/.test(value)) {
-                    return t`Invalid email format`;
+                    return `Invalid email forma`;
                 }
                 return null;
             }
@@ -60,14 +60,14 @@ export const EditAffiliateModal = ({affiliateId, onClose}: EditAffiliateModalPro
             }
         }, {
             onSuccess: () => {
-                showSuccess(t`Affiliate updated successfully`);
+                showSuccess(`Affiliate updated successfully`);
                 onClose();
             },
             onError: (error: any) => {
                 if (error.response?.data?.message) {
                     showError(error.response.data.message);
                 } else {
-                    showError(t`Failed to update affiliate`);
+                    showError(`Failed to update affiliate`);
                 }
             }
         });
@@ -78,7 +78,7 @@ export const EditAffiliateModal = ({affiliateId, onClose}: EditAffiliateModalPro
             <Modal
                 opened={true}
                 onClose={onClose}
-                title={t`Edit Affiliate`}
+                title={`Edit Affiliate`}
                 size="md"
             >
                 <LoadingMask />
@@ -90,7 +90,7 @@ export const EditAffiliateModal = ({affiliateId, onClose}: EditAffiliateModalPro
         <Modal
             opened={true}
             onClose={onClose}
-            heading={t`Edit Affiliate`}
+            heading={`Edit Affiliate`}
             size="md"
         >
             <form onSubmit={handleSubmit}>
@@ -105,7 +105,7 @@ export const EditAffiliateModal = ({affiliateId, onClose}: EditAffiliateModalPro
                     loading={updateMutation.isPending}
                     fullWidth
                 >
-                    {t`Update Affiliate`}
+                    {`Update Affiliate`}
                 </Button>
             </form>
         </Modal>

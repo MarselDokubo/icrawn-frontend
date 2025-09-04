@@ -31,7 +31,7 @@ export const Countdown = ({
             const diff = dateInUTC.diff(now);
 
             if (diff <= 0) {
-                setTimeLeft(displayType === 'short' ? '0:00' : t`0 minutes and 0 seconds`);
+                setTimeLeft(displayType === 'short' ? '0:00' : `0 minutes and 0 seconds`);
                 clearInterval(interval);
                 onExpiry && onExpiry();
                 return;
@@ -65,11 +65,11 @@ export const Countdown = ({
                 setTimeLeft(display);
             } else {
                 if (days > 0) {
-                    setTimeLeft(t`${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`);
+                    setTimeLeft(`${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`);
                 } else if (hours > 0) {
-                    setTimeLeft(t`${hours} hours, ${minutes} minutes, and ${seconds} seconds`);
+                    setTimeLeft(`${hours} hours, ${minutes} minutes, and ${seconds} seconds`);
                 } else {
-                    setTimeLeft(t`${minutes} minutes and ${seconds} seconds`);
+                    setTimeLeft(`${minutes} minutes and ${seconds} seconds`);
                 }
             }
         }, 1000);

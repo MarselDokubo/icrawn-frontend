@@ -33,10 +33,10 @@ export const TaxAndFeeList = () => {
             taxAndFeeId: taxAndFee.id,
             accountId: taxAndFee.account_id,
         }, {
-            onSuccess: () => showSuccess(t`Tax or Fee deleted successfully`),
+            onSuccess: () => showSuccess(`Tax or Fee deleted successfully`),
             onError: (error) => {
                 console.error(error);
-                showError(t`Something went wrong while deleting the Tax or Fee`);
+                showError(`Something went wrong while deleting the Tax or Fee`);
             },
         });
     }
@@ -62,7 +62,7 @@ export const TaxAndFeeList = () => {
                                             leftSection={<IconPencil size={14}/>}
                                             onClick={() => handleEdit(tax)}
                                         >
-                                            {t`Edit`}
+                                            {`Edi`}
                                         </Menu.Item>
 
                                         <Menu.Item
@@ -70,7 +70,7 @@ export const TaxAndFeeList = () => {
                                             leftSection={<IconTrash size={14}/>}
                                             onClick={() => handleDelete(tax)}
                                         >
-                                            {t`Delete`}
+                                            {`Delete`}
                                         </Menu.Item>
                                     </Menu.Dropdown>
                                 </Menu>
@@ -98,7 +98,7 @@ export const TaxAndFeeList = () => {
     const NoTaxes = () => {
         return (
             <div className={classes.noTaxes}>
-                <p>{t`No Taxes or Fees have been added.`} </p>
+                <p>{`No Taxes or Fees have been added.`} </p>
             </div>
         )
     }

@@ -57,8 +57,8 @@ export function EventCard({event}: EventCardProps) {
     // Only allow status toggle for Event type
     const handleStatusToggle = (event: Event) => () => {
         const message = event?.status !== 'ARCHIVED'
-            ? t`Are you sure you want to archive this event?`
-            : t`Are you sure you want to restore this event? It will be restored as a draft event.`;
+            ? `Are you sure you want to archive this event?`
+            : `Are you sure you want to restore this event? It will be restored as a draft event.`;
 
         confirmationDialog(message, () => {
             statusToggleMutation.mutate({
@@ -66,14 +66,14 @@ export function EventCard({event}: EventCardProps) {
                 status: event.status === 'ARCHIVED' ? 'DRAFT' : 'ARCHIVED'
             }, {
                 onSuccess: () => {
-                    showSuccess(t`Event status updated`);
+                    showSuccess(`Event status updated`);
                 },
                 onError: (error: unknown) => {
                     if (typeof error === 'object' && error !== null && 'response' in error) {
                         // @ts-expect-error: dynamic error shape
-                        showError(error.response?.data?.message || t`Event status update failed. Please try again later`);
+                        showError(error.response?.data?.message || `Event status update failed. Please try again later`);
                     } else {
-                        showError(t`Event status update failed. Please try again later`);
+                        showError(`Event status update failed. Please try again later`);
                     }
                 }
             });
@@ -87,28 +87,28 @@ export function EventCard({event}: EventCardProps) {
                 // Only show admin controls for Event type
                 ...('status' in event && 'lifecycle_status' in event ? [
                     {
-                        label: t`View event page`,
+                        label: `View event page`,
                         icon: <IconEye size={14}/>,
                         onClick: () => window.location.href = eventHomepagePath(event as Event),
                     },
                     {
-                        label: t`Manage event`,
+                        label: `Manage even`,
                         icon: <IconSettings size={14}/>,
                         onClick: () => navigate(`/manage/event/${event.id}`),
                     },
                     (event.lifecycle_status === 'UPCOMING' || event.lifecycle_status === 'ONGOING') && event.status === 'LIVE' ? {
-                        label: t`Check-in`,
+                        label: `Check-in`,
                         icon: <IconQrcode size={14}/>,
                         onClick: () => navigate(`/manage/event/${event.id}/check-in`),
                         visible: true,
                     } : null,
                     {
-                        label: t`Duplicate event`,
+                        label: `Duplicate even`,
                         icon: <IconCopy size={14}/>,
                         onClick: () => handleDuplicate(event),
                     },
                     {
-                        label: event.status === 'ARCHIVED' ? t`Restore event` : t`Archive event`,
+                        label: event.status === 'ARCHIVED' ? `Restore even` : `Archive even`,
                         icon: <IconArchive size={14}/>,
                         onClick: handleStatusToggle(event)
                     },
@@ -116,7 +116,7 @@ export function EventCard({event}: EventCardProps) {
                 // For public events, only show duplicate (if needed)
                 ...(!('status' in event) ? [
                     {
-                        label: t`Duplicate event`,
+                        label: `Duplicate even`,
                         icon: <IconCopy size={14}/>,
                         onClick: () => handleDuplicate(event),
                     }
@@ -159,10 +159,10 @@ export function EventCard({event}: EventCardProps) {
                             </div>
                             <div className={classes.timeInfo}>
                                 <span
-                                    className={classes.time}>{formatDate(event.start_date, t`h:mm A`, 'timezone' in event ? event.timezone ?? 'UTC' : 'UTC')}</span>
+                                    className={classes.time}>{formatDate(event.start_date, `h:mm A`, 'timezone' in event ? event.timezone ?? 'UTC' : 'UTC')}</span>
                                 {event.end_date && (
                                     <span
-                                        className={classes.endTime}>- {formatDate(event.end_date, t`h:mm A`, 'timezone' in event ? event.timezone ?? 'UTC' : 'UTC')}</span>
+                                        className={classes.endTime}>- {formatDate(event.end_date, `h:mm A`, 'timezone' in event ? event.timezone ?? 'UTC' : 'UTC')}</span>
                                 )}
                             </div>
                         </div>
@@ -193,7 +193,7 @@ export function EventCard({event}: EventCardProps) {
                         {'settings' in event && event.settings?.is_online_event && (
                             <div className={classes.statItem}>
                                 <IconWorld size={14} className={classes.statIcon}/>
-                                <span className={classes.statText}>{t`Online event`}</span>
+                                <span className={classes.statText}>{`Online even`}</span>
                             </div>
                         )}
                         {'statistics' in event && (
@@ -201,7 +201,7 @@ export function EventCard({event}: EventCardProps) {
                                 <IconUsers size={14} className={classes.statIcon}/>
                                 <span
                                     className={classes.statValue}>{formatNumber(event?.statistics?.products_sold || 0)}</span>
-                                <span className={classes.statLabel}>{t`sold`}</span>
+                                <span className={classes.statLabel}>{`sold`}</span>
                             </div>
                         )}
                         {'statistics' in event && (
@@ -222,7 +222,7 @@ export function EventCard({event}: EventCardProps) {
                                     className={classes.manageButton}
                                     fullWidth
                                 >
-                                    {t`Manage Event`}
+                                    {`Manage Even`}
                                 </Button>
                             }
                         />

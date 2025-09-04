@@ -18,7 +18,7 @@ export const WidgetEditor = () => {
     const {eventId} = useParams();
     const eventQuery = useGetEvent(eventId);
 
-    const colorMessage = t`Color must be a valid hex color code. Example: #ffffff`;
+    const colorMessage = `Color must be a valid hex color code. Example: #ffffff`;
     const colorRegex = /^#([0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/;
     const {data: eventSettings, isFetched: isEventSettingsFetched} = useGetEventSettings(eventId);
     const form = useForm({
@@ -28,7 +28,7 @@ export const WidgetEditor = () => {
             primary_text_color: "#ffffff",
             secondary_color: "#f5f5f5",
             secondary_text_color: "#828282",
-            continue_button_text: t`Continue`,
+            continue_button_text: `Continue`,
             padding: 20,
             autoResize: true,
         },
@@ -159,27 +159,27 @@ export default App;
                 <Card className={classes.widgetForm}>
                     <form>
                         <h2 className={classes.formHeader}>
-                            {t`Widget Settings`}
+                            {`Widget Settings`}
                         </h2>
                         <h3>
                             <Group justify={'space-between'}>
-                                {t`Colors`}
+                                {`Colors`}
 
                                 <Popover
-                                    title={t`The styling settings you choose apply only to copied HTML and won't be stored.`}>
+                                    title={`The styling settings you choose apply only to copied HTML and won't be stored.`}>
                                     <IconInfoCircle size={23}/>
                                 </Popover>
                             </Group>
                         </h3>
                         <ColorInput
-                            label={t`Background Color`}
+                            label={`Background Color`}
                             placeholder="#RRGGBB"
                             {...form.getInputProps('background_color')}
                             required
                             style={{marginBottom: 15}}
                         />
                         <ColorInput
-                            label={t`Primary Color`}
+                            label={`Primary Color`}
                             placeholder="#RRGGBB"
                             {...form.getInputProps('primary_color')}
                             required
@@ -187,7 +187,7 @@ export default App;
                         />
 
                         <ColorInput
-                            label={t`Primary Text Color`}
+                            label={`Primary Text Color`}
                             placeholder="#RRGGBB"
                             {...form.getInputProps('primary_text_color')}
                             required
@@ -195,7 +195,7 @@ export default App;
                         />
 
                         <ColorInput
-                            label={t`Secondary Color`}
+                            label={`Secondary Color`}
                             placeholder="#RRGGBB"
                             {...form.getInputProps('secondary_color')}
                             required
@@ -203,37 +203,37 @@ export default App;
                         />
 
                         <ColorInput
-                            label={t`Secondary Text Color`}
+                            label={`Secondary Text Color`}
                             placeholder="#RRGGBB"
                             {...form.getInputProps('secondary_text_color')}
                             required
                             style={{marginBottom: 15}}
                         />
 
-                        <h3>{t`Appearance`}</h3>
+                        <h3>{`Appearance`}</h3>
 
                         <TextInput
-                            label={t`Continue Button Text`}
-                            placeholder={t`Continue`}
+                            label={`Continue Button Tex`}
+                            placeholder={`Continue`}
                             {...form.getInputProps('continue_button_text')}
                             style={{marginBottom: 15}}
                         />
 
                         <NumberInput
-                            label={t`Padding`}
+                            label={`Padding`}
                             min={0}
                             max={500}
-                            placeholder={t`20`}
+                            placeholder={`20`}
                             rightSection={`px`}
                             {...form.getInputProps('padding')}
                             style={{marginBottom: 15}}
                         />
 
                         <Switch
-                            label={t`Auto Resize`}
+                            label={`Auto Resize`}
                             {...form.getInputProps('autoResize', {type: 'checkbox'})}
                             style={{marginBottom: 15, marginTop: 15}}
-                            description={t`Automatically resize the widget height based on the content. When disabled, the widget will fill the height of the container.`}
+                            description={`Automatically resize the widget height based on the content. When disabled, the widget will fill the height of the container.`}
                         />
 
                         <h3>
@@ -254,10 +254,10 @@ export default App;
                                 <Tabs.Panel value="html">
                                     <Textarea
                                         onChange={void 0}
-                                        description={t`Place this in the <head> of your website.`}
+                                        description={`Place this in the <head> of your website.`}
                                         label={(
                                             <Group>
-                                                {t`Embed Script`}
+                                                {`Embed Scrip`}
                                                 <CopyButton value={embedScript}/>
                                             </Group>)
                                         }
@@ -266,10 +266,10 @@ export default App;
                                     />
                                     <Textarea
                                         onChange={void 0}
-                                        description={t`Paste this where you want the widget to appear.`}
+                                        description={`Paste this where you want the widget to appear.`}
                                         label={(
                                             <Group>
-                                                {t`Embed Code`}
+                                                {`Embed Code`}
                                                 <CopyButton value={htmlEmbedCode}/>
                                             </Group>)
                                         }
@@ -281,10 +281,10 @@ export default App;
 
                             <Tabs.Panel value="react">
                                 <Textarea
-                                    description={t`Here is the React component you can use to embed the widget in your application.`}
+                                    description={`Here is the React component you can use to embed the widget in your application.`}
                                     label={(
                                         <Group>
-                                            {t`Component Code`}
+                                            {`Component Code`}
                                             <CopyButton value={reactComponentCode}/>
                                         </Group>)
                                     }
@@ -292,10 +292,10 @@ export default App;
                                     value={reactComponentCode}
                                 />
                                 <Textarea
-                                    description={t`Here is an example of how you can use the component in your application.`}
+                                    description={`Here is an example of how you can use the component in your application.`}
                                     label={(
                                         <Group>
-                                            {t`Usage Example`}
+                                            {`Usage Example`}
                                             <CopyButton value={reactUsageCode}/>
                                         </Group>)
                                     }
@@ -310,7 +310,7 @@ export default App;
                 </Card>
                 <div className={classes.previewPane}>
                     <h2 className={classes.previewHeader}>
-                        {t`Product Widget Preview`}
+                        {`Product Widget Preview`}
                     </h2>
                     <section className={classes.stickyContainer}>
                         <div className={classes.browserChrome}>
@@ -326,9 +326,9 @@ export default App;
                             </div>
                         </div>
                         <div className={classes.websitePlaceholder}>
-                            <h1>{t`Your awesome website 🎉`}</h1>
+                            <h1>{`Your awesome website 🎉`}</h1>
                             <p className={classes.lorem}>
-                                {t`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat elementum...`}
+                                {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat elementum...`}
                             </p>
 
                             <div className={classes.widgetWrapper}>
@@ -351,7 +351,7 @@ export default App;
                             </div>
 
                             <p className={classes.lorem}>
-                                {t`Nam placerat elementum...`}
+                                {`Nam placerat elementum...`}
                             </p>
                         </div>
 

@@ -19,7 +19,7 @@ export const CreateProductCategoryModal = ({onClose}: GenericModalProps) => {
                 name: '',
                 description: '',
                 is_hidden: false,
-                no_products_message: t`No products available in this category.`,
+                no_products_message: `No products available in this category.`,
             },
         },
     );
@@ -34,7 +34,7 @@ export const CreateProductCategoryModal = ({onClose}: GenericModalProps) => {
             .then(() => {
                 onClose();
                 form.reset();
-                showSuccess(t`Category Created Successfully`);
+                showSuccess(`Category Created Successfully`);
             })
             .catch((error) => errorHandler(form, error));
     }
@@ -42,7 +42,7 @@ export const CreateProductCategoryModal = ({onClose}: GenericModalProps) => {
     return (
         <Modal
             onClose={onClose}
-            heading={t`Create Category`}
+            heading={`Create Category`}
             opened
             size={'lg'}
             withCloseButton
@@ -50,14 +50,14 @@ export const CreateProductCategoryModal = ({onClose}: GenericModalProps) => {
             <form onSubmit={form.onSubmit((values) => handleCreate(values))}>
                 <Alert
                     icon={<IconInfoCircle/>}
-                    title={t`What is a Category?`}
+                    title={`What is a Category?`}
                     mb={20}
                 >
-                    {t`Categories allow you to group products together. For example, you might have a category for "Tickets" and another for "Merchandise".`}
+                    {`Categories allow you to group products together. For example, you might have a category for "Tickets" and another for "Merchandise".`}
                 </Alert>
                 <ProductCategoryForm form={form}/>
                 <Button type="submit" fullWidth disabled={mutation.isPending}>
-                    {mutation.isPending ? t`Working...` : t`Create Category`}
+                    {mutation.isPending ? `Working...` : `Create Category`}
                 </Button>
             </form>
         </Modal>

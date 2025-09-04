@@ -94,12 +94,12 @@ const QuestionItem = ({ qa, isEditing, toggleEditMode, onEditAnswer, compact = f
         }, {
             onSuccess: () => {
                 toggleEditMode(qa.question_id);
-                showSuccess(t`Answer updated successfully.`);
+                showSuccess(`Answer updated successfully.`);
                 onEditAnswer?.();
             },
             onError: (error) => {
                 errorHandler(questionForm, error);
-                showError(t`Failed to update answer.`);
+                showError(`Failed to update answer.`);
             }
         });
     };
@@ -139,14 +139,14 @@ const QuestionItem = ({ qa, isEditing, toggleEditMode, onEditAnswer, compact = f
                                 size="xs"
                                 loading={updateAnswerMutation.isPending}
                             >
-                                {t`Save`}
+                                {`Save`}
                             </Button>
                             <Button
                                 variant="subtle"
                                 size="xs"
                                 onClick={() => toggleEditMode(qa.question_id)}
                             >
-                                {t`Cancel`}
+                                {`Cancel`}
                             </Button>
                         </Group>
                     </div>
@@ -156,7 +156,7 @@ const QuestionItem = ({ qa, isEditing, toggleEditMode, onEditAnswer, compact = f
                     <Text size="sm" className={classes.answer} style={{whiteSpace: 'pre-line'}}>
                         {formatAnswer(qa.answer)}
                     </Text>
-                    <Tooltip label={t`Edit Answer`} position="bottom" withArrow>
+                    <Tooltip label={`Edit Answer`} position="bottom" withArrow>
                         <ActionIcon
                             variant="subtle"
                             radius="xl"
@@ -175,10 +175,10 @@ const QuestionItem = ({ qa, isEditing, toggleEditMode, onEditAnswer, compact = f
                     <Text size="sm" span>
                         {qa.first_name
                             ? `${qa.first_name} ${qa.last_name}`
-                            : t`N/A`}
+                            : `N/A`}
                     </Text>
                     <Tooltip
-                        label={t`Navigate to Attendee`}
+                        label={`Navigate to Attendee`}
                         position="bottom"
                         withArrow
                     >
@@ -281,12 +281,12 @@ export const AttendeeQuestionsList = ({attendeeQuestions, onEditAnswer, compact 
                                 <Text size="sm" fw={600}>
                                     {attendeeInfo.first_name
                                         ? `${attendeeInfo.first_name} ${attendeeInfo.last_name}`
-                                        : t`Unknown Attendee`}
+                                        : `Unknown Attendee`}
                                 </Text>
                             </Group>
                             {attendeeInfo.attendee_public_id && (
                                 <Tooltip
-                                    label={t`Navigate to Attendee`}
+                                    label={`Navigate to Attendee`}
                                     position="bottom"
                                     withArrow
                                 >
