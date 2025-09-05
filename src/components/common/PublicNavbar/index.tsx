@@ -46,7 +46,7 @@ export default function PublicNavbar() {
             ))}
           </Group>
           <Button radius="xl" variant="gradient" gradient={{ from: "grape", to: "indigo" }}>
-            {`Book Even`}
+            {`Book Event`}
           </Button>
         </Group>
       </Container>
