@@ -59,7 +59,7 @@ const Events = () => {
                         onClick={openCreateModal}
                         pr={12}
                     >
-                        {`Create Even`}
+                        {`Create Event`}
                     </Button>
                 </>
             </ToolBar>

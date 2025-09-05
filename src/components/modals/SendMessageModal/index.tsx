@@ -185,7 +185,7 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                                     },
                                     {
                                         value: 'ALL_ATTENDEES',
-                                        label: `All attendees of this even`,
+                                        label: `All attendees of this Event`,
                                     },
                                     {
                                         value: 'ORDER_OWNERS_WITH_PRODUCT',

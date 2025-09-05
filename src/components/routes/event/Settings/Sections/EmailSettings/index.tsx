@@ -52,20 +52,20 @@ export const EmailSettings = () => {
         <Card>
             <HeadingWithDescription
                 heading={`Email & Notification Settings`}
-                description={`Customize the email and notification settings for this even`}
+                description={`Customize the email and notification settings for this Event`}
             />
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>
                     <TextInput
                         {...form.getInputProps('support_email')}
-                        description={`Any queries from product holders will be sent to this email address. This will also be used as the "reply-to" address for all emails sent from this even`}
+                        description={`Any queries from product holders will be sent to this email address. This will also be used as the "reply-to" address for all emails sent from this Event`}
                         label={`Support Email`}
                     />
 
                     <Editor
                         label={`Email footer message`}
                         value={form.values.email_footer_message || ''}
-                        description={`This message will be included in the footer of all emails sent from this even`}
+                        description={`This message will be included in the footer of all emails sent from this Event`}
                         onChange={(value) => form.setFieldValue('email_footer_message', value)}
                     />
 

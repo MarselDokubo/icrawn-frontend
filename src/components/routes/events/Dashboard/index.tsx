@@ -180,7 +180,7 @@ export function Dashboard() {
                                 }
                                 onClick={openCreateModal}
                             >
-                                {`Even`}
+                                {`Event`}
                             </Menu.Item>
                             <Menu.Item
                                 leftSection={

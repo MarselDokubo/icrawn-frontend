@@ -163,7 +163,7 @@ export const EventCard: React.FC<EventCardProps> = ({event, primaryColor = '#8b5
                             {(location || isOnlineEvent) && (
                                 <div className={classes.location}>
                                     {isOnlineEvent ? (
-                                        <><IconWifi size={14}/><span>{`Online Even`}</span></>
+                                        <><IconWifi size={14}/><span>{`Online Event`}</span></>
                                     ) : (
                                         <><IconMapPin size={14}/><span>{location}</span></>
                                     )}

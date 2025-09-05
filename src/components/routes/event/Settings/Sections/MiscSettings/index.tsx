@@ -67,7 +67,7 @@ export const MiscSettings = () => {
         <Card>
             <HeadingWithDescription
                 heading={`Miscellaneous Settings`}
-                description={`Customize the miscellaneous settings for this even`}
+                description={`Customize the miscellaneous settings for this Event`}
             />
             <form onSubmit={form.onSubmit(handleSubmit as any)}>
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>

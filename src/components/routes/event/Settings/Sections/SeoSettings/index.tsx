@@ -54,7 +54,7 @@ export const SeoSettings = () => {
         <Card>
             <HeadingWithDescription
                 heading={`SEO Settings`}
-                description={`Customize the SEO settings for this even`}
+                description={`Customize the SEO settings for this Event`}
             />
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>
@@ -72,13 +72,13 @@ export const SeoSettings = () => {
                     />
                     <TextInput
                         {...form.getInputProps('seo_keywords')}
-                        description={`Comma seperated keywords that describe the event. These will be used by search engines to help categorize and index the even`}
+                        description={`Comma seperated keywords that describe the event. These will be used by search engines to help categorize and index the Event`}
                         label={`SEO Keywords`}
                         placeholder={`Amazing, Event, Keywords...`}
                     />
                     <Switch
                         {...form.getInputProps('allow_search_engine_indexing', {type: 'checkbox'})}
-                        description={`Allow search engines to index this even`}
+                        description={`Allow search engines to index this Event`}
                         label={`Allow search engine indexing`}
                     />
                     <Button loading={updateMutation.isPending} type={'submit'}>

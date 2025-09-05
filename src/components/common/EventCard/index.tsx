@@ -92,7 +92,7 @@ export function EventCard({event}: EventCardProps) {
                         onClick: () => window.location.href = eventHomepagePath(event as Event),
                     },
                     {
-                        label: `Manage even`,
+                        label: `Manage Event`,
                         icon: <IconSettings size={14}/>,
                         onClick: () => navigate(`/manage/event/${event.id}`),
                     },
@@ -103,12 +103,12 @@ export function EventCard({event}: EventCardProps) {
                         visible: true,
                     } : null,
                     {
-                        label: `Duplicate even`,
+                        label: `Duplicate Event`,
                         icon: <IconCopy size={14}/>,
                         onClick: () => handleDuplicate(event),
                     },
                     {
-                        label: event.status === 'ARCHIVED' ? `Restore even` : `Archive even`,
+                        label: event.status === 'ARCHIVED' ? `Restore Event` : `Archive Event`,
                         icon: <IconArchive size={14}/>,
                         onClick: handleStatusToggle(event)
                     },
@@ -116,7 +116,7 @@ export function EventCard({event}: EventCardProps) {
                 // For public events, only show duplicate (if needed)
                 ...(!('status' in event) ? [
                     {
-                        label: `Duplicate even`,
+                        label: `Duplicate Event`,
                         icon: <IconCopy size={14}/>,
                         onClick: () => handleDuplicate(event),
                     }
@@ -193,7 +193,7 @@ export function EventCard({event}: EventCardProps) {
                         {'settings' in event && event.settings?.is_online_event && (
                             <div className={classes.statItem}>
                                 <IconWorld size={14} className={classes.statIcon}/>
-                                <span className={classes.statText}>{`Online even`}</span>
+                                <span className={classes.statText}>{`Online Event`}</span>
                             </div>
                         )}
                         {'statistics' in event && (
@@ -222,7 +222,7 @@ export function EventCard({event}: EventCardProps) {
                                     className={classes.manageButton}
                                     fullWidth
                                 >
-                                    {`Manage Even`}
+                                    {`Manage Event`}
                                 </Button>
                             }
                         />

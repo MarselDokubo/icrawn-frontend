@@ -54,7 +54,7 @@ export const EventDetailsForm = () => {
             eventId: eventId,
         }, {
             onSuccess: () => {
-                showSuccess(`Successfully Updated Even`);
+                showSuccess(`Successfully Updated Event`);
             },
             onError: (error) => {
                 formErrorHandle(form, error);

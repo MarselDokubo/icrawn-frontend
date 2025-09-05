@@ -156,7 +156,7 @@ export const EventDashboard = () => {
                                                 radius="md"
                                                 fullWidth
                                             >
-                                                {`Publish Even`}
+                                                {`Publish Event`}
                                             </Button>
                                         )}
                                         {event?.status === 'LIVE' && (
@@ -167,7 +167,7 @@ export const EventDashboard = () => {
                                                 radius="md"
                                                 fullWidth
                                             >
-                                                {`Unpublish Even`}
+                                                {`Unpublish Event`}
                                             </Button>
                                         )}
                                     </div>

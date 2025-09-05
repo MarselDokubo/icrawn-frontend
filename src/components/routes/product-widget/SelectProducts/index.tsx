@@ -307,7 +307,7 @@ const SelectProducts = (props: SelectProductsProps) => {
             {!productAreAvailable && (
                 <div className={classNames(['hi-no-products'])}>
                     <p className={classNames(['hi-no-products-message'])}>
-                        {`There are no products available for this even`}
+                        {`There are no products available for this Event`}
                     </p>
                 </div>
             )}

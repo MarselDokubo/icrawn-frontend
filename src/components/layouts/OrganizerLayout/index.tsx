@@ -155,7 +155,7 @@ const OrganizerLayout = () => {
                     className={classes.createEventBreadcrumb}
                     onClick={() => setShowCreateEventModal(true)}
                 >
-                    <IconCalendarPlus size={16} /> {`Create Even`}
+                    <IconCalendarPlus size={16} /> {`Create Event`}
                 </span>
             ),
         }

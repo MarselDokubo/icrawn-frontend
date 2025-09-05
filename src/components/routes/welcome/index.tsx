@@ -262,7 +262,7 @@ export const CreateEvent = ({progressInfo}: {
         if (organizersFetched) {
             const organizerName = organizers?.data?.[0].name ?? '';
             form.setFieldValue('organizer_id', organizers?.data?.[0].id);
-            form.setFieldValue('title', `${organizerName}'s first even`);
+            form.setFieldValue('title', `${organizerName}'s first Event`);
         }
     }, [organizersFetched, form, organizers?.data]);
 
@@ -295,7 +295,7 @@ export const CreateEvent = ({progressInfo}: {
                         </div>
                     )}
                     <h2 className={classes.stepTitle}>
-                        {`Create your first even`}
+                        {`Create your first Event`}
                     </h2>
                 </div>
 

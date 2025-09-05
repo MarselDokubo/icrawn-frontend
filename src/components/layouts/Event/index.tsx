@@ -194,13 +194,13 @@ const EventLayout = () => {
                                 variant="transparent"
                                 leftSection={<IconShare size={16}/>}
                             >
-                                {`Share Even`}
+                                {`Share Event`}
                             </Button>
 
                             {event && <ShareModal
                                 url={eventHomepageUrl(event)}
                                 title={event.title}
-                                modalTitle={`Share Even`}
+                                modalTitle={`Share Event`}
                                 opened={opened}
                                 onClose={close}
                             />}

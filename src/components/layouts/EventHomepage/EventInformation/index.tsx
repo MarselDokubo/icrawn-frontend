@@ -68,7 +68,7 @@ export const EventInformation: FC<{
                         <div className={classes.details}>
                             <IconWorld size={20}/>
                             <div className={classes.detail}>
-                                <b>{`Online Even`}</b>
+                                <b>{`Online Event`}</b>
                             </div>
                         </div>
                     </div>

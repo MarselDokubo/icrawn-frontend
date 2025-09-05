@@ -71,7 +71,7 @@ function getCoverUrl(event?: Event): string | undefined {
   return cover?.url;
 }
 function formatMonthYear(date?: Date) {
-  if (!date) return `Upcoming Even`;
+  if (!date) return `Upcoming Event`;
   return new Intl.DateTimeFormat(undefined, { month: "long", year: "numeric" }).format(date);
 }
 
@@ -144,7 +144,7 @@ export default function Hero() {
         : undefined,
     [fullEvent, upcomingEventSummary]
   );
-  const eventTitle = fullEvent?.title ?? upcomingEventSummary?.title ?? `Upcoming Even`;
+  const eventTitle = fullEvent?.title ?? upcomingEventSummary?.title ?? `Upcoming Event`;
   const eventDescription =
     fullEvent?.description_preview ??
     upcomingEventSummary?.description_preview ??

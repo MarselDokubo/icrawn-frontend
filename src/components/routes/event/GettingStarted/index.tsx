@@ -131,13 +131,13 @@ const GettingStarted = () => {
                     <Card className={event?.description ? classes.completedCard : ''}>
                         {event?.description && <CompletedBadge/>}
                         <h2>
-                            {`⚡️ Set up your even`}
+                            {`⚡️ Set up your Event`}
                         </h2>
                         <p>
                             {`Add event details and manage event settings.`}
                         </p>
                         <Button variant={'light'} component={NavLink} to={'/manage/event/' + eventId + '/settings'}>
-                            {event?.description ? `Continue set up` : `Set up your even`}
+                            {event?.description ? `Continue set up` : `Set up your Event`}
                         </Button>
                     </Card>
 

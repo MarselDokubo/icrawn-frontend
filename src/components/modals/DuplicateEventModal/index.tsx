@@ -95,7 +95,7 @@ export const DuplicateEventModal = ({onClose, eventId}: DuplicateEventModalProps
     return (
         <Modal
             onClose={onClose}
-            heading={`Duplicate Even`}
+            heading={`Duplicate Event`}
             opened
             size={'lg'}
             withCloseButton
@@ -172,7 +172,7 @@ export const DuplicateEventModal = ({onClose, eventId}: DuplicateEventModalProps
                     </Card>
                 </fieldset>
                 <Button type="submit" fullWidth disabled={mutation.isPending}>
-                    {mutation.isPending ? `Working...` : `Duplicate Even`}
+                    {mutation.isPending ? `Working...` : `Duplicate Event`}
                 </Button>
             </form>
         </Modal>

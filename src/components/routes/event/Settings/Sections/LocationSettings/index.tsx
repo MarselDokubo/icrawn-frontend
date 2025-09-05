@@ -88,7 +88,7 @@ export const LocationSettings = () => {
                 <fieldset disabled={eventSettingsQuery.isLoading || updateMutation.isPending}>
                     <Switch
                         {...form.getInputProps('is_online_event', {type: 'checkbox'})}
-                        label={`This is an online even`}
+                        label={`This is an online Event`}
                     />
 
                     {form.values.is_online_event && (

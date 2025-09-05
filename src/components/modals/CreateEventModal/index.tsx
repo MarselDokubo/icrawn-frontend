@@ -124,8 +124,9 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                 <div className={classes.modalHeader}>
                     <div className={classes.headerContent}>
                         <div className={classes.magicWand}>✨</div>
-                        <h1 className={classes.headerTitle}>{`Create Your Even`}</h1>
-                        <p className={classes.headerSubtitle}>{`Tell us about your even`}</p>
+
+                        <h1 className={classes.headerTitle}>{`Create Your Event`}</h1>
+                        <p className={classes.headerSubtitle}>{`Tell us about your Event`}</p>
                     </div>
                 </div>
 
@@ -195,7 +196,7 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                             <div className={classes.editorField}>
                                 <Editor
                                     label={`Event Description`}
-                                    description={`Tell people what to expect at your even`}
+                                    description={`Tell people what to expect at your Event`}
                                     value={form.values.description || ''}
                                     onChange={(value) => form.setFieldValue('description', value)}
                                     error={form.errors.description as string}
