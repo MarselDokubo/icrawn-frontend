@@ -16,8 +16,8 @@ export default function PublicNavbar() {
       const navLinks = [
     { to: '/', label: () => `Home` },
     { to: '/events', label: () => `Events` },
-    { to: '/about', label: () => `Abou` },
-    { to: '/contact', label: () => `Contac` },
+    { to: '/about', label: () => `About` },
+    { to: '/contact', label: () => `Contact` },
   ];
     return (
         <div style={{

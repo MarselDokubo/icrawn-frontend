@@ -14,8 +14,8 @@ export function NavBar() {
     const navLinks = [
   { to: '/', label: () => `Home` },
   { to: '/events', label: () => `Events` },
-  { to: '/about', label: () => `Abou` },
-  { to: '/contact', label: () => `Contac` },
+  { to: '/about', label: () => `About` },
+  { to: '/contact', label: () => `Contact` },
 ];
   return (
     <Container size="lg" py="md">
@@ -54,12 +54,12 @@ function Footer() {
           </Stack>
           <Stack>
             <Title order={5}>{`Quick Links`}</Title>
-            <Anchor href="#about">{`Abou`}</Anchor>
+            <Anchor href="#about">{`About`}</Anchor>
             <Anchor href="#video">{`Video`}</Anchor>
-            <Anchor href="#contact">{`Contac`}</Anchor>
+            <Anchor href="#contact">{`Contact`}</Anchor>
           </Stack>
           <Stack>
-            <Title order={5}>{`Contac`}</Title>
+            <Title order={5}>{`Contact`}</Title>
             <Text>{`icrawnevents@gmail.com`}</Text>
             <Text>{`1000 S Eighth Ave, NYC`}</Text>
             <Text>{`(+234)-706-7823-892`}</Text>

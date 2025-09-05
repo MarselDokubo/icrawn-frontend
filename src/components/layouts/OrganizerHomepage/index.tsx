@@ -218,7 +218,7 @@ export const OrganizerHomepage = ({
                                                         variant="outline"
                                                         size="sm"
                                                     >
-                                                        {`Contac`}
+                                                        {`Contact`}
                                                     </Button>
                                                 </div>
                                             </div>

@@ -157,7 +157,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
           {event?.description && (
             <div className={classes.contentSection}>
               <div className={`${classes.sectionContent} ${classes.glassCard}`}>
-                <h2 className={classes.sectionTitle}>{`Abou`}</h2>
+                <h2 className={classes.sectionTitle}>{`About`}</h2>
                 <div
                   className={classes.eventDescription}
                   dangerouslySetInnerHTML={{
@@ -262,7 +262,7 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
                       variant="outline"
                       size="sm"
                     >
-                      {`Contac`}
+                      {`Contact`}
                     </Button>
                   </div>
                 </div>
