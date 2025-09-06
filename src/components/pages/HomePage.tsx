@@ -51,7 +51,7 @@ function IntroSection() {
           {`Upcoming Events`}
         </Title>
         <Text maw={800} ta="center" c="dimmed">
-          {`In collaboration with top global partners, iCrawn Events is where inventive and forward-thinking leaders come together to discover emerging trends in fundraising and technology.`}
+{`Experience the excitement of live events, unforgettable celebrations, and creative gatherings. Stay tuned for our upcoming events!`}
         </Text>
       </Stack>
     </Container>
