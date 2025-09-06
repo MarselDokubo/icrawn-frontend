@@ -233,7 +233,7 @@ if (!upcomingEventSummary) {
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 5 }}>
             <Stack align="center">
-              <MantineImage radius="xl" src="/Website_Landing_Page.jpeg" alt="Events coming soon" h={300} fit="cover" />
+              <MantineImage radius="xl" src="/Coming_Soon.jpeg" alt="Events coming soon" h={300} fit="cover" />
               <Group>
                 <Badge variant="outline">{`CONF`}</Badge>
                 <Badge color="grape" variant="light">{`Public`}</Badge>
