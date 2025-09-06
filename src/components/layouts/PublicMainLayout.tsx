@@ -61,7 +61,7 @@ function Footer() {
           <Stack>
             <Title order={5}>{`Contact`}</Title>
             <Text>{`icrawnevents@gmail.com`}</Text>
-            <Text>{`1000 S Eighth Ave, NYC`}</Text>
+            <Text>{`Plot 421 Hillside FCT ABUJA`}</Text>
             <Text>{`(+234)-706-7823-892`}</Text>
           </Stack>
         </SimpleGrid>

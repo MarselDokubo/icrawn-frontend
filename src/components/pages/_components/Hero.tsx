@@ -198,21 +198,82 @@ export default function Hero() {
     );
   }
 
-  if (!upcomingEventSummary) {
-    return (
-      <Container size="lg" pt="xl" pb="xl">
-        <Alert
-          icon={<IconAlertCircle size={16} />}
-          title={`No upcoming events`}
-          color="gray"
-          variant="light"
-          radius="md"
-        >
-          {`There are currently no upcoming events. Once an event is scheduled, its cover image and countdown will appear here.`}
-        </Alert>
+if (!upcomingEventSummary) {
+  const heroBg = `
+    linear-gradient(135deg, rgba(30,27,75,0.70), rgba(17,24,39,0.65)),
+    url(/Website_Landing_Page.jpeg)
+  `;
+  return (
+    <Box
+      pt={60}
+      pb={140}
+      style={{
+        position: "relative",
+        background: heroBg,
+        backgroundSize: "cover",
+        backgroundPosition: "top",
+        backgroundRepeat: "no-repeat",
+        marginBottom: 150,
+      }}
+    >
+      <Container size="lg">
+        <Grid align="center" gutter="xl">
+          <Grid.Col span={{ base: 12, md: 7 }}>
+            <Stack gap="md">
+              <Badge variant="light" size="lg" radius="md" style={{color:"#ffffffaa"}}>
+                Upcoming Event
+              </Badge>
+              <Title order={1} style={{ fontSize: rem(48), lineHeight: 1.1, position: "relative", zIndex: 20, color: "white" }}>
+                Events coming soon
+              </Title>
+              <Text size="lg" style={{color:"#ffffffdd"}}>
+                Stay updated
+              </Text>
+            </Stack>
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 5 }}>
+            <Stack align="center">
+              <MantineImage radius="xl" src="/Website_Landing_Page.jpeg" alt="Events coming soon" h={300} fit="cover" />
+              <Group>
+                <Badge variant="outline">{`CONF`}</Badge>
+                <Badge color="grape" variant="light">{`Public`}</Badge>
+              </Group>
+            </Stack>
+          </Grid.Col>
+        </Grid>
       </Container>
-    );
-  }
+      {/* CONTACT INFO GRID */}
+      <Container size="lg" mt="xl">
+        <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="lg">
+          <Paper withBorder radius="lg" p="md">
+            <Group>
+              <ThemeIcon variant="light" color="grape" radius="md">
+                <IconMail />
+              </ThemeIcon>
+              <Text>{`icrawnevents@gmail.com`}</Text>
+            </Group>
+          </Paper>
+          <Paper withBorder radius="lg" p="md">
+            <Group>
+              <ThemeIcon variant="light" color="indigo" radius="md">
+                <IconMapPin />
+              </ThemeIcon>
+              <Text>{`Plot 421 Hillside FCT ABUJA`}</Text>
+            </Group>
+          </Paper>
+          <Paper withBorder radius="lg" p="md">
+            <Group>
+              <ThemeIcon variant="light" color="violet" radius="md">
+                <IconPhone />
+              </ThemeIcon>
+              <Text>{`(+234)-706-7823-892`}</Text>
+            </Group>
+          </Paper>
+        </SimpleGrid>
+      </Container>
+    </Box>
+  );
+}
 
   return (
     <Box
@@ -324,7 +385,7 @@ export default function Hero() {
               <ThemeIcon variant="light" color="indigo" radius="md">
                 <IconMapPin />
               </ThemeIcon>
-              <Text>{`1000 S Eighth Ave, NYC`}</Text>
+              <Text>{`Plot 421 Hillside FCT ABUJA`}</Text>
             </Group>
           </Paper>
           <Paper withBorder radius="lg" p="md">

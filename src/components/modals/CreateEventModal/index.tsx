@@ -124,7 +124,6 @@ export const CreateEventModal = ({onClose, organizerId}: CreateEventModalProps) 
                 <div className={classes.modalHeader}>
                     <div className={classes.headerContent}>
                         <div className={classes.magicWand}>✨</div>
-
                         <h1 className={classes.headerTitle}>{`Create Your Event`}</h1>
                         <p className={classes.headerSubtitle}>{`Tell us about your Event`}</p>
                     </div>
