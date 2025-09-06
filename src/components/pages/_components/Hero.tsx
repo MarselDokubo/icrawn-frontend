@@ -224,10 +224,10 @@ if (!upcomingEventSummary) {
                 Upcoming Event
               </Badge>
               <Title order={1} style={{ fontSize: rem(48), lineHeight: 1.1, position: "relative", zIndex: 20, color: "white" }}>
-                Events coming soon
+                More events coming soon
               </Title>
               <Text size="lg" style={{color:"#ffffffdd"}}>
-                Stay updated
+                Stay tuned for our upcoming events...
               </Text>
             </Stack>
           </Grid.Col>
