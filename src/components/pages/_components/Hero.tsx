@@ -201,7 +201,7 @@ export default function Hero() {
 if (!upcomingEventSummary) {
   const heroBg = `
     linear-gradient(135deg, rgba(30,27,75,0.70), rgba(17,24,39,0.65)),
-    url(/Coming_Soon.jpeg)
+    url(/Landing.jpeg)
   `;
   return (
     <Box
