@@ -1,5 +1,22 @@
 {
-  "rewrites":  [
-    {"source": "/(.*)", "destination": "/"}
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "admin.icrawnevents.com" }],
+      "destination": "https://icrawnevents.com/auth/login",
+      "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "admin.icrawnevents.com" }],
+      "destination": "https://icrawnevents.com/auth/login",
+      "permanent": false
+    }
+  ],
+   "rewrites": [
+    {
+      "source": "/((?!api/|.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ]
 }
