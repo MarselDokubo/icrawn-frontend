@@ -1865,7 +1865,7 @@ msgstr "Steuer oder Gebühr erstellen"
 #~ msgstr "Ticket erstellen"
 
 #: src/components/modals/CreateProductModal/index.tsx:78
-msgid "Create Ticket or Product"
+msgid "Create Ticket or Productt"
 msgstr "Ticket oder Produkt erstellen"
 
 #: src/components/routes/event/GettingStarted/index.tsx:122
@@ -6598,7 +6598,7 @@ msgid "Ticket holders"
 msgstr "Ticketinhaber"
 
 #: src/components/routes/event/products.tsx:86
-msgid "Ticket or Product"
+msgid "Ticket or Productt"
 msgstr "Ticket oder Produkt"
 
 #: src/components/routes/event/EventDashboard/index.tsx:53

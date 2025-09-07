@@ -1863,7 +1863,7 @@ msgstr "創建税費"
 #~ msgstr "創建機票"
 
 #: src/components/modals/CreateProductModal/index.tsx:78
-msgid "Create Ticket or Product"
+msgid "Create Ticket or Productt"
 msgstr "建立門票或商品"
 
 #: src/components/routes/event/GettingStarted/index.tsx:122
@@ -6596,7 +6596,7 @@ msgid "Ticket holders"
 msgstr "票務持有人"
 
 #: src/components/routes/event/products.tsx:86
-msgid "Ticket or Product"
+msgid "Ticket or Productt"
 msgstr "票券或產品"
 
 #: src/components/routes/event/EventDashboard/index.tsx:53

@@ -152,7 +152,7 @@ export const CreateAttendeeModal = ({onClose}: GenericModalProps) => {
 
                 <ProductSelector
                     placeholder={`Select Ticke`}
-                    label={`Ticke`}
+                    label={`Ticket`}
                     productCategories={event.product_categories as ProductCategory[]}
                     form={form}
                     productFieldName={'product_id'}

@@ -116,7 +116,7 @@ export const ManageAttendeeModal = ({onClose, attendeeId}: ManageAttendeeModalPr
                 {event?.product_categories && event.product_categories.length > 0 && (
                     <ProductSelector
                         placeholder={`Select Produc`}
-                        label={`Produc`}
+                        label={`Product`}
                         productCategories={event.product_categories as ProductCategory[]}
                         form={form}
                         productFieldName={"product_id"}

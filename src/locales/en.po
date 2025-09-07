@@ -2004,8 +2004,8 @@ msgstr "Create Tax or Fee"
 #~ msgstr "Create Ticket"
 
 #: src/components/modals/CreateProductModal/index.tsx:78
-msgid "Create Ticket or Product"
-msgstr "Create Ticket or Product"
+msgid "Create Ticket or Productt"
+msgstr "Create Ticket or Productt"
 
 #: src/components/routes/event/GettingStarted/index.tsx:122
 msgid "Create tickets for your event, set prices, and manage available quantity."
@@ -7157,8 +7157,8 @@ msgid "Ticket holders"
 msgstr "Ticket holders"
 
 #: src/components/routes/event/products.tsx:86
-msgid "Ticket or Product"
-msgstr "Ticket or Product"
+msgid "Ticket or Productt"
+msgstr "Ticket or Productt"
 
 #: src/components/routes/event/Settings/Sections/HomepageAndCheckoutSettings/index.tsx:63
 #~ msgid "Ticket page message"

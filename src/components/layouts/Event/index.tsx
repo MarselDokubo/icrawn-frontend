@@ -176,7 +176,7 @@ const EventLayout = () => {
                             rightSection={<IconChevronRight size={14}/>}
                         >
                             {event?.status === 'DRAFT'
-                                ? <span>{`Draf`} <span
+                                ? <span>{`Draft`} <span
                                     className={classes.statusAction}>{`- Click to Publish`}</span></span>
                                 : <span>{`Live`} <span
                                     className={classes.statusAction}>{`- Click to Unpublish`}</span></span>

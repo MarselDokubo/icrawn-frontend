@@ -2020,7 +2020,7 @@ msgstr "Crea Tassa o Commissione"
 #~ msgstr "Crea Biglietto"
 
 #: src/components/modals/CreateProductModal/index.tsx:78
-msgid "Create Ticket or Product"
+msgid "Create Ticket or Productt"
 msgstr "Crea biglietto o prodotto"
 
 #: src/components/routes/event/GettingStarted/index.tsx:122
@@ -7171,7 +7171,7 @@ msgid "Ticket holders"
 msgstr "Possessori di biglietti"
 
 #: src/components/routes/event/products.tsx:86
-msgid "Ticket or Product"
+msgid "Ticket or Productt"
 msgstr "Biglietto o prodotto"
 
 #: src/components/routes/event/Settings/Sections/HomepageAndCheckoutSettings/index.tsx:63

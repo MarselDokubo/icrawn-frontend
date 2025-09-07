@@ -108,7 +108,7 @@ export const AttendeeTable = ({attendees, openCreateModal}: AttendeeTableProps) 
                         <MantineTable.Th>{`Name`}</MantineTable.Th>
                         <MantineTable.Th>{`Email`}</MantineTable.Th>
                         <MantineTable.Th miw={140}>{`Order`}</MantineTable.Th>
-                        <MantineTable.Th>{`Ticke`}</MantineTable.Th>
+                        <MantineTable.Th>{`Ticket`}</MantineTable.Th>
                         <MantineTable.Th miw={120}>{`Status`}</MantineTable.Th>
                         <MantineTable.Th></MantineTable.Th>
                     </MantineTable.Tr>
@@ -180,7 +180,7 @@ export const AttendeeTable = ({attendees, openCreateModal}: AttendeeTableProps) 
                                             label: `Danger Zone`,
                                             items: [
                                                 {
-                                                    label: attendee.status === 'CANCELLED' ? `Activate` : `Cancel` + ` ` + `ticke`,
+                                                    label: attendee.status === 'CANCELLED' ? `Activate` : `Cancel` + ` ` + `Ticket`,
                                                     icon: <IconTrash size={14}/>,
                                                     onClick: () => handleCancel(attendee),
                                                     color: attendee.status === 'CANCELLED' ? 'green' : 'red',

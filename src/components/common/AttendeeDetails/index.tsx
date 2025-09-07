@@ -33,7 +33,7 @@ export const AttendeeDetails = ({attendee}: { attendee: Attendee }) => {
             </div>
             <div className={classes.block}>
                 <div className={classes.title}>
-                    {`Produc`}
+                    {`Product`}
                 </div>
                 <div className={classes.amount}>
                     {getAttendeeProductTitle(attendee)}

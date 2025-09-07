@@ -1938,7 +1938,7 @@ msgstr "Creëer belasting of heffing"
 #~ msgstr "Ticket maken"
 
 #: src/components/modals/CreateProductModal/index.tsx:78
-msgid "Create Ticket or Product"
+msgid "Create Ticket or Productt"
 msgstr "Maak ticket of product aan"
 
 #: src/components/routes/event/GettingStarted/index.tsx:122
@@ -6873,7 +6873,7 @@ msgid "Ticket holders"
 msgstr "Tickethouders"
 
 #: src/components/routes/event/products.tsx:86
-msgid "Ticket or Product"
+msgid "Ticket or Productt"
 msgstr "Ticket of product"
 
 #~ msgid "Ticket page message"

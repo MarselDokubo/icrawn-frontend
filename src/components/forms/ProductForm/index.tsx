@@ -127,7 +127,7 @@ export const ProductForm = ({form, product}: ProductFormProps) => {
     const productTypeOptions: ItemProps[] = [
         {
             icon: <IconTicket/>,
-            label: `Ticke`,
+            label: `Ticket`,
             value: 'TICKET',
             description: `This product is a ticket. Buyers will be issued a ticket upon purchase`,
         },

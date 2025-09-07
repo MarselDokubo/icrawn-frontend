@@ -83,7 +83,7 @@ export const Products = () => {
                             }
                             onClick={() => openCreateProduct(undefined)}
                         >
-                            {`Ticket or Produc`}
+                            {`Ticket or Product`}
                         </Menu.Item>
                         <Menu.Item
                             leftSection={

@@ -1732,7 +1732,7 @@ msgid "Create Tax or Fee"
 msgstr "Tạo thuế hoặc phí"
 
 #: src/components/modals/CreateProductModal/index.tsx:78
-msgid "Create Ticket or Product"
+msgid "Create Ticket or Productt"
 msgstr "Tạo vé hoặc sản phẩm"
 
 #: src/components/routes/event/GettingStarted/index.tsx:122
@@ -6134,7 +6134,7 @@ msgid "Ticket holders"
 msgstr "Người sở hữu vé"
 
 #: src/components/routes/event/products.tsx:86
-msgid "Ticket or Product"
+msgid "Ticket or Productt"
 msgstr "Vé hoặc sản phẩm"
 
 #: src/components/layouts/Event/index.tsx:101
