@@ -89,11 +89,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div className={classes.nav}>
                 {renderLinks()}
             </div>
-            {sidebarFooter && (
+            {/* {sidebarFooter && (
                 <div className={classes.sidebarFooter}>
                     {sidebarFooter}
                 </div>
-            )}
+            )} */}
             {sidebarOpen && (
                 <UnstyledButton
                     className={classes.sidebarClose}
