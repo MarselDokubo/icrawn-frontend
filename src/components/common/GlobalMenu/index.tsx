@@ -42,7 +42,7 @@ export const GlobalMenu = () => {
 
     if (me?.role === 'ADMIN') {
         links.push({
-            label: `User Managemen`,
+            label: `User Management`,
             icon: IconUsers,
             link: `/account/users`
         })

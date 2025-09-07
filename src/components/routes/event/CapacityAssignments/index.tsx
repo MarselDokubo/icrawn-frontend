@@ -29,7 +29,7 @@ const CapacityAssignments = () => {
     return (
         <PageBody>
             <PageTitle>
-                {`Capacity Managemen`}
+                {`Capacity Management`}
             </PageTitle>
 
             <ToolBar searchComponent={() => (

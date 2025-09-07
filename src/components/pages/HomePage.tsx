@@ -162,7 +162,7 @@ function AboutICrawn() {
 
               <Group>
                 <ThemeIcon radius="md" variant="light"><IconMicrophone size={16} /></ThemeIcon>
-                <Text fw={600}>{`Artist Managemen`}</Text>
+                <Text fw={600}>{`Artist Management`}</Text>
               </Group>
               <Text c="dimmed">{`We work closely with talents to create memorable performances.`}</Text>
 
@@ -222,7 +222,7 @@ function ConnectSection() {
     {
       icon: IconBrandFacebook,
       title: `Facebook`,
-      label: `@icrawn events managemen`,
+      label: `@icrawn events Management`,
       href: "#",
       color: "blue",
     },

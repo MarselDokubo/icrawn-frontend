@@ -139,7 +139,7 @@ const Users = () => {
     return (
         <>
             <HeadingCard
-                heading={`User Managemen`}
+                heading={`User Management`}
                 subHeading={`Manage your users and their permissions`}
                 buttonText={`Invite User`}
                 buttonAction={openCreateModal}

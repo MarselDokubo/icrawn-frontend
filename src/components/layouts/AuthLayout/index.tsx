@@ -72,7 +72,7 @@ const GenericFeatures = () => {
         },
         {
             icon: IconMessages,
-            title: `Attendee Managemen`,
+            title: `Attendee Management`,
             description: `Message attendees, manage orders, and handle refunds all in one place`
         },
         {
