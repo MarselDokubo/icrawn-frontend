@@ -20,6 +20,8 @@ export const PaystackPaymentMethod: React.FC<Props> = ({ enabled, setSubmitHandl
   }, [order?.email, emailOverride]);
 
   useEffect(() => {
+
+    console.log("Wondering if we got to this page!!!")
     setSubmitHandler(async () => {
       if (!enabled) return;
 
