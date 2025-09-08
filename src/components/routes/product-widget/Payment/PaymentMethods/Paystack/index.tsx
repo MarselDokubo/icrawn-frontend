@@ -30,10 +30,9 @@ export const PaystackPaymentMethod: React.FC<Props> = ({ enabled, setSubmitHandl
         return;
       }
 
-    //   if (!effectiveEmail) {
-    //     showError("Please enter your email to continue.");
-    //     return;
-    //   }
+      if (!effectiveEmail) {
+        return;
+      }
 
       try {
         const sessionId = localStorage.getItem("session_identifier");
