@@ -52,6 +52,7 @@ export const PaystackPaymentMethod: React.FC<Props> = ({ enabled, setSubmitHandl
         if (!res.ok) throw new Error(data?.message || "Failed to initialize Paystack.");
 
         // Redirect to Paystack
+        console.log("Redirecting to Paystack:", data.authorization_url);
         window.location.href = data.authorization_url;
       } catch (e: any) {
         showError(e?.message || "Could not start Paystack payment.");
