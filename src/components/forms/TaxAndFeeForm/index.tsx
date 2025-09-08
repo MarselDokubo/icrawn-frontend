@@ -32,7 +32,7 @@ export const TaxAndFeeForm = ({form}: { form: UseFormReturnType<TaxAndFee> }) =>
             icon: <IconCash/>,
             label: `Fixed`,
             value: 'FIXED',
-            description: `A fixed amount per product. E.g, $0.50 per produc`,
+            description: `A fixed amount per product. E.g, $0.50 per product`,
         },
     ];
 

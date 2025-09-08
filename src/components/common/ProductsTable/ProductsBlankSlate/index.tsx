@@ -65,7 +65,7 @@ export const ProductsBlankSlate = ({openCreateModal, productCategories, searchTe
                 leftSection={<IconPlus/>}
                 color={'green'}
                 onClick={() => openCreateModal()}
-            >{`Add Produc`}
+            >{`Add product`}
             </Button>
         </div>
     )

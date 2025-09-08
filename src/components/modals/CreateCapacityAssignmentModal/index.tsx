@@ -44,7 +44,7 @@ export const CreateCapacityAssignmentModal = ({onClose}: GenericModalProps) => {
         return (
             <NoResultsSplash
                 imageHref={'/blank-slate/tickets.svg'}
-                heading={`Please create a produc`}
+                heading={`Please create a product`}
                 subHeading={(
                     <>
                         <p>
@@ -54,9 +54,9 @@ export const CreateCapacityAssignmentModal = ({onClose}: GenericModalProps) => {
                             size={'xs'}
                             leftSection={<IconPlus/>}
                             color={'green'}
-                            onClick={() => window.location.href = `/manage/event/${eventId}/products/#create-produc`}
+                            onClick={() => window.location.href = `/manage/event/${eventId}/products/#create-product`}
                         >
-                            {`Create a Produc`}
+                            {`Create a product`}
                         </Button>
                     </>
                 )}

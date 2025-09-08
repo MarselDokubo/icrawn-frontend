@@ -37,7 +37,7 @@ export const Settings = () => {
         },
         {
             id: 'homepage-settings',
-            label: `Checkou`,
+            label: `Checkout`,
             icon: IconHome,
             component: HomepageAndCheckoutSettings
         },

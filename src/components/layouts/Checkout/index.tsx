@@ -78,7 +78,7 @@ const Checkout = () => {
                                     </Button>
 
                                     <span className={classes.title}>
-                                        {order.status === 'RESERVED' && `Checkou`}
+                                        {order.status === 'RESERVED' && `Checkout`}
                                         {order.status === 'COMPLETED' && `Your Order`}
                                     </span>
 

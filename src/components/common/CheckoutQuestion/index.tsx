@@ -237,7 +237,7 @@ export const CheckoutProductQuestions = ({
                 }
 
                 const name = `products.${productIndex}.questions.${questionIndex++}.response`;
-                return <QuestionInput key={`${index}-produc`} question={question} name={name} form={form}/>
+                return <QuestionInput key={`${index}-product`} question={question} name={name} form={form}/>
             })}
         </>
     )

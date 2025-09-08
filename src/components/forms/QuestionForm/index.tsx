@@ -88,7 +88,7 @@ export const QuestionForm = ({form, productCategories}: QuestionFormProps) => {
         },
         {
             icon: <IconUser/>,
-            label: `Ask once per produc`,
+            label: `Ask once per product`,
             value: QuestionBelongsToType.PRODUCT,
             description: `A single question per product. E.g, What is your t-shirt size?`,
         },

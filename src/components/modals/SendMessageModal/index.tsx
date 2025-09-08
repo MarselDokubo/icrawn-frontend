@@ -189,7 +189,7 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                                     },
                                     {
                                         value: 'ORDER_OWNERS_WITH_PRODUCT',
-                                        label: `Order owners with a specific produc`,
+                                        label: `Order owners with a specific product`,
                                     },
                                 ]}
                                 label={`Who is this message to?`}

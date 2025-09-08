@@ -135,14 +135,24 @@ const SelectProducts = (props: SelectProductsProps) => {
     });
 
     const productMutation = useMutation({
-        mutationFn: (orderData: ProductFormPayload) => orderClientPublic.create(Number(eventId), orderData),
+        mutationFn: (orderData: ProductFormPayload) => 
+            orderClientPublic.create(Number(eventId), orderData),
 
         onSuccess: (data) => queryClient.invalidateQueries()
             .then(() => {
+                const sessionId = data.data.session_identifier;
+
+                // ✅ Store in localStorage
+                localStorage.setItem("session_identifier", sessionId??"");
+
+                console.log("Order data session_identifier:", sessionId);
+                console.log("getSessionID session_identifier:", getSessionIdentifier());
+
                 const url = '/checkout/' + eventId + '/' + data.data.short_id + '/details';
+
                 if (props.widgetMode === 'embedded') {
                     window.open(
-                        url + '?session_identifier=' + data.data.session_identifier + '&utm_source=embedded_widget',
+                        url + '?session_identifier=' + sessionId + '&utm_source=embedded_widget',
                         '_blank'
                     );
                     setOrderInProcessOverlayVisible(true);
@@ -179,9 +189,7 @@ const SelectProducts = (props: SelectProductsProps) => {
             }
 
             const eventWithPromoCodeApplied = await eventsClientPublic.findByID(
-                eventId,
-                promoCode
-            );
+                eventId);
 
             setEvent(eventWithPromoCodeApplied.data);
 
@@ -272,7 +280,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                 session_identifier: getSessionIdentifier()
             });
         } else {
-            showInfo(`Please select at least one produc`);
+            showInfo(`Please select at least one product`);
         }
     };
 
@@ -372,7 +380,7 @@ const SelectProducts = (props: SelectProductsProps) => {
                                     }
                                 }}
                             >
-                                {`Continue to Checkou`}
+                                {`Continue to Checkout`}
                             </Button>
 
                             <Button

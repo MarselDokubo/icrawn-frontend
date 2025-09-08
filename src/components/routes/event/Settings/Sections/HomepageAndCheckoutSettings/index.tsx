@@ -66,7 +66,7 @@ export const HomepageAndCheckoutSettings = () => {
                     <Editor
                         label={`Pre Checkout message`}
                         value={form.values.pre_checkout_message || ''}
-                        description={`Shown to the customer before they checkou`}
+                        description={`Shown to the customer before they Checkout`}
                         onChange={(value) => form.setFieldValue('pre_checkout_message', value)}
                     />
 

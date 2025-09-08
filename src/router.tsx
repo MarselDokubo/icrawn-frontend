@@ -442,6 +442,14 @@ export const router: RouteObject[] = [
         errorElement: <ErrorPage/>,
     },
     {
+        path: "/checkout/paystack/callback",
+        async lazy() {
+            const Page = await import("./components/pages/PaystackCallback");
+            return { Component: Page.default };
+        },
+        errorElement: <ErrorPage />,
+    },
+    {
         path: "/checkout/:eventId",
         async lazy() {
             const Checkout = await import("./components/layouts/Checkout");

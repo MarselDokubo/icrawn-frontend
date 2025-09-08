@@ -49,7 +49,7 @@ export const CreateProductModal = ({onClose, selectedCategoryId = undefined}: Cr
     const handleCreateProduct = (values: Product) => {
         createProductMutation.mutate({eventId, productData: values}, {
             onSuccess: () => {
-                showSuccess(`Successfully Created Produc`);
+                showSuccess(`Successfully Created product`);
                 form.reset();
                 onClose();
             },
@@ -83,7 +83,7 @@ export const CreateProductModal = ({onClose, selectedCategoryId = undefined}: Cr
             <form onSubmit={form.onSubmit((values) => handleCreateProduct(values))}>
                 <ProductForm form={form}/>
                 <Button type="submit" fullWidth disabled={createProductMutation.isPending}>
-                    {createProductMutation.isPending ? `Working...` : `Create Produc`}
+                    {createProductMutation.isPending ? `Working...` : `Create product`}
                 </Button>
             </form>
         </Modal>

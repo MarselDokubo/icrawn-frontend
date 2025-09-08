@@ -95,7 +95,7 @@ export const CapacityAssignmentList = ({capacityAssignments, openCreateModal}: C
                                                 <div>
                                                     {assignment.products.length > 1 &&
                                                         <>Applies to {assignment.products.length} products</>}
-                                                    {assignment.products.length === 1 && `Applies to 1 produc`}
+                                                    {assignment.products.length === 1 && `Applies to 1 product`}
                                                 </div>
                                                 &nbsp;
                                                 <IconHelp size={16}/>

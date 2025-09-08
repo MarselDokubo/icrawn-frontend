@@ -277,19 +277,19 @@ export const SortableProduct = ({product, currencyCode, category, categories}: S
                                 <Menu.Item
                                     onClick={() => handleModalClick(product.id, editModal)}
                                     leftSection={<IconPencil size={14}/>}>
-                                    {`Edit Produc`}
+                                    {`Edit product`}
                                 </Menu.Item>
                                 <Menu.Item
                                     onClick={() => handleModalClick(product.id, duplicateModal)}
                                     leftSection={<IconCopyPlus size={14}/>}>
-                                    {`Duplicate Produc`}
+                                    {`Duplicate product`}
                                 </Menu.Item>
                                 <Menu.Label>{`Danger zone`}</Menu.Label>
                                 <Menu.Item
                                     onClick={() => handleDeleteProduct(product.id, product.event_id)}
                                     color="red"
                                     leftSection={<IconTrash size={14}/>}>
-                                    {`Delete produc`}
+                                    {`Delete product`}
                                 </Menu.Item>
                             </Menu.Dropdown>
                         </Menu>

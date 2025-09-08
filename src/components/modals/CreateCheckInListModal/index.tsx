@@ -58,7 +58,7 @@ export const CreateCheckInListModal = ({onClose}: GenericModalProps) => {
                             size={'xs'}
                             leftSection={<IconPlus/>}
                             color={'green'}
-                            onClick={() => window.location.href = `/manage/event/${eventId}/products/#create-produc`}
+                            onClick={() => window.location.href = `/manage/event/${eventId}/products/#create-product`}
                         >
                             {`Create a Ticke`}
                         </Button>

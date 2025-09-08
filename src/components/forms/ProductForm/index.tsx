@@ -142,25 +142,25 @@ export const ProductForm = ({form, product}: ProductFormProps) => {
     const productPriceOptions: ItemProps[] = [
         {
             icon: <IconCash/>,
-            label: `Paid Produc`,
+            label: `Paid product`,
             value: 'PAID',
             description: `Standard product with a fixed price`,
         },
         {
             icon: <IconCoinOff/>,
-            label: `Free Produc`,
+            label: `Free product`,
             value: 'FREE',
             description: `Free product, no payment information required`,
         },
         {
             icon: <IconHeartDollar/>,
-            label: `Donation / Pay what you'd like produc`,
+            label: `Donation / Pay what you'd like product`,
             value: 'DONATION',
             description: `Set a minimum price and let users pay more if they choose`,
         },
         {
             icon: <IconCoins/>,
-            label: `Tiered Produc`,
+            label: `Tiered product`,
             value: 'TIERED',
             description: `Multiple price options. Perfect for early bird products etc.`,
         },

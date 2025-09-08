@@ -1,66 +1,81 @@
-import { useState } from "react";
+// frontend/src/components/routes/product-widget/Payment/PaymentMethods/Paystack.tsx
+import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router";
+import { TextInput } from "@mantine/core";
+import { useGetOrderPublic } from "@/queries/useGetOrderPublic";
+import { showError } from "@/utilites/notifications";
 
-import { orderClientPublic } from "../../../../../../api/order.client";
-import { Button, Alert } from "@mantine/core";
-import { CheckoutContent } from "../../../../../layouts/Checkout/CheckoutContent"; 
+type Props = {
+  enabled: boolean;
+  setSubmitHandler: (fn: () => Promise<void>) => void;
+};
 
-interface PaystackPaymentMethodProps {
-    enabled: boolean;
-    setSubmitHandler: (submitHandler: () => () => Promise<void>) => void;
-}
+export const PaystackPaymentMethod: React.FC<Props> = ({ enabled, setSubmitHandler }) => {
+  const { eventId, orderShortId } = useParams();
+  const { data: order } = useGetOrderPublic(eventId, orderShortId, []);
+  const [emailOverride, setEmailOverride] = useState("");
 
-export const PaystackPaymentMethod = ({ enabled, setSubmitHandler }: PaystackPaymentMethodProps) => {
-    const { eventId, orderShortId } = useParams();
-    const [email, setEmail] = useState("");
-    const [amount, setAmount] = useState<number>(0);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
+  const effectiveEmail = useMemo(() => {
+    return (order?.email || "").trim() || emailOverride.trim();
+  }, [order?.email, emailOverride]);
 
-    const handlePaystack = async () => {
-        setLoading(true);
-        setError(null);
-        try {
-            const result = await orderClientPublic.initializePaystackPayment(
-                Number(eventId),
-                String(orderShortId),
-                email,
-                amount
-            );
-            window.location.href = result.authorization_url;
-        } catch (e: any) {
-            setError(e?.message || `Unable to initialize Paystack payment.`);
-        } finally {
-            setLoading(false);
-        }
-    };
+  useEffect(() => {
+    setSubmitHandler(async () => {
+      if (!enabled) return;
 
-    // For compatibility with setSubmitHandler
-    setSubmitHandler(() => handlePaystack);
+      if (!eventId || !orderShortId) {
+        showError("Missing event/order identifiers.");
+        return;
+      }
 
-    if (!enabled) {
-        return null;
-    }
+    //   if (!effectiveEmail) {
+    //     showError("Please enter your email to continue.");
+    //     return;
+    //   }
 
+      try {
+        const sessionId = localStorage.getItem("session_identifier");
+
+        console.log("Inside initialize payment", sessionId)
+        const res = await fetch(
+          `${import.meta.env.VITE_API_BASE_URL}/api/public/events/${eventId}/order/${orderShortId}/paystack/initialize?session_identifier=${sessionId}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+            body: JSON.stringify({ email: effectiveEmail }),
+          }
+        );
+
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data?.message || "Failed to initialize Paystack.");
+
+        // Redirect to Paystack
+        window.location.href = data.authorization_url;
+      } catch (e: any) {
+        showError(e?.message || "Could not start Paystack payment.");
+      }
+    });
+  }, [enabled, setSubmitHandler, eventId, orderShortId, effectiveEmail]);
+
+  if (!order?.email) {
     return (
-        <CheckoutContent>
-            <h2>{`Pay with Paystack`}</h2>
-            <input
-                type="email"
-                placeholder={`Email`}
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-            />
-            <input
-                type="number"
-                placeholder={`Amoun`}
-                value={amount}
-                onChange={e => setAmount(Number(e.target.value))}
-            />
-            <Button onClick={handlePaystack} loading={loading} color="green">
-                {`Pay Now`}
-            </Button>
-            {error && <Alert color="red">{error}</Alert>}
-        </CheckoutContent>
+      <div>
+        <TextInput
+          label="Email"
+          placeholder="you@example.com"
+          value={emailOverride}
+          onChange={(e) => setEmailOverride(e.currentTarget.value)}
+          required
+        />
+        <p style={{ marginTop: 8, fontSize: 13 }}>
+          We’ll use your email to create your order and send your tickets.
+        </p>
+      </div>
     );
+  }
+
+  return <p>Pay with Paystack using <strong>{order.email}</strong>.</p>;
 };

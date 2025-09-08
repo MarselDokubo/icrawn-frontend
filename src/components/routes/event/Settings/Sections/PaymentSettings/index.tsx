@@ -167,7 +167,7 @@ export const PaymentAndInvoicingSettings = () => {
                             <Text size="lg" fw={500} mb="md">{`Billing Settings`}</Text>
                             <Switch
                                 label={`Require Billing Address`}
-                                description={`Make billing address mandatory during checkou`}
+                                description={`Make billing address mandatory during Checkout`}
                                 checked={form.values.require_billing_address}
                                 onChange={(event) => form.setFieldValue('require_billing_address', event.currentTarget.checked)}
                             />

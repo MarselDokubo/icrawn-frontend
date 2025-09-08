@@ -101,7 +101,7 @@ export const CheckInListList = ({checkInLists, openCreateModal}: CheckInListList
                                                 <div>
                                                     {list.products.length > 1 &&
                                                         <>Includes {list.products.length} products</>}
-                                                    {list.products.length === 1 && `Includes 1 produc`}
+                                                    {list.products.length === 1 && `Includes 1 product`}
                                                 </div>
                                                 &nbsp;
                                                 <IconHelp size={16}/>
