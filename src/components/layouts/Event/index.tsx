@@ -102,17 +102,17 @@ const EventLayout = () => {
         {link: 'attendees', label: `Attendees`, icon: IconUsers, badge: eventStats?.total_products_sold},
         {link: 'orders', label: `Orders`, icon: IconReceipt, badge: eventStats?.total_orders},
         {link: 'products', label: `Tickets & Products`, icon: IconTicket},
-        {link: 'questions', label: `Questions`, icon: IconUserQuestion},
+        // {link: 'questions', label: `Questions`, icon: IconUserQuestion},
         {link: 'capacity-assignments', label: `Capacity`, icon: IconUsersGroup},
         {link: 'check-in', label: `Check-In Lists`, icon: IconQrcode},
-        {link: 'messages', label: `Messages`, icon: IconSend},
-        {link: 'promo-codes', label: `Promo Codes`, icon: IconDiscount2},
-        {link: 'affiliates', label: `Affiliates`, icon: IconTrendingUp},
+        // {link: 'messages', label: `Messages`, icon: IconSend},
+        // {link: 'promo-codes', label: `Promo Codes`, icon: IconDiscount2},
+        // {link: 'affiliates', label: `Affiliates`, icon: IconTrendingUp},
 
         {label: `Tools`},
         {link: 'homepage-designer', label: `Homepage Designer`, icon: IconPaint},
-        {link: 'widget', label: `Widget Embed`, icon: IconDeviceTabletCode},
-        {link: 'webhooks', label: `Webhooks`, icon: IconWebhook},
+        // {link: 'widget', label: `Widget Embed`, icon: IconDeviceTabletCode},
+        // {link: 'webhooks', label: `Webhooks`, icon: IconWebhook},
     ];
 
     const navItemsWithLoading = !isEventSettingsFetched || !isEventFetched
