@@ -23,14 +23,13 @@ export default function PaystackCallback() {
       try {
         const res = await fetch(
           `${import.meta.env.VITE_API_BASE_URL}/api/public/events/${eventId}/order/${orderShortId}/paystack/verify/${reference}`,
-          { credentials: "include" } // keeps session cookie if any
+          { credentials: "include" } 
         );
         const data = await res.json();
 
         if (res.ok && data.verified) {
           setStatus("success");
           setMessage("Payment verified. Redirecting...");
-          // send the user to your existing order confirmation page
           setTimeout(() => navigate(`/checkout/${eventId}/${orderShortId}/summary`), 1200);
         } else {
           setStatus("failed");
