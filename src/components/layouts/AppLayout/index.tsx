@@ -87,7 +87,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({
                 breadcrumbItems={breadcrumbItems}
                 topBarContent={topBarContent}
                 breadcrumbContentRight={breadcrumbContentRight}
-                actionGroupContent={actionGroupContent}
+            
             />
 
             <div className={classes.main} id={'app-manage-main'}>

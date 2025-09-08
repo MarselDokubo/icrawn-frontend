@@ -92,7 +92,7 @@ const PromoCodesReport = () => {
 
     return (
         <ReportTable
-            title={`Promo Codes Repor`}
+            title={`Promo Codes Report`}
             columns={columns}
             isLoading={eventQuery.isLoading}
             downloadFileName="promo_codes_report.csv"

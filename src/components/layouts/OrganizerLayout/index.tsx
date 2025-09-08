@@ -237,21 +237,7 @@ const OrganizerLayout = () => {
                         )}
                     </>
                 )}
-                actionGroupContent={(
-                    <Button
-                        component={NavLink}
-                        to={`/events/${organizerId}/${organizer?.slug || ''}`}
-                        target={'_blank'}
-                        variant={'transparent'}
-                        className={classes.viewHomepageButton}
-                        leftSection={<IconExternalLink size={17}/>}
-                        title={`View Organizer Homepage`}
-                    >
-                        <span className={classes.viewHomepageButtonTextDesktop}>
-                            {`View Organizer Homepage`}
-                        </span>
-                    </Button>
-                )}
+
                 sidebarFooter={<SidebarCalloutQueue callouts={callouts}/>}
             />
 

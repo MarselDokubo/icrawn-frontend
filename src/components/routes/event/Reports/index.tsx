@@ -20,13 +20,13 @@ const Reports = () => {
         },
         {
             id: ReportTypes.DailySales,
-            title: `Daily Sales Repor`,
+            title: `Daily Sales Report`,
             description: `Daily sales, tax, and fee breakdown`,
             icon: <Avatar size={40} color={'#00a3e0'}><IconChartBar/></Avatar>
         },
         {
             id: ReportTypes.PromoCodes,
-            title: `Promo Codes Repor`,
+            title: `Promo Codes Report`,
             description: `Promo code usage and discount breakdown`,
             icon: <Avatar size={40} color={'#634fc0'}><IconReportMoney/></Avatar>
         }
