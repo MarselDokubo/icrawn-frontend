@@ -244,7 +244,7 @@ const OrganizerLayout = () => {
             {createModalOpen && <InviteUserModal onClose={closeCreateModal}/>}
             {switchOrganizerModalOpen &&
                 <SwitchOrganizerModal opened={switchOrganizerModalOpen} onClose={closeSwitchModal}/>}
-            {organizer && shareModalOpen && (
+            {/* {organizer && shareModalOpen && (
                 <ShareModal
                     url={organizerHomepageUrl(organizer)}
                     title={organizer.name}
@@ -252,7 +252,7 @@ const OrganizerLayout = () => {
                     opened={shareModalOpen}
                     onClose={closeShareModal}
                 />
-            )}
+            )} */}
             {showCreateEventModal && (
                 <CreateEventModal
                     onClose={() => setShowCreateEventModal(false)}
