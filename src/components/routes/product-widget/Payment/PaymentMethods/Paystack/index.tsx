@@ -44,7 +44,6 @@ export const PaystackPaymentMethod: React.FC<Props> = ({ enabled, setSubmitHandl
             headers: {
               "Content-Type": "application/json",
             },
-            credentials: "include",
             body: JSON.stringify({ email: effectiveEmail }),
           }
         );
