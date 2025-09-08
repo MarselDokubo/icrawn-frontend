@@ -87,7 +87,7 @@ export const HomepageAndCheckoutSettings = () => {
                     />
 
                     <NumberInput
-                        label={`Order timeou`}
+                        label={`Order timeout`}
                         description={`How many minutes the customer has to complete their order. We recommend at least 15 minutes`}
                         {...form.getInputProps('order_timeout_in_minutes')}
                     />
