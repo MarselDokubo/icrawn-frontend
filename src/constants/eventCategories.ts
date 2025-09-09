@@ -8,7 +8,7 @@ export const EventCategories = [
     {id: 'SPORTS', name: `Sports`, emoji: '⚽'},
     {id: 'COMEDY', name: `Comedy`, emoji: '😂'},
     {id: 'THEATER', name: `Theater`, emoji: '🎭'},
-    {id: 'ART', name: `Ar`, emoji: '🎨'},
+    {id: 'ART', name: `Art`, emoji: '🎨'},
 
     {id: 'SOCIAL', name: `Social`, emoji: '🤝'},
     {id: 'FOOD_DRINK', name: `Food & Drink`, emoji: '🍽️'},
