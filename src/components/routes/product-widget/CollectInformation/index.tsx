@@ -218,9 +218,9 @@ export const CollectInformation = () => {
 
     if (order?.payment_status === 'AWAITING_PAYMENT') {
         return <HomepageInfoMessage
-            message={`This order is awaiting paymen`}
+            message={`This order is awaiting payment`}
             link={eventCheckoutPath(eventId, orderShortId, 'payment')}
-            linkText={`Complete paymen`}
+            linkText={`Complete payment`}
         />;
     }
 

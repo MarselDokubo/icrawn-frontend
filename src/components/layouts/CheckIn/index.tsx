@@ -260,7 +260,7 @@ const CheckIn = () => {
                                     </div>
                                     {isAttendeeAwaitingPayment && (
                                         <div className={classes.awaitingPayment}>
-                                            {`Awaiting paymen`}
+                                            {`Awaiting Payment`}
                                         </div>
                                     )}
                                     <div>

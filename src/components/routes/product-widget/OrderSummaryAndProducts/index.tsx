@@ -37,10 +37,10 @@ import classes from './OrderSummaryAndProducts.module.scss';
 const PaymentStatus = ({order}: { order: Order }) => {
     const paymentStatuses: Record<string, string> = {
         'NO_PAYMENT_REQUIRED': `No Payment Required`,
-        'AWAITING_PAYMENT': `Awaiting Paymen`,
+        'AWAITING_PAYMENT': `Awaiting Payment`,
         'PAYMENT_FAILED': `Payment Failed`,
         'PAYMENT_RECEIVED': `Payment Received`,
-        'AWAITING_OFFLINE_PAYMENT': `Awaiting Offline Paymen`,
+        'AWAITING_OFFLINE_PAYMENT': `Awaiting Offline payment`,
     };
 
     return order?.payment_status ? <span>{paymentStatuses[order.payment_status] || ''}</span> : null;
@@ -62,8 +62,8 @@ const OrderStatusType = ({order}: { order: Order }) => {
         'COMPLETED': {label: `Order Completed`, color: 'green'},
         'CANCELLED': {label: `Order Cancelled`, color: 'red'},
         'PAYMENT_FAILED': {label: `Payment Failed`, color: 'red'},
-        'AWAITING_PAYMENT': {label: `Awaiting Paymen`, color: 'orange'},
-        'AWAITING_OFFLINE_PAYMENT': {label: `Awaiting Offline Paymen`, color: 'orange'},
+        'AWAITING_PAYMENT': {label: `Awaiting Payment`, color: 'orange'},
+        'AWAITING_OFFLINE_PAYMENT': {label: `Awaiting Offline payment`, color: 'orange'},
     };
 
     const status = statuses[order?.status];

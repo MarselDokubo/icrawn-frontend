@@ -64,7 +64,7 @@ export const AttendeeTicket = ({attendee, product, event, hideButtons = false}: 
 
                     {attendee.status === 'AWAITING_PAYMENT' && (
                         <div className={classes.awaitingPayment}>
-                            {`Awaiting Paymen`}
+                            {`Awaiting Payment`}
                         </div>
                     )}
                     {attendee.status !== 'CANCELLED' && <QRCode value={String(attendee.public_id)}/>}

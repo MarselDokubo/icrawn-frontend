@@ -12,7 +12,7 @@ export const OrderStatusBadge = ({order, variant = 'outline'}: { order: Order, v
         title = `Cancelled`;
     } else if (order.status === 'AWAITING_OFFLINE_PAYMENT') {
         color = getStatusColor('AWAITING_PAYMENT');
-        title = `Awaiting offline paymen`;
+        title = `Awaiting offline payment`;
     } else if (order.refund_status) {
         color = getStatusColor(order.refund_status);
         title = order.refund_status;

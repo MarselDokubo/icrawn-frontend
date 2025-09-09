@@ -355,7 +355,7 @@ const formatOrderStatus = (status: Order['status'], paymentStatus?: Order['payme
         return `Cancelled`;
     }
     if ((status === 'RESERVED' || !status) && paymentStatus === 'AWAITING_PAYMENT') {
-        return `Awaiting Paymen`;
+        return `Awaiting Payment`;
     }
     if (status === 'AWAITING_OFFLINE_PAYMENT' || paymentStatus === 'AWAITING_OFFLINE_PAYMENT') {
         return `Awaiting Offline Pmt.`;

@@ -120,7 +120,7 @@ export default function StripeCheckoutForm({setSubmitHandler}: {
         <form id="payment-form">
             <>
                 <h2>
-                    {`Paymen`}
+                    {`payment`}
                 </h2>
                 {(order?.payment_status === 'PAYMENT_FAILED' || window?.location.search.includes('payment_failed')) && (
                     <Alert mb={20} color={'red'}>{`Your payment was unsuccessful. Please try again.`}</Alert>

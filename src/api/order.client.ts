@@ -167,7 +167,7 @@ export const orderClientPublic = {
     },
 
     transitionToOfflinePayment: async (eventId: IdParam, orderShortId: IdParam) => {
-        const response = await publicApi.post<GenericDataResponse<Order>>(`events/${eventId}/order/${orderShortId}/await-offline-paymen`);
+        const response = await publicApi.post<GenericDataResponse<Order>>(`events/${eventId}/order/${orderShortId}/await-offline-payment`);
         return response.data;
     },
 

@@ -229,7 +229,7 @@ export const SendMessageModal = (props: EventMessageModalProps) => {
                                     label={`Order statuses`}
                                     data={[
                                         {value: 'COMPLETED', label: `Completed`},
-                                        {value: 'AWAITING_OFFLINE_PAYMENT', label: `Awaiting offline paymen`},
+                                        {value: 'AWAITING_OFFLINE_PAYMENT', label: `Awaiting offline payment`},
                                     ]}
                                     {...form.getInputProps('order_statuses')}
                                 />
