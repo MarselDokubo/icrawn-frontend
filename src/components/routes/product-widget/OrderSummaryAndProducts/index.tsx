@@ -283,7 +283,7 @@ export const OrderSummaryAndProducts = () => {
                             size="sm"
                             variant="transparent"
                             leftSection={<IconPrinter size={16}/>}
-                            onClick={() => window?.open(`/order/${eventId}/${orderShortId}/prin`, '_blank')}
+                            onClick={() => window?.open(`/order/${eventId}/${orderShortId}/print`, '_blank')}
                         >
                             {`Print All Tickets`}
                         </Button>

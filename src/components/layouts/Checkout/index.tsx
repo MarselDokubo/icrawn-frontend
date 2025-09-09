@@ -112,7 +112,7 @@ const Checkout = () => {
                                                 <Tooltip label={`Print Tickets`}>
                                                     <ActionIcon
                                                         variant="subtle"
-                                                        onClick={() => window?.open(`/order/${eventId}/${orderShortId}/prin`, '_blank')}
+                                                        onClick={() => window?.open(`/order/${eventId}/${orderShortId}/print`, '_blank')}
                                                     >
                                                         <IconPrinter size={20}/>
                                                     </ActionIcon>

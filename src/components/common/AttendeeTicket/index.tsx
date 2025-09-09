@@ -75,10 +75,10 @@ export const AttendeeTicket = ({attendee, product, event, hideButtons = false}: 
                     <div className={classes.productButtons}>
                         <Button variant={'transparent'}
                                 size={'sm'}
-                                onClick={() => window?.open(`/product/${event.id}/${attendee.short_id}/prin`, '_blank', 'noopener,noreferrer')}
+                                onClick={() => window?.open(`/product/${event.id}/${attendee.short_id}/print`, '_blank', 'noopener,noreferrer')}
                                 leftSection={<IconPrinter size={18}/>
                                 }>
-                            {`Prin`}
+                            {`Print`}
                         </Button>
 
                         <CopyButton value={`${window?.location.origin}/product/${event.id}/${attendee.short_id}`}>
