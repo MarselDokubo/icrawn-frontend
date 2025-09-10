@@ -145,9 +145,6 @@ const SelectProducts = (props: SelectProductsProps) => {
                 // ✅ Store in localStorage
                 localStorage.setItem("session_identifier", sessionId??"");
 
-                console.log("Order data session_identifier:", sessionId);
-                console.log("getSessionID session_identifier:", getSessionIdentifier());
-
                 const url = '/checkout/' + eventId + '/' + data.data.short_id + '/details';
 
                 if (props.widgetMode === 'embedded') {
@@ -277,7 +274,6 @@ const SelectProducts = (props: SelectProductsProps) => {
         if (values && selectedProductQuantitySum > 0) {
             productMutation.mutate({
                 ...values,
-                session_identifier: getSessionIdentifier()
             });
         } else {
             showInfo(`Please select at least one product`);
