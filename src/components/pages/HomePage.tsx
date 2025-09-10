@@ -195,7 +195,6 @@ function CTASection() {
             <Text c="dimmed">{`Let’s make your next event bigger, brighter, and better than you imagined.`}</Text>
           </Stack>
           <Button radius="xl" size="md" variant="gradient" gradient={{ from: "grape", to: "indigo" }}>
-            {`Get a Quote`}
           </Button>
         </Group>
       </Container>
