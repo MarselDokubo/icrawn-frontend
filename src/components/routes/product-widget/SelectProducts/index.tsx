@@ -1,4 +1,3 @@
-import {t, Trans} from "@lingui/macro";
 import {
     ActionIcon,
     Anchor,
@@ -34,8 +33,8 @@ import {Event, Product} from "../../../../types.ts";
 import {eventsClientPublic} from "../../../../api/event.client.ts";
 import {promoCodeClientPublic} from "../../../../api/promo-code.client.ts";
 import {IconChevronRight, IconX} from "@tabler/icons-react"
-import {getSessionIdentifier} from "../../../../utilites/sessionIdentifier.ts";
-import {Constants} from "../../../../constants.ts";
+import { Constants } from "@/constants.ts";
+
 
 const AFFILIATE_EXPIRY_DAYS = 30;
 
@@ -145,6 +144,10 @@ const SelectProducts = (props: SelectProductsProps) => {
                 // ✅ Store in localStorage
                 localStorage.setItem("session_identifier", sessionId??"");
 
+                // ✅ Store in cookie
+                document.cookie = `sessionId=${sessionId}; path=/; SameSite=Lax'; Secure
+                `;
+
                 const url = '/checkout/' + eventId + '/' + data.data.short_id + '/details';
 
                 if (props.widgetMode === 'embedded') {
@@ -158,7 +161,6 @@ const SelectProducts = (props: SelectProductsProps) => {
 
                 return navigate(url);
             }),
-
         onError: (error: any) => {
             if (error?.response?.data?.errors) {
                 form.setErrors(error.response.data.errors);

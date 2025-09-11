@@ -87,7 +87,7 @@ export const CollectInformation = () => {
         const attendeeProductIds = new Set<IdParam>(
             products
                 .filter(product => product && product.product_type === 'TICKET')
-                .map(product => product.id)
+                .map(product => product?.id)
         );
 
         const updatedProducts = form.values.products.map(product => {
@@ -251,12 +251,12 @@ export const CollectInformation = () => {
             </>
         );
     }
-
-    if (isOrderError || isEventError || isQuestionsError) {
+    const isPageError = isOrderError || isEventError || isQuestionsError;
+    if (isPageError) {
         return (
             <>
                 <HomepageInfoMessage
-                    message={`Sorry, something went wrong loading this page.`}
+                    message={`Sorry, something went wrong loading this page. ${isPageError}`}
                     link={eventHomepagePath(event as Event)}
                     linkText={`Back to event page`}
                 />
