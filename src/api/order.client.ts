@@ -131,7 +131,7 @@ export const orderClientPublic = {
         sessionIdentifier?: string
     ) => {
         const query = new URLSearchParams();
-        const sessionId = sessionIdentifier ?? localStorage.getItem("session_identifier");
+        const sessionId = localStorage.getItem("session_identifier");
         if (includes.length > 0) {
             query.append("include", includes.join(","));
         }
