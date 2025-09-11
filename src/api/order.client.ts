@@ -131,11 +131,13 @@ export const orderClientPublic = {
         sessionIdentifier?: string
     ) => {
         const query = new URLSearchParams();
+        const sessionId = sessionIdentifier ?? localStorage.getItem("session_identifier");
         if (includes.length > 0) {
             query.append("include", includes.join(","));
         }
-        if (sessionIdentifier) {
-            query.append("session_identifier", sessionIdentifier);
+    
+        if (sessionId) {
+            query.append("session_identifier", sessionId);
         }
 
         const response = await publicApi.get<GenericDataResponse<Order>>(
