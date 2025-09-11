@@ -257,7 +257,7 @@ export const CollectInformation = () => {
         return (
             <>
                 <HomepageInfoMessage
-                    message={`Sorry, something went wrong loading this page. ${isFetchError}`}
+                    message={`Sorry, something went wrong loading this page. ${isEventFetched} ${isOrderFetched} ${isQuestionsFetched}`}
                     link={eventHomepagePath(event as Event)}
                     linkText={`Back to event page`}
                 />
