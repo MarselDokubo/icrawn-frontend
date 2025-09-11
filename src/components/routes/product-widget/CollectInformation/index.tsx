@@ -252,11 +252,12 @@ export const CollectInformation = () => {
         );
     }
     const isPageError = isOrderError || isEventError || isQuestionsError;
+    const isFetchError =  isEventFetched && isOrderFetched && isQuestionsFetched;
     if (isPageError) {
         return (
             <>
                 <HomepageInfoMessage
-                    message={`Sorry, something went wrong loading this page. ${isPageError}`}
+                    message={`Sorry, something went wrong loading this page. ${isFetchError}`}
                     link={eventHomepagePath(event as Event)}
                     linkText={`Back to event page`}
                 />
